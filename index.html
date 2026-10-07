@@ -1,804 +1,806 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Dra. Liz Vera | Odontología</title>
-
-  <style>
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      color: #333;
-      background: #ffffff;
-    }
-
-
-    /* =========================
-       HEADER
-    ========================= */
-
-    header {
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-      background: rgba(255,255,255,.95);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 2px 15px rgba(0,0,0,.08);
-    }
-
-    .navbar {
-      max-width: 1200px;
-      margin: auto;
-      padding: 18px 25px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-size: 22px;
-      font-weight: bold;
-      color: #167b82;
-      letter-spacing: 1px;
-    }
-
-    .logo span {
-      color: #555;
-      font-weight: normal;
-      font-size: 14px;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #333;
-      margin-left: 25px;
-      font-size: 15px;
-      transition: .3s;
-    }
-
-    nav a:hover {
-      color: #167b82;
-    }
-
-
-    /* =========================
-       PORTADA
-    ========================= */
-
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding: 100px 10%;
-
-      background:
-        linear-gradient(
-          90deg,
-          rgba(255,255,255,.95) 25%,
-          rgba(255,255,255,.55) 48%,
-          rgba(255,255,255,.05) 75%
-        ),
-        url('dra-liz-recepcion.jpeg');
-
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
-
-    .hero-content {
-      max-width: 600px;
-    }
-
-    .hero h1 {
-      font-size: 60px;
-      color: #1c5559;
-      margin-bottom: 20px;
-      line-height: 1.1;
-    }
-
-    .hero h2 {
-      font-size: 24px;
-      font-weight: normal;
-      margin-bottom: 20px;
-      color: #555;
-    }
-
-    .hero p {
-      font-size: 18px;
-      line-height: 1.7;
-      margin-bottom: 30px;
-      color: #555;
-    }
-
-
-    /* =========================
-       BOTONES
-    ========================= */
-
-    .btn {
-      display: inline-block;
-      background: #167b82;
-      color: white;
-      padding: 15px 30px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: .3s;
-      box-shadow: 0 5px 15px rgba(0,0,0,.12);
-    }
-
-    .btn:hover {
-      background: #105e63;
-      transform: translateY(-3px);
-    }
-
-
-    /* =========================
-       SECCIONES GENERALES
-    ========================= */
-
-    section {
-      padding: 90px 10%;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 55px;
-    }
-
-    .section-title h2 {
-      font-size: 40px;
-      color: #1c5559;
-      margin-bottom: 12px;
-    }
-
-    .section-title p {
-      color: #777;
-      font-size: 17px;
-    }
-
-
-    /* =========================
-       SERVICIOS
-    ========================= */
-
-    .services {
-      background: #f4f9f9;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 25px;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .service-card {
-      background: white;
-      padding: 35px 25px;
-      border-radius: 18px;
-      text-align: center;
-      box-shadow: 0 8px 25px rgba(0,0,0,.06);
-      transition: .3s;
-    }
-
-    .service-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 15px 35px rgba(0,0,0,.10);
-    }
-
-    .icon {
-      width: 70px;
-      height: 70px;
-      margin: auto auto 20px;
-      border-radius: 50%;
-      background: #e3f2f2;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 30px;
-    }
-
-    .service-card h3 {
-      margin-bottom: 12px;
-      color: #1c5559;
-      font-size: 20px;
-    }
-
-    .service-card p {
-      color: #777;
-      line-height: 1.6;
-      font-size: 15px;
-    }
-
-
-    /* =========================
-       SOBRE LA DOCTORA
-    ========================= */
-
-    .about {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .about-image {
-      overflow: hidden;
-      border-radius: 20px;
-      box-shadow: 0 15px 40px rgba(0,0,0,.15);
-    }
-
-    .about-image img {
-      width: 100%;
-      display: block;
-      transition: .4s;
-    }
-
-    .about-image:hover img {
-      transform: scale(1.03);
-    }
-
-    .about-text h2 {
-      font-size: 45px;
-      color: #1c5559;
-      margin-bottom: 20px;
-    }
-
-    .about-text h3 {
-      font-size: 22px;
-      margin-bottom: 20px;
-      font-weight: normal;
-      color: #777;
-    }
-
-    .about-text p {
-      line-height: 1.8;
-      color: #666;
-      margin-bottom: 20px;
-      font-size: 17px;
-    }
-
-
-    /* =========================
-       GALERIA
-    ========================= */
-
-    .gallery {
-      background: #f4f9f9;
-    }
-
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 25px;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    .gallery-grid img {
-      width: 100%;
-      height: 450px;
-      object-fit: cover;
-      border-radius: 18px;
-      box-shadow: 0 10px 25px rgba(0,0,0,.10);
-      transition: .3s;
-    }
-
-    .gallery-grid img:hover {
-      transform: scale(1.02);
-    }
-
-
-    /* =========================
-       CONTACTO
-    ========================= */
-
-    .contact {
-      background: linear-gradient(135deg, #167b82, #103f42);
-      color: white;
-      text-align: center;
-    }
-
-    .contact h2 {
-      font-size: 42px;
-      margin-bottom: 20px;
-    }
-
-    .contact p {
-      font-size: 18px;
-      margin-bottom: 15px;
-    }
-
-    .contact .btn {
-      background: white;
-      color: #167b82;
-      margin-top: 20px;
-    }
-
-    .contact .btn:hover {
-      background: #f2f2f2;
-    }
-
-
-    /* =========================
-       FOOTER
-    ========================= */
-
-    footer {
-      background: #0d3033;
-      color: white;
-      text-align: center;
-      padding: 25px;
-      font-size: 14px;
-    }
-
-
-    /* =========================
-       WHATSAPP
-    ========================= */
-
-    .whatsapp {
-      position: fixed;
-      right: 25px;
-      bottom: 25px;
-      width: 62px;
-      height: 62px;
-      background: #25D366;
-      color: white;
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-decoration: none;
-      font-size: 30px;
-      box-shadow: 0 5px 20px rgba(0,0,0,.25);
-      z-index: 1000;
-      transition: .3s;
-    }
-
-    .whatsapp:hover {
-      transform: scale(1.1);
-    }
-
-
-    /* =========================
-       RESPONSIVE CELULAR
-    ========================= */
-
-    @media(max-width: 768px) {
-
-      nav {
-        display: none;
-      }
-
-      .navbar {
-        justify-content: center;
-      }
-
-      .logo {
-        text-align: center;
-      }
-
-      .hero {
-        text-align: center;
-        justify-content: center;
-        padding: 100px 25px;
-
-        background:
-          linear-gradient(
-            rgba(255,255,255,.85),
-            rgba(255,255,255,.55)
-          ),
-          url('dra-liz-recepcion.jpeg');
-
-        background-position: center;
-      }
-
-      .hero h1 {
-        font-size: 42px;
-      }
-
-      .hero h2 {
-        font-size: 20px;
-      }
-
-      .hero p {
-        font-size: 16px;
-      }
-
-      section {
-        padding: 70px 25px;
-      }
-
-      .section-title h2 {
-        font-size: 32px;
-      }
-
-      .about {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-
-      .about-text {
-        text-align: center;
-      }
-
-      .about-text h2 {
-        font-size: 36px;
-      }
-
-      .gallery-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .gallery-grid img {
-        height: 400px;
-      }
-
-      .contact h2 {
-        font-size: 35px;
-      }
-
-    }
-
-  </style>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Médica Alta Boutique Dental | Dra. Liz Vera</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:Arial,Helvetica,sans-serif;
+color:#333;
+background:#fff;
+}
+
+/* HEADER */
+
+header{
+position:fixed;
+width:100%;
+top:0;
+z-index:1000;
+background:rgba(255,255,255,.96);
+backdrop-filter:blur(10px);
+box-shadow:0 2px 15px rgba(0,0,0,.08);
+}
+
+.navbar{
+max-width:1200px;
+margin:auto;
+padding:17px 25px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-size:19px;
+font-weight:bold;
+color:#167b82;
+letter-spacing:1px;
+}
+
+.logo span{
+display:block;
+color:#555;
+font-size:11px;
+font-weight:normal;
+letter-spacing:2px;
+margin-top:3px;
+}
+
+nav a{
+text-decoration:none;
+color:#333;
+margin-left:25px;
+font-size:15px;
+transition:.3s;
+}
+
+nav a:hover{
+color:#167b82;
+}
+
+
+/* HERO */
+
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+padding:100px 10%;
+
+background:
+linear-gradient(
+90deg,
+rgba(255,255,255,.95) 25%,
+rgba(255,255,255,.55) 50%,
+rgba(255,255,255,.05) 80%
+),
+url('dra-liz-recepcion.jpeg');
+
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+}
+
+.hero-content{
+max-width:620px;
+}
+
+.hero small{
+color:#167b82;
+font-size:15px;
+font-weight:bold;
+letter-spacing:3px;
+text-transform:uppercase;
+}
+
+.hero h1{
+font-size:56px;
+color:#1c5559;
+margin:18px 0;
+line-height:1.08;
+}
+
+.hero h2{
+font-size:23px;
+font-weight:normal;
+margin-bottom:20px;
+color:#555;
+}
+
+.hero p{
+font-size:18px;
+line-height:1.7;
+margin-bottom:30px;
+color:#555;
+}
+
+
+/* BOTONES */
+
+.btn{
+display:inline-block;
+background:#167b82;
+color:white;
+padding:15px 30px;
+border-radius:30px;
+text-decoration:none;
+font-weight:bold;
+transition:.3s;
+box-shadow:0 5px 15px rgba(0,0,0,.12);
+}
+
+.btn:hover{
+background:#105e63;
+transform:translateY(-3px);
+}
+
+
+/* SECCIONES */
+
+section{
+padding:90px 10%;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:55px;
+}
+
+.section-title h2{
+font-size:40px;
+color:#1c5559;
+margin-bottom:12px;
+}
+
+.section-title p{
+color:#777;
+font-size:17px;
+}
+
+
+/* SERVICIOS */
+
+.services{
+background:#f4f9f9;
+}
+
+.services-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+gap:25px;
+max-width:1200px;
+margin:auto;
+}
+
+.service-card{
+background:white;
+padding:35px 25px;
+border-radius:18px;
+text-align:center;
+box-shadow:0 8px 25px rgba(0,0,0,.06);
+transition:.3s;
+}
+
+.service-card:hover{
+transform:translateY(-8px);
+}
+
+.icon{
+width:70px;
+height:70px;
+margin:auto auto 20px;
+border-radius:50%;
+background:#e3f2f2;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:30px;
+}
+
+.service-card h3{
+margin-bottom:12px;
+color:#1c5559;
+font-size:20px;
+}
+
+.service-card p{
+color:#777;
+line-height:1.6;
+font-size:15px;
+}
+
+
+/* DOCTORA */
+
+.about{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+max-width:1200px;
+margin:auto;
+}
+
+.about-image{
+overflow:hidden;
+border-radius:20px;
+box-shadow:0 15px 40px rgba(0,0,0,.15);
+}
+
+.about-image img{
+width:100%;
+display:block;
+transition:.4s;
+}
+
+.about-image:hover img{
+transform:scale(1.03);
+}
+
+.about-text h2{
+font-size:45px;
+color:#1c5559;
+margin-bottom:10px;
+}
+
+.about-text h3{
+font-size:21px;
+margin-bottom:20px;
+font-weight:normal;
+color:#777;
+}
+
+.about-text p{
+line-height:1.8;
+color:#666;
+margin-bottom:20px;
+font-size:17px;
+}
+
+
+/* GALERÍA */
+
+.gallery{
+background:#f4f9f9;
+}
+
+.gallery-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:25px;
+max-width:1000px;
+margin:auto;
+}
+
+.gallery-grid img{
+width:100%;
+height:450px;
+object-fit:cover;
+border-radius:18px;
+box-shadow:0 10px 25px rgba(0,0,0,.10);
+transition:.3s;
+}
+
+.gallery-grid img:hover{
+transform:scale(1.02);
+}
+
+
+/* CONTACTO */
+
+.contact{
+background:linear-gradient(135deg,#167b82,#103f42);
+color:white;
+text-align:center;
+}
+
+.contact h2{
+font-size:42px;
+margin-bottom:20px;
+}
+
+.contact p{
+font-size:18px;
+margin-bottom:15px;
+}
+
+.contact .btn{
+background:white;
+color:#167b82;
+margin-top:20px;
+}
+
+
+/* FOOTER */
+
+footer{
+background:#0d3033;
+color:white;
+text-align:center;
+padding:25px;
+font-size:14px;
+line-height:1.7;
+}
+
+
+/* WHATSAPP */
+
+.whatsapp{
+position:fixed;
+right:25px;
+bottom:25px;
+width:62px;
+height:62px;
+background:#25D366;
+color:white;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+text-decoration:none;
+font-size:29px;
+box-shadow:0 5px 20px rgba(0,0,0,.25);
+z-index:1000;
+transition:.3s;
+}
+
+.whatsapp:hover{
+transform:scale(1.1);
+}
+
+
+/* CELULAR */
+
+@media(max-width:768px){
+
+nav{
+display:none;
+}
+
+.navbar{
+justify-content:center;
+text-align:center;
+}
+
+.hero{
+text-align:center;
+justify-content:center;
+padding:110px 25px;
+
+background:
+linear-gradient(
+rgba(255,255,255,.85),
+rgba(255,255,255,.55)
+),
+url('dra-liz-recepcion.jpeg');
+
+background-position:center;
+}
+
+.hero h1{
+font-size:40px;
+}
+
+.hero h2{
+font-size:20px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+section{
+padding:70px 25px;
+}
+
+.section-title h2{
+font-size:32px;
+}
+
+.about{
+grid-template-columns:1fr;
+gap:40px;
+}
+
+.about-text{
+text-align:center;
+}
+
+.about-text h2{
+font-size:36px;
+}
+
+.gallery-grid{
+grid-template-columns:1fr;
+}
+
+.gallery-grid img{
+height:400px;
+}
+
+.contact h2{
+font-size:35px;
+}
+
+}
+
+</style>
 </head>
 
 
 <body>
 
 
-  <!-- =========================
-       MENU
-  ========================= -->
+<!-- =========================
+HEADER
+========================= -->
 
-  <header>
+<header>
 
-    <div class="navbar">
+<div class="navbar">
 
-      <div class="logo">
-        DRA. LIZ VERA
-        <br>
-        <span>ODONTOLOGÍA</span>
-      </div>
+<div class="logo">
 
-      <nav>
-        <a href="#inicio">Inicio</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#doctora">Sobre mí</a>
-        <a href="#galeria">Galería</a>
-        <a href="#contacto">Contacto</a>
-      </nav>
+MÉDICA ALTA
 
-    </div>
+<span>BOUTIQUE DENTAL</span>
 
-  </header>
+</div>
 
 
+<nav>
 
-  <!-- =========================
-       PORTADA
-  ========================= -->
+<a href="#inicio">Inicio</a>
 
-  <section class="hero" id="inicio">
+<a href="#servicios">Servicios</a>
 
-    <div class="hero-content">
+<a href="#doctora">Nosotros</a>
 
-      <h1>
-        Tu sonrisa merece
-        el mejor cuidado
-      </h1>
+<a href="#galeria">Galería</a>
 
-      <h2>
-        Dra. Liz Vera · Odontología Integral
-      </h2>
+<a href="#contacto">Contacto</a>
 
-      <p>
-        Atención odontológica profesional y personalizada,
-        enfocada en cuidar tu salud, mejorar tu sonrisa
-        y brindarte una experiencia cómoda y segura.
-      </p>
+</nav>
 
-      <!-- CAMBIAR NUMERO DE WHATSAPP -->
+</div>
 
-      <a
-        href="https://wa.me/521XXXXXXXXXX"
-        target="_blank"
-        class="btn"
-      >
-        Agenda tu cita
-      </a>
+</header>
 
-    </div>
 
-  </section>
 
+<!-- =========================
+PORTADA
+========================= -->
 
+<section class="hero" id="inicio">
 
-  <!-- =========================
-       SERVICIOS
-  ========================= -->
+<div class="hero-content">
 
-  <section class="services" id="servicios">
+<small>
+Médica Alta Boutique Dental
+</small>
 
-    <div class="section-title">
 
-      <h2>Nuestros Servicios</h2>
+<h1>
+Una sonrisa que habla por ti
+</h1>
 
-      <p>
-        Atención profesional para cuidar y transformar tu sonrisa.
-      </p>
 
-    </div>
+<h2>
+Dra. Liz Vera · Odontología Integral
+</h2>
 
 
-    <div class="services-grid">
+<p>
+Cuidamos tu sonrisa con atención profesional,
+personalizada y enfocada en tu bienestar,
+salud y estética dental.
+</p>
 
 
-      <div class="service-card">
+<a
+href="https://wa.me/527713159521"
+target="_blank"
+class="btn"
+>
+Agenda tu cita
+</a>
 
-        <div class="icon">🦷</div>
+</div>
 
-        <h3>Odontología General</h3>
+</section>
 
-        <p>
-          Prevención, diagnóstico y tratamientos para mantener
-          una sonrisa saludable.
-        </p>
 
-      </div>
 
+<!-- =========================
+SERVICIOS
+========================= -->
 
+<section class="services" id="servicios">
 
-      <div class="service-card">
+<div class="section-title">
 
-        <div class="icon">✨</div>
+<h2>Nuestros Servicios</h2>
 
-        <h3>Estética Dental</h3>
+<p>
+Tratamientos pensados para cuidar y transformar tu sonrisa.
+</p>
 
-        <p>
-          Tratamientos diseñados para mejorar la apariencia
-          y armonía de tu sonrisa.
-        </p>
+</div>
 
-      </div>
 
+<div class="services-grid">
 
 
-      <div class="service-card">
+<div class="service-card">
 
-        <div class="icon">😁</div>
+<div class="icon">🦷</div>
 
-        <h3>Blanqueamiento</h3>
+<h3>Odontología General</h3>
 
-        <p>
-          Recupera el brillo natural de tu sonrisa con
-          tratamientos profesionales.
-        </p>
+<p>
+Prevención, diagnóstico y tratamientos para mantener
+una sonrisa saludable.
+</p>
 
-      </div>
+</div>
 
 
+<div class="service-card">
 
-      <div class="service-card">
+<div class="icon">✨</div>
 
-        <div class="icon">🦷</div>
+<h3>Estética Dental</h3>
 
-        <h3>Ortodoncia</h3>
+<p>
+Tratamientos enfocados en mejorar la apariencia,
+armonía y estética de tu sonrisa.
+</p>
 
-        <p>
-          Corrección de la posición dental para lograr una
-          sonrisa funcional y estética.
-        </p>
+</div>
 
-      </div>
 
+<div class="service-card">
 
+<div class="icon">😁</div>
 
-      <div class="service-card">
+<h3>Blanqueamiento</h3>
 
-        <div class="icon">👑</div>
+<p>
+Tratamientos profesionales para recuperar
+luminosidad y armonía en tu sonrisa.
+</p>
 
-        <h3>Rehabilitación Dental</h3>
+</div>
 
-        <p>
-          Soluciones para recuperar la función y estética
-          de tus dientes.
-        </p>
 
-      </div>
+<div class="service-card">
 
+<div class="icon">🦷</div>
 
+<h3>Ortodoncia</h3>
 
-      <div class="service-card">
+<p>
+Tratamientos para mejorar la posición dental
+y lograr una sonrisa funcional y estética.
+</p>
 
-        <div class="icon">❤️</div>
+</div>
 
-        <h3>Atención Personalizada</h3>
 
-        <p>
-          Cada paciente recibe un tratamiento adaptado
-          a sus necesidades.
-        </p>
+<div class="service-card">
 
-      </div>
+<div class="icon">👑</div>
 
+<h3>Rehabilitación Dental</h3>
 
-    </div>
+<p>
+Soluciones para recuperar la función,
+estética y bienestar de tu sonrisa.
+</p>
 
-  </section>
+</div>
 
 
+<div class="service-card">
 
-  <!-- =========================
-       SOBRE LA DOCTORA
-  ========================= -->
+<div class="icon">❤️</div>
 
-  <section id="doctora">
+<h3>Atención Personalizada</h3>
 
-    <div class="about">
+<p>
+Cada paciente recibe una atención adaptada
+a sus necesidades.
+</p>
 
+</div>
 
-      <div class="about-image">
 
-        <img
-          src="dra-liz-consultorio.jpeg"
-          alt="Dra. Liz Vera"
-        >
+</div>
 
-      </div>
+</section>
 
 
 
-      <div class="about-text">
+<!-- =========================
+SOBRE LA DOCTORA
+========================= -->
 
-        <h2>Dra. Liz Vera</h2>
+<section id="doctora">
 
-        <h3>
-          Comprometida con tu salud y tu sonrisa
-        </h3>
+<div class="about">
 
-        <p>
-          Mi compromiso es brindar atención odontológica
-          profesional, cercana y personalizada para cada paciente.
-        </p>
 
-        <p>
-          Creo que una sonrisa saludable puede transformar
-          la confianza y el bienestar de las personas.
-          Por eso, cada tratamiento se realiza con dedicación,
-          atención y compromiso.
-        </p>
+<div class="about-image">
 
-        <a href="#contacto" class="btn">
-          Agenda una consulta
-        </a>
+<img
+src="dra-liz-consultorio.jpeg"
+alt="Dra. Liz Vera - Médica Alta Boutique Dental"
+>
 
-      </div>
+</div>
 
 
-    </div>
+<div class="about-text">
 
-  </section>
+<h2>Dra. Liz Vera</h2>
 
+<h3>
+Parte de Médica Alta Boutique Dental
+</h3>
 
 
-  <!-- =========================
-       GALERIA
-  ========================= -->
+<p>
+En Médica Alta Boutique Dental creemos que cada sonrisa
+merece atención, cuidado y un tratamiento personalizado.
+</p>
 
-  <section class="gallery" id="galeria">
 
+<p>
+La Dra. Liz Vera brinda atención odontológica profesional
+en un espacio diseñado para ofrecer una experiencia
+cómoda, cercana y de confianza.
+</p>
 
-    <div class="section-title">
 
-      <h2>Conoce nuestro espacio</h2>
+<a
+href="#contacto"
+class="btn"
+>
+Conoce nuestros servicios
+</a>
 
-      <p>
-        Un consultorio diseñado para brindarte comodidad,
-        confianza y atención profesional.
-      </p>
+</div>
 
-    </div>
+</div>
 
+</section>
 
 
-    <div class="gallery-grid">
 
-      <img
-        src="dra-liz-recepcion.jpeg"
-        alt="Consultorio Dra Liz Vera"
-      >
+<!-- =========================
+GALERÍA
+========================= -->
 
-      <img
-        src="dra-liz-consultorio.jpeg"
-        alt="Dra Liz Vera Odontología"
-      >
+<section class="gallery" id="galeria">
 
-    </div>
+<div class="section-title">
 
+<h2>Conoce Médica Alta</h2>
 
-  </section>
+<p>
+Un espacio creado para cuidar de ti y de tu sonrisa.
+</p>
 
+</div>
 
 
-  <!-- =========================
-       CONTACTO
-  ========================= -->
+<div class="gallery-grid">
 
-  <section class="contact" id="contacto">
+<img
+src="dra-liz-recepcion.jpeg"
+alt="Médica Alta Boutique Dental"
+>
 
-    <h2>Agenda tu cita</h2>
 
-    <p>
-      Estamos listos para ayudarte a cuidar tu sonrisa.
-    </p>
+<img
+src="dra-liz-consultorio.jpeg"
+alt="Dra. Liz Vera"
+>
 
-    <p>
-      📍 Agrega aquí la dirección del consultorio
-    </p>
+</div>
 
-    <p>
-      📞 +52 XXX XXX XXXX
-    </p>
+</section>
 
 
-    <!-- CAMBIAR NUMERO DE WHATSAPP -->
 
-    <a
-      href="https://wa.me/521XXXXXXXXXX"
-      target="_blank"
-      class="btn"
-    >
-      Contactar por WhatsApp
-    </a>
+<!-- =========================
+CONTACTO
+========================= -->
 
+<section class="contact" id="contacto">
 
-  </section>
+<h2>
+Agenda tu cita
+</h2>
 
 
+<p>
+Tu sonrisa merece atención especializada.
+</p>
 
-  <!-- =========================
-       FOOTER
-  ========================= -->
 
-  <footer>
+<p>
+📞 <strong>771 711 2564</strong>
+</p>
 
-    © 2026 Dra. Liz Vera | Odontología Integral
 
-  </footer>
+<p>
+💬 WhatsApp: <strong>771 315 9521</strong>
+</p>
 
 
+<a
+href="https://wa.me/527713159521"
+target="_blank"
+class="btn"
+>
+Contactar por WhatsApp
+</a>
 
-  <!-- =========================
-       BOTON WHATSAPP
-  ========================= -->
+</section>
 
-  <a
-    href="https://wa.me/521XXXXXXXXXX"
-    target="_blank"
-    class="whatsapp"
-    aria-label="WhatsApp"
-  >
-    ☎
-  </a>
+
+
+<!-- =========================
+FOOTER
+========================= -->
+
+<footer>
+
+<strong>MÉDICA ALTA BOUTIQUE DENTAL</strong>
+
+<br>
+
+Dra. Liz Vera · Odontología Integral
+
+<br>
+
+Tel. 771 711 2564 · WhatsApp 771 315 9521
+
+<br><br>
+
+© 2026 Médica Alta Boutique Dental
+
+</footer>
+
+
+
+<!-- =========================
+BOTÓN WHATSAPP
+========================= -->
+
+<a
+href="https://wa.me/527713159521"
+target="_blank"
+class="whatsapp"
+aria-label="WhatsApp"
+>
+💬
+</a>
 
 
 </body>
-
 </html>
