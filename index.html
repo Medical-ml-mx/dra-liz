@@ -1,1253 +1,1045 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Médica Alta Boutique Dental | Dra. Liz Vera</title>
-
-<style>
-
-/* =========================
-   GENERAL
-========================= */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    color: #333;
-    background: #fff;
-}
-
-img {
-    max-width: 100%;
-}
-
-
-/* =========================
-   HEADER
-========================= */
-
-header {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-
-    background: rgba(255,255,255,.96);
-    backdrop-filter: blur(12px);
-
-    box-shadow: 0 2px 18px rgba(0,0,0,.08);
-}
-
-.navbar {
-    max-width: 1200px;
-    margin: auto;
-
-    padding: 17px 25px;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    color: #167b82;
-    font-size: 19px;
-    font-weight: bold;
-    letter-spacing: 1px;
-}
-
-.logo span {
-    display: block;
-
-    color: #555;
-    font-size: 11px;
-    font-weight: normal;
-
-    letter-spacing: 2px;
-    margin-top: 4px;
-}
-
-nav a {
-    color: #333;
-    text-decoration: none;
-
-    margin-left: 25px;
-
-    font-size: 15px;
-
-    transition: .3s;
-}
-
-nav a:hover {
-    color: #167b82;
-}
-
-
-/* =========================
-   HERO
-========================= */
-
-.hero {
-
-    min-height: 100vh;
-
-    display: flex;
-    align-items: center;
-
-    padding: 120px 10%;
-
-    background:
-
-        linear-gradient(
-            90deg,
-            rgba(255,255,255,.96) 20%,
-            rgba(255,255,255,.70) 42%,
-            rgba(255,255,255,.15) 75%
-        ),
-
-        url('DSC_8583.jpeg');
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.hero-content {
-    max-width: 620px;
-}
-
-.hero small {
-
-    color: #167b82;
-
-    font-size: 14px;
-    font-weight: bold;
-
-    letter-spacing: 3px;
-
-    text-transform: uppercase;
-}
-
-.hero h1 {
-
-    color: #1c5559;
-
-    font-size: 58px;
-
-    line-height: 1.08;
-
-    margin: 18px 0;
-}
-
-.hero h2 {
-
-    color: #555;
-
-    font-size: 23px;
-
-    font-weight: normal;
-
-    margin-bottom: 20px;
-}
-
-.hero p {
-
-    color: #555;
-
-    font-size: 18px;
-
-    line-height: 1.7;
-
-    margin-bottom: 30px;
-}
-
-
-/* =========================
-   BOTONES
-========================= */
-
-.btn {
-
-    display: inline-block;
-
-    background: #167b82;
-
-    color: white;
-
-    padding: 15px 30px;
-
-    border-radius: 30px;
-
-    text-decoration: none;
-
-    font-weight: bold;
-
-    box-shadow: 0 6px 18px rgba(0,0,0,.15);
-
-    transition: .3s;
-}
-
-.btn:hover {
-
-    background: #105e63;
-
-    transform: translateY(-3px);
-}
-
-
-/* =========================
-   SECCIONES
-========================= */
-
-section {
-    padding: 90px 10%;
-}
-
-.section-title {
-
-    text-align: center;
-
-    margin-bottom: 55px;
-}
-
-.section-title h2 {
-
-    color: #1c5559;
-
-    font-size: 40px;
-
-    margin-bottom: 12px;
-}
-
-.section-title p {
-
-    color: #777;
-
-    font-size: 17px;
-}
-
-
-/* =========================
-   SERVICIOS
-========================= */
-
-.services {
-
-    background: #f4f9f9;
-}
-
-.services-grid {
-
-    max-width: 1200px;
-
-    margin: auto;
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(auto-fit, minmax(230px, 1fr));
-
-    gap: 25px;
-}
-
-.service-card {
-
-    background: white;
-
-    padding: 35px 25px;
-
-    border-radius: 18px;
-
-    text-align: center;
-
-    box-shadow:
-        0 8px 25px rgba(0,0,0,.06);
-
-    transition: .3s;
-}
-
-.service-card:hover {
-
-    transform: translateY(-8px);
-
-    box-shadow:
-        0 15px 35px rgba(0,0,0,.10);
-}
-
-.icon {
-
-    width: 70px;
-    height: 70px;
-
-    margin: 0 auto 20px;
-
-    border-radius: 50%;
-
-    background: #e3f2f2;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    font-size: 30px;
-}
-
-.service-card h3 {
-
-    color: #1c5559;
-
-    font-size: 20px;
-
-    margin-bottom: 12px;
-}
-
-.service-card p {
-
-    color: #777;
-
-    font-size: 15px;
-
-    line-height: 1.6;
-}
-
-
-/* =========================
-   SOBRE LA DOCTORA
-========================= */
-
-.about {
-
-    max-width: 1200px;
-
-    margin: auto;
-
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    gap: 60px;
-
-    align-items: center;
-}
-
-.about-image {
-
-    overflow: hidden;
-
-    border-radius: 20px;
-
-    box-shadow:
-        0 15px 40px rgba(0,0,0,.15);
-}
-
-.about-image img {
-
-    width: 100%;
-
-    display: block;
-
-    transition: .4s;
-}
-
-.about-image:hover img {
-
-    transform: scale(1.03);
-}
-
-.about-text h2 {
-
-    color: #1c5559;
-
-    font-size: 45px;
-
-    margin-bottom: 10px;
-}
-
-.about-text h3 {
-
-    color: #777;
-
-    font-size: 21px;
-
-    font-weight: normal;
-
-    margin-bottom: 20px;
-}
-
-.about-text p {
-
-    color: #666;
-
-    font-size: 17px;
-
-    line-height: 1.8;
-
-    margin-bottom: 20px;
-}
-
-
-/* =========================
-   GALERÍA
-========================= */
-
-.gallery {
-
-    background: #f4f9f9;
-}
-
-.gallery-grid {
-
-    max-width: 1000px;
-
-    margin: auto;
-
-    display: grid;
-
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 25px;
-}
-
-.gallery-grid img {
-
-    width: 100%;
-
-    height: 450px;
-
-    object-fit: cover;
-
-    border-radius: 18px;
-
-    box-shadow:
-        0 10px 25px rgba(0,0,0,.10);
-
-    transition: .3s;
-}
-
-.gallery-grid img:hover {
-
-    transform: scale(1.02);
-}
-
-
-/* =========================
-   CONTACTO
-========================= */
-
-.contact {
-
-    background:
-        linear-gradient(
-            135deg,
-            #167b82,
-            #103f42
-        );
-
-    color: white;
-
-    text-align: center;
-}
-
-.contact h2 {
-
-    font-size: 42px;
-
-    margin-bottom: 20px;
-}
-
-.contact p {
-
-    font-size: 18px;
-
-    margin-bottom: 15px;
-}
-
-.contact .btn {
-
-    background: white;
-
-    color: #167b82;
-
-    margin-top: 20px;
-}
-
-
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-
-    background: #0d3033;
-
-    color: white;
-
-    text-align: center;
-
-    padding: 28px;
-
-    font-size: 14px;
-
-    line-height: 1.8;
-}
-
-
-/* =========================
-   WHATSAPP
-========================= */
-
-.whatsapp {
-
-    position: fixed;
-
-    right: 25px;
-    bottom: 25px;
-
-    width: 62px;
-    height: 62px;
-
-    background: #25D366;
-
-    color: white;
-
-    border-radius: 50%;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    text-decoration: none;
-
-    font-size: 29px;
-
-    box-shadow:
-        0 5px 20px rgba(0,0,0,.25);
-
-    z-index: 1000;
-
-    transition: .3s;
-}
-
-.whatsapp:hover {
-
-    transform: scale(1.1);
-}
-
-
-/* =========================
-   CELULAR
-========================= */
-
-@media(max-width: 768px) {
-
-    nav {
-        display: none;
-    }
-
-    .navbar {
-
-        justify-content: center;
-
-        text-align: center;
-    }
-
-    .hero {
-
-        min-height: 100vh;
-
-        padding: 120px 25px 70px;
-
-        text-align: center;
-
-        justify-content: center;
-
-        background:
-
-            linear-gradient(
-                rgba(255,255,255,.88),
-                rgba(255,255,255,.55)
-            ),
-
-            url('DSC_8583.jpeg');
-
-        background-position: center;
-    }
-
-    .hero h1 {
-
-        font-size: 40px;
-    }
-
-    .hero h2 {
-
-        font-size: 20px;
-    }
-
-    .hero p {
-
-        font-size: 16px;
-    }
-
-    section {
-
-        padding: 70px 25px;
-    }
-
-    .section-title h2 {
-
-        font-size: 32px;
-    }
-
-    .about {
-
-        grid-template-columns: 1fr;
-
-        gap: 40px;
-    }
-
-    .about-text {
-
-        text-align: center;
-    }
-
-    .about-text h2 {
-
-        font-size: 36px;
-    }
-
-    .gallery-grid {
-
-        grid-template-columns: 1fr;
-    }
-
-    .gallery-grid img {
-
-        height: 400px;
-    }
-
-    .contact h2 {
-
-        font-size: 35px;
-    }
-
-}
-
-
-/* =========================
-   ANIMACIÓN
-========================= */
-
-@keyframes aparecer {
-
-    from {
-
-        opacity: 0;
-
-        transform: translateY(20px);
-    }
-
-    to {
-
-        opacity: 1;
-
-        transform: translateY(0);
-    }
-}
-
-.hero-content {
-
-    animation: aparecer 1s ease;
-}
-
-</style>
-
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Médica Alta Boutique Dental - Odontología integral, estética dental, ortodoncia y rehabilitación dental.">
+
+    <meta name="theme-color" content="#111111">
+
+    <title>MÉDICA ALTA | Boutique Dental</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f8f7f4;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255,255,255,0.96);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e5e1d8;
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: auto;
+            padding: 18px 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            text-decoration: none;
+            color: #111;
+            line-height: 1.1;
+        }
+
+        .logo-main {
+            font-size: 22px;
+            letter-spacing: 4px;
+            font-weight: 500;
+        }
+
+        .logo-sub {
+            font-size: 11px;
+            letter-spacing: 4px;
+            color: #a88a42;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #a88a42;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 100vh;
+
+            background:
+                linear-gradient(
+                    rgba(0,0,0,0.25),
+                    rgba(0,0,0,0.40)
+                ),
+                url("https://raw.githubusercontent.com/manyws123-del/dra-liz/main/DSC_8583.jpeg");
+
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+            color: white;
+
+            padding: 120px 20px 60px;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero-small {
+            font-size: 14px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-family: Georgia, serif;
+            font-size: clamp(42px, 7vw, 78px);
+            font-weight: 400;
+            line-height: 1.05;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 35px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+
+            background: #b49655;
+            color: white;
+
+            text-decoration: none;
+            border-radius: 3px;
+
+            font-size: 14px;
+            letter-spacing: 1px;
+
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #8d7137;
+            transform: translateY(-2px);
+        }
+
+        /* =========================
+           GENERAL
+        ========================= */
+
+        section {
+            padding: 100px 25px;
+        }
+
+        .container {
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title span {
+            display: block;
+            color: #b49655;
+            font-size: 12px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .section-title h2 {
+            font-family: Georgia, serif;
+            font-size: 42px;
+            font-weight: 400;
+        }
+
+        /* =========================
+           SOBRE MÉDICA
+        ========================= */
+
+        .about {
+            background: #fff;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .about-image {
+            width: 100%;
+            border-radius: 3px;
+            display: block;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.10);
+        }
+
+        .about-text h3 {
+            font-family: Georgia, serif;
+            font-size: 38px;
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .gold-line {
+            width: 60px;
+            height: 2px;
+            background: #b49655;
+            margin: 25px 0;
+        }
+
+        /* =========================
+           SERVICIOS
+        ========================= */
+
+        .services {
+            background: #f5f3ef;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .service {
+            background: white;
+            padding: 35px 25px;
+            text-align: center;
+            border: 1px solid #e8e4db;
+
+            transition: 0.3s;
+        }
+
+        .service:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+        }
+
+        .service-number {
+            color: #b49655;
+            font-size: 13px;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .service h3 {
+            font-family: Georgia, serif;
+            font-size: 23px;
+            font-weight: 400;
+            margin-bottom: 12px;
+        }
+
+        .service p {
+            color: #777;
+            font-size: 14px;
+        }
+
+        /* =========================
+           DOCTORA
+        ========================= */
+
+        .doctor {
+            background: white;
+        }
+
+        .doctor-grid {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .doctor-image {
+            width: 100%;
+            display: block;
+            border-radius: 3px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.10);
+        }
+
+        .doctor-text h3 {
+            font-family: Georgia, serif;
+            font-size: 42px;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+
+        .doctor-role {
+            color: #b49655;
+            letter-spacing: 2px;
+            font-size: 13px;
+            margin-bottom: 25px;
+        }
+
+        .doctor-text p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        /* =========================
+           GALERÍA
+        ========================= */
+
+        .gallery {
+            background: #f5f3ef;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 520px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* =========================
+           CONTACTO
+        ========================= */
+
+        .contact {
+            background: #181818;
+            color: white;
+            text-align: center;
+        }
+
+        .contact .section-title h2 {
+            color: white;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 70px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .contact-item span {
+            display: block;
+            color: #b49655;
+            font-size: 12px;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #111;
+            color: #999;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 12px;
+        }
+
+        footer strong {
+            color: #b49655;
+        }
+
+        /* =========================
+           WHATSAPP FLOTANTE
+        ========================= */
+
+        .whatsapp {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+
+            width: 58px;
+            height: 58px;
+
+            background: #25D366;
+            color: white;
+
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-decoration: none;
+
+            font-size: 26px;
+
+            box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+
+            z-index: 2000;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 850px) {
+
+            nav {
+                display: none;
+            }
+
+            .nav {
+                justify-content: center;
+            }
+
+            .hero {
+                background-position: 60% center;
+            }
+
+            .about-grid,
+            .doctor-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery img {
+                height: 450px;
+            }
+
+        }
+
+        @media (max-width: 550px) {
+
+            section {
+                padding: 75px 20px;
+            }
+
+            .logo-main {
+                font-size: 19px;
+            }
+
+            .logo-sub {
+                font-size: 9px;
+            }
+
+            .hero {
+                min-height: 90vh;
+            }
+
+            .hero h1 {
+                font-size: 43px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .section-title h2 {
+                font-size: 34px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-text h3,
+            .doctor-text h3 {
+                font-size: 34px;
+            }
+
+            .contact-info {
+                gap: 30px;
+            }
+
+            .gallery img {
+                height: 400px;
+            }
+
+        }
+
+    </style>
 </head>
-
 
 <body>
 
+    <!-- =========================
+         HEADER
+    ========================= -->
 
-<!-- =========================
-     HEADER
-========================= -->
+    <header>
 
-<header>
+        <div class="nav">
 
-<div class="navbar">
+            <a href="#inicio" class="logo">
 
-<div class="logo">
+                <div class="logo-main">
+                    MÉDICA ALTA
+                </div>
 
-MÉDICA ALTA
+                <div class="logo-sub">
+                    BOUTIQUE DENTAL
+                </div>
 
-<span>BOUTIQUE DENTAL</span>
+            </a>
 
-</div>
+            <nav>
 
+                <a href="#nosotros">
+                    Nosotros
+                </a>
 
-<nav>
+                <a href="#servicios">
+                    Servicios
+                </a>
 
-<a href="#inicio">
-Inicio
-</a>
+                <a href="#doctora">
+                    Dra. Liz Vera
+                </a>
 
-<a href="#servicios">
-Servicios
-</a>
+                <a href="#galeria">
+                    Galería
+                </a>
 
-<a href="#doctora">
-Nosotros
-</a>
+                <a href="#contacto">
+                    Contacto
+                </a>
 
-<a href="#galeria">
-Galería
-</a>
+            </nav>
 
-<a href="#contacto">
-Contacto
-</a>
+        </div>
 
-</nav>
+    </header>
 
-</div>
 
-</header>
+    <!-- =========================
+         HERO
+    ========================= -->
 
+    <section class="hero" id="inicio">
 
+        <div class="hero-content">
 
-<!-- =========================
-     PORTADA
-========================= -->
+            <div class="hero-small">
+                MÉDICA ALTA BOUTIQUE DENTAL
+            </div>
 
-<section
-class="hero"
-id="inicio"
->
+            <h1>
+                Una sonrisa<br>
+                que habla por ti
+            </h1>
 
-<div class="hero-content">
+            <p>
+                Odontología integral con atención personalizada.
+            </p>
 
+            <a
+                class="btn"
+                href="https://wa.me/527713159521"
+                target="_blank"
+            >
+                AGENDAR CITA
+            </a>
 
-<small>
+        </div>
 
-Médica Alta Boutique Dental
+    </section>
 
-</small>
 
+    <!-- =========================
+         SOBRE MÉDICA ALTA
+    ========================= -->
 
-<h1>
+    <section class="about" id="nosotros">
 
-Una sonrisa que
-habla por ti
+        <div class="container">
 
-</h1>
+            <div class="section-title">
 
+                <span>
+                    Conoce Médica Alta
+                </span>
 
-<h2>
+                <h2>
+                    Un espacio pensado para ti
+                </h2>
 
-Dra. Liz Vera
-·
-Odontología Integral
+            </div>
 
-</h2>
 
+            <div class="about-grid">
 
-<p>
+                <div>
 
-Cuidamos tu sonrisa con atención profesional,
-personalizada y enfocada en tu bienestar,
-salud y estética dental.
+                    <img
+                        class="about-image"
+                        src="https://raw.githubusercontent.com/manyws123-del/dra-liz/main/DSC_8583.jpeg"
+                        alt="Médica Alta Boutique Dental"
+                    >
 
-</p>
+                </div>
 
 
-<a
+                <div class="about-text">
 
-href="https://wa.me/527713159521"
+                    <h3>
+                        Más que una clínica dental
+                    </h3>
 
-target="_blank"
+                    <div class="gold-line"></div>
 
-class="btn"
+                    <p>
+                        En MÉDICA ALTA BOUTIQUE DENTAL
+                        creemos que una visita al dentista
+                        debe ser una experiencia cómoda,
+                        profesional y personalizada.
+                    </p>
 
->
+                    <p>
+                        Nuestro objetivo es cuidar tu salud
+                        bucal y ayudarte a conseguir una
+                        sonrisa que refleje tu personalidad
+                        y confianza.
+                    </p>
 
-Agenda tu cita
+                    <p>
+                        Combinamos atención profesional,
+                        tecnología y un espacio diseñado
+                        para hacerte sentir cómodo desde
+                        el primer momento.
+                    </p>
 
-</a>
+                </div>
 
+            </div>
 
-</div>
+        </div>
 
-</section>
+    </section>
 
 
+    <!-- =========================
+         SERVICIOS
+    ========================= -->
 
-<!-- =========================
-     SERVICIOS
-========================= -->
+    <section class="services" id="servicios">
 
-<section
-class="services"
-id="servicios"
->
+        <div class="container">
 
-<div class="section-title">
+            <div class="section-title">
 
-<h2>
+                <span>
+                    Nuestros servicios
+                </span>
 
-Nuestros Servicios
+                <h2>
+                    Odontología integral
+                </h2>
 
-</h2>
+            </div>
 
-<p>
 
-Tratamientos pensados para cuidar
-y transformar tu sonrisa.
+            <div class="services-grid">
 
-</p>
 
-</div>
+                <div class="service">
 
+                    <div class="service-number">
+                        01
+                    </div>
 
-<div class="services-grid">
+                    <h3>
+                        Odontología General
+                    </h3>
 
+                    <p>
+                        Prevención, diagnóstico y cuidado
+                        integral de tu salud bucal.
+                    </p>
 
-<!-- SERVICIO 1 -->
+                </div>
 
-<div class="service-card">
 
-<div class="icon">
+                <div class="service">
 
-🦷
+                    <div class="service-number">
+                        02
+                    </div>
 
-</div>
+                    <h3>
+                        Estética Dental
+                    </h3>
 
-<h3>
+                    <p>
+                        Diseñamos sonrisas naturales,
+                        armónicas y personalizadas.
+                    </p>
 
-Odontología General
+                </div>
 
-</h3>
 
-<p>
+                <div class="service">
 
-Prevención, diagnóstico y tratamientos
-para mantener una sonrisa saludable.
+                    <div class="service-number">
+                        03
+                    </div>
 
-</p>
+                    <h3>
+                        Blanqueamiento
+                    </h3>
 
-</div>
+                    <p>
+                        Tratamientos para recuperar
+                        luminosidad y mejorar tu sonrisa.
+                    </p>
 
+                </div>
 
-<!-- SERVICIO 2 -->
 
-<div class="service-card">
+                <div class="service">
 
-<div class="icon">
+                    <div class="service-number">
+                        04
+                    </div>
 
-✨
+                    <h3>
+                        Ortodoncia
+                    </h3>
 
-</div>
+                    <p>
+                        Opciones para lograr una sonrisa
+                        alineada y funcional.
+                    </p>
 
-<h3>
+                </div>
 
-Estética Dental
 
-</h3>
+                <div class="service">
 
-<p>
+                    <div class="service-number">
+                        05
+                    </div>
 
-Tratamientos enfocados en mejorar
-la apariencia y armonía de tu sonrisa.
+                    <h3>
+                        Rehabilitación Dental
+                    </h3>
 
-</p>
+                    <p>
+                        Recuperamos función, estética
+                        y confianza en tu sonrisa.
+                    </p>
 
-</div>
+                </div>
 
 
-<!-- SERVICIO 3 -->
+                <div class="service">
 
-<div class="service-card">
+                    <div class="service-number">
+                        06
+                    </div>
 
-<div class="icon">
+                    <h3>
+                        Atención Personalizada
+                    </h3>
 
-😁
+                    <p>
+                        Cada paciente recibe un tratamiento
+                        pensado especialmente para sus necesidades.
+                    </p>
 
-</div>
+                </div>
 
-<h3>
 
-Blanqueamiento
+            </div>
 
-</h3>
+        </div>
 
-<p>
+    </section>
 
-Tratamientos profesionales para recuperar
-luminosidad y armonía en tu sonrisa.
 
-</p>
+    <!-- =========================
+         DRA. LIZ VERA
+    ========================= -->
 
-</div>
+    <section class="doctor" id="doctora">
 
+        <div class="container">
 
-<!-- SERVICIO 4 -->
+            <div class="section-title">
 
-<div class="service-card">
+                <span>
+                    Conoce a la especialista
+                </span>
 
-<div class="icon">
+                <h2>
+                    Sobre la doctora
+                </h2>
 
-🦷
+            </div>
 
-</div>
 
-<h3>
+            <div class="doctor-grid">
 
-Ortodoncia
 
-</h3>
+                <div>
 
-<p>
+                    <img
+                        class="doctor-image"
+                        src="https://raw.githubusercontent.com/manyws123-del/dra-liz/main/IMG_0295.jpeg"
+                        alt="Dra. Liz Vera"
+                    >
 
-Tratamientos para mejorar la posición dental
-y lograr una sonrisa funcional y estética.
+                </div>
 
-</p>
 
-</div>
+                <div class="doctor-text">
 
+                    <h3>
+                        Dra. Liz Vera
+                    </h3>
 
-<!-- SERVICIO 5 -->
+                    <div class="doctor-role">
+                        ODONTOLOGÍA INTEGRAL
+                    </div>
 
-<div class="service-card">
+                    <div class="gold-line"></div>
 
-<div class="icon">
+                    <p>
+                        La Dra. Liz Vera forma parte de
+                        MÉDICA ALTA BOUTIQUE DENTAL,
+                        ofreciendo atención cercana,
+                        profesional y personalizada.
+                    </p>
 
-👑
+                    <p>
+                        Su objetivo es acompañar a cada
+                        paciente durante su tratamiento,
+                        buscando resultados funcionales,
+                        estéticos y naturales.
+                    </p>
 
-</div>
+                    <p>
+                        Porque una sonrisa saludable no
+                        solamente cambia tu apariencia:
+                        también puede cambiar la forma
+                        en que te sientes contigo mismo.
+                    </p>
 
-<h3>
+                    <a
+                        class="btn"
+                        href="https://wa.me/527713159521"
+                        target="_blank"
+                    >
+                        AGENDAR CITA
+                    </a>
 
-Rehabilitación Dental
+                </div>
 
-</h3>
 
-<p>
+            </div>
 
-Soluciones para recuperar la función,
-estética y bienestar de tu sonrisa.
+        </div>
 
-</p>
+    </section>
 
-</div>
 
+    <!-- =========================
+         GALERÍA
+    ========================= -->
 
-<!-- SERVICIO 6 -->
+    <section class="gallery" id="galeria">
 
-<div class="service-card">
+        <div class="container">
 
-<div class="icon">
+            <div class="section-title">
 
-❤️
+                <span>
+                    Nuestro espacio
+                </span>
 
-</div>
+                <h2>
+                    Galería
+                </h2>
 
-<h3>
+            </div>
 
-Atención Personalizada
 
-</h3>
+            <div class="gallery-grid">
 
-<p>
+                <img
+                    src="https://raw.githubusercontent.com/manyws123-del/dra-liz/main/DSC_8583.jpeg"
+                    alt="Médica Alta Boutique Dental"
+                >
 
-Cada paciente recibe una atención
-adaptada a sus necesidades.
+                <img
+                    src="https://raw.githubusercontent.com/manyws123-del/dra-liz/main/IMG_0295.jpeg"
+                    alt="Dra. Liz Vera"
+                >
 
-</p>
+            </div>
 
-</div>
+        </div>
 
+    </section>
 
-</div>
 
-</section>
+    <!-- =========================
+         CONTACTO
+    ========================= -->
 
+    <section class="contact" id="contacto">
 
+        <div class="container">
 
-<!-- =========================
-     SOBRE LA DOCTORA
-========================= -->
+            <div class="section-title">
 
-<section
-id="doctora"
->
+                <span>
+                    Agenda tu cita
+                </span>
 
-<div class="about">
+                <h2>
+                    Estamos para atenderte
+                </h2>
 
+            </div>
 
-<div class="about-image">
 
-<img
+            <div class="contact-info">
 
-src="IMG_0295.jpeg"
 
-alt="Dra. Liz Vera - Médica Alta Boutique Dental"
+                <div class="contact-item">
 
->
+                    <span>
+                        TELÉFONO
+                    </span>
 
-</div>
+                    <a href="tel:+527717112564">
+                        771 711 2564
+                    </a>
 
+                </div>
 
-<div class="about-text">
 
+                <div class="contact-item">
 
-<h2>
+                    <span>
+                        WHATSAPP
+                    </span>
 
-Dra. Liz Vera
+                    <a
+                        href="https://wa.me/527713159521"
+                        target="_blank"
+                    >
+                        771 315 9521
+                    </a>
 
-</h2>
+                </div>
 
 
-<h3>
+            </div>
 
-Parte de Médica Alta Boutique Dental
 
-</h3>
+            <a
+                class="btn"
+                href="https://wa.me/527713159521"
+                target="_blank"
+            >
+                ESCRÍBENOS POR WHATSAPP
+            </a>
 
+        </div>
 
-<p>
+    </section>
 
-En Médica Alta Boutique Dental creemos
-que cada sonrisa merece atención,
-cuidado y un tratamiento personalizado.
 
-</p>
+    <!-- =========================
+         FOOTER
+    ========================= -->
 
+    <footer>
 
-<p>
+        © 2026
+        <strong>
+            MÉDICA ALTA BOUTIQUE DENTAL
+        </strong>
 
-La Dra. Liz Vera brinda atención
-odontológica profesional en un espacio
-diseñado para ofrecer una experiencia
-cómoda, cercana y de confianza.
+        <br>
 
-</p>
+        Todos los derechos reservados.
 
+    </footer>
 
-<a
 
-href="#contacto"
+    <!-- =========================
+         WHATSAPP FLOTANTE
+    ========================= -->
 
-class="btn"
-
->
-
-Conoce nuestros servicios
-
-</a>
-
-
-</div>
-
-
-</div>
-
-</section>
-
-
-
-<!-- =========================
-     GALERÍA
-========================= -->
-
-<section
-class="gallery"
-id="galeria"
->
-
-<div class="section-title">
-
-
-<h2>
-
-Conoce Médica Alta
-
-</h2>
-
-
-<p>
-
-Un espacio creado para cuidar
-de ti y de tu sonrisa.
-
-</p>
-
-
-</div>
-
-
-<div class="gallery-grid">
-
-
-<img
-
-src="DSC_8583.jpeg"
-
-alt="Médica Alta Boutique Dental"
-
->
-
-
-<img
-
-src="IMG_0295.jpeg"
-
-alt="Dra. Liz Vera"
-
->
-
-
-</div>
-
-</section>
-
-
-
-<!-- =========================
-     CONTACTO
-========================= -->
-
-<section
-class="contact"
-id="contacto"
->
-
-
-<h2>
-
-Agenda tu cita
-
-</h2>
-
-
-<p>
-
-Tu sonrisa merece atención especializada.
-
-</p>
-
-
-<p>
-
-📞
-<strong>
-771 711 2564
-</strong>
-
-</p>
-
-
-<p>
-
-💬 WhatsApp:
-<strong>
-771 315 9521
-</strong>
-
-</p>
-
-
-<a
-
-href="https://wa.me/527713159521"
-
-target="_blank"
-
-class="btn"
-
->
-
-Contactar por WhatsApp
-
-</a>
-
-
-</section>
-
-
-
-<!-- =========================
-     FOOTER
-========================= -->
-
-<footer>
-
-
-<strong>
-
-MÉDICA ALTA BOUTIQUE DENTAL
-
-</strong>
-
-
-<br>
-
-
-Dra. Liz Vera
-·
-Odontología Integral
-
-
-<br>
-
-
-Tel.
-771 711 2564
-·
-WhatsApp
-771 315 9521
-
-
-<br><br>
-
-
-© 2026 Médica Alta Boutique Dental
-
-
-</footer>
-
-
-
-<!-- =========================
-     WHATSAPP
-========================= -->
-
-<a
-
-href="https://wa.me/527713159521"
-
-target="_blank"
-
-class="whatsapp"
-
-aria-label="WhatsApp"
-
->
-
-💬
-
-</a>
+    <a
+        class="whatsapp"
+        href="https://wa.me/527713159521"
+        target="_blank"
+        aria-label="WhatsApp"
+    >
+        ☎
+    </a>
 
 
 </body>
-
 </html>
