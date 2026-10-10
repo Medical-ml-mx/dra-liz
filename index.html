@@ -1,940 +1,458 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<meta name="description" content="MÉDICA ALTA BOUTIQUE DENTAL - Odontología integral, estética dental y atención personalizada.">
-
-<title>MÉDICA ALTA | Boutique Dental</title>
+<meta name="theme-color" content="#171717">
+<meta name="description" content="MÉDICA ML Alta Boutique Dental. Clínica de especialidades dentales, laboratorio digital CAD/CAM y gabinete de radiología dental.">
+<title>MÉDICA ML | Alta Boutique Dental</title>
 
 <style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+:root {
+  --gold: #b69a60;
+  --dark: #171715;
+  --cream: #f6f4ef;
+  --text: #34332f;
+  --muted: #77746d;
 }
-
-html{
-    scroll-behavior:smooth;
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 85px; }
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  background: #fff;
+  line-height: 1.7;
 }
-
-body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:#f8f7f4;
-    color:#222;
-    line-height:1.6;
+a { color: inherit; }
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(255,255,255,.97);
+  border-bottom: 1px solid #e9e5dc;
 }
-
-/* HEADER */
-
-header{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    z-index:1000;
-    background:rgba(255,255,255,.96);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid #e5e1d8;
+.nav {
+  max-width: 1180px;
+  margin: auto;
+  padding: 15px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
 }
-
-.nav{
-    max-width:1200px;
-    margin:auto;
-    padding:18px 25px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
+.brand { text-decoration: none; line-height: 1.15; }
+.brand strong {
+  display: block;
+  color: var(--dark);
+  letter-spacing: 4px;
+  font-size: 22px;
+  font-weight: 500;
 }
-
-.logo{
-    text-decoration:none;
-    color:#111;
-    line-height:1.1;
+.brand span {
+  display: block;
+  color: var(--gold);
+  letter-spacing: 3px;
+  font-size: 10px;
+  margin-top: 5px;
 }
-
-.logo-main{
-    font-size:22px;
-    letter-spacing:4px;
-    font-weight:500;
+nav { display: flex; gap: 22px; flex-wrap: wrap; }
+nav a {
+  text-decoration: none;
+  font-size: 13px;
+  color: #444;
 }
-
-.logo-sub{
-    font-size:11px;
-    letter-spacing:4px;
-    color:#a88a42;
+nav a:hover { color: var(--gold); }
+.hero {
+  min-height: 82vh;
+  padding: 90px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.67), rgba(0,0,0,.24)),
+    url("./DSC_8583.jpeg") center 45% / cover no-repeat;
 }
-
-nav{
-    display:flex;
-    gap:25px;
+.hero-content { max-width: 850px; }
+.eyebrow {
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 12px;
+  margin-bottom: 18px;
 }
-
-nav a{
-    text-decoration:none;
-    color:#333;
-    font-size:14px;
+.hero h1 {
+  font: 400 clamp(42px, 7vw, 76px)/1.08 Georgia, serif;
+  margin-bottom: 22px;
 }
-
-nav a:hover{
-    color:#a88a42;
+.hero p { font-size: 17px; max-width: 680px; margin: 0 auto 30px; }
+.button {
+  display: inline-block;
+  padding: 13px 24px;
+  background: var(--gold);
+  color: white;
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  border: 1px solid var(--gold);
+  transition: .2s;
 }
-
-/* HERO */
-
-.hero{
-    min-height:100vh;
-
-    background:
-    linear-gradient(
-        rgba(0,0,0,.25),
-        rgba(0,0,0,.40)
-    ),
-    url("./DSC_8583.jpeg");
-
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    text-align:center;
-    color:white;
-
-    padding:120px 20px 60px;
+.button:hover { background: #927643; }
+.button-outline { background: transparent; border-color: white; margin-left: 8px; }
+section { padding: 85px 24px; }
+.container { max-width: 1120px; margin: auto; }
+.section-head { text-align: center; max-width: 780px; margin: 0 auto 48px; }
+.section-head .eyebrow { margin-bottom: 8px; }
+h2 {
+  font: 400 clamp(30px, 4vw, 43px)/1.2 Georgia, serif;
+  color: var(--dark);
+  margin-bottom: 18px;
 }
-
-.hero-content{
-    max-width:850px;
+.section-head p, .muted { color: var(--muted); }
+.intro { background: white; }
+.intro-grid, .doctor-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 55px;
 }
-
-.hero-small{
-    font-size:14px;
-    letter-spacing:5px;
-    text-transform:uppercase;
-    margin-bottom:20px;
+.photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
-
-.hero h1{
-    font-family:Georgia,serif;
-    font-size:clamp(42px,7vw,78px);
-    font-weight:400;
-    line-height:1.05;
-    margin-bottom:20px;
+.intro .photo { max-height: 540px; }
+.copy h2 { margin-bottom: 22px; }
+.copy p { margin-bottom: 16px; color: var(--muted); }
+.line { width: 55px; height: 2px; background: var(--gold); margin: 22px 0; }
+.cream { background: var(--cream); }
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
-
-.hero p{
-    font-size:18px;
-    margin-bottom:35px;
+.card {
+  padding: 29px 25px;
+  background: white;
+  border: 1px solid #e8e3d8;
 }
-
-.btn{
-    display:inline-block;
-    padding:15px 30px;
-    background:#b49655;
-    color:white;
-    text-decoration:none;
-    border-radius:3px;
-    font-size:14px;
-    letter-spacing:1px;
-    transition:.3s;
+.card .number { color: var(--gold); letter-spacing: 2px; font-size: 12px; }
+.card h3 {
+  font: 400 23px/1.3 Georgia, serif;
+  color: var(--dark);
+  margin: 13px 0;
 }
-
-.btn:hover{
-    background:#8d7137;
-    transform:translateY(-2px);
+.card p { font-size: 14px; color: var(--muted); }
+.feature { background: var(--dark); color: white; }
+.feature h2 { color: white; }
+.feature .section-head p { color: #c9c6bd; }
+.feature .card { background: #22221f; border-color: #414039; }
+.feature .card h3 { color: white; }
+.feature .card p { color: #c9c6bd; }
+.feature .number { color: #d2b87e; }
+.radiology { background: white; }
+.radiology-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin: 24px 0;
 }
-
-/* GENERAL */
-
-section{
-    padding:100px 25px;
+.radiology-item {
+  padding: 15px 18px;
+  background: var(--cream);
+  border-left: 3px solid var(--gold);
 }
-
-.container{
-    max-width:1150px;
-    margin:auto;
+.radiology-item strong { display: block; color: var(--dark); }
+.radiology-item span { font-size: 13px; color: var(--muted); }
+.doctor { background: var(--cream); }
+.doctor .photo { max-height: 600px; }
+.doctor-role {
+  color: var(--gold);
+  letter-spacing: 2px;
+  font-size: 12px;
+  margin: -5px 0 20px;
 }
-
-.section-title{
-    text-align:center;
-    margin-bottom:60px;
+.gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.gallery-grid img { width: 100%; height: 440px; object-fit: cover; }
+.contact { background: #171715; color: white; text-align: center; }
+.contact h2 { color: white; }
+.contact .section-head p { color: #c9c6bd; }
+.contact-grid {
+  display: flex;
+  justify-content: center;
+  gap: 55px;
+  flex-wrap: wrap;
+  margin: 30px 0;
 }
-
-.section-title span{
-    display:block;
-    color:#b49655;
-    font-size:12px;
-    letter-spacing:4px;
-    text-transform:uppercase;
-    margin-bottom:10px;
+.contact-item span {
+  display: block;
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
 }
-
-.section-title h2{
-    font-family:Georgia,serif;
-    font-size:42px;
-    font-weight:400;
+.contact-item a { text-decoration: none; font-size: 17px; }
+footer {
+  background: #10100f;
+  color: #aaa79f;
+  text-align: center;
+  padding: 25px;
+  font-size: 12px;
 }
-
-/* SOBRE MÉDICA */
-
-.about{
-    background:#fff;
+footer strong { color: var(--gold); }
+.whatsapp {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 20;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #25d366;
+  color: white;
+  text-decoration: none;
+  font-size: 25px;
+  box-shadow: 0 4px 16px #0003;
 }
-
-.about-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:70px;
-    align-items:center;
+@media(max-width: 850px) {
+  .nav { flex-direction: column; gap: 12px; }
+  nav { justify-content: center; gap: 14px; }
+  .intro-grid, .doctor-grid { grid-template-columns: 1fr; gap: 30px; }
+  .cards { grid-template-columns: repeat(2, 1fr); }
+  .hero { min-height: 75vh; }
 }
-
-.about-image{
-    width:100%;
-    display:block;
-    border-radius:3px;
-    box-shadow:0 15px 40px rgba(0,0,0,.10);
+@media(max-width: 560px) {
+  section { padding: 65px 20px; }
+  .brand { text-align: center; }
+  .brand strong { font-size: 20px; }
+  nav { gap: 10px 14px; }
+  nav a { font-size: 12px; }
+  .hero { padding: 80px 20px; background-position: 58% center; }
+  .hero h1 { font-size: 43px; }
+  .hero p { font-size: 15px; }
+  .button-outline { margin: 12px 0 0; }
+  .cards, .radiology-list, .gallery-grid { grid-template-columns: 1fr; }
+  .gallery-grid img { height: 350px; }
+  .contact-grid { gap: 25px; }
 }
-
-.about-text h3{
-    font-family:Georgia,serif;
-    font-size:38px;
-    font-weight:400;
-    margin-bottom:20px;
-}
-
-.about-text p{
-    color:#666;
-    margin-bottom:20px;
-    font-size:16px;
-}
-
-.gold-line{
-    width:60px;
-    height:2px;
-    background:#b49655;
-    margin:25px 0;
-}
-
-/* SERVICIOS */
-
-.services{
-    background:#f5f3ef;
-}
-
-.services-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:25px;
-}
-
-.service{
-    background:white;
-    padding:35px 25px;
-    text-align:center;
-    border:1px solid #e8e4db;
-    transition:.3s;
-}
-
-.service:hover{
-    transform:translateY(-6px);
-    box-shadow:0 15px 35px rgba(0,0,0,.08);
-}
-
-.service-number{
-    color:#b49655;
-    font-size:13px;
-    letter-spacing:2px;
-    margin-bottom:20px;
-}
-
-.service h3{
-    font-family:Georgia,serif;
-    font-size:23px;
-    font-weight:400;
-    margin-bottom:12px;
-}
-
-.service p{
-    color:#777;
-    font-size:14px;
-}
-
-/* DOCTORA */
-
-.doctor{
-    background:#fff;
-}
-
-.doctor-grid{
-    display:grid;
-    grid-template-columns:.9fr 1.1fr;
-    gap:70px;
-    align-items:center;
-}
-
-.doctor-image{
-    width:100%;
-    display:block;
-    border-radius:3px;
-    box-shadow:0 15px 40px rgba(0,0,0,.10);
-}
-
-.doctor-text h3{
-    font-family:Georgia,serif;
-    font-size:42px;
-    font-weight:400;
-    margin-bottom:8px;
-}
-
-.doctor-role{
-    color:#b49655;
-    letter-spacing:2px;
-    font-size:13px;
-    margin-bottom:25px;
-}
-
-.doctor-text p{
-    color:#666;
-    margin-bottom:20px;
-}
-
-/* GALERÍA */
-
-.gallery{
-    background:#f5f3ef;
-}
-
-.gallery-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:25px;
-}
-
-.gallery img{
-    width:100%;
-    height:520px;
-    object-fit:cover;
-    display:block;
-}
-
-/* CONTACTO */
-
-.contact{
-    background:#181818;
-    color:white;
-    text-align:center;
-}
-
-.contact .section-title h2{
-    color:white;
-}
-
-.contact-info{
-    display:flex;
-    justify-content:center;
-    gap:70px;
-    flex-wrap:wrap;
-    margin-bottom:40px;
-}
-
-.contact-item span{
-    display:block;
-    color:#b49655;
-    font-size:12px;
-    letter-spacing:2px;
-    margin-bottom:8px;
-}
-
-.contact-item a{
-    color:white;
-    text-decoration:none;
-    font-size:18px;
-}
-
-/* FOOTER */
-
-footer{
-    background:#111;
-    color:#999;
-    text-align:center;
-    padding:30px 20px;
-    font-size:12px;
-}
-
-footer strong{
-    color:#b49655;
-}
-
-/* WHATSAPP */
-
-.whatsapp{
-    position:fixed;
-    right:20px;
-    bottom:20px;
-
-    width:58px;
-    height:58px;
-
-    background:#25D366;
-    color:white;
-
-    border-radius:50%;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    text-decoration:none;
-
-    font-size:25px;
-
-    box-shadow:0 5px 20px rgba(0,0,0,.25);
-
-    z-index:2000;
-}
-
-/* RESPONSIVE */
-
-@media(max-width:850px){
-
-    nav{
-        display:none;
-    }
-
-    .nav{
-        justify-content:center;
-    }
-
-    .hero{
-        background-position:60% center;
-    }
-
-    .about-grid,
-    .doctor-grid{
-        grid-template-columns:1fr;
-        gap:40px;
-    }
-
-    .services-grid{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .gallery-grid{
-        grid-template-columns:1fr;
-    }
-
-    .gallery img{
-        height:450px;
-    }
-}
-
-@media(max-width:550px){
-
-    section{
-        padding:75px 20px;
-    }
-
-    .logo-main{
-        font-size:19px;
-    }
-
-    .logo-sub{
-        font-size:9px;
-    }
-
-    .hero{
-        min-height:90vh;
-    }
-
-    .hero h1{
-        font-size:43px;
-    }
-
-    .hero p{
-        font-size:16px;
-    }
-
-    .section-title h2{
-        font-size:34px;
-    }
-
-    .services-grid{
-        grid-template-columns:1fr;
-    }
-
-    .about-text h3,
-    .doctor-text h3{
-        font-size:34px;
-    }
-
-    .contact-info{
-        gap:30px;
-    }
-
-    .gallery img{
-        height:400px;
-    }
-}
-
 </style>
 </head>
 
 <body>
 
 <header>
-
-<div class="nav">
-
-<a href="#inicio" class="logo">
-
-<div class="logo-main">
-MÉDICA ALTA
-</div>
-
-<div class="logo-sub">
-BOUTIQUE DENTAL
-</div>
-
-</a>
-
-<nav>
-
-<a href="#nosotros">Nosotros</a>
-<a href="#servicios">Servicios</a>
-<a href="#doctora">Dra. Liz Vera</a>
-<a href="#galeria">Galería</a>
-<a href="#contacto">Contacto</a>
-
-</nav>
-
-</div>
-
+  <div class="nav">
+    <a class="brand" href="#inicio" aria-label="MÉDICA ML Alta Boutique Dental">
+      <strong>MÉDICA ML</strong>
+      <span>ALTA BOUTIQUE DENTAL</span>
+    </a>
+    <nav aria-label="Navegación principal">
+      <a href="#nosotros">Nosotros</a>
+      <a href="#especialidades">Especialidades</a>
+      <a href="#tecnologia">Tecnología</a>
+      <a href="#radiologia">Rayos X</a>
+      <a href="#doctora">Doctora</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </div>
 </header>
 
-
-<!-- HERO -->
-
+<main>
 <section class="hero" id="inicio">
-
-<div class="hero-content">
-
-<div class="hero-small">
-MÉDICA ALTA BOUTIQUE DENTAL
-</div>
-
-<h1>
-Una sonrisa<br>
-que habla por ti
-</h1>
-
-<p>
-Odontología integral con atención personalizada.
-</p>
-
-<a
-class="btn"
-href="https://wa.me/527713159521"
-target="_blank">
-
-AGENDAR CITA
-
-</a>
-
-</div>
-
+  <div class="hero-content">
+    <div class="eyebrow">MÉDICA ML · Alta Boutique Dental</div>
+    <h1>Especialidades dentales con tecnología de vanguardia</h1>
+    <p>Atención especializada, flujo digital y estudios radiográficos en un mismo lugar para apoyar diagnósticos adecuados y planes de tratamiento personalizados.</p>
+    <a class="button" href="https://wa.me/527713159521" target="_blank" rel="noopener">SOLICITAR INFORMACIÓN</a>
+    <a class="button button-outline" href="#servicios">CONOCE NUESTROS SERVICIOS</a>
+  </div>
 </section>
 
-
-<!-- SOBRE -->
-
-<section class="about" id="nosotros">
-
-<div class="container">
-
-<div class="section-title">
-
-<span>
-Conoce Médica Alta
-</span>
-
-<h2>
-Un espacio pensado para ti
-</h2>
-
-</div>
-
-
-<div class="about-grid">
-
-<div>
-
-<img
-class="about-image"
-src="./DSC_8583.jpeg"
-alt="Médica Alta Boutique Dental"
->
-
-</div>
-
-
-<div class="about-text">
-
-<h3>
-Más que una clínica dental
-</h3>
-
-<div class="gold-line"></div>
-
-<p>
-En MÉDICA ALTA BOUTIQUE DENTAL creemos que una visita al dentista debe ser una experiencia cómoda, profesional y personalizada.
-</p>
-
-<p>
-Nuestro objetivo es cuidar tu salud bucal y ayudarte a conseguir una sonrisa que refleje tu personalidad y confianza.
-</p>
-
-<p>
-Combinamos atención profesional, tecnología y un espacio diseñado para hacerte sentir cómodo desde el primer momento.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
+<section class="intro" id="nosotros">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Conócenos</div>
+      <h2>Un concepto integral de atención dental</h2>
+      <p>Clínica de especialidades dentales, laboratorio propio de flujo digital y gabinete de radiología.</p>
+    </div>
+    <div class="intro-grid">
+      <img class="photo" src="./DSC_8583.jpeg" alt="Instalaciones de MÉDICA ML Alta Boutique Dental">
+      <div class="copy">
+        <h2>Precisión, tecnología y atención personalizada</h2>
+        <div class="line"></div>
+        <p>En MÉDICA ML Alta Boutique Dental reunimos servicios de especialidades dentales, tecnología digital y estudios de imagen para apoyar la valoración y planificación de los tratamientos odontológicos.</p>
+        <p>Contamos con laboratorio dental propio de flujo digital y equipo para estudios radiográficos dentales. Nuestro personal está altamente capacitado para contribuir a la obtención de información diagnóstica adecuada.</p>
+        <p>Trabajamos para ofrecer una experiencia profesional, organizada y centrada en las necesidades de cada paciente.</p>
+        <a class="button" href="https://wa.me/527713159521" target="_blank" rel="noopener">CONTACTAR A LA CLÍNICA</a>
+      </div>
+    </div>
+  </div>
 </section>
 
-
-<!-- SERVICIOS -->
-
-<section class="services" id="servicios">
-
-<div class="container">
-
-<div class="section-title">
-
-<span>
-Nuestros servicios
-</span>
-
-<h2>
-Odontología integral
-</h2>
-
-</div>
-
-
-<div class="services-grid">
-
-
-<div class="service">
-
-<div class="service-number">01</div>
-
-<h3>
-Odontología General
-</h3>
-
-<p>
-Prevención, diagnóstico y cuidado integral de tu salud bucal.
-</p>
-
-</div>
-
-
-<div class="service">
-
-<div class="service-number">02</div>
-
-<h3>
-Estética Dental
-</h3>
-
-<p>
-Diseñamos sonrisas naturales, armónicas y personalizadas.
-</p>
-
-</div>
-
-
-<div class="service">
-
-<div class="service-number">03</div>
-
-<h3>
-Blanqueamiento
-</h3>
-
-<p>
-Tratamientos para recuperar luminosidad y mejorar tu sonrisa.
-</p>
-
-</div>
-
-
-<div class="service">
-
-<div class="service-number">04</div>
-
-<h3>
-Ortodoncia
-</h3>
-
-<p>
-Opciones para lograr una sonrisa alineada y funcional.
-</p>
-
-</div>
-
-
-<div class="service">
-
-<div class="service-number">05</div>
-
-<h3>
-Rehabilitación Dental
-</h3>
-
-<p>
-Recuperamos función, estética y confianza en tu sonrisa.
-</p>
-
-</div>
-
-
-<div class="service">
-
-<div class="service-number">06</div>
-
-<h3>
-Atención Personalizada
-</h3>
-
-<p>
-Cada paciente recibe un tratamiento pensado especialmente para sus necesidades.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
+<section class="cream" id="especialidades">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Atención dental</div>
+      <h2>Especialidades y servicios</h2>
+      <p>Atención coordinada para valorar las necesidades de cada sonrisa.</p>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <div class="number">01</div>
+        <h3>Odontología integral</h3>
+        <p>Valoración y atención de la salud bucal de acuerdo con las necesidades de cada paciente.</p>
+      </article>
+      <article class="card">
+        <div class="number">02</div>
+        <h3>Estética dental</h3>
+        <p>Alternativas de tratamiento orientadas a la armonía y apariencia de la sonrisa.</p>
+      </article>
+      <article class="card">
+        <div class="number">03</div>
+        <h3>Rehabilitación oral</h3>
+        <p>Planificación de tratamientos para recuperar función y estética dental.</p>
+      </article>
+      <article class="card">
+        <div class="number">04</div>
+        <h3>Ortodoncia</h3>
+        <p>Valoración y planificación para atender la posición dental y la oclusión.</p>
+      </article>
+      <article class="card">
+        <div class="number">05</div>
+        <h3>Diagnóstico por imagen</h3>
+        <p>Estudios radiográficos dentales como apoyo a la valoración clínica.</p>
+      </article>
+      <article class="card">
+        <div class="number">06</div>
+        <h3>Flujo digital</h3>
+        <p>Integración de herramientas digitales para apoyar los procesos de diagnóstico y laboratorio.</p>
+      </article>
+    </div>
+  </div>
 </section>
 
+<section class="feature" id="tecnologia">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Innovación odontológica</div>
+      <h2>Laboratorio dental de flujo digital</h2>
+      <p>Integración de tecnología para apoyar la precisión y coordinación de los procesos clínicos y de laboratorio.</p>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <div class="number">01 · DIGITAL</div>
+        <h3>Laboratorio propio</h3>
+        <p>Contamos con laboratorio dental propio que trabaja con flujo digital para apoyar los procesos de elaboración y planificación de trabajos dentales.</p>
+      </article>
+      <article class="card">
+        <div class="number">02 · CAD/CAM</div>
+        <h3>Diseño y fabricación</h3>
+        <p>La tecnología CAD/CAM permite integrar procesos de diseño asistido por computadora y fabricación asistida por computadora.</p>
+      </article>
+      <article class="card">
+        <div class="number">03 · SIRONA</div>
+        <h3>Escáner intraoral</h3>
+        <p>Utilizamos tecnología de escaneo intraoral Sirona para apoyar la captura digital de información de la cavidad oral.</p>
+      </article>
+    </div>
+    <p style="text-align:center;color:#c9c6bd;margin-top:28px;font-size:14px;">Equipamiento de importación alemana, de acuerdo con el equipamiento disponible en la clínica.</p>
+  </div>
+</section>
 
-<!-- DOCTORA -->
+<section class="radiology" id="radiologia">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Gabinete de radiología</div>
+      <h2>Estudios de imagen dental</h2>
+      <p>Estudios que apoyan la valoración y planificación de tratamientos odontológicos, según la indicación clínica.</p>
+    </div>
+    <div class="intro-grid">
+      <div class="copy">
+        <h2>Información para apoyar un diagnóstico adecuado</h2>
+        <div class="line"></div>
+        <p>Contamos con gabinete de rayos X para realizar distintos estudios radiográficos dentales. Los estudios se seleccionan de acuerdo con la necesidad clínica y la indicación del profesional tratante.</p>
+        <p>El personal capacitado apoya la realización de los estudios para proporcionar imágenes útiles para la valoración odontológica.</p>
+        <a class="button" href="https://wa.me/527713159521" target="_blank" rel="noopener">CONSULTAR ESTUDIOS</a>
+      </div>
+      <div class="radiology-list">
+        <div class="radiology-item"><strong>Panorámica</strong><span>Vista general de estructuras dentales y maxilares.</span></div>
+        <div class="radiology-item"><strong>Lateral de cráneo</strong><span>Imagen utilizada en determinadas valoraciones ortodónticas.</span></div>
+        <div class="radiology-item"><strong>Cefalometría</strong><span>Mediciones y análisis de estructuras craneofaciales.</span></div>
+        <div class="radiology-item"><strong>Carpal</strong><span>Estudio solicitado en indicaciones específicas de valoración del crecimiento.</span></div>
+        <div class="radiology-item"><strong>Oclusal</strong><span>Imagen de áreas específicas de la arcada dental.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="doctor" id="doctora">
-
-<div class="container">
-
-<div class="section-title">
-
-<span>
-Conoce a la especialista
-</span>
-
-<h2>
-Sobre la doctora
-</h2>
-
-</div>
-
-
-<div class="doctor-grid">
-
-<div>
-
-<img
-class="doctor-image"
-src="./IMG_0295.jpeg"
-alt="Dra. Liz Vera"
->
-
-</div>
-
-
-<div class="doctor-text">
-
-<h3>
-Dra. Liz Vera
-</h3>
-
-<div class="doctor-role">
-ODONTOLOGÍA INTEGRAL
-</div>
-
-<div class="gold-line"></div>
-
-<p>
-La Dra. Liz Vera forma parte de MÉDICA ALTA BOUTIQUE DENTAL, ofreciendo atención cercana, profesional y personalizada.
-</p>
-
-<p>
-Su objetivo es acompañar a cada paciente durante su tratamiento, buscando resultados funcionales, estéticos y naturales.
-</p>
-
-<p>
-Porque una sonrisa saludable no solamente cambia tu apariencia: también puede cambiar la forma en que te sientes contigo mismo.
-</p>
-
-<a
-class="btn"
-href="https://wa.me/527713159521"
-target="_blank">
-
-AGENDAR CITA
-
-</a>
-
-</div>
-
-</div>
-
-</div>
-
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Nuestro equipo</div>
+      <h2>Atención profesional y personalizada</h2>
+    </div>
+    <div class="doctor-grid">
+      <img class="photo" src="./IMG_0295.jpeg" alt="Dra. Liz Vera en el consultorio">
+      <div class="copy">
+        <h2>Dra. Liz Vera</h2>
+        <div class="doctor-role">ODONTOLOGÍA · MÉDICA ML</div>
+        <div class="line"></div>
+        <p>En MÉDICA ML Alta Boutique Dental, la atención se orienta a conocer las necesidades de cada paciente y coordinar la valoración clínica con los recursos tecnológicos disponibles.</p>
+        <p>El personal de la clínica está capacitado para apoyar la realización de estudios y contribuir a diagnósticos adecuados junto con los profesionales tratantes.</p>
+        <a class="button" href="https://wa.me/527713159521" target="_blank" rel="noopener">SOLICITAR INFORMACIÓN</a>
+      </div>
+    </div>
+  </div>
 </section>
 
-
-<!-- GALERÍA -->
-
-<section class="gallery" id="galeria">
-
-<div class="container">
-
-<div class="section-title">
-
-<span>
-Nuestro espacio
-</span>
-
-<h2>
-Galería
-</h2>
-
-</div>
-
-
-<div class="gallery-grid">
-
-<img
-src="./DSC_8583.jpeg"
-alt="Médica Alta Boutique Dental"
->
-
-<img
-src="./IMG_0295.jpeg"
-alt="Dra. Liz Vera"
->
-
-</div>
-
-</div>
-
+<section id="servicios">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Nuestras instalaciones</div>
+      <h2>Conoce MÉDICA ML</h2>
+      <p>Un espacio que integra atención dental, tecnología digital y servicios de radiología.</p>
+    </div>
+    <div class="gallery-grid">
+      <img src="./DSC_8583.jpeg" alt="Instalaciones de MÉDICA ML Alta Boutique Dental">
+      <img src="./IMG_0295.jpeg" alt="Atención dental en MÉDICA ML">
+    </div>
+  </div>
 </section>
-
-
-<!-- CONTACTO -->
 
 <section class="contact" id="contacto">
-
-<div class="container">
-
-<div class="section-title">
-
-<span>
-Agenda tu cita
-</span>
-
-<h2>
-Estamos para atenderte
-</h2>
-
-</div>
-
-
-<div class="contact-info">
-
-<div class="contact-item">
-
-<span>
-TELÉFONO
-</span>
-
-<a href="tel:+527717112564">
-771 711 2564
-</a>
-
-</div>
-
-
-<div class="contact-item">
-
-<span>
-WHATSAPP
-</span>
-
-<a
-href="https://wa.me/527713159521"
-target="_blank">
-
-771 315 9521
-
-</a>
-
-</div>
-
-</div>
-
-
-<a
-class="btn"
-href="https://wa.me/527713159521"
-target="_blank">
-
-ESCRÍBENOS POR WHATSAPP
-
-</a>
-
-</div>
-
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Estamos para ayudarte</div>
+      <h2>Contacta a MÉDICA ML</h2>
+      <p>Escríbenos para consultar disponibilidad, estudios y servicios.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-item">
+        <span>TELÉFONO</span>
+        <a href="tel:+527717112564">771 711 2564</a>
+      </div>
+      <div class="contact-item">
+        <span>WHATSAPP</span>
+        <a href="https://wa.me/527713159521" target="_blank" rel="noopener">771 315 9521</a>
+      </div>
+    </div>
+    <a class="button" href="https://wa.me/527713159521" target="_blank" rel="noopener">ESCRÍBENOS POR WHATSAPP</a>
+  </div>
 </section>
-
-
-<!-- FOOTER -->
+</main>
 
 <footer>
-
-© 2026
-<strong>
-MÉDICA ALTA BOUTIQUE DENTAL
-</strong>
-
-<br>
-
-Todos los derechos reservados.
-
+  © 2026 <strong>MÉDICA ML · ALTA BOUTIQUE DENTAL</strong><br>
+  Clínica de especialidades dentales · Laboratorio digital · Gabinete de radiología
 </footer>
 
-
-<!-- WHATSAPP -->
-
-<a
-class="whatsapp"
-href="https://wa.me/527713159521"
-target="_blank"
-aria-label="WhatsApp">
-
-☎
-
-</a>
+<a class="whatsapp" href="https://wa.me/527713159521" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">✆</a>
 
 </body>
 </html>
