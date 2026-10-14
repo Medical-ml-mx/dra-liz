@@ -4,455 +4,1685 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#171717">
-<meta name="description" content="MÉDICA ML Alta Boutique Dental. Clínica de especialidades dentales, laboratorio digital CAD/CAM y gabinete de radiología dental.">
+
 <title>MÉDICA ML | Alta Boutique Dental</title>
+<meta name="description" content="MÉDICA ML Alta Boutique Dental. Odontología, tecnología digital, flujo CAD/CAM, escáner intraoral y estudios de radiología dental.">
+<meta name="theme-color" content="#0b0b0b">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --gold: #b69a60;
-  --dark: #171715;
-  --cream: #f6f4ef;
-  --text: #34332f;
-  --muted: #77746d;
+  --black: #090909;
+  --black2: #111111;
+  --white: #f8f7f3;
+  --gold: #c7a66a;
+  --gold2: #e5d0a0;
+  --gray: #a8a8a8;
+  --line: rgba(199,166,106,.23);
+  --max: 1220px;
 }
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; scroll-padding-top: 85px; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  color: var(--text);
-  background: #fff;
-  line-height: 1.7;
+  background: var(--black);
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
 }
-a { color: inherit; }
-header {
-  position: sticky;
+
+body, button, a { -webkit-tap-highlight-color: transparent; }
+
+a { color: inherit; text-decoration: none; }
+
+button { font: inherit; }
+
+img { display: block; max-width: 100%; }
+
+::selection { background: var(--gold); color: #080808; }
+
+.container {
+  width: min(var(--max), calc(100% - 44px));
+  margin-inline: auto;
+}
+
+.gold { color: var(--gold2); }
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  color: var(--gold2);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 25px;
+  height: 1px;
+  background: var(--gold);
+}
+
+h1, h2, h3, .brand {
+  font-family: 'Manrope', sans-serif;
+}
+
+.section {
+  padding: 112px 0;
+  position: relative;
+}
+
+.section-heading {
+  max-width: 760px;
+  margin-bottom: 48px;
+}
+
+.section-heading h2 {
+  font-size: clamp(34px, 5vw, 58px);
+  line-height: 1.08;
+  letter-spacing: -2px;
+  font-weight: 500;
+  margin-top: 22px;
+}
+
+.section-heading p {
+  color: #aaa;
+  line-height: 1.9;
+  max-width: 610px;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+/* NAVEGACIÓN */
+
+.header {
+  height: 84px;
+  position: fixed;
   top: 0;
-  z-index: 10;
-  background: rgba(255,255,255,.97);
-  border-bottom: 1px solid #e9e5dc;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  background: rgba(9,9,9,.82);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
 }
+
 .nav {
-  max-width: 1180px;
-  margin: auto;
-  padding: 15px 24px;
+  height: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 20px;
+  gap: 25px;
 }
-.brand { text-decoration: none; line-height: 1.15; }
-.brand strong {
-  display: block;
-  color: var(--dark);
-  letter-spacing: 4px;
-  font-size: 22px;
-  font-weight: 500;
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex-shrink: 0;
 }
-.brand span {
-  display: block;
-  color: var(--gold);
+
+.brand-main {
+  font-size: 23px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.brand-main span { color: var(--gold); }
+
+.brand-sub {
+  font-size: 8px;
   letter-spacing: 3px;
+  color: #bcb6aa;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 27px;
+}
+
+.nav-links a {
+  font-size: 11px;
+  color: #d0d0d0;
+  transition: color .25s;
+}
+
+.nav-links a:hover { color: var(--gold2); }
+
+.nav-cta, .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 20px;
+  background: var(--gold);
+  color: #0a0a0a;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .4px;
+  border: 1px solid var(--gold);
+  transition: .3s ease;
+  cursor: pointer;
+}
+
+.nav-cta:hover, .btn:hover {
+  background: var(--gold2);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(199,166,106,.15);
+}
+
+.btn-outline {
+  color: var(--white);
+  background: transparent;
+  border-color: rgba(255,255,255,.28);
+}
+
+.btn-outline:hover {
+  color: var(--gold2);
+  border-color: var(--gold);
+  background: transparent;
+}
+
+.menu-toggle {
+  display: none;
+  border: 1px solid var(--line);
+  color: var(--gold2);
+  background: transparent;
+  padding: 9px 12px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* PORTADA */
+
+.hero {
+  min-height: 790px;
+  padding: 155px 0 75px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  background:
+    linear-gradient(90deg, rgba(5,5,5,.98) 0%, rgba(5,5,5,.88) 42%, rgba(5,5,5,.24) 100%),
+    linear-gradient(0deg, var(--black) 0%, transparent 36%),
+    url("./DSC_8583.jpeg") center 48% / cover no-repeat;
+  transform: scale(1.03);
+  animation: heroReveal 1.4s ease both;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  width: 550px;
+  height: 550px;
+  right: -200px;
+  top: 100px;
+  border-radius: 50%;
+  background: rgba(199,166,106,.09);
+  filter: blur(90px);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  align-items: center;
+  gap: 35px;
+}
+
+.hero-content { max-width: 680px; }
+
+.hero-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #d9d1c1;
   font-size: 10px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  margin-bottom: 27px;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 14px var(--gold);
+}
+
+.hero h1 {
+  font-size: clamp(48px, 6.4vw, 84px);
+  font-weight: 500;
+  line-height: .99;
+  letter-spacing: -4px;
+}
+
+.hero h1 span {
+  color: var(--gold2);
+  display: block;
+}
+
+.hero-copy {
+  color: #c0c0c0;
+  font-size: 14px;
+  line-height: 1.95;
+  max-width: 480px;
+  margin: 27px 0 30px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hero-footnote {
+  margin-top: 32px;
+  color: #a9a9a9;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.hero-footnote span { color: var(--gold2); }
+
+.hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  position: relative;
+}
+
+.digital-orb {
+  width: min(330px, 80vw);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  position: relative;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(229,208,160,.3);
+  background:
+    radial-gradient(circle at 50% 45%, rgba(199,166,106,.15), transparent 53%),
+    rgba(10,10,10,.12);
+  box-shadow: 0 0 80px rgba(199,166,106,.07), inset 0 0 60px rgba(199,166,106,.04);
+}
+
+.orb-ring {
+  position: absolute;
+  inset: 17px;
+  border: 1px solid rgba(229,208,160,.25);
+  border-radius: 50%;
+  animation: rotate 24s linear infinite;
+}
+
+.orb-ring::before, .orb-ring::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gold2);
+  box-shadow: 0 0 16px var(--gold);
+}
+
+.orb-ring::before { top: 18%; left: 12%; }
+.orb-ring::after { bottom: 10%; right: 24%; }
+
+.orb-ring.ring-two {
+  inset: -15px;
+  border-style: dashed;
+  opacity: .55;
+  animation-direction: reverse;
+  animation-duration: 42s;
+}
+
+.tooth-icon {
+  font-size: 115px;
+  color: var(--gold2);
+  font-family: 'Manrope', sans-serif;
+  font-weight: 300;
+  text-shadow: 0 0 50px rgba(199,166,106,.2);
+}
+
+.orb-label {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  padding: 12px 16px;
+  background: rgba(13,13,13,.8);
+  border: 1px solid var(--line);
+  color: #ddd4c1;
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+/* BARRA DIGITAL */
+
+.digital-strip {
+  background: #101010;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.strip-inner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.strip-item {
+  min-height: 90px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px 22px;
+  border-right: 1px solid rgba(255,255,255,.07);
+}
+
+.strip-item:last-child { border-right: 0; }
+
+.strip-symbol {
+  color: var(--gold2);
+  font-size: 22px;
+  font-family: 'Manrope', sans-serif;
+}
+
+.strip-item strong {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.strip-item small {
+  display: block;
+  color: #8c8c8c;
+  font-size: 9px;
   margin-top: 5px;
 }
-nav { display: flex; gap: 22px; flex-wrap: wrap; }
-nav a {
-  text-decoration: none;
-  font-size: 13px;
-  color: #444;
-}
-nav a:hover { color: var(--gold); }
-.hero {
-  min-height: 82vh;
-  padding: 90px 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-  background:
-    linear-gradient(90deg, rgba(0,0,0,.67), rgba(0,0,0,.24)),
-    url("./DSC_8583.jpeg") center 45% / cover no-repeat;
-}
-.hero-content { max-width: 850px; }
-.eyebrow {
-  color: var(--gold);
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  font-size: 12px;
-  margin-bottom: 18px;
-}
-.hero h1 {
-  font: 400 clamp(42px, 7vw, 76px)/1.08 Georgia, serif;
-  margin-bottom: 22px;
-}
-.hero p { font-size: 17px; max-width: 680px; margin: 0 auto 30px; }
-.button {
-  display: inline-block;
-  padding: 13px 24px;
-  background: var(--gold);
-  color: white;
-  text-decoration: none;
-  font-size: 12px;
-  letter-spacing: 1.5px;
-  border: 1px solid var(--gold);
-  transition: .2s;
-}
-.button:hover { background: #927643; }
-.button-outline { background: transparent; border-color: white; margin-left: 8px; }
-section { padding: 85px 24px; }
-.container { max-width: 1120px; margin: auto; }
-.section-head { text-align: center; max-width: 780px; margin: 0 auto 48px; }
-.section-head .eyebrow { margin-bottom: 8px; }
-h2 {
-  font: 400 clamp(30px, 4vw, 43px)/1.2 Georgia, serif;
-  color: var(--dark);
-  margin-bottom: 18px;
-}
-.section-head p, .muted { color: var(--muted); }
-.intro { background: white; }
-.intro-grid, .doctor-grid {
+
+/* FILOSOFÍA */
+
+.about-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: .85fr 1.15fr;
+  gap: 80px;
   align-items: center;
-  gap: 55px;
 }
-.photo {
-  display: block;
+
+.about-image {
+  min-height: 520px;
+  position: relative;
+  background: #151515;
+  overflow: hidden;
+}
+
+.about-image img {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
+  object-position: center;
+  filter: saturate(.75);
+  transition: transform .7s ease;
 }
-.intro .photo { max-height: 540px; }
-.copy h2 { margin-bottom: 22px; }
-.copy p { margin-bottom: 16px; color: var(--muted); }
-.line { width: 55px; height: 2px; background: var(--gold); margin: 22px 0; }
-.cream { background: var(--cream); }
-.cards {
+
+.about-image:hover img { transform: scale(1.045); }
+
+.image-caption {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  padding: 18px;
+  background: rgba(8,8,8,.82);
+  backdrop-filter: blur(10px);
+  border-left: 2px solid var(--gold);
+}
+
+.image-caption strong {
+  display: block;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.image-caption span {
+  font-size: 10px;
+  color: #b5b5b5;
+}
+
+.about-copy h2 {
+  font-size: clamp(34px, 4vw, 52px);
+  line-height: 1.12;
+  font-weight: 500;
+  letter-spacing: -2px;
+  margin: 22px 0;
+}
+
+.about-copy p {
+  color: #aaa;
+  font-size: 13px;
+  line-height: 2;
+  margin-bottom: 18px;
+}
+
+.feature-list {
+  display: grid;
+  gap: 13px;
+  margin: 28px 0 30px;
+}
+
+.feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  color: #e6e6e6;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.check {
+  flex: 0 0 20px;
+  height: 20px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  color: var(--gold2);
+  font-size: 10px;
+}
+
+/* TECNOLOGÍA */
+
+.tech-section {
+  background:
+    radial-gradient(ellipse at 90% 10%, rgba(199,166,106,.07), transparent 35%),
+    #101010;
+  border-top: 1px solid rgba(255,255,255,.04);
+  border-bottom: 1px solid rgba(255,255,255,.04);
+}
+
+.tech-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 15px;
 }
-.card {
-  padding: 29px 25px;
-  background: white;
-  border: 1px solid #e8e3d8;
+
+.tech-card {
+  min-height: 280px;
+  padding: 28px;
+  background: linear-gradient(145deg, #181818, #101010);
+  border: 1px solid rgba(255,255,255,.09);
+  position: relative;
+  overflow: hidden;
+  transition: transform .3s, border-color .3s;
 }
-.card .number { color: var(--gold); letter-spacing: 2px; font-size: 12px; }
-.card h3 {
-  font: 400 23px/1.3 Georgia, serif;
-  color: var(--dark);
-  margin: 13px 0;
+
+.tech-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(199,166,106,.5);
 }
-.card p { font-size: 14px; color: var(--muted); }
-.feature { background: var(--dark); color: white; }
-.feature h2 { color: white; }
-.feature .section-head p { color: #c9c6bd; }
-.feature .card { background: #22221f; border-color: #414039; }
-.feature .card h3 { color: white; }
-.feature .card p { color: #c9c6bd; }
-.feature .number { color: #d2b87e; }
-.radiology { background: white; }
-.radiology-list {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-  margin: 24px 0;
-}
-.radiology-item {
-  padding: 15px 18px;
-  background: var(--cream);
-  border-left: 3px solid var(--gold);
-}
-.radiology-item strong { display: block; color: var(--dark); }
-.radiology-item span { font-size: 13px; color: var(--muted); }
-.doctor { background: var(--cream); }
-.doctor .photo { max-height: 600px; }
-.doctor-role {
-  color: var(--gold);
-  letter-spacing: 2px;
-  font-size: 12px;
-  margin: -5px 0 20px;
-}
-.gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
-.gallery-grid img { width: 100%; height: 440px; object-fit: cover; }
-.contact { background: #171715; color: white; text-align: center; }
-.contact h2 { color: white; }
-.contact .section-head p { color: #c9c6bd; }
-.contact-grid {
-  display: flex;
-  justify-content: center;
-  gap: 55px;
-  flex-wrap: wrap;
-  margin: 30px 0;
-}
-.contact-item span {
-  display: block;
-  color: var(--gold);
-  font-size: 11px;
-  letter-spacing: 2px;
-  margin-bottom: 8px;
-}
-.contact-item a { text-decoration: none; font-size: 17px; }
-footer {
-  background: #10100f;
-  color: #aaa79f;
-  text-align: center;
-  padding: 25px;
-  font-size: 12px;
-}
-footer strong { color: var(--gold); }
-.whatsapp {
-  position: fixed;
-  right: 18px;
-  bottom: 18px;
-  z-index: 20;
-  width: 56px;
-  height: 56px;
+
+.tech-card::after {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  right: -80px;
+  bottom: -80px;
   border-radius: 50%;
+  background: rgba(199,166,106,.08);
+  filter: blur(20px);
+}
+
+.tech-number {
+  color: var(--gold);
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.tech-icon {
+  margin: 32px 0 20px;
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  color: var(--gold2);
+  font-size: 23px;
+}
+
+.tech-card h3 {
+  font-size: 19px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.tech-card p {
+  color: #9e9e9e;
+  font-size: 12px;
+  line-height: 1.85;
+}
+
+/* LABORATORIO DIGITAL */
+
+.lab-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.lab-panel {
+  border: 1px solid var(--line);
+  background: #0e0e0e;
+  min-height: 390px;
+  padding: 32px;
+  position: relative;
+  overflow: hidden;
+}
+
+.lab-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgba(199,166,106,.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(199,166,106,.045) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: linear-gradient(to bottom, black, transparent);
+}
+
+.scan-display {
+  min-height: 320px;
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.scan-tooth {
+  width: 150px;
+  height: 185px;
+  border: 1px solid rgba(229,208,160,.7);
+  border-radius: 48% 48% 40% 40% / 35% 35% 55% 55%;
+  transform: perspective(300px) rotateY(-20deg) rotateX(8deg);
+  box-shadow: 0 0 35px rgba(199,166,106,.09), inset 0 0 30px rgba(199,166,106,.08);
+  position: relative;
+  animation: float 5s ease-in-out infinite;
+}
+
+.scan-tooth::before {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  border: 1px dashed rgba(229,208,160,.5);
+  border-radius: inherit;
+}
+
+.scan-tooth::after {
+  content: "";
+  position: absolute;
+  left: -25px;
+  right: -25px;
+  top: 48%;
+  height: 1px;
+  background: var(--gold2);
+  box-shadow: 0 0 18px var(--gold);
+  animation: scan 3.5s ease-in-out infinite;
+}
+
+.scan-tag {
+  position: absolute;
+  font-size: 9px;
+  letter-spacing: 1px;
+  color: var(--gold2);
+  background: #101010;
+  border: 1px solid var(--line);
+  padding: 9px 12px;
+}
+
+.tag-one { top: 22px; left: 10px; }
+.tag-two { right: 0; bottom: 45px; }
+.tag-three { left: 15px; bottom: 10px; }
+
+.lab-copy h2 {
+  font-size: clamp(34px, 4vw, 51px);
+  font-weight: 500;
+  letter-spacing: -2px;
+  line-height: 1.12;
+  margin: 20px 0;
+}
+
+.lab-copy p {
+  color: #aaa;
+  font-size: 13px;
+  line-height: 1.95;
+  margin-bottom: 20px;
+}
+
+.lab-points {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.lab-point {
+  padding: 15px;
+  border: 1px solid rgba(255,255,255,.08);
+  background: #111;
+}
+
+.lab-point strong {
+  display: block;
+  color: var(--gold2);
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+
+.lab-point span {
+  color: #999;
+  font-size: 10px;
+  line-height: 1.7;
+}
+
+/* RADIOLOGÍA */
+
+.radiology {
+  background: #f1eee7;
+  color: #101010;
+}
+
+.radiology .eyebrow { color: #806335; }
+.radiology .eyebrow::before { background: #a7854c; }
+
+.radiology .section-heading p { color: #666; }
+
+.radiology-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+}
+
+.radio-card {
+  background: #fff;
+  padding: 23px 18px;
+  min-height: 180px;
+  border: 1px solid rgba(0,0,0,.07);
+  transition: .3s ease;
+}
+
+.radio-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0,0,0,.08);
+}
+
+.radio-card .radio-icon {
+  font-size: 26px;
+  color: #9b7943;
+  margin-bottom: 24px;
+}
+
+.radio-card h3 {
+  font-size: 13px;
+  margin-bottom: 9px;
+}
+
+.radio-card p {
+  color: #777;
+  font-size: 10px;
+  line-height: 1.75;
+}
+
+.radiology-note {
+  margin-top: 20px;
+  color: #666;
+  font-size: 10px;
+  line-height: 1.8;
+}
+
+/* SERVICIOS */
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.service-card {
+  padding: 30px;
+  border: 1px solid rgba(255,255,255,.1);
+  background: #101010;
+  min-height: 230px;
+  transition: .3s;
+}
+
+.service-card:hover {
+  background: #17140f;
+  border-color: var(--line);
+}
+
+.service-card .service-num {
+  color: var(--gold);
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.service-card h3 {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 25px 0 13px;
+}
+
+.service-card p {
+  color: #999;
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+/* EXPERIENCIA */
+
+.experience {
+  padding: 95px 0;
+  border-block: 1px solid var(--line);
+  background:
+    linear-gradient(90deg, rgba(8,8,8,.97), rgba(8,8,8,.85)),
+    url("./DSC_8583.jpeg") center / cover no-repeat;
+}
+
+.experience-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 35px;
+}
+
+.experience h2 {
+  font-size: clamp(32px, 4.5vw, 54px);
+  font-weight: 500;
+  line-height: 1.13;
+  letter-spacing: -2px;
+  max-width: 680px;
+  margin-top: 20px;
+}
+
+.experience p {
+  color: #aaa;
+  font-size: 13px;
+  line-height: 1.9;
+  margin-top: 18px;
+  max-width: 600px;
+}
+
+.experience-actions { flex-shrink: 0; }
+
+/* EQUIPO / FOTO */
+
+.team-grid {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  align-items: center;
+  gap: 75px;
+}
+
+.team-photo {
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+  background: #151515;
+}
+
+.team-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.team-copy h2 {
+  font-size: clamp(35px, 4vw, 52px);
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: -2px;
+  margin: 20px 0;
+}
+
+.team-copy p {
+  color: #aaa;
+  font-size: 13px;
+  line-height: 2;
+  margin-bottom: 18px;
+}
+
+/* CONTACTO */
+
+.contact-section {
+  background: #111;
+  border-top: 1px solid rgba(255,255,255,.06);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 65px;
+}
+
+.contact-copy h2 {
+  font-size: clamp(36px, 5vw, 60px);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -2px;
+  margin: 20px 0;
+}
+
+.contact-copy p {
+  color: #aaa;
+  font-size: 13px;
+  line-height: 1.9;
+  max-width: 450px;
+}
+
+.contact-cards {
+  display: grid;
+  gap: 12px;
+  align-content: center;
+}
+
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 23px;
+  border: 1px solid rgba(255,255,255,.1);
+  background: #151515;
+  transition: border-color .25s;
+}
+
+a.contact-card:hover { border-color: var(--gold); }
+
+.contact-icon {
+  width: 43px;
+  height: 43px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  color: var(--gold2);
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.contact-card small {
+  display: block;
+  color: #999;
+  font-size: 10px;
+  margin-bottom: 6px;
+}
+
+.contact-card strong {
+  font-size: 13px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+/* FAQ */
+
+.faq-list {
+  max-width: 850px;
+  border-top: 1px solid rgba(255,255,255,.12);
+}
+
+.faq-item {
+  border-bottom: 1px solid rgba(255,255,255,.12);
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  padding: 23px 0;
+  background: none;
+  border: 0;
+  width: 100%;
+  color: #eee;
+  text-align: left;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.faq-question span:last-child {
+  color: var(--gold2);
+  font-size: 20px;
+  transition: transform .25s;
+}
+
+.faq-answer {
+  display: none;
+  color: #aaa;
+  font-size: 12px;
+  line-height: 1.9;
+  padding: 0 30px 22px 0;
+}
+
+.faq-item.active .faq-answer { display: block; }
+.faq-item.active .faq-question span:last-child { transform: rotate(45deg); }
+
+/* PIE */
+
+.footer {
+  padding: 32px 0;
+  background: #080808;
+  border-top: 1px solid rgba(255,255,255,.08);
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.footer-copy {
+  color: #777;
+  font-size: 10px;
+  line-height: 1.8;
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+  color: #aaa;
+  font-size: 10px;
+}
+
+.footer-links a:hover { color: var(--gold2); }
+
+.whatsapp-float {
+  position: fixed;
+  z-index: 900;
+  right: 22px;
+  bottom: 22px;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
   background: #25d366;
-  color: white;
-  text-decoration: none;
+  color: #fff;
+  display: grid;
+  place-items: center;
   font-size: 25px;
-  box-shadow: 0 4px 16px #0003;
+  box-shadow: 0 8px 28px rgba(0,0,0,.4);
+  transition: transform .25s;
 }
-@media(max-width: 850px) {
-  .nav { flex-direction: column; gap: 12px; }
-  nav { justify-content: center; gap: 14px; }
-  .intro-grid, .doctor-grid { grid-template-columns: 1fr; gap: 30px; }
-  .cards { grid-template-columns: repeat(2, 1fr); }
-  .hero { min-height: 75vh; }
+
+.whatsapp-float:hover { transform: scale(1.08); }
+
+/* ANIMACIONES */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .7s ease, transform .7s ease;
 }
-@media(max-width: 560px) {
-  section { padding: 65px 20px; }
-  .brand { text-align: center; }
-  .brand strong { font-size: 20px; }
-  nav { gap: 10px 14px; }
-  nav a { font-size: 12px; }
-  .hero { padding: 80px 20px; background-position: 58% center; }
-  .hero h1 { font-size: 43px; }
-  .hero p { font-size: 15px; }
-  .button-outline { margin: 12px 0 0; }
-  .cards, .radiology-list, .gallery-grid { grid-template-columns: 1fr; }
-  .gallery-grid img { height: 350px; }
-  .contact-grid { gap: 25px; }
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes rotate { to { transform: rotate(360deg); } }
+
+@keyframes float {
+  0%, 100% { transform: perspective(300px) rotateY(-20deg) rotateX(8deg) translateY(0); }
+  50% { transform: perspective(300px) rotateY(-15deg) rotateX(4deg) translateY(-10px); }
+}
+
+@keyframes scan {
+  0%, 100% { top: 22%; opacity: .4; }
+  50% { top: 78%; opacity: 1; }
+}
+
+@keyframes heroReveal {
+  from { transform: scale(1.08); opacity: .5; }
+  to { transform: scale(1.03); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+}
+
+@media (max-width: 980px) {
+  .nav-links { gap: 15px; }
+  .nav-links a { font-size: 10px; }
+  .nav-cta { padding: 12px 13px; font-size: 10px; }
+  .hero-grid { grid-template-columns: 1fr .7fr; }
+  .digital-orb { width: 250px; }
+  .tooth-icon { font-size: 90px; }
+  .strip-inner { grid-template-columns: repeat(2, 1fr); }
+  .strip-item:nth-child(2) { border-right: 0; }
+  .strip-item:nth-child(-n+2) { border-bottom: 1px solid rgba(255,255,255,.07); }
+  .about-grid, .lab-layout, .team-grid { gap: 38px; }
+  .radiology-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 720px) {
+  .container { width: min(100% - 34px, var(--max)); }
+  .header { height: 72px; }
+  .brand-main { font-size: 20px; }
+  .brand-sub { font-size: 7px; letter-spacing: 2.2px; }
+
+  .menu-toggle { display: block; }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 71px;
+    left: 0;
+    right: 0;
+    padding: 18px 22px 25px;
+    background: rgba(9,9,9,.98);
+    border-bottom: 1px solid var(--line);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .nav-links.open { display: flex; }
+
+  .nav-links a {
+    font-size: 13px;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255,255,255,.07);
+  }
+
+  .nav-links .nav-cta {
+    margin-top: 15px;
+    text-align: center;
+    border-bottom: 1px solid var(--gold);
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 135px 0 80px;
+  }
+
+  .hero::before {
+    background:
+      linear-gradient(90deg, rgba(5,5,5,.9), rgba(5,5,5,.66)),
+      linear-gradient(0deg, var(--black), transparent 60%),
+      url("./DSC_8583.jpeg") center / cover no-repeat;
+  }
+
+  .hero-grid { grid-template-columns: 1fr; gap: 50px; }
+  .hero h1 { font-size: clamp(48px, 13vw, 70px); letter-spacing: -3px; }
+  .hero-copy { font-size: 13px; }
+  .hero-visual { min-height: 280px; }
+  .digital-orb { width: 220px; }
+  .tooth-icon { font-size: 75px; }
+  .orb-label { font-size: 8px; }
+
+  .section { padding: 78px 0; }
+  .section-heading h2 { letter-spacing: -1.5px; }
+  .strip-item { padding: 17px 12px; min-height: 80px; gap: 10px; }
+  .strip-item strong { font-size: 10px; }
+  .strip-item small { font-size: 8px; }
+
+  .about-grid, .lab-layout, .team-grid, .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .about-image { min-height: 390px; }
+  .about-copy h2, .lab-copy h2, .team-copy h2 { letter-spacing: -1.5px; }
+  .tech-grid, .services-grid { grid-template-columns: 1fr; }
+  .tech-card { min-height: auto; padding: 25px; }
+  .tech-icon { margin: 22px 0 15px; }
+  .lab-panel { min-height: 350px; padding: 20px; }
+  .scan-display { min-height: 300px; }
+  .scan-tooth { width: 120px; height: 155px; }
+  .lab-points { grid-template-columns: 1fr 1fr; }
+  .radiology-grid { grid-template-columns: repeat(2, 1fr); }
+  .radio-card { padding: 18px 14px; min-height: 160px; }
+  .experience { padding: 75px 0; }
+  .experience-inner { align-items: flex-start; flex-direction: column; }
+  .team-photo { height: 420px; }
+  .contact-grid { gap: 30px; }
+  .footer-inner { flex-direction: column; align-items: flex-start; }
+  .footer-links { flex-wrap: wrap; }
+  .whatsapp-float { right: 15px; bottom: 15px; width: 54px; height: 54px; }
+}
+
+@media (max-width: 380px) {
+  .hero-actions { flex-direction: column; align-items: stretch; }
+  .lab-points { grid-template-columns: 1fr; }
+  .radiology-grid { grid-template-columns: 1fr 1fr; }
+  .brand-main { font-size: 18px; }
 }
 </style>
 </head>
 
 <body>
 
-<header>
-  <div class="nav">
-    <a class="brand" href="#inicio" aria-label="MÉDICA ML Alta Boutique Dental">
-      <strong>MÉDICA ML</strong>
-      <span>ALTA BOUTIQUE DENTAL</span>
+<header class="header">
+  <nav class="nav container" aria-label="Navegación principal">
+    <a href="#inicio" class="brand" aria-label="MÉDICA ML inicio">
+      <span class="brand-main">MÉDICA <span>ML</span></span>
+      <span class="brand-sub">Alta Boutique Dental</span>
     </a>
-    <nav aria-label="Navegación principal">
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+
+    <div class="nav-links" id="navLinks">
       <a href="#nosotros">Nosotros</a>
-      <a href="#especialidades">Especialidades</a>
       <a href="#tecnologia">Tecnología</a>
-      <a href="#radiologia">Rayos X</a>
-      <a href="#doctora">Doctora</a>
+      <a href="#radiologia">Radiología</a>
+      <a href="#servicios">Servicios</a>
       <a href="#contacto">Contacto</a>
-    </nav>
-  </div>
+      <a class="nav-cta" href="https://wa.me/527713159521?text=Hola%2C%20quiero%20informaci%C3%B3n%20de%20M%C3%89DICA%20ML." target="_blank" rel="noopener noreferrer">Solicitar información ↗</a>
+    </div>
+  </nav>
 </header>
 
 <main>
+
+<!-- PORTADA -->
 <section class="hero" id="inicio">
-  <div class="hero-content">
-    <div class="eyebrow">MÉDICA ML · Alta Boutique Dental</div>
-    <h1>Especialidades dentales con tecnología de vanguardia</h1>
-    <p>Atención especializada, flujo digital y estudios radiográficos en un mismo lugar para apoyar diagnósticos adecuados y planes de tratamiento personalizados.</p>
-    <a class="button" href="https://wa.me/527713159521" target="_blank" rel="noopener">SOLICITAR INFORMACIÓN</a>
-    <a class="button button-outline" href="#servicios">CONOCE NUESTROS SERVICIOS</a>
-  </div>
-</section>
+  <div class="container hero-grid">
+    <div class="hero-content">
+      <div class="hero-kicker"><span class="status-dot"></span> Odontología · Innovación · Precisión</div>
 
-<section class="intro" id="nosotros">
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Conócenos</div>
-      <h2>Un concepto integral de atención dental</h2>
-      <p>Clínica de especialidades dentales, laboratorio propio de flujo digital y gabinete de radiología.</p>
+      <h1>
+        El futuro de tu
+        <span>sonrisa comienza aquí.</span>
+      </h1>
+
+      <p class="hero-copy">
+        Bienvenido a MÉDICA ML, Alta Boutique Dental. Un espacio donde la atención especializada se encuentra con la tecnología digital para acompañar el cuidado de tu salud bucal.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn" href="https://wa.me/527713159521?text=Hola%2C%20quiero%20conocer%20los%20servicios%20de%20M%C3%89DICA%20ML." target="_blank" rel="noopener noreferrer">
+          Descubre nuestros servicios <span>↗</span>
+        </a>
+        <a class="btn btn-outline" href="#tecnologia">Explorar tecnología ↓</a>
+      </div>
+
+      <p class="hero-footnote"><span>●</span> TECNOLOGÍA DIGITAL &nbsp; / &nbsp; ATENCIÓN ESPECIALIZADA</p>
     </div>
-    <div class="intro-grid">
-      <img class="photo" src="./DSC_8583.jpeg" alt="Instalaciones de MÉDICA ML Alta Boutique Dental">
-      <div class="copy">
-        <h2>Precisión, tecnología y atención personalizada</h2>
-        <div class="line"></div>
-        <p>En MÉDICA ML Alta Boutique Dental reunimos servicios de especialidades dentales, tecnología digital y estudios de imagen para apoyar la valoración y planificación de los tratamientos odontológicos.</p>
-        <p>Contamos con laboratorio dental propio de flujo digital y equipo para estudios radiográficos dentales. Nuestro personal está altamente capacitado para contribuir a la obtención de información diagnóstica adecuada.</p>
-        <p>Trabajamos para ofrecer una experiencia profesional, organizada y centrada en las necesidades de cada paciente.</p>
-        <a class="button" href="https://wa.me/527713159521" target="_blank" rel="noopener">CONTACTAR A LA CLÍNICA</a>
+
+    <div class="hero-visual" aria-label="Diseño gráfico inspirado en tecnología dental">
+      <div class="digital-orb">
+        <div class="orb-ring"></div>
+        <div class="orb-ring ring-two"></div>
+        <div class="tooth-icon" aria-hidden="true">✧</div>
+        <div class="orb-label">PRECISIÓN EN CADA DETALLE</div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="cream" id="especialidades">
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Atención dental</div>
-      <h2>Especialidades y servicios</h2>
-      <p>Atención coordinada para valorar las necesidades de cada sonrisa.</p>
+<!-- SELLO DIGITAL -->
+<div class="digital-strip">
+  <div class="container strip-inner">
+    <div class="strip-item">
+      <span class="strip-symbol">⌘</span>
+      <div><strong>Flujo digital</strong><small>Procesos integrados</small></div>
     </div>
-    <div class="cards">
-      <article class="card">
-        <div class="number">01</div>
-        <h3>Odontología integral</h3>
-        <p>Valoración y atención de la salud bucal de acuerdo con las necesidades de cada paciente.</p>
-      </article>
-      <article class="card">
-        <div class="number">02</div>
-        <h3>Estética dental</h3>
-        <p>Alternativas de tratamiento orientadas a la armonía y apariencia de la sonrisa.</p>
-      </article>
-      <article class="card">
-        <div class="number">03</div>
-        <h3>Rehabilitación oral</h3>
-        <p>Planificación de tratamientos para recuperar función y estética dental.</p>
-      </article>
-      <article class="card">
-        <div class="number">04</div>
-        <h3>Ortodoncia</h3>
-        <p>Valoración y planificación para atender la posición dental y la oclusión.</p>
-      </article>
-      <article class="card">
-        <div class="number">05</div>
-        <h3>Diagnóstico por imagen</h3>
-        <p>Estudios radiográficos dentales como apoyo a la valoración clínica.</p>
-      </article>
-      <article class="card">
-        <div class="number">06</div>
-        <h3>Flujo digital</h3>
-        <p>Integración de herramientas digitales para apoyar los procesos de diagnóstico y laboratorio.</p>
-      </article>
+    <div class="strip-item">
+      <span class="strip-symbol">◎</span>
+      <div><strong>Escaneo intraoral</strong><small>Tecnología digital Sirona</small></div>
+    </div>
+    <div class="strip-item">
+      <span class="strip-symbol">◇</span>
+      <div><strong>CAD / CAM</strong><small>Flujo de trabajo digital</small></div>
+    </div>
+    <div class="strip-item">
+      <span class="strip-symbol">＋</span>
+      <div><strong>Estudios radiológicos</strong><small>Apoyo para el diagnóstico</small></div>
+    </div>
+  </div>
+</div>
+
+<!-- NOSOTROS -->
+<section class="section" id="nosotros">
+  <div class="container about-grid">
+    <div class="about-image reveal">
+      <img src="./DSC_8583.jpeg" alt="Recepción de MÉDICA ML Alta Boutique Dental" loading="lazy">
+      <div class="image-caption">
+        <strong>Un espacio pensado para ti</strong>
+        <span>Atención profesional y tecnología dental</span>
+      </div>
+    </div>
+
+    <div class="about-copy reveal">
+      <div class="eyebrow">Nuestra filosofía</div>
+      <h2>Más que una clínica.<br><span class="gold">Una experiencia dental diferente.</span></h2>
+      <p>
+        En MÉDICA ML creemos que la atención odontológica debe combinar conocimiento, innovación y una comunicación clara con cada paciente.
+      </p>
+      <p>
+        Integramos herramientas digitales, equipamiento especializado y un equipo preparado para apoyar el diagnóstico y la planeación de cada caso, de acuerdo con las necesidades clínicas.
+      </p>
+
+      <div class="feature-list">
+        <div class="feature"><span class="check">✓</span><span>Atención con enfoque profesional y personalizado.</span></div>
+        <div class="feature"><span class="check">✓</span><span>Tecnología digital aplicada al flujo de trabajo dental.</span></div>
+        <div class="feature"><span class="check">✓</span><span>Estudios radiológicos para apoyar la evaluación clínica.</span></div>
+      </div>
+
+      <a class="btn btn-outline" href="#contacto">Conoce MÉDICA ML ↗</a>
     </div>
   </div>
 </section>
 
-<section class="feature" id="tecnologia">
+<!-- TECNOLOGÍA -->
+<section class="section tech-section" id="tecnologia">
   <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Innovación odontológica</div>
-      <h2>Laboratorio dental de flujo digital</h2>
-      <p>Integración de tecnología para apoyar la precisión y coordinación de los procesos clínicos y de laboratorio.</p>
+    <div class="section-heading reveal">
+      <div class="eyebrow">Tecnología aplicada</div>
+      <h2>Innovación que transforma<br>la experiencia dental.</h2>
+      <p>
+        Herramientas digitales que forman parte de un flujo de trabajo diseñado para facilitar la obtención de información, la planeación y la colaboración entre profesionales.
+      </p>
     </div>
-    <div class="cards">
-      <article class="card">
-        <div class="number">01 · DIGITAL</div>
-        <h3>Laboratorio propio</h3>
-        <p>Contamos con laboratorio dental propio que trabaja con flujo digital para apoyar los procesos de elaboración y planificación de trabajos dentales.</p>
-      </article>
-      <article class="card">
-        <div class="number">02 · CAD/CAM</div>
-        <h3>Diseño y fabricación</h3>
-        <p>La tecnología CAD/CAM permite integrar procesos de diseño asistido por computadora y fabricación asistida por computadora.</p>
-      </article>
-      <article class="card">
-        <div class="number">03 · SIRONA</div>
+
+    <div class="tech-grid">
+      <article class="tech-card reveal">
+        <span class="tech-number">01 / DIGITAL</span>
+        <div class="tech-icon">◎</div>
         <h3>Escáner intraoral</h3>
-        <p>Utilizamos tecnología de escaneo intraoral Sirona para apoyar la captura digital de información de la cavidad oral.</p>
+        <p>Contamos con tecnología intraoral Sirona integrada a nuestro entorno de trabajo digital, de acuerdo con las necesidades de cada procedimiento.</p>
+      </article>
+
+      <article class="tech-card reveal">
+        <span class="tech-number">02 / PRECISION</span>
+        <div class="tech-icon">◇</div>
+        <h3>Flujo CAD / CAM</h3>
+        <p>Procesos digitales para apoyar el diseño y la fabricación de soluciones dentales mediante herramientas compatibles con cada caso.</p>
+      </article>
+
+      <article class="tech-card reveal">
+        <span class="tech-number">03 / IMAGING</span>
+        <div class="tech-icon">⌖</div>
+        <h3>Imagenología dental</h3>
+        <p>Estudios radiológicos que proporcionan información complementaria para la valoración y la planeación clínica.</p>
       </article>
     </div>
-    <p style="text-align:center;color:#c9c6bd;margin-top:28px;font-size:14px;">Equipamiento de importación alemana, de acuerdo con el equipamiento disponible en la clínica.</p>
   </div>
 </section>
 
-<section class="radiology" id="radiologia">
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Gabinete de radiología</div>
-      <h2>Estudios de imagen dental</h2>
-      <p>Estudios que apoyan la valoración y planificación de tratamientos odontológicos, según la indicación clínica.</p>
-    </div>
-    <div class="intro-grid">
-      <div class="copy">
-        <h2>Información para apoyar un diagnóstico adecuado</h2>
-        <div class="line"></div>
-        <p>Contamos con gabinete de rayos X para realizar distintos estudios radiográficos dentales. Los estudios se seleccionan de acuerdo con la necesidad clínica y la indicación del profesional tratante.</p>
-        <p>El personal capacitado apoya la realización de los estudios para proporcionar imágenes útiles para la valoración odontológica.</p>
-        <a class="button" href="https://wa.me/527713159521" target="_blank" rel="noopener">CONSULTAR ESTUDIOS</a>
-      </div>
-      <div class="radiology-list">
-        <div class="radiology-item"><strong>Panorámica</strong><span>Vista general de estructuras dentales y maxilares.</span></div>
-        <div class="radiology-item"><strong>Lateral de cráneo</strong><span>Imagen utilizada en determinadas valoraciones ortodónticas.</span></div>
-        <div class="radiology-item"><strong>Cefalometría</strong><span>Mediciones y análisis de estructuras craneofaciales.</span></div>
-        <div class="radiology-item"><strong>Carpal</strong><span>Estudio solicitado en indicaciones específicas de valoración del crecimiento.</span></div>
-        <div class="radiology-item"><strong>Oclusal</strong><span>Imagen de áreas específicas de la arcada dental.</span></div>
+<!-- LABORATORIO DIGITAL -->
+<section class="section" id="laboratorio">
+  <div class="container lab-layout">
+    <div class="lab-panel reveal">
+      <div class="scan-display">
+        <span class="scan-tag tag-one">DIGITAL WORKFLOW</span>
+        <div class="scan-tooth" aria-hidden="true"></div>
+        <span class="scan-tag tag-two">CAD / CAM</span>
+        <span class="scan-tag tag-three">PRECISIÓN DIGITAL</span>
       </div>
     </div>
-  </div>
-</section>
 
-<section class="doctor" id="doctora">
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Nuestro equipo</div>
-      <h2>Atención profesional y personalizada</h2>
-    </div>
-    <div class="doctor-grid">
-      <img class="photo" src="./IMG_0295.jpeg" alt="Dra. Liz Vera en el consultorio">
-      <div class="copy">
-        <h2>Dra. Liz Vera</h2>
-        <div class="doctor-role">ODONTOLOGÍA · MÉDICA ML</div>
-        <div class="line"></div>
-        <p>En MÉDICA ML Alta Boutique Dental, la atención se orienta a conocer las necesidades de cada paciente y coordinar la valoración clínica con los recursos tecnológicos disponibles.</p>
-        <p>El personal de la clínica está capacitado para apoyar la realización de estudios y contribuir a diagnósticos adecuados junto con los profesionales tratantes.</p>
-        <a class="button" href="https://wa.me/527713159521" target="_blank" rel="noopener">SOLICITAR INFORMACIÓN</a>
+    <div class="lab-copy reveal">
+      <div class="eyebrow">Laboratorio y diseño digital</div>
+      <h2>De la información digital a una mejor planeación.</h2>
+      <p>
+        Nuestro flujo de trabajo digital propio integra herramientas para facilitar la comunicación entre las distintas etapas del proceso dental.
+      </p>
+      <p>
+        La tecnología CAD/CAM y el escaneo intraoral forman parte de un entorno de trabajo que busca apoyar la precisión, la organización y la colaboración profesional.
+      </p>
+
+      <div class="lab-points">
+        <div class="lab-point">
+          <strong>Escaneo</strong>
+          <span>Captura digital según el procedimiento indicado.</span>
+        </div>
+        <div class="lab-point">
+          <strong>Diseño</strong>
+          <span>Planeación digital de acuerdo con el caso.</span>
+        </div>
+        <div class="lab-point">
+          <strong>Integración</strong>
+          <span>Conexión entre etapas del flujo de trabajo.</span>
+        </div>
+        <div class="lab-point">
+          <strong>Colaboración</strong>
+          <span>Apoyo al trabajo de los profesionales dentales.</span>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="servicios">
+<!-- RADIOLOGÍA -->
+<section class="section radiology" id="radiologia">
   <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Nuestras instalaciones</div>
-      <h2>Conoce MÉDICA ML</h2>
-      <p>Un espacio que integra atención dental, tecnología digital y servicios de radiología.</p>
+    <div class="section-heading reveal">
+      <div class="eyebrow">Diagnóstico por imagen</div>
+      <h2>Información visual<br>para una evaluación más completa.</h2>
+      <p>
+        Nuestro gabinete de radiología ofrece diferentes estudios que pueden apoyar la valoración odontológica cuando son indicados por el profesional tratante.
+      </p>
     </div>
-    <div class="gallery-grid">
-      <img src="./DSC_8583.jpeg" alt="Instalaciones de MÉDICA ML Alta Boutique Dental">
-      <img src="./IMG_0295.jpeg" alt="Atención dental en MÉDICA ML">
+
+    <div class="radiology-grid">
+      <article class="radio-card reveal">
+        <div class="radio-icon">◉</div>
+        <h3>Panorámica</h3>
+        <p>Vista general de las estructuras dentales y maxilares.</p>
+      </article>
+
+      <article class="radio-card reveal">
+        <div class="radio-icon">◌</div>
+        <h3>Lateral de cráneo</h3>
+        <p>Imagen utilizada en evaluaciones cefalométricas.</p>
+      </article>
+
+      <article class="radio-card reveal">
+        <div class="radio-icon">⌖</div>
+        <h3>Cefalometría</h3>
+        <p>Apoyo al análisis de relaciones craneofaciales.</p>
+      </article>
+
+      <article class="radio-card reveal">
+        <div class="radio-icon">◇</div>
+        <h3>Carpal</h3>
+        <p>Estudio que puede apoyar la evaluación de maduración ósea.</p>
+      </article>
+
+      <article class="radio-card reveal">
+        <div class="radio-icon">＋</div>
+        <h3>Oclusal</h3>
+        <p>Proyección radiográfica para indicaciones clínicas específicas.</p>
+      </article>
+    </div>
+
+    <p class="radiology-note reveal">
+      Los estudios se realizan de acuerdo con la indicación profesional y los protocolos aplicables. La selección del estudio depende de cada caso clínico.
+    </p>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section class="section" id="servicios">
+  <div class="container">
+    <div class="section-heading reveal">
+      <div class="eyebrow">Atención odontológica</div>
+      <h2>Soluciones pensadas<br>para cada sonrisa.</h2>
+      <p>
+        Conoce nuestras áreas de atención y solicita información para identificar el servicio adecuado para tus necesidades.
+      </p>
+    </div>
+
+    <div class="services-grid">
+      <article class="service-card reveal">
+        <span class="service-num">01 — ATENCIÓN</span>
+        <h3>Odontología integral</h3>
+        <p>Valoración y orientación para el cuidado de la salud bucal, de acuerdo con las necesidades de cada paciente.</p>
+      </article>
+
+      <article class="service-card reveal">
+        <span class="service-num">02 — ESPECIALIDADES</span>
+        <h3>Atención especializada</h3>
+        <p>Orientación sobre las áreas odontológicas disponibles y la valoración correspondiente con el profesional indicado.</p>
+      </article>
+
+      <article class="service-card reveal">
+        <span class="service-num">03 — DIAGNÓSTICO</span>
+        <h3>Estudios radiológicos</h3>
+        <p>Apoyo por imagen para complementar la evaluación clínica y facilitar la planeación del tratamiento.</p>
+      </article>
+    </div>
+
+    <p class="radiology-note" style="color:#999;margin-top:20px">
+      Consulta por WhatsApp la disponibilidad de especialidades y tratamientos antes de acudir.
+    </p>
+  </div>
+</section>
+
+<!-- LLAMADA A LA ACCIÓN -->
+<section class="experience">
+  <div class="container experience-inner">
+    <div class="reveal">
+      <div class="eyebrow">Tu próxima visita</div>
+      <h2>La tecnología es parte del proceso. <span class="gold">Tu bienestar es el objetivo.</span></h2>
+      <p>Comunícate con nuestro equipo y conoce las opciones de atención y estudios disponibles en MÉDICA ML.</p>
+    </div>
+    <div class="experience-actions reveal">
+      <a class="btn" href="https://wa.me/527713159521?text=Hola%2C%20quiero%20solicitar%20informaci%C3%B3n%20y%20conocer%20la%20disponibilidad." target="_blank" rel="noopener noreferrer">Hablar por WhatsApp ↗</a>
     </div>
   </div>
 </section>
 
-<section class="contact" id="contacto">
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Estamos para ayudarte</div>
-      <h2>Contacta a MÉDICA ML</h2>
-      <p>Escríbenos para consultar disponibilidad, estudios y servicios.</p>
+<!-- EQUIPO -->
+<section class="section" id="equipo">
+  <div class="container team-grid">
+    <div class="team-photo reveal">
+      <img src="./IMG_0295.jpeg" alt="Profesional de MÉDICA ML en el consultorio" loading="lazy">
     </div>
-    <div class="contact-grid">
-      <div class="contact-item">
-        <span>TELÉFONO</span>
-        <a href="tel:+527717112564">771 711 2564</a>
-      </div>
-      <div class="contact-item">
-        <span>WHATSAPP</span>
-        <a href="https://wa.me/527713159521" target="_blank" rel="noopener">771 315 9521</a>
-      </div>
+
+    <div class="team-copy reveal">
+      <div class="eyebrow">Nuestro compromiso</div>
+      <h2>Tecnología de vanguardia. <span class="gold">Atención humana.</span></h2>
+      <p>
+        Detrás de cada estudio y proceso existe un equipo que trabaja para ofrecer atención profesional, explicar las opciones disponibles y contribuir a una experiencia clara y organizada.
+      </p>
+      <p>
+        En MÉDICA ML valoramos la capacitación, el uso responsable de la tecnología y la colaboración con los profesionales que confían en nuestros servicios.
+      </p>
+      <a class="btn btn-outline" href="#contacto">Conecta con nosotros ↗</a>
     </div>
-    <a class="button" href="https://wa.me/527713159521" target="_blank" rel="noopener">ESCRÍBENOS POR WHATSAPP</a>
   </div>
 </section>
+
+<!-- PREGUNTAS FRECUENTES -->
+<section class="section" id="preguntas">
+  <div class="container">
+    <div class="section-heading reveal">
+      <div class="eyebrow">Información para pacientes</div>
+      <h2>Resolvemos tus dudas.</h2>
+      <p>Consulta información general y escríbenos si necesitas confirmar un servicio o estudio.</p>
+    </div>
+
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          ¿Qué tecnología digital utiliza MÉDICA ML?
+          <span>+</span>
+        </button>
+        <div class="faq-answer">
+          Contamos con un flujo de trabajo digital dental, tecnología CAD/CAM y escáner intraoral Sirona. La disponibilidad y aplicación dependen del procedimiento.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          ¿Qué estudios radiológicos puedo solicitar?
+          <span>+</span>
+        </button>
+        <div class="faq-answer">
+          Entre los estudios disponibles se encuentran panorámica, lateral de cráneo, cefalometría, carpal y oclusal. Consulta por WhatsApp la disponibilidad y los requisitos para tu estudio.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          ¿Necesito una indicación para realizarme un estudio?
+          <span>+</span>
+        </button>
+        <div class="faq-answer">
+          La necesidad de una indicación depende del estudio y de los protocolos aplicables. Comunícate con nuestro equipo para conocer los requisitos correspondientes.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          ¿Cómo puedo conocer los tratamientos disponibles?
+          <span>+</span>
+        </button>
+        <div class="faq-answer">
+          Escríbenos por WhatsApp. Nuestro equipo podrá orientarte sobre las áreas de atención, disponibilidad y forma de solicitar una cita.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="section contact-section" id="contacto">
+  <div class="container contact-grid">
+    <div class="contact-copy reveal">
+      <div class="eyebrow">Estamos para atenderte</div>
+      <h2>Tu próxima sonrisa comienza con una conversación.</h2>
+      <p>
+        Contáctanos para recibir información sobre nuestros servicios, estudios radiológicos y disponibilidad de atención.
+      </p>
+      <div style="margin-top:28px">
+        <a class="btn" href="https://wa.me/527713159521?text=Hola%2C%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20de%20M%C3%89DICA%20ML." target="_blank" rel="noopener noreferrer">Enviar mensaje ↗</a>
+      </div>
+    </div>
+
+    <div class="contact-cards reveal">
+      <a class="contact-card" href="tel:+527717112564">
+        <span class="contact-icon">⌕</span>
+        <span><small>Llámanos</small><strong>771 711 2564</strong></span>
+      </a>
+
+      <a class="contact-card" href="https://wa.me/527713159521" target="_blank" rel="noopener noreferrer">
+        <span class="contact-icon">↗</span>
+        <span><small>WhatsApp</small><strong>771 315 9521</strong></span>
+      </a>
+
+      <div class="contact-card">
+        <span class="contact-icon">✧</span>
+        <span><small>Encuéntranos</small><strong>MÉDICA ML · Alta Boutique Dental</strong></span>
+      </div>
+    </div>
+  </div>
+</section>
+
 </main>
 
-<footer>
-  © 2026 <strong>MÉDICA ML · ALTA BOUTIQUE DENTAL</strong><br>
-  Clínica de especialidades dentales · Laboratorio digital · Gabinete de radiología
+<!-- PIE DE PÁGINA -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <a href="#inicio" class="brand">
+      <span class="brand-main">MÉDICA <span>ML</span></span>
+      <span class="brand-sub">Alta Boutique Dental</span>
+    </a>
+
+    <div class="footer-copy">
+      © <span id="year"></span> MÉDICA ML. Todos los derechos reservados.<br>
+      La información de este sitio es general y no sustituye una valoración profesional.
+    </div>
+
+    <div class="footer-links">
+      <a href="#nosotros">Nosotros</a>
+      <a href="#tecnologia">Tecnología</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+  </div>
 </footer>
 
-<a class="whatsapp" href="https://wa.me/527713159521" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">✆</a>
+<a class="whatsapp-float"
+   href="https://wa.me/527713159521?text=Hola%2C%20quiero%20informaci%C3%B3n%20de%20M%C3%89DICA%20ML."
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="Contactar a MÉDICA ML por WhatsApp">
+  <svg width="27" height="27" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <path d="M20.5 11.7a8.4 8.4 0 0 1-12.4 7.4L3 20.4l1.3-4.9a8.4 8.4 0 1 1 16.2-3.8Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+    <path d="M8.8 8.1c.2-.4.4-.4.7-.4h.4c.2 0 .3.1.4.4l.7 1.6c.1.2.1.4 0 .6l-.5.7c-.2.2-.2.4 0 .6.5.8 1.2 1.5 2 1.9.2.1.4.1.6-.1l.7-.8c.2-.2.4-.2.6-.1l1.6.8c.3.1.4.2.4.4 0 .3-.2 1.2-.8 1.6-.5.4-1.1.6-1.8.4-1-.2-2.3-.8-3.6-2-1.1-1-1.9-2.4-2.1-3.3-.2-.8.1-1.6.5-2.1Z" fill="currentColor"/>
+  </svg>
+</a>
+
+<script>
+/* Menú móvil */
+const menuToggle = document.getElementById('menuToggle');
+const navLinks = document.getElementById('navLinks');
+
+menuToggle.addEventListener('click', () => {
+  const isOpen = navLinks.classList.toggle('open');
+  menuToggle.setAttribute('aria-expanded', String(isOpen));
+  menuToggle.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
+  menuToggle.textContent = isOpen ? '×' : '☰';
+});
+
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.setAttribute('aria-label', 'Abrir menú');
+    menuToggle.textContent = '☰';
+  });
+});
+
+/* Preguntas frecuentes */
+document.querySelectorAll('.faq-question').forEach(button => {
+  button.addEventListener('click', () => {
+    const item = button.closest('.faq-item');
+    const willOpen = !item.classList.contains('active');
+
+    document.querySelectorAll('.faq-item').forEach(other => {
+      other.classList.remove('active');
+      other.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+    });
+
+    if (willOpen) {
+      item.classList.add('active');
+      button.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+
+/* Aparición suave al desplazarse */
+const revealElements = document.querySelectorAll('.reveal');
+
+if ('IntersectionObserver' in window) {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  revealElements.forEach(element => observer.observe(element));
+} else {
+  revealElements.forEach(element => element.classList.add('visible'));
+}
+
+/* Año automático */
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
