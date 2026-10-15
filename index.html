@@ -75,6 +75,8 @@ section{padding:85px 0}
 .specialty .number{color:var(--gold);font-size:11px;letter-spacing:2px}
 .specialty h3{font-size:19px;margin:20px 0 12px}
 .specialty p{font-size:13px;color:var(--gray)}
+/* Ocultar texto y flechas de las tarjetas de especialidades */
+.specialty a{display:none!important}
 .lab-visual{min-height:350px;border:1px solid var(--line);background:radial-gradient(circle at 50% 40%,rgba(199,166,106,.17),transparent 55%),repeating-linear-gradient(0deg,transparent,transparent 39px,rgba(199,166,106,.06) 40px),repeating-linear-gradient(90deg,transparent,transparent 39px,rgba(199,166,106,.06) 40px);display:grid;place-items:center;text-align:center;padding:25px}
 .lab-logo{font:800 clamp(32px,5vw,52px) Manrope;letter-spacing:2px}
 .lab-logo span{color:var(--gold)}
@@ -209,38 +211,32 @@ h1{letter-spacing:-1.5px}
 <h2>Especialidades para cuidar <span class="gold">tu sonrisa.</span></h2>
 <p>Consulta con nuestro equipo qué opciones de atención se encuentran disponibles para ti.</p>
 </div>
-
 <div class="specialties-grid">
 <article class="specialty">
 <div class="number">01 / PREVENCIÓN</div>
 <h3>Odontología general</h3>
 <p>Evaluación de la salud oral, prevención y orientación para el cuidado dental.</p>
 </article>
-
 <article class="specialty">
 <div class="number">02 / ALINEACIÓN</div>
 <h3>Ortodoncia</h3>
 <p>Valoración de la posición dental y orientación sobre alternativas de tratamiento.</p>
 </article>
-
 <article class="specialty">
 <div class="number">03 / ESTÉTICA</div>
 <h3>Estética dental</h3>
 <p>Opciones para mejorar la apariencia de la sonrisa de acuerdo con cada caso.</p>
 </article>
-
 <article class="specialty">
 <div class="number">04 / REHABILITACIÓN</div>
 <h3>Rehabilitación oral</h3>
 <p>Valoración de alternativas para recuperar función y estética oral.</p>
 </article>
-
 <article class="specialty">
 <div class="number">05 / SALUD ORAL</div>
 <h3>Periodoncia</h3>
 <p>Atención enfocada en las encías y los tejidos que sostienen los dientes.</p>
 </article>
-
 <article class="specialty">
 <div class="number">06 / TU CASO</div>
 <h3>Valoración personalizada</h3>
@@ -260,7 +256,6 @@ h1{letter-spacing:-1.5px}
 <p>PRECISIÓN · INNOVACIÓN · CALIDAD</p>
 </a>
 </div>
-
 <div class="lab-copy">
 <div class="section-label">04 / LABDENTAL</div>
 <h2>Laboratorio Dental: <span class="gold">precisión en cada sonrisa.</span></h2>
@@ -318,9 +313,6 @@ h1{letter-spacing:-1.5px}
 </footer>
 
 <a class="whatsapp" href="https://wa.me/527713159521" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">WhatsApp</a>
-
-<script>
-document.getElementById("year").textContent=new Date().getFullYear();
-</script>
+<script>document.getElementById("year").textContent=new Date().getFullYear();</script>
 </body>
 </html>
