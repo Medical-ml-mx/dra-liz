@@ -1,505 +1,84 @@
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#090909">
-  <meta name="description" content="MÉDICA ML Alta Boutique Dental. Tecnología, diseño y atención dental especializada.">
-  <title>MÉDICA ML | Alta Boutique Dental</title>
+<section class="lab" id="labdental">
+  <div class="container lab-grid">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <div class="lab-visual">
+      <a href="https://www.labdental.mx"
+         target="_blank"
+         rel="noopener"
+         aria-label="Visitar página oficial de LabDental"
+         style="text-align:center; display:block;">
 
-  <style>
-    :root {
-      --black: #090909;
-      --panel: #111111;
-      --gold: #c7a66a;
-      --white: #f8f7f3;
-      --gray: #a4a4a4;
-      --line: rgba(199,166,106,.25);
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; scroll-padding-top: 85px; }
-    body {
-      background: var(--black);
-      color: var(--white);
-      font-family: 'DM Sans', sans-serif;
-      line-height: 1.7;
-      overflow-x: hidden;
-    }
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
-    .container { width: min(1180px, 90%); margin: auto; }
-
-    .topline {
-      height: 3px;
-      background: linear-gradient(90deg, transparent, var(--gold), transparent);
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(9,9,9,.94);
-      backdrop-filter: blur(18px);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .nav {
-      min-height: 84px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 25px;
-    }
-
-    .brand { display: flex; align-items: center; gap: 12px; }
-    .brand-mark {
-      width: 43px;
-      height: 43px;
-      border: 1px solid var(--gold);
-      display: grid;
-      place-items: center;
-      color: var(--gold);
-      font-family: Manrope, sans-serif;
-      font-size: 22px;
-      font-weight: 300;
-    }
-    .brand-name { font-family: Manrope, sans-serif; font-weight: 800; letter-spacing: 2px; font-size: 19px; }
-    .brand-sub { display: block; color: var(--gold); font-size: 9px; letter-spacing: 2px; text-transform: uppercase; }
-
-    .nav-links { display: flex; align-items: center; gap: 23px; }
-    .nav-links a {
-      font-size: 12px;
-      color: #d4d4d4;
-      transition: color .2s;
-    }
-    .nav-links a:hover { color: var(--gold); }
-    .nav-cta {
-      padding: 11px 15px;
-      border: 1px solid var(--gold);
-      color: var(--gold) !important;
-    }
-
-    .hero {
-      min-height: 650px;
-      position: relative;
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-      background:
-        linear-gradient(90deg, rgba(9,9,9,.98) 0%, rgba(9,9,9,.82) 48%, rgba(9,9,9,.24) 100%),
-        url('./DSC_8583.jpeg') center/cover no-repeat;
-    }
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: auto 0 0;
-      height: 150px;
-      background: linear-gradient(transparent, var(--black));
-    }
-    .hero-content { position: relative; z-index: 2; padding: 90px 0 115px; max-width: 730px; }
-    .eyebrow {
-      color: var(--gold);
-      text-transform: uppercase;
-      letter-spacing: 4px;
-      font-size: 11px;
-      font-weight: 700;
-      margin-bottom: 22px;
-    }
-    h1, h2, h3 { font-family: Manrope, sans-serif; line-height: 1.15; }
-    h1 { font-size: clamp(42px, 7vw, 82px); font-weight: 500; letter-spacing: -3px; }
-    h1 span, .gold { color: var(--gold); }
-    .hero p { margin-top: 24px; color: #d0d0d0; max-width: 520px; font-size: 16px; }
-    .actions { display: flex; flex-wrap: wrap; gap: 13px; margin-top: 32px; }
-    .btn {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      padding: 14px 21px;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: .5px;
-      transition: .25s;
-    }
-    .btn-gold { background: var(--gold); color: #111; }
-    .btn-gold:hover { background: #e2c68d; transform: translateY(-2px); }
-    .btn-outline { border: 1px solid rgba(255,255,255,.4); }
-    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      background: #0d0d0d;
-    }
-    .stat { text-align: center; padding: 27px 12px; border-right: 1px solid var(--line); }
-    .stat:last-child { border-right: 0; }
-    .stat strong { display: block; font: 600 14px Manrope, sans-serif; color: var(--gold); }
-    .stat span { font-size: 11px; color: var(--gray); }
-
-    section { padding: 100px 0; }
-    .section-head { max-width: 700px; margin-bottom: 42px; }
-    .section-head h2 { font-size: clamp(32px, 5vw, 52px); font-weight: 500; letter-spacing: -1.5px; }
-    .section-head p { color: var(--gray); margin-top: 17px; }
-    .section-label { color: var(--gold); text-transform: uppercase; letter-spacing: 3px; font-size: 10px; margin-bottom: 15px; }
-
-    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-    .about-image { position: relative; }
-    .about-image img { width: 100%; height: 470px; object-fit: cover; }
-    .image-tag {
-      position: absolute;
-      bottom: -18px;
-      right: -18px;
-      background: var(--gold);
-      color: #111;
-      padding: 18px 23px;
-      font: 700 12px Manrope, sans-serif;
-    }
-    .about-copy p { color: var(--gray); margin: 20px 0; }
-    .feature-list { list-style: none; margin-top: 25px; }
-    .feature-list li { padding: 12px 0; border-bottom: 1px solid #252525; font-size: 13px; }
-    .feature-list li::before { content: "✦"; color: var(--gold); margin-right: 12px; }
-
-    .installations { background: #0e0e0e; }
-    .install-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 20px; }
-    .install-card { position: relative; min-height: 300px; overflow: hidden; background: #171717; }
-    .install-card img { width: 100%; height: 100%; min-height: 300px; object-fit: cover; transition: transform .5s; }
-    .install-card:hover img { transform: scale(1.04); }
-    .install-caption {
-      position: absolute; inset: auto 0 0;
-      padding: 50px 25px 24px;
-      background: linear-gradient(transparent, rgba(0,0,0,.9));
-    }
-    .install-caption h3 { font-size: 22px; }
-    .install-caption p { color: #d2d2d2; font-size: 12px; }
-    .portfolio-note { color: var(--gray); font-size: 12px; margin-top: 22px; }
-
-    .specialties-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-    .specialty {
-      border: 1px solid #292929;
-      background: linear-gradient(145deg, #151515, #0b0b0b);
-      padding: 28px;
-      transition: .25s;
-    }
-    .specialty:hover { border-color: var(--gold); transform: translateY(-5px); }
-    .specialty .number { color: var(--gold); font: 500 12px Manrope, sans-serif; letter-spacing: 2px; }
-    .specialty h3 { font-size: 19px; margin: 23px 0 12px; }
-    .specialty p { font-size: 12px; color: var(--gray); }
-    .specialty a { display: inline-block; color: var(--gold); font-size: 11px; margin-top: 20px; }
-
-    .lab { background: #0e0e0e; }
-    .lab-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
-    .lab-visual {
-      min-height: 380px;
-      border: 1px solid var(--line);
-      background:
-        radial-gradient(circle at 50% 40%, rgba(199,166,106,.15), transparent 55%),
-        repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(199,166,106,.07) 40px),
-        repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(199,166,106,.07) 40px);
-      display: grid;
-      place-items: center;
-      text-align: center;
-      padding: 25px;
-    }
-    .lab-symbol { font-size: 80px; color: var(--gold); line-height: 1; }
-    .lab-visual p { color: var(--gray); font-size: 11px; letter-spacing: 3px; margin-top: 20px; }
-    .lab-copy p { color: var(--gray); margin: 20px 0; }
-    .lab-points { display: grid; gap: 12px; margin-top: 25px; }
-    .lab-point { border-left: 2px solid var(--gold); padding: 9px 15px; background: #151515; font-size: 13px; }
-
-    .contact-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 50px; }
-    .contact-copy p { color: var(--gray); margin: 18px 0; }
-    .contact-item { padding: 17px 0; border-bottom: 1px solid #292929; }
-    .contact-item small { color: var(--gold); text-transform: uppercase; letter-spacing: 2px; font-size: 9px; display: block; }
-    .contact-item a, .contact-item span { font-size: 14px; }
-    .contact-panel { padding: 32px; background: #111; border: 1px solid var(--line); }
-    .contact-panel h3 { font-size: 24px; margin-bottom: 13px; }
-    .contact-panel p { color: var(--gray); font-size: 13px; margin-bottom: 25px; }
-    .contact-panel .btn { width: 100%; margin-top: 10px; border: 0; cursor: pointer; }
-    .socials { display: flex; gap: 18px; margin-top: 25px; color: var(--gold); font-size: 12px; }
-
-    footer { border-top: 1px solid var(--line); padding: 28px 0; }
-    .footer-inner { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; color: var(--gray); font-size: 11px; }
-    .footer-inner strong { color: var(--gold); }
-
-    .whatsapp {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      z-index: 200;
-      background: #25D366;
-      color: #071b0e;
-      border-radius: 50px;
-      padding: 13px 18px;
-      font-size: 12px;
-      font-weight: 700;
-      box-shadow: 0 5px 25px #0008;
-    }
-
-    @media (max-width: 900px) {
-      .nav { padding: 17px 0; align-items: flex-start; flex-direction: column; }
-      .nav-links { width: 100%; overflow-x: auto; gap: 19px; padding-bottom: 5px; }
-      .nav-links a { white-space: nowrap; }
-      .hero { min-height: 570px; background-position: 60% center; }
-      .about-grid, .lab-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
-      .about-image img { height: 380px; }
-      .specialties-grid { grid-template-columns: repeat(2, 1fr); }
-      .install-grid { grid-template-columns: 1fr 1fr; }
-      section { padding: 75px 0; }
-    }
-    @media (max-width: 560px) {
-      .brand-name { font-size: 17px; }
-      .hero { min-height: 600px; background-position: 58% center; }
-      .hero-content { padding: 75px 0 100px; }
-      h1 { letter-spacing: -1.8px; }
-      .hero p { font-size: 14px; }
-      .stats { grid-template-columns: 1fr; }
-      .stat { border-right: 0; border-bottom: 1px solid var(--line); padding: 18px; }
-      .stat:last-child { border-bottom: 0; }
-      .specialties-grid, .install-grid { grid-template-columns: 1fr; }
-      .install-card, .install-card img { min-height: 280px; }
-      .image-tag { right: 0; }
-      .contact-panel { padding: 24px; }
-      .whatsapp { right: 12px; bottom: 12px; }
-    }
-  </style>
-</head>
-
-<body>
-  <div class="topline"></div>
-
-  <header>
-    <div class="container nav">
-      <a class="brand" href="#inicio" aria-label="MÉDICA ML, inicio">
-        <div class="brand-mark">ML</div>
-        <div>
-          <div class="brand-name">MÉDICA ML</div>
-          <span class="brand-sub">Alta Boutique Dental</span>
+        <div style="
+          font-family:Manrope,sans-serif;
+          font-size:clamp(30px,5vw,48px);
+          font-weight:800;
+          letter-spacing:3px;
+          color:#f8f7f3;">
+          LAB<span style="color:#c7a66a;">DENTAL</span>
         </div>
+
+        <div style="
+          color:#c7a66a;
+          font-size:10px;
+          letter-spacing:4px;
+          margin-top:12px;">
+          TECNOLOGÍA DENTAL DIGITAL
+        </div>
+
+        <div style="
+          width:70px;
+          height:1px;
+          background:#c7a66a;
+          margin:25px auto;">
+        </div>
+
+        <p>PRECISIÓN · INNOVACIÓN · CALIDAD</p>
       </a>
-
-      <nav class="nav-links" aria-label="Navegación principal">
-        <a href="#inicio">Página inicial</a>
-        <a href="#instalaciones">Nuestras instalaciones</a>
-        <a href="#especialidades">Especialidades</a>
-        <a href="#labdental">LabDental</a>
-        <a href="#contacto">Contacto</a>
-        <a class="nav-cta" href="https://wa.me/527713159521" target="_blank" rel="noopener">Agendar cita ↗</a>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero" id="inicio">
-      <div class="container">
-        <div class="hero-content">
-          <div class="eyebrow">Una nueva experiencia dental</div>
-          <h1>La precisión de la ciencia.<br><span>El arte de sonreír.</span></h1>
-          <p>Bienvenido a MÉDICA ML, un espacio donde la atención dental, la tecnología y el cuidado personal se encuentran en un entorno moderno y sofisticado.</p>
-          <div class="actions">
-            <a class="btn btn-gold" href="https://wa.me/527713159521" target="_blank" rel="noopener">AGENDA TU CITA ↗</a>
-            <a class="btn btn-outline" href="#instalaciones">CONOCE EL ESPACIO</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="stats">
-      <div class="stat"><strong>ATENCIÓN PERSONALIZADA</strong><span>Un trato pensado para ti</span></div>
-      <div class="stat"><strong>TECNOLOGÍA Y PRECISIÓN</strong><span>Innovación al servicio de tu sonrisa</span></div>
-      <div class="stat"><strong>EXPERIENCIA BOUTIQUE</strong><span>Comodidad en cada visita</span></div>
     </div>
 
-    <section id="nosotros">
-      <div class="container about-grid">
-        <div class="about-image">
-          <img src="./IMG_0295.jpeg" alt="Espacio de atención de MÉDICA ML" loading="lazy">
-          <div class="image-tag">Cuidado con intención.</div>
-        </div>
-        <div class="about-copy">
-          <div class="section-label">01 / Nuestra esencia</div>
-          <h2>Una sonrisa merece una atención <span class="gold">extraordinaria.</span></h2>
-          <p>En MÉDICA ML creemos que cada paciente merece una experiencia cercana, profesional y diseñada alrededor de sus necesidades.</p>
-          <p>Nuestro concepto boutique combina un entorno cuidado, atención personalizada y un enfoque moderno de la salud dental.</p>
-          <ul class="feature-list">
-            <li>Atención centrada en cada paciente</li>
-            <li>Espacios modernos y confortables</li>
-            <li>Información clara durante tu atención</li>
-            <li>Planes de tratamiento personalizados</li>
-          </ul>
-        </div>
+    <div class="lab-copy">
+      <div class="section-label">04 / LABDENTAL</div>
+
+      <h2>
+        Laboratorio Dental:
+        <span class="gold">precisión en cada sonrisa.</span>
+      </h2>
+
+      <p>
+        Nuestro laboratorio dental se especializa en el diseño y
+        fabricación de prótesis dentales, coronas, carillas, puentes
+        y aparatología odontológica, combinando experiencia técnica
+        con tecnología digital para ofrecer resultados precisos,
+        funcionales y estéticos.
+      </p>
+
+      <p>
+        Trabajamos con materiales de alta calidad y herramientas
+        de vanguardia, como sistemas CAD/CAM, diseño 3D, fresado
+        e impresión digital, para brindar soluciones personalizadas
+        que respondan a las necesidades de cada odontólogo y sus pacientes.
+      </p>
+
+      <div class="lab-points">
+        <div class="lab-point">Diseño y fabricación digital</div>
+        <div class="lab-point">Tecnología CAD/CAM y diseño 3D</div>
+        <div class="lab-point">Soluciones personalizadas</div>
       </div>
-    </section>
 
-    <section class="installations" id="instalaciones">
-      <div class="container">
-        <div class="section-head">
-          <div class="section-label">02 / El espacio</div>
-          <h2>Nuestras <span class="gold">instalaciones.</span></h2>
-          <p>Un entorno contemporáneo donde cada detalle busca transmitir tranquilidad, confianza y profesionalismo.</p>
-        </div>
+      <p style="color:#c7a66a; font-weight:600;">
+        Precisión, innovación y calidad en cada sonrisa.
+      </p>
 
-        <div class="install-grid">
-          <a class="install-card" href="./IMG_0295.jpeg" target="_blank" rel="noopener">
-            <img src="./IMG_0295.jpeg" alt="Instalaciones de MÉDICA ML" loading="lazy">
-            <div class="install-caption">
-              <h3>Un espacio para ti</h3>
-              <p>Conoce nuestro entorno de atención.</p>
-            </div>
-          </a>
-          <a class="install-card" href="./DSC_8583.jpeg" target="_blank" rel="noopener">
-            <img src="./DSC_8583.jpeg" alt="Área de recepción de MÉDICA ML" loading="lazy">
-            <div class="install-caption">
-              <h3>Diseño y comodidad</h3>
-              <p>Una experiencia diferente desde tu llegada.</p>
-            </div>
-          </a>
-        </div>
-
-        <p class="portfolio-note">¿Tienes un portafolio virtual de las instalaciones? Puedes enlazarlo aquí cuando tengas lista su dirección.</p>
-        <!-- Sustituye el # por la dirección de tu portafolio -->
-        <div class="actions">
-          <a class="btn btn-outline" href="#contacto">SOLICITAR INFORMACIÓN ↗</a>
-        </div>
+      <div class="actions">
+        <a class="btn btn-gold"
+           href="https://www.labdental.mx"
+           target="_blank"
+           rel="noopener">
+          VISITAR LABDENTAL.MX ↗
+        </a>
       </div>
-    </section>
-
-    <section id="especialidades">
-      <div class="container">
-        <div class="section-head">
-          <div class="section-label">03 / Atención dental</div>
-          <h2>Especialidades para cuidar <span class="gold">tu sonrisa.</span></h2>
-          <p>Conoce algunas áreas de atención dental. Los tratamientos disponibles deben confirmarse directamente con la clínica.</p>
-        </div>
-
-        <div class="specialties-grid">
-          <article class="specialty">
-            <div class="number">01 / PREVENCIÓN</div>
-            <h3>Odontología general</h3>
-            <p>Evaluación de la salud oral, prevención y orientación para el cuidado dental.</p>
-            <a href="https://wa.me/527713159521" target="_blank" rel="noopener">CONSULTAR ↗</a>
-          </article>
-          <article class="specialty">
-            <div class="number">02 / ALINEACIÓN</div>
-            <h3>Ortodoncia</h3>
-            <p>Valoración de la posición dental y orientación sobre alternativas de tratamiento.</p>
-            <a href="https://wa.me/527713159521" target="_blank" rel="noopener">CONSULTAR ↗</a>
-          </article>
-          <article class="specialty">
-            <div class="number">03 / ESTÉTICA</div>
-            <h3>Estética dental</h3>
-            <p>Opciones para mejorar la apariencia de la sonrisa de acuerdo con cada caso.</p>
-            <a href="https://wa.me/527713159521" target="_blank" rel="noopener">CONSULTAR ↗</a>
-          </article>
-          <article class="specialty">
-            <div class="number">04 / REHABILITACIÓN</div>
-            <h3>Rehabilitación oral</h3>
-            <p>Valoración de alternativas para recuperar función y estética oral.</p>
-            <a href="https://wa.me/527713159521" target="_blank" rel="noopener">CONSULTAR ↗</a>
-          </article>
-          <article class="specialty">
-            <div class="number">05 / SALUD ORAL</div>
-            <h3>Periodoncia</h3>
-            <p>Atención enfocada en las encías y los tejidos que sostienen los dientes.</p>
-            <a href="https://wa.me/527713159521" target="_blank" rel="noopener">CONSULTAR ↗</a>
-          </article>
-          <article class="specialty">
-            <div class="number">06 / TU CASO</div>
-            <h3>Valoración personalizada</h3>
-            <p>Comunícate con nosotros para conocer las opciones adecuadas para tus necesidades.</p>
-            <a href="https://wa.me/527713159521" target="_blank" rel="noopener">CONSULTAR ↗</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="lab" id="labdental">
-      <div class="container lab-grid">
-        <div class="lab-visual">
-          <div>
-            <div class="lab-symbol">ML<span style="font-size:28px">✦</span></div>
-            <p>PRECISIÓN · DETALLE · INNOVACIÓN</p>
-          </div>
-        </div>
-        <div class="lab-copy">
-          <div class="section-label">04 / LabDental</div>
-          <h2>La tecnología detrás de <span class="gold">cada detalle.</span></h2>
-          <p>Un espacio dedicado a presentar el enfoque de laboratorio dental de MÉDICA ML, sus procesos y las soluciones que ofrece.</p>
-          <p>La información específica sobre servicios, materiales, flujos digitales y tiempos de entrega puede añadirse aquí cuando esté confirmada por la clínica.</p>
-          <div class="lab-points">
-            <div class="lab-point">Procesos orientados a la precisión</div>
-            <div class="lab-point">Atención al detalle</div>
-            <div class="lab-point">Información clara sobre cada servicio</div>
-          </div>
-          <div class="actions">
-            <a class="btn btn-gold" href="https://wa.me/527713159521" target="_blank" rel="noopener">CONSULTAR LABDENTAL ↗</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contacto">
-      <div class="container">
-        <div class="section-head">
-          <div class="section-label">05 / Estamos para ayudarte</div>
-          <h2>Tu próxima sonrisa comienza <span class="gold">aquí.</span></h2>
-          <p>Contáctanos para solicitar información o consultar disponibilidad para una cita.</p>
-        </div>
-
-        <div class="contact-grid">
-          <div class="contact-copy">
-            <h3>Hablemos de tu sonrisa.</h3>
-            <p>Elige el medio que te resulte más cómodo. Nuestro equipo podrá orientarte sobre la información que necesitas.</p>
-
-            <div class="contact-item">
-              <small>Teléfono</small>
-              <a href="tel:+527717112564">771 711 2564</a>
-            </div>
-            <div class="contact-item">
-              <small>WhatsApp</small>
-              <a href="https://wa.me/527713159521" target="_blank" rel="noopener">771 315 9521 ↗</a>
-            </div>
-            <div class="contact-item">
-              <small>Redes sociales</small>
-              <span>Encuentra nuestros perfiles oficiales en redes.</span>
-            </div>
-
-            <div class="socials">
-              <!-- Sustituye estos enlaces por los perfiles oficiales -->
-              <a href="#contacto">Instagram</a>
-              <a href="#contacto">Facebook</a>
-            </div>
-          </div>
-
-          <div class="contact-panel">
-            <div class="section-label">CONTACTO DIRECTO</div>
-            <h3>¿Agendamos una cita?</h3>
-            <p>Escríbenos por WhatsApp para consultar horarios, servicios y disponibilidad.</p>
-            <a class="btn btn-gold" href="https://wa.me/527713159521?text=Hola%2C%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20de%20M%C3%89DICA%20ML." target="_blank" rel="noopener">ESCRIBIR POR WHATSAPP ↗</a>
-            <a class="btn btn-outline" href="tel:+527717112564">LLAMAR A LA CLÍNICA</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container footer-inner">
-      <div><strong>MÉDICA ML</strong> · Alta Boutique Dental</div>
-      <div>© <span id="year"></span> MÉDICA ML. Todos los derechos reservados.</div>
     </div>
-  </footer>
 
-  <a class="whatsapp" href="https://wa.me/527713159521" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">WhatsApp ↗</a>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
+  </div>
+</section>
