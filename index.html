@@ -1,53 +1,849 @@
 
-<section class="ubicaciones" id="ubicaciones">
-  <div class="contenedor centrado">
-    <div class="etiqueta">Encuentra tu clínica</div>
-    <h2>Nuestras <span class="dorado">ubicaciones</span></h2>
-    <p class="texto-seccion">
-      Estamos listos para recibirte. Elige la clínica que te quede mejor
-      y consulta la ruta en Google Maps.
-    </p>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101010">
+  <meta name="description" content="MÉDICA ML, Alta Boutique Dental. Atención odontológica y tecnología para tu sonrisa.">
+  <title>MÉDICA ML | Alta Boutique Dental</title>
 
-    <div class="ubicaciones-grid">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
-      <!-- CLÍNICA 1 -->
-      <article class="ubicacion-card">
-        <div class="ubicacion-icono" aria-hidden="true">⌖</div>
-        <span class="numero">Ubicación 01</span>
-        <h3>Clínica MÉDICA ML</h3>
-        <p>
-          Plaza Q, Blvd. Luis Donaldo Colosio,
-          Colinas de Plata, Hidalgo, México.
-        </p>
-        <a
-          class="boton"
-          href="https://maps.app.goo.gl/ntiYwqHr58auN8dQ8?g_st=ic"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Cómo llegar a la primera clínica en Google Maps">
-          Cómo llegar ↗
-        </a>
-      </article>
+  <style>
+    :root {
+      --negro: #101010;
+      --negro2: #191919;
+      --tarjeta: #202020;
+      --dorado: #c7a66a;
+      --dorado-claro: #e5cd98;
+      --blanco: #f8f6f1;
+      --gris: #bcb8b0;
+      --borde: rgba(199,166,106,.35);
+    }
 
-      <!-- CLÍNICA 2 -->
-      <article class="ubicacion-card">
-        <div class="ubicacion-icono" aria-hidden="true">⌖</div>
-        <span class="numero">Ubicación 02</span>
-        <h3>MÉDICA ML</h3>
-        <p>
-          Cto. Tulipán Sur 307, Tulipanes I,
-          42185 Pachuca de Soto, Hidalgo, México.
-        </p>
-        <a
-          class="boton"
-          href="https://maps.app.goo.gl/Acs23e9rWX7uCvRC8?g_st=ic"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Cómo llegar a la segunda clínica en Google Maps">
-          Cómo llegar ↗
-        </a>
-      </article>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+
+    body {
+      background: var(--negro);
+      color: var(--blanco);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.7;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    button, input, textarea { font: inherit; }
+
+    .contenedor {
+      width: min(1120px, 90%);
+      margin: auto;
+    }
+
+    .centrado { text-align: center; }
+
+    .dorado { color: var(--dorado); }
+
+    .seccion {
+      padding: 88px 0;
+      scroll-margin-top: 75px;
+    }
+
+    .etiqueta {
+      color: var(--dorado);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 12px;
+      margin-bottom: 12px;
+    }
+
+    h1, h2, h3 {
+      font-family: "Playfair Display", serif;
+      line-height: 1.2;
+    }
+
+    h2 {
+      font-size: clamp(30px, 4vw, 44px);
+      margin-bottom: 18px;
+    }
+
+    .texto-seccion {
+      max-width: 680px;
+      color: var(--gris);
+      margin: 0 auto;
+    }
+
+    .boton {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 13px 23px;
+      border: 1px solid var(--dorado);
+      border-radius: 3px;
+      background: var(--dorado);
+      color: #111;
+      font-weight: 700;
+      font-size: 14px;
+      transition: .25s ease;
+      cursor: pointer;
+    }
+
+    .boton:hover {
+      background: var(--dorado-claro);
+      border-color: var(--dorado-claro);
+      transform: translateY(-2px);
+    }
+
+    .boton-secundario {
+      background: transparent;
+      color: var(--dorado-claro);
+    }
+
+    .boton-secundario:hover { color: #111; }
+
+    /* ENCABEZADO */
+    .navbar {
+      position: sticky;
+      z-index: 1000;
+      top: 0;
+      background: rgba(16,16,16,.96);
+      border-bottom: 1px solid var(--borde);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav-interior {
+      min-height: 78px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .marca {
+      color: var(--dorado-claro);
+      font-family: "Playfair Display", serif;
+      font-size: 23px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      white-space: nowrap;
+    }
+
+    .marca small {
+      display: block;
+      font: 9px "DM Sans", sans-serif;
+      letter-spacing: 3px;
+      color: var(--blanco);
+      text-align: center;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      align-items: center;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #e7e3dc;
+      font-size: 13px;
+      transition: color .2s;
+    }
+
+    .nav-links a:hover { color: var(--dorado); }
+
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: 1px solid var(--borde);
+      border-radius: 3px;
+      color: var(--dorado);
+      padding: 7px 12px;
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    /* PORTADA */
+    .hero {
+      min-height: 620px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 80% 40%, rgba(199,166,106,.14), transparent 42%),
+        linear-gradient(120deg, #101010 25%, #1a1814 100%);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 380px;
+      height: 380px;
+      right: -120px;
+      bottom: -170px;
+      border: 1px solid rgba(199,166,106,.35);
+      border-radius: 50%;
+      box-shadow: 0 0 0 35px rgba(199,166,106,.03),
+                  0 0 0 70px rgba(199,166,106,.025);
+      pointer-events: none;
+    }
+
+    .hero-contenido {
+      max-width: 760px;
+      padding: 90px 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font-size: clamp(43px, 7vw, 76px);
+      margin-bottom: 24px;
+    }
+
+    .hero p {
+      color: var(--gris);
+      max-width: 590px;
+      font-size: 17px;
+      margin-bottom: 30px;
+    }
+
+    .hero-botones {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    /* TARJETAS */
+    .rejilla {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+      margin-top: 42px;
+    }
+
+    .tarjeta {
+      background: linear-gradient(145deg, #202020, #151515);
+      border: 1px solid var(--borde);
+      border-radius: 5px;
+      padding: 29px;
+      text-align: left;
+      transition: .25s ease;
+    }
+
+    .tarjeta:hover {
+      border-color: var(--dorado);
+      transform: translateY(-4px);
+    }
+
+    .tarjeta .icono {
+      font-size: 27px;
+      color: var(--dorado);
+      margin-bottom: 18px;
+    }
+
+    .tarjeta h3 {
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+
+    .tarjeta p {
+      color: var(--gris);
+      font-size: 14px;
+    }
+
+    /* UBICACIONES */
+    .ubicaciones {
+      background: linear-gradient(180deg, #151515, #101010);
+      border-top: 1px solid var(--borde);
+      border-bottom: 1px solid var(--borde);
+    }
+
+    .ubicaciones-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 26px;
+      margin-top: 42px;
+      text-align: left;
+    }
+
+    .ubicacion-card {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 34px;
+      background: linear-gradient(145deg, #242321, #151515);
+      border: 1px solid #6d5734;
+      border-radius: 5px;
+      transition: .25s ease;
+    }
+
+    .ubicacion-card:hover {
+      border-color: var(--dorado-claro);
+      transform: translateY(-4px);
+    }
+
+    .ubicacion-icono {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 54px;
+      height: 54px;
+      margin-bottom: 24px;
+      border: 1px solid var(--dorado);
+      border-radius: 50%;
+      color: var(--dorado);
+      font-size: 25px;
+    }
+
+    .ubicacion-numero {
+      color: var(--dorado);
+      font-size: 11px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+    }
+
+    .ubicacion-card h3 {
+      font-size: 25px;
+      margin: 12px 0;
+    }
+
+    .ubicacion-card p {
+      color: var(--gris);
+      font-size: 14px;
+      margin-bottom: 25px;
+    }
+
+    .ubicacion-card .boton { margin-top: auto; }
+
+    /* GALERÍA */
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 15px;
+      margin-top: 38px;
+    }
+
+    .galeria img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border: 1px solid var(--borde);
+      border-radius: 3px;
+      background: #242424;
+    }
+
+    .imagen-fallback {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: 4 / 3;
+      padding: 12px;
+      color: var(--gris);
+      background: #202020;
+      border: 1px solid var(--borde);
+      text-align: center;
+      font-size: 13px;
+    }
+
+    /* OPINIONES */
+    .opiniones { background: #171715; }
+
+    .formulario {
+      max-width: 650px;
+      margin: 35px auto 0;
+      padding: 30px;
+      background: #202020;
+      border: 1px solid var(--borde);
+      border-radius: 5px;
+      text-align: left;
+    }
+
+    .campo { margin-bottom: 18px; }
+
+    .campo label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 13px;
+      color: var(--dorado-claro);
+    }
+
+    .campo input, .campo textarea {
+      width: 100%;
+      padding: 13px;
+      color: var(--blanco);
+      background: #111;
+      border: 1px solid #514630;
+      border-radius: 3px;
+      outline: none;
+    }
+
+    .campo input:focus, .campo textarea:focus {
+      border-color: var(--dorado);
+    }
+
+    .campo textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .estrellas {
+      display: flex;
+      gap: 8px;
+      margin: 5px 0 20px;
+    }
+
+    .estrella {
+      border: 0;
+      background: transparent;
+      color: #777;
+      font-size: 30px;
+      cursor: pointer;
+    }
+
+    .estrella.activa { color: var(--dorado-claro); }
+
+    .opiniones-lista {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 35px;
+      text-align: left;
+    }
+
+    .opinion {
+      padding: 22px;
+      border: 1px solid var(--borde);
+      border-radius: 4px;
+      background: #202020;
+    }
+
+    .opinion .estrellas-texto {
+      color: var(--dorado);
+      letter-spacing: 2px;
+    }
+
+    .opinion p {
+      color: var(--gris);
+      margin: 10px 0;
+      overflow-wrap: anywhere;
+    }
+
+    .opinion strong { color: var(--blanco); }
+
+    .mensaje {
+      margin-top: 14px;
+      color: var(--dorado-claro);
+      font-size: 14px;
+    }
+
+    /* CONTACTO Y PIE */
+    .contacto-contenido {
+      max-width: 720px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .contacto-contenido p {
+      color: var(--gris);
+      margin: 12px 0 26px;
+    }
+
+    .contacto-botones {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    footer {
+      border-top: 1px solid var(--borde);
+      padding: 28px 0;
+      text-align: center;
+      color: var(--gris);
+      font-size: 12px;
+    }
+
+    .whatsapp-flotante {
+      position: fixed;
+      z-index: 900;
+      right: 20px;
+      bottom: 20px;
+      width: 56px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: #25d366;
+      color: #071b0d;
+      font-size: 25px;
+      font-weight: 700;
+      box-shadow: 0 4px 18px #0008;
+    }
+
+    @media (max-width: 900px) {
+      .menu-toggle { display: block; }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 78px;
+        left: 0;
+        right: 0;
+        padding: 20px 5%;
+        background: #111;
+        border-bottom: 1px solid var(--borde);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+      }
+
+      .nav-links.abierto { display: flex; }
+
+      .nav-links a {
+        display: block;
+        padding: 12px 0;
+      }
+
+      .rejilla { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 600px) {
+      .seccion { padding: 65px 0; }
+      .nav-interior { min-height: 72px; }
+      .nav-links { top: 72px; }
+      .marca { font-size: 19px; }
+      .hero { min-height: 540px; }
+      .hero-contenido { padding: 75px 0; }
+      .hero p { font-size: 15px; }
+      .rejilla, .ubicaciones-grid, .galeria, .opiniones-lista {
+        grid-template-columns: 1fr;
+      }
+      .ubicacion-card { padding: 26px; }
+      .formulario { padding: 22px; }
+      .whatsapp-flotante { right: 14px; bottom: 14px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="contenedor nav-interior">
+      <a class="marca" href="#inicio">
+        MÉDICA ML
+        <small>ALTA BOUTIQUE DENTAL</small>
+      </a>
+
+      <button class="menu-toggle" id="menu-toggle"
+        aria-label="Abrir menú" aria-expanded="false">☰</button>
+
+      <nav aria-label="Menú principal">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#especialidades">Especialidades</a></li>
+          <li><a href="#instalaciones">Instalaciones</a></li>
+          <li><a href="#ubicaciones">Ubicaciones</a></li>
+          <li><a href="#opiniones">Opiniones</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
     </div>
-  </div>
-</section>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="contenedor">
+        <div class="hero-contenido">
+          <div class="etiqueta">Alta Boutique Dental</div>
+          <h1>Tu sonrisa merece una atención <span class="dorado">extraordinaria.</span></h1>
+          <p>
+            En MÉDICA ML combinamos atención personalizada,
+            tecnología y cuidado profesional para acompañarte
+            en el camino hacia una sonrisa saludable.
+          </p>
+          <div class="hero-botones">
+            <a class="boton" href="https://wa.me/527713159521"
+              target="_blank" rel="noopener noreferrer">Agenda tu cita ↗</a>
+            <a class="boton boton-secundario" href="#ubicaciones">Encuentra tu clínica</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion" id="nosotros">
+      <div class="contenedor centrado">
+        <div class="etiqueta">Conoce MÉDICA ML</div>
+        <h2>Cuidado dental con <span class="dorado">distinción</span></h2>
+        <p class="texto-seccion">
+          Creamos una experiencia enfocada en el bienestar,
+          la confianza y la atención cercana. Nuestro objetivo
+          es que cada visita sea cómoda y personalizada.
+        </p>
+      </div>
+    </section>
+
+    <section class="seccion" id="especialidades">
+      <div class="contenedor centrado">
+        <div class="etiqueta">Nuestros servicios</div>
+        <h2>Especialidades <span class="dorado">dentales</span></h2>
+        <p class="texto-seccion">
+          Consulta con nuestro equipo las opciones de tratamiento
+          disponibles para tus necesidades.
+        </p>
+
+        <div class="rejilla">
+          <article class="tarjeta">
+            <div class="icono">✧</div>
+            <h3>Odontología general</h3>
+            <p>Prevención, revisión y cuidado integral de la salud bucal.</p>
+          </article>
+          <article class="tarjeta">
+            <div class="icono">◇</div>
+            <h3>Ortodoncia</h3>
+            <p>Opciones para mejorar la alineación dental y la sonrisa.</p>
+          </article>
+          <article class="tarjeta">
+            <div class="icono">✦</div>
+            <h3>Estética dental</h3>
+            <p>Alternativas estéticas personalizadas según valoración profesional.</p>
+          </article>
+          <article class="tarjeta">
+            <div class="icono">◎</div>
+            <h3>Implantología</h3>
+            <p>Valoración y opciones de rehabilitación dental.</p>
+          </article>
+          <article class="tarjeta">
+            <div class="icono">♡</div>
+            <h3>Periodoncia</h3>
+            <p>Cuidado de las encías y de los tejidos que sostienen los dientes.</p>
+          </article>
+          <article class="tarjeta">
+            <div class="icono">✧</div>
+            <h3>Atención personalizada</h3>
+            <p>Orientación para conocer el tratamiento adecuado para ti.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion" id="instalaciones">
+      <div class="contenedor centrado">
+        <div class="etiqueta">Nuestro espacio</div>
+        <h2>Instalaciones <span class="dorado">MÉDICA ML</span></h2>
+        <p class="texto-seccion">
+          Un espacio pensado para ofrecer una experiencia cómoda,
+          profesional y agradable.
+        </p>
+
+        <div class="galeria">
+          <div>
+            <img src="https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/5e770fd8-4e44-4615-bcbf-a68745ab324f.jpeg"
+              alt="Instalaciones de MÉDICA ML" loading="lazy"
+              onerror="this.outerHTML='<div class=&quot;imagen-fallback&quot;>Fotografía de instalaciones</div>'">
+          </div>
+          <div>
+            <img src="https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/cc758aa7-2d30-4563-9023-cfa9a1a6587a.jpeg"
+              alt="Espacio clínico dental" loading="lazy"
+              onerror="this.outerHTML='<div class=&quot;imagen-fallback&quot;>Fotografía de instalaciones</div>'">
+          </div>
+          <div>
+            <img src="https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/f55d05cf-065c-4c40-b070-8a62da1c67af.jpeg"
+              alt="Atención en MÉDICA ML" loading="lazy"
+              onerror="this.outerHTML='<div class=&quot;imagen-fallback&quot;>Fotografía de instalaciones</div>'">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- UBICACIONES -->
+    <section class="seccion ubicaciones" id="ubicaciones">
+      <div class="contenedor centrado">
+        <div class="etiqueta">Encuentra tu clínica</div>
+        <h2>Nuestras <span class="dorado">ubicaciones</span></h2>
+        <p class="texto-seccion">
+          Estamos listos para recibirte. Elige la clínica que te
+          quede mejor y consulta la ruta en Google Maps.
+        </p>
+
+        <div class="ubicaciones-grid">
+          <article class="ubicacion-card">
+            <div class="ubicacion-icono" aria-hidden="true">⌖</div>
+            <span class="ubicacion-numero">Ubicación 01</span>
+            <h3>Clínica MÉDICA ML</h3>
+            <p>
+              Consulta la dirección exacta, la ubicación y las
+              indicaciones de llegada directamente en Google Maps.
+            </p>
+            <a class="boton"
+              href="https://maps.app.goo.gl/ntiYwqHr58auN8dQ8?g_st=ic"
+              target="_blank" rel="noopener noreferrer">
+              Cómo llegar ↗
+            </a>
+          </article>
+
+          <article class="ubicacion-card">
+            <div class="ubicacion-icono" aria-hidden="true">⌖</div>
+            <span class="ubicacion-numero">Ubicación 02</span>
+            <h3>MÉDICA ML</h3>
+            <p>
+              Consulta la dirección exacta, la ubicación y las
+              indicaciones de llegada directamente en Google Maps.
+            </p>
+            <a class="boton"
+              href="https://maps.app.goo.gl/Acs23e9rWX7uCvRC8?g_st=ic"
+              target="_blank" rel="noopener noreferrer">
+              Cómo llegar ↗
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- OPINIONES: formulario local; no conectado a base de datos -->
+    <section class="seccion opiniones" id="opiniones">
+      <div class="contenedor centrado">
+        <div class="etiqueta">Experiencias de nuestros pacientes</div>
+        <h2>Tu opinión nos <span class="dorado">importa</span></h2>
+        <p class="texto-seccion">
+          Comparte tu experiencia con MÉDICA ML.
+        </p>
+
+        <form class="formulario" id="form-opinion">
+          <div class="campo">
+            <label for="nombre">Tu nombre</label>
+            <input id="nombre" name="nombre" maxlength="80"
+              required placeholder="Escribe tu nombre">
+          </div>
+
+          <div class="campo">
+            <label>Tu calificación</label>
+            <div class="estrellas" role="group" aria-label="Calificación">
+              <button type="button" class="estrella activa" data-valor="1" aria-label="1 estrella">★</button>
+              <button type="button" class="estrella activa" data-valor="2" aria-label="2 estrellas">★</button>
+              <button type="button" class="estrella activa" data-valor="3" aria-label="3 estrellas">★</button>
+              <button type="button" class="estrella activa" data-valor="4" aria-label="4 estrellas">★</button>
+              <button type="button" class="estrella activa" data-valor="5" aria-label="5 estrellas">★</button>
+            </div>
+          </div>
+
+          <div class="campo">
+            <label for="comentario">Tu opinión</label>
+            <textarea id="comentario" name="comentario" minlength="5"
+              maxlength="1200" required
+              placeholder="Cuéntanos cómo fue tu experiencia"></textarea>
+          </div>
+
+          <button class="boton" type="submit">Enviar opinión</button>
+          <p class="mensaje" id="mensaje-opinion" role="status">
+            Las opiniones escritas aquí no se publican ni se guardan en un servidor.
+          </p>
+        </form>
+
+        <div class="opiniones-lista" id="opiniones-lista"></div>
+      </div>
+    </section>
+
+    <section class="seccion" id="contacto">
+      <div class="contenedor contacto-contenido">
+        <div class="etiqueta">Estamos para atenderte</div>
+        <h2>Agenda tu próxima visita <span class="dorado">con nosotros</span></h2>
+        <p>
+          Escríbenos para solicitar información, consultar disponibilidad
+          o recibir orientación sobre nuestros servicios.
+        </p>
+        <div class="contacto-botones">
+          <a class="boton" href="https://wa.me/527713159521"
+            target="_blank" rel="noopener noreferrer">
+            WhatsApp · 771 315 9521
+          </a>
+          <a class="boton boton-secundario"
+            href="https://www.labdental.mx"
+            target="_blank" rel="noopener noreferrer">
+            LabDental ↗
+          </a>
+        </div>
+        <p>Teléfono: <a href="tel:+527717112564">771 711 2564</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="contenedor">
+      <p>© <span id="anio"></span> MÉDICA ML · Alta Boutique Dental</p>
+      <p>Atención profesional y personalizada.</p>
+    </div>
+  </footer>
+
+  <a class="whatsapp-flotante"
+    href="https://wa.me/527713159521"
+    target="_blank" rel="noopener noreferrer"
+    aria-label="Contactar a MÉDICA ML por WhatsApp">✆</a>
+
+  <script>
+    const menuToggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+    menuToggle.addEventListener("click", () => {
+      const abierto = navLinks.classList.toggle("abierto");
+      menuToggle.setAttribute("aria-expanded", String(abierto));
+      menuToggle.textContent = abierto ? "×" : "☰";
+    });
+
+    navLinks.querySelectorAll("a").forEach(enlace => {
+      enlace.addEventListener("click", () => {
+        navLinks.classList.remove("abierto");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.textContent = "☰";
+      });
+    });
+
+    document.getElementById("anio").textContent = new Date().getFullYear();
+
+    let calificacion = 5;
+    const botonesEstrella = [...document.querySelectorAll(".estrella")];
+
+    function actualizarEstrellas() {
+      botonesEstrella.forEach((boton, indice) => {
+        boton.classList.toggle("activa", indice < calificacion);
+        boton.setAttribute("aria-pressed", String(indice + 1 === calificacion));
+      });
+    }
+
+    botonesEstrella.forEach(boton => {
+      boton.addEventListener("click", () => {
+        calificacion = Number(boton.dataset.valor);
+        actualizarEstrellas();
+      });
+    });
+
+    /*
+      Este formulario es una demostración local.
+      No envía ni almacena opiniones en Supabase.
+      Para publicar opiniones con moderación, configura
+      la conexión real a tu proyecto de Supabase.
+    */
+    document.getElementById("form-opinion").addEventListener("submit", evento => {
+      evento.preventDefault();
+
+      const nombre = document.getElementById("nombre").value.trim();
+      const comentario = document.getElementById("comentario").value.trim();
+      const mensaje = document.getElementById("mensaje-opinion");
+
+      if (nombre.length < 2 || comentario.length < 5) {
+        mensaje.textContent = "Revisa tu nombre y tu opinión antes de continuar.";
+        return;
+      }
+
+      mensaje.textContent =
+        "La página está lista visualmente, pero el envío de opiniones requiere conectar una base de datos. Tu opinión no se ha enviado.";
+    });
+  </script>
+</body>
+</html>
