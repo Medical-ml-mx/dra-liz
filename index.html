@@ -51,26 +51,15 @@ header {
   justify-content:space-between;
   gap:24px;
 }
-.brand {
-  display:flex;
-  align-items:center;
-  gap:14px;
-  flex-shrink:0;
-}
+.brand { display:flex; align-items:center; gap:14px; flex-shrink:0; }
 .brand-logo {
   width:125px;
   height:88px;
   object-fit:contain;
   object-position:center;
   flex-shrink:0;
-  visibility:visible;
-  opacity:1;
 }
-.brand-name {
-  font:800 20px Manrope,sans-serif;
-  letter-spacing:2px;
-  white-space:nowrap;
-}
+.brand-name { font:800 20px Manrope,sans-serif; letter-spacing:2px; white-space:nowrap; }
 .brand-sub {
   display:block;
   color:var(--gold);
@@ -79,7 +68,7 @@ header {
   text-transform:uppercase;
   white-space:nowrap;
 }
-.nav-links { display:flex; align-items:center; gap:18px; }
+.nav-links { display:flex; align-items:center; gap:17px; }
 .nav-links a { color:#ddd; font-size:12px; white-space:nowrap; }
 .nav-links a:hover { color:var(--gold); }
 .nav-links .nav-cta { border:1px solid var(--gold); padding:10px 14px; color:var(--gold); }
@@ -165,9 +154,7 @@ section { padding:85px 0; }
 }
 .about-image { position:relative; min-width:0; }
 .about-image img {
-  display:block!important;
-  visibility:visible!important;
-  opacity:1!important;
+  display:block;
   width:100%;
   height:440px;
   object-fit:cover;
@@ -199,9 +186,7 @@ section { padding:85px 0; }
 }
 .gallery-card:first-child { grid-column:span 2; }
 .gallery-card img {
-  display:block!important;
-  visibility:visible!important;
-  opacity:1!important;
+  display:block;
   width:100%;
   height:290px;
   object-fit:cover;
@@ -257,6 +242,75 @@ section { padding:85px 0; }
 .lab-point { padding:12px 15px; background:#151515; border-left:2px solid var(--gold); font-size:13px; }
 .lab-tagline { color:var(--gold)!important; font-weight:600; margin-top:22px!important; }
 
+/* TESTIMONIOS */
+.testimonials { background:#090909; }
+.testimonials-heading { text-align:center; max-width:760px; margin:0 auto 42px; }
+.testimonials-heading h2 {
+  font-size:clamp(32px,5vw,48px);
+  font-weight:500;
+  letter-spacing:-1px;
+  margin-top:14px;
+}
+.testimonials-heading p { color:var(--gray); margin-top:16px; }
+.testimonial-grid {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:18px;
+}
+.testimonial-card {
+  position:relative;
+  padding:28px 25px;
+  background:linear-gradient(145deg,#171717,#0e0e0e);
+  border:1px solid var(--line);
+  min-height:230px;
+  display:flex;
+  flex-direction:column;
+}
+.testimonial-card:before {
+  content:"“";
+  position:absolute;
+  top:5px;
+  right:18px;
+  font-family:Georgia,serif;
+  font-size:62px;
+  line-height:1;
+  color:rgba(199,166,106,.28);
+}
+.testimonial-stars {
+  color:var(--gold);
+  letter-spacing:4px;
+  font-size:17px;
+  margin-bottom:17px;
+}
+.testimonial-text { color:#dedede; font-size:14px; line-height:1.8; flex:1; }
+.testimonial-author {
+  border-top:1px solid #303030;
+  margin-top:22px;
+  padding-top:16px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.testimonial-avatar {
+  width:39px;
+  height:39px;
+  flex-shrink:0;
+  border:1px solid var(--gold);
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  color:var(--gold);
+  font:600 12px Manrope,sans-serif;
+}
+.testimonial-author strong { display:block; font-size:12px; font-weight:600; }
+.testimonial-author small { display:block; color:var(--gray); font-size:10px; }
+.testimonial-note {
+  text-align:center;
+  color:#858585;
+  font-size:11px;
+  margin-top:24px;
+}
+
 .contact-copy>p { color:var(--gray); margin:17px 0; }
 .contact-item { padding:16px 0; border-bottom:1px solid #292929; }
 .contact-item small {
@@ -300,7 +354,7 @@ footer { padding:25px 0; border-top:1px solid var(--line); }
   .nav { align-items:flex-start; flex-direction:column; padding:14px 0; }
   .nav-links { width:100%; overflow-x:auto; padding-bottom:8px; gap:19px; }
   .about-grid,.lab-grid,.contact-grid { grid-template-columns:1fr; gap:35px; }
-  .specialties-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .specialties-grid,.testimonial-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
   section { padding:70px 0; }
 }
 @media(max-width:560px) {
@@ -318,7 +372,7 @@ footer { padding:25px 0; border-top:1px solid var(--line); }
   .gallery { grid-template-columns:1fr; }
   .gallery-card:first-child { grid-column:auto; }
   .gallery-card:first-child img,.gallery-card img { height:280px; }
-  .specialties-grid { grid-template-columns:1fr; }
+  .specialties-grid,.testimonial-grid { grid-template-columns:1fr; }
   .about-image img { height:350px; }
   .contact-panel { padding:22px; }
   .whatsapp { right:12px; bottom:12px; }
@@ -346,6 +400,7 @@ footer { padding:25px 0; border-top:1px solid var(--line); }
       <a href="#instalaciones">Nuestras instalaciones</a>
       <a href="#especialidades">Especialidades</a>
       <a href="#labdental">LabDental</a>
+      <a href="#testimonios">Opiniones</a>
       <a href="#contacto">Contacto</a>
       <a class="nav-cta" href="https://wa.me/527713159521" target="_blank" rel="noopener">Agendar cita</a>
     </nav>
@@ -406,32 +461,17 @@ footer { padding:25px 0; border-top:1px solid var(--line); }
       <h2>Nuestras <span class="gold">instalaciones.</span></h2>
       <p>Un entorno contemporáneo donde cada detalle busca transmitir tranquilidad, confianza y profesionalismo.</p>
     </div>
-
     <div class="gallery">
-      <a class="gallery-card"
-        href="https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/5e770fd8-4e44-4615-bcbf-a68745ab324f.jpeg"
-        target="_blank" rel="noopener">
-        <img
-          src="https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/5e770fd8-4e44-4615-bcbf-a68745ab324f.jpeg"
-          alt="Instalaciones de MÉDICA ML">
+      <a class="gallery-card" href="https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/5e770fd8-4e44-4615-bcbf-a68745ab324f.jpeg" target="_blank" rel="noopener">
+        <img src="https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/5e770fd8-4e44-4615-bcbf-a68745ab324f.jpeg" alt="Instalaciones de MÉDICA ML">
         <div class="gallery-caption"><h3>Un espacio para ti</h3><p>Diseño, comodidad y atención personalizada.</p></div>
       </a>
-
-      <a class="gallery-card"
-        href="https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/cc758aa7-2d30-4563-9023-cfa9a1a6587a.jpeg"
-        target="_blank" rel="noopener">
-        <img
-          src="https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/cc758aa7-2d30-4563-9023-cfa9a1a6587a.jpeg"
-          alt="Espacio de atención dental">
+      <a class="gallery-card" href="https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/cc758aa7-2d30-4563-9023-cfa9a1a6587a.jpeg" target="_blank" rel="noopener">
+        <img src="https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/cc758aa7-2d30-4563-9023-cfa9a1a6587a.jpeg" alt="Espacio de atención dental">
         <div class="gallery-caption"><h3>Nuestro entorno</h3><p>Atención en un ambiente confortable.</p></div>
       </a>
-
-      <a class="gallery-card"
-        href="https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/f55d05cf-065c-4c40-b070-8a62da1c67af.jpeg"
-        target="_blank" rel="noopener">
-        <img
-          src="https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/f55d05cf-065c-4c40-b070-8a62da1c67af.jpeg"
-          alt="Detalles de MÉDICA ML">
+      <a class="gallery-card" href="https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/f55d05cf-065c-4c40-b070-8a62da1c67af.jpeg" target="_blank" rel="noopener">
+        <img src="https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/f55d05cf-065c-4c40-b070-8a62da1c67af.jpeg" alt="Detalles de MÉDICA ML">
         <div class="gallery-caption"><h3>Cada detalle importa</h3><p>Una experiencia dental contemporánea.</p></div>
       </a>
     </div>
@@ -445,7 +485,6 @@ footer { padding:25px 0; border-top:1px solid var(--line); }
       <h2>Especialidades para cuidar <span class="gold">tu sonrisa.</span></h2>
       <p>Consulta con nuestro equipo qué opciones de atención están disponibles para ti.</p>
     </div>
-
     <div class="specialties-grid">
       <article class="specialty"><div class="number">01 / PREVENCIÓN</div><h3>Odontología general</h3><p>Evaluación de la salud oral, prevención y orientación para el cuidado dental.</p></article>
       <article class="specialty"><div class="number">02 / ALINEACIÓN</div><h3>Ortodoncia</h3><p>Valoración de la posición dental y orientación sobre alternativas de tratamiento.</p></article>
@@ -478,17 +517,60 @@ footer { padding:25px 0; border-top:1px solid var(--line); }
         <div class="lab-point">Soluciones personalizadas para odontólogos y pacientes</div>
       </div>
       <p class="lab-tagline">Precisión, innovación y calidad en cada sonrisa.</p>
-      <div class="actions">
-        <a class="btn btn-gold" href="https://www.labdental.mx" target="_blank" rel="noopener">VISITAR LABDENTAL.MX</a>
-      </div>
+      <div class="actions"><a class="btn btn-gold" href="https://www.labdental.mx" target="_blank" rel="noopener">VISITAR LABDENTAL.MX</a></div>
     </div>
+  </div>
+</section>
+
+<!-- SECCIÓN DE TESTIMONIOS: EDITA LOS TEXTOS CUANDO TENGAS OPINIONES REALES -->
+<section class="testimonials" id="testimonios">
+  <div class="container">
+    <div class="testimonials-heading">
+      <div class="section-label">05 / Experiencias</div>
+      <h2>Sonrisas que cuentan <span class="gold">historias.</span></h2>
+      <p>La confianza de nuestros pacientes es parte esencial de nuestra filosofía de atención.</p>
+    </div>
+
+    <div class="testimonial-grid">
+      <!-- TESTIMONIO 1: sustituye el texto y el nombre por un testimonio real -->
+      <article class="testimonial-card">
+        <div class="testimonial-stars" aria-label="5 estrellas">★★★★★</div>
+        <p class="testimonial-text">Aquí puedes agregar la opinión real de un paciente sobre su experiencia en MÉDICA ML.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">P1</div>
+          <div><strong>Nombre o iniciales</strong><small>Paciente de MÉDICA ML</small></div>
+        </div>
+      </article>
+
+      <!-- TESTIMONIO 2 -->
+      <article class="testimonial-card">
+        <div class="testimonial-stars" aria-label="5 estrellas">★★★★★</div>
+        <p class="testimonial-text">Escribe aquí otro comentario auténtico sobre la atención, el trato recibido o las instalaciones.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">P2</div>
+          <div><strong>Nombre o iniciales</strong><small>Paciente de MÉDICA ML</small></div>
+        </div>
+      </article>
+
+      <!-- TESTIMONIO 3 -->
+      <article class="testimonial-card">
+        <div class="testimonial-stars" aria-label="5 estrellas">★★★★★</div>
+        <p class="testimonial-text">Agrega una tercera experiencia real cuando tengas autorización para compartirla.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">P3</div>
+          <div><strong>Nombre o iniciales</strong><small>Paciente de MÉDICA ML</small></div>
+        </div>
+      </article>
+    </div>
+
+    <p class="testimonial-note">Los testimonios deben corresponder a experiencias reales y compartirse con autorización de cada paciente.</p>
   </div>
 </section>
 
 <section id="contacto">
   <div class="container">
     <div class="section-head">
-      <div class="section-label">05 / Estamos para ayudarte</div>
+      <div class="section-label">06 / Estamos para ayudarte</div>
       <h2>Tu próxima sonrisa comienza <span class="gold">aquí.</span></h2>
       <p>Contáctanos para solicitar información o consultar disponibilidad para una cita.</p>
     </div>
