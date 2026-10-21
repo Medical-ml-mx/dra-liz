@@ -22,7 +22,7 @@
   --line:rgba(199,166,106,.27);
 }
 * { box-sizing:border-box; margin:0; padding:0; }
-html { scroll-behavior:smooth; scroll-padding-top:120px; }
+html { scroll-behavior:smooth; scroll-padding-top:130px; }
 body {
   background:var(--black);
   color:var(--white);
@@ -45,29 +45,41 @@ header {
   backdrop-filter:blur(15px);
 }
 .nav {
-  min-height:95px;
+  min-height:110px;
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:24px;
 }
-.brand { display:flex; align-items:center; gap:13px; flex-shrink:0; }
+.brand {
+  display:flex;
+  align-items:center;
+  gap:14px;
+  flex-shrink:0;
+}
 .brand-logo {
-  width:70px;
-  height:70px;
+  width:125px;
+  height:88px;
   object-fit:contain;
+  object-position:center;
+  flex-shrink:0;
   visibility:visible;
   opacity:1;
 }
-.brand-name { font:800 20px Manrope,sans-serif; letter-spacing:2px; }
+.brand-name {
+  font:800 20px Manrope,sans-serif;
+  letter-spacing:2px;
+  white-space:nowrap;
+}
 .brand-sub {
   display:block;
   color:var(--gold);
   font-size:10px;
   letter-spacing:2px;
   text-transform:uppercase;
+  white-space:nowrap;
 }
-.nav-links { display:flex; align-items:center; gap:20px; }
+.nav-links { display:flex; align-items:center; gap:18px; }
 .nav-links a { color:#ddd; font-size:12px; white-space:nowrap; }
 .nav-links a:hover { color:var(--gold); }
 .nav-links .nav-cta { border:1px solid var(--gold); padding:10px 14px; color:var(--gold); }
@@ -292,7 +304,10 @@ footer { padding:25px 0; border-top:1px solid var(--line); }
   section { padding:70px 0; }
 }
 @media(max-width:560px) {
-  .brand-logo { width:55px; height:55px; }
+  .brand-logo { width:125px; height:75px; }
+  .brand { gap:10px; }
+  .brand-name { font-size:19px; }
+  .brand-sub { font-size:9px; letter-spacing:1.5px; }
   .hero { min-height:590px; }
   .hero-content { padding:70px 0; }
   h1 { letter-spacing:-1.5px; }
@@ -399,10 +414,7 @@ footer { padding:25px 0; border-top:1px solid var(--line); }
         <img
           src="https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/5e770fd8-4e44-4615-bcbf-a68745ab324f.jpeg"
           alt="Instalaciones de MÉDICA ML">
-        <div class="gallery-caption">
-          <h3>Un espacio para ti</h3>
-          <p>Diseño, comodidad y atención personalizada.</p>
-        </div>
+        <div class="gallery-caption"><h3>Un espacio para ti</h3><p>Diseño, comodidad y atención personalizada.</p></div>
       </a>
 
       <a class="gallery-card"
@@ -411,10 +423,7 @@ footer { padding:25px 0; border-top:1px solid var(--line); }
         <img
           src="https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/cc758aa7-2d30-4563-9023-cfa9a1a6587a.jpeg"
           alt="Espacio de atención dental">
-        <div class="gallery-caption">
-          <h3>Nuestro entorno</h3>
-          <p>Atención en un ambiente confortable.</p>
-        </div>
+        <div class="gallery-caption"><h3>Nuestro entorno</h3><p>Atención en un ambiente confortable.</p></div>
       </a>
 
       <a class="gallery-card"
@@ -423,10 +432,7 @@ footer { padding:25px 0; border-top:1px solid var(--line); }
         <img
           src="https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/f55d05cf-065c-4c40-b070-8a62da1c67af.jpeg"
           alt="Detalles de MÉDICA ML">
-        <div class="gallery-caption">
-          <h3>Cada detalle importa</h3>
-          <p>Una experiencia dental contemporánea.</p>
-        </div>
+        <div class="gallery-caption"><h3>Cada detalle importa</h3><p>Una experiencia dental contemporánea.</p></div>
       </a>
     </div>
   </div>
@@ -441,36 +447,12 @@ footer { padding:25px 0; border-top:1px solid var(--line); }
     </div>
 
     <div class="specialties-grid">
-      <article class="specialty">
-        <div class="number">01 / PREVENCIÓN</div>
-        <h3>Odontología general</h3>
-        <p>Evaluación de la salud oral, prevención y orientación para el cuidado dental.</p>
-      </article>
-      <article class="specialty">
-        <div class="number">02 / ALINEACIÓN</div>
-        <h3>Ortodoncia</h3>
-        <p>Valoración de la posición dental y orientación sobre alternativas de tratamiento.</p>
-      </article>
-      <article class="specialty">
-        <div class="number">03 / ESTÉTICA</div>
-        <h3>Estética dental</h3>
-        <p>Opciones para mejorar la apariencia de la sonrisa de acuerdo con cada caso.</p>
-      </article>
-      <article class="specialty">
-        <div class="number">04 / REHABILITACIÓN</div>
-        <h3>Rehabilitación oral</h3>
-        <p>Valoración de alternativas para recuperar función y estética oral.</p>
-      </article>
-      <article class="specialty">
-        <div class="number">05 / SALUD ORAL</div>
-        <h3>Periodoncia</h3>
-        <p>Atención enfocada en las encías y los tejidos que sostienen los dientes.</p>
-      </article>
-      <article class="specialty">
-        <div class="number">06 / TU CASO</div>
-        <h3>Valoración personalizada</h3>
-        <p>Conoce las opciones de atención de acuerdo con tus necesidades.</p>
-      </article>
+      <article class="specialty"><div class="number">01 / PREVENCIÓN</div><h3>Odontología general</h3><p>Evaluación de la salud oral, prevención y orientación para el cuidado dental.</p></article>
+      <article class="specialty"><div class="number">02 / ALINEACIÓN</div><h3>Ortodoncia</h3><p>Valoración de la posición dental y orientación sobre alternativas de tratamiento.</p></article>
+      <article class="specialty"><div class="number">03 / ESTÉTICA</div><h3>Estética dental</h3><p>Opciones para mejorar la apariencia de la sonrisa de acuerdo con cada caso.</p></article>
+      <article class="specialty"><div class="number">04 / REHABILITACIÓN</div><h3>Rehabilitación oral</h3><p>Valoración de alternativas para recuperar función y estética oral.</p></article>
+      <article class="specialty"><div class="number">05 / SALUD ORAL</div><h3>Periodoncia</h3><p>Atención enfocada en las encías y los tejidos que sostienen los dientes.</p></article>
+      <article class="specialty"><div class="number">06 / TU CASO</div><h3>Valoración personalizada</h3><p>Conoce las opciones de atención de acuerdo con tus necesidades.</p></article>
     </div>
   </div>
 </section>
@@ -514,14 +496,8 @@ footer { padding:25px 0; border-top:1px solid var(--line); }
       <div class="contact-copy">
         <h3>Hablemos de tu sonrisa.</h3>
         <p>Elige el medio que te resulte más cómodo para comunicarte con nosotros.</p>
-        <div class="contact-item">
-          <small>Teléfono</small>
-          <a href="tel:+527717112564">771 711 2564</a>
-        </div>
-        <div class="contact-item">
-          <small>WhatsApp</small>
-          <a href="https://wa.me/527713159521" target="_blank" rel="noopener">771 315 9521</a>
-        </div>
+        <div class="contact-item"><small>Teléfono</small><a href="tel:+527717112564">771 711 2564</a></div>
+        <div class="contact-item"><small>WhatsApp</small><a href="https://wa.me/527713159521" target="_blank" rel="noopener">771 315 9521</a></div>
       </div>
       <div class="contact-panel">
         <div class="section-label">CONTACTO DIRECTO</div>
