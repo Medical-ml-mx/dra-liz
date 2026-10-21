@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#101010">
-  <meta name="description" content="MÉDICA ML, Alta Boutique Dental. Atención odontológica y tecnología para tu sonrisa.">
+  <meta name="description" content="MÉDICA ML — Alta Boutique Dental. Atención odontológica personalizada.">
   <title>MÉDICA ML | Alta Boutique Dental</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,9 +24,16 @@
       --borde: rgba(199,166,106,.35);
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
 
     body {
       background: var(--negro);
@@ -35,22 +42,36 @@
       line-height: 1.7;
     }
 
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
-    button, input, textarea { font: inherit; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    button, input, textarea {
+      font: inherit;
+    }
 
     .contenedor {
       width: min(1120px, 90%);
       margin: auto;
     }
 
-    .centrado { text-align: center; }
+    .centrado {
+      text-align: center;
+    }
 
-    .dorado { color: var(--dorado); }
+    .dorado {
+      color: var(--dorado);
+    }
 
     .seccion {
       padding: 88px 0;
-      scroll-margin-top: 75px;
+      scroll-margin-top: 78px;
     }
 
     .etiqueta {
@@ -89,6 +110,7 @@
       color: #111;
       font-weight: 700;
       font-size: 14px;
+      text-align: center;
       transition: .25s ease;
       cursor: pointer;
     }
@@ -104,14 +126,16 @@
       color: var(--dorado-claro);
     }
 
-    .boton-secundario:hover { color: #111; }
+    .boton-secundario:hover {
+      color: #111;
+    }
 
     /* ENCABEZADO */
     .navbar {
       position: sticky;
       z-index: 1000;
       top: 0;
-      background: rgba(16,16,16,.96);
+      background: rgba(16,16,16,.97);
       border-bottom: 1px solid var(--borde);
       backdrop-filter: blur(14px);
     }
@@ -143,7 +167,7 @@
 
     .nav-links {
       display: flex;
-      gap: 22px;
+      gap: 20px;
       align-items: center;
       list-style: none;
     }
@@ -154,7 +178,9 @@
       transition: color .2s;
     }
 
-    .nav-links a:hover { color: var(--dorado); }
+    .nav-links a:hover {
+      color: var(--dorado);
+    }
 
     .menu-toggle {
       display: none;
@@ -298,7 +324,7 @@
       border: 1px solid var(--dorado);
       border-radius: 50%;
       color: var(--dorado);
-      font-size: 25px;
+      font-size: 26px;
     }
 
     .ubicacion-numero {
@@ -319,7 +345,9 @@
       margin-bottom: 25px;
     }
 
-    .ubicacion-card .boton { margin-top: auto; }
+    .ubicacion-card .boton {
+      margin-top: auto;
+    }
 
     /* GALERÍA */
     .galeria {
@@ -352,7 +380,9 @@
     }
 
     /* OPINIONES */
-    .opiniones { background: #171715; }
+    .opiniones {
+      background: #171715;
+    }
 
     .formulario {
       max-width: 650px;
@@ -364,7 +394,9 @@
       text-align: left;
     }
 
-    .campo { margin-bottom: 18px; }
+    .campo {
+      margin-bottom: 18px;
+    }
 
     .campo label {
       display: block;
@@ -373,7 +405,8 @@
       color: var(--dorado-claro);
     }
 
-    .campo input, .campo textarea {
+    .campo input,
+    .campo textarea {
       width: 100%;
       padding: 13px;
       color: var(--blanco);
@@ -383,7 +416,8 @@
       outline: none;
     }
 
-    .campo input:focus, .campo textarea:focus {
+    .campo input:focus,
+    .campo textarea:focus {
       border-color: var(--dorado);
     }
 
@@ -406,7 +440,9 @@
       cursor: pointer;
     }
 
-    .estrella.activa { color: var(--dorado-claro); }
+    .estrella.activa {
+      color: var(--dorado-claro);
+    }
 
     .opiniones-lista {
       display: grid;
@@ -434,7 +470,9 @@
       overflow-wrap: anywhere;
     }
 
-    .opinion strong { color: var(--blanco); }
+    .opinion strong {
+      color: var(--blanco);
+    }
 
     .mensaje {
       margin-top: 14px;
@@ -442,7 +480,7 @@
       font-size: 14px;
     }
 
-    /* CONTACTO Y PIE */
+    /* CONTACTO */
     .contacto-contenido {
       max-width: 720px;
       margin: auto;
@@ -487,8 +525,11 @@
       box-shadow: 0 4px 18px #0008;
     }
 
+    /* RESPONSIVE */
     @media (max-width: 900px) {
-      .menu-toggle { display: block; }
+      .menu-toggle {
+        display: block;
+      }
 
       .nav-links {
         display: none;
@@ -504,30 +545,68 @@
         gap: 0;
       }
 
-      .nav-links.abierto { display: flex; }
+      .nav-links.abierto {
+        display: flex;
+      }
 
       .nav-links a {
         display: block;
         padding: 12px 0;
       }
 
-      .rejilla { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .rejilla {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
     }
 
     @media (max-width: 600px) {
-      .seccion { padding: 65px 0; }
-      .nav-interior { min-height: 72px; }
-      .nav-links { top: 72px; }
-      .marca { font-size: 19px; }
-      .hero { min-height: 540px; }
-      .hero-contenido { padding: 75px 0; }
-      .hero p { font-size: 15px; }
-      .rejilla, .ubicaciones-grid, .galeria, .opiniones-lista {
+      .seccion {
+        padding: 65px 0;
+      }
+
+      .nav-interior {
+        min-height: 72px;
+      }
+
+      .nav-links {
+        top: 72px;
+      }
+
+      .marca {
+        font-size: 19px;
+      }
+
+      .hero {
+        min-height: 540px;
+      }
+
+      .hero-contenido {
+        padding: 75px 0;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .rejilla,
+      .ubicaciones-grid,
+      .galeria,
+      .opiniones-lista {
         grid-template-columns: 1fr;
       }
-      .ubicacion-card { padding: 26px; }
-      .formulario { padding: 22px; }
-      .whatsapp-flotante { right: 14px; bottom: 14px; }
+
+      .ubicacion-card {
+        padding: 26px;
+      }
+
+      .formulario {
+        padding: 22px;
+      }
+
+      .whatsapp-flotante {
+        right: 14px;
+        bottom: 14px;
+      }
     }
   </style>
 </head>
@@ -558,6 +637,7 @@
   </header>
 
   <main>
+    <!-- PORTADA -->
     <section class="hero" id="inicio">
       <div class="contenedor">
         <div class="hero-contenido">
@@ -577,6 +657,7 @@
       </div>
     </section>
 
+    <!-- NOSOTROS -->
     <section class="seccion" id="nosotros">
       <div class="contenedor centrado">
         <div class="etiqueta">Conoce MÉDICA ML</div>
@@ -589,6 +670,7 @@
       </div>
     </section>
 
+    <!-- ESPECIALIDADES -->
     <section class="seccion" id="especialidades">
       <div class="contenedor centrado">
         <div class="etiqueta">Nuestros servicios</div>
@@ -604,26 +686,31 @@
             <h3>Odontología general</h3>
             <p>Prevención, revisión y cuidado integral de la salud bucal.</p>
           </article>
+
           <article class="tarjeta">
             <div class="icono">◇</div>
             <h3>Ortodoncia</h3>
             <p>Opciones para mejorar la alineación dental y la sonrisa.</p>
           </article>
+
           <article class="tarjeta">
             <div class="icono">✦</div>
             <h3>Estética dental</h3>
             <p>Alternativas estéticas personalizadas según valoración profesional.</p>
           </article>
+
           <article class="tarjeta">
             <div class="icono">◎</div>
             <h3>Implantología</h3>
             <p>Valoración y opciones de rehabilitación dental.</p>
           </article>
+
           <article class="tarjeta">
             <div class="icono">♡</div>
             <h3>Periodoncia</h3>
             <p>Cuidado de las encías y de los tejidos que sostienen los dientes.</p>
           </article>
+
           <article class="tarjeta">
             <div class="icono">✧</div>
             <h3>Atención personalizada</h3>
@@ -633,6 +720,7 @@
       </div>
     </section>
 
+    <!-- INSTALACIONES -->
     <section class="seccion" id="instalaciones">
       <div class="contenedor centrado">
         <div class="etiqueta">Nuestro espacio</div>
@@ -643,21 +731,23 @@
         </p>
 
         <div class="galeria">
-          <div>
-            <img src="https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/5e770fd8-4e44-4615-bcbf-a68745ab324f.jpeg"
-              alt="Instalaciones de MÉDICA ML" loading="lazy"
-              onerror="this.outerHTML='<div class=&quot;imagen-fallback&quot;>Fotografía de instalaciones</div>'">
-          </div>
-          <div>
-            <img src="https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/cc758aa7-2d30-4563-9023-cfa9a1a6587a.jpeg"
-              alt="Espacio clínico dental" loading="lazy"
-              onerror="this.outerHTML='<div class=&quot;imagen-fallback&quot;>Fotografía de instalaciones</div>'">
-          </div>
-          <div>
-            <img src="https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/f55d05cf-065c-4c40-b070-8a62da1c67af.jpeg"
-              alt="Atención en MÉDICA ML" loading="lazy"
-              onerror="this.outerHTML='<div class=&quot;imagen-fallback&quot;>Fotografía de instalaciones</div>'">
-          </div>
+          <img
+            src="https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/5e770fd8-4e44-4615-bcbf-a68745ab324f.jpeg"
+            alt="Instalaciones de MÉDICA ML"
+            loading="lazy"
+            onerror="this.outerHTML='<div class=&quot;imagen-fallback&quot;>Fotografía de instalaciones</div>'">
+
+          <img
+            src="https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/cc758aa7-2d30-4563-9023-cfa9a1a6587a.jpeg"
+            alt="Espacio clínico dental"
+            loading="lazy"
+            onerror="this.outerHTML='<div class=&quot;imagen-fallback&quot;>Fotografía de instalaciones</div>'">
+
+          <img
+            src="https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/f55d05cf-065c-4c40-b070-8a62da1c67af.jpeg"
+            alt="Atención en MÉDICA ML"
+            loading="lazy"
+            onerror="this.outerHTML='<div class=&quot;imagen-fallback&quot;>Fotografía de instalaciones</div>'">
         </div>
       </div>
     </section>
@@ -673,6 +763,7 @@
         </p>
 
         <div class="ubicaciones-grid">
+
           <article class="ubicacion-card">
             <div class="ubicacion-icono" aria-hidden="true">⌖</div>
             <span class="ubicacion-numero">Ubicación 01</span>
@@ -702,11 +793,12 @@
               Cómo llegar ↗
             </a>
           </article>
+
         </div>
       </div>
     </section>
 
-    <!-- OPINIONES: formulario local; no conectado a base de datos -->
+    <!-- OPINIONES -->
     <section class="seccion opiniones" id="opiniones">
       <div class="contenedor centrado">
         <div class="etiqueta">Experiencias de nuestros pacientes</div>
@@ -735,14 +827,15 @@
 
           <div class="campo">
             <label for="comentario">Tu opinión</label>
-            <textarea id="comentario" name="comentario" minlength="5"
-              maxlength="1200" required
+            <textarea id="comentario" name="comentario"
+              minlength="5" maxlength="1200" required
               placeholder="Cuéntanos cómo fue tu experiencia"></textarea>
           </div>
 
           <button class="boton" type="submit">Enviar opinión</button>
+
           <p class="mensaje" id="mensaje-opinion" role="status">
-            Las opiniones escritas aquí no se publican ni se guardan en un servidor.
+            Las opiniones requieren conexión con el servidor para enviarse.
           </p>
         </form>
 
@@ -750,6 +843,7 @@
       </div>
     </section>
 
+    <!-- CONTACTO -->
     <section class="seccion" id="contacto">
       <div class="contenedor contacto-contenido">
         <div class="etiqueta">Estamos para atenderte</div>
@@ -758,18 +852,25 @@
           Escríbenos para solicitar información, consultar disponibilidad
           o recibir orientación sobre nuestros servicios.
         </p>
+
         <div class="contacto-botones">
-          <a class="boton" href="https://wa.me/527713159521"
+          <a class="boton"
+            href="https://wa.me/527713159521"
             target="_blank" rel="noopener noreferrer">
             WhatsApp · 771 315 9521
           </a>
+
           <a class="boton boton-secundario"
             href="https://www.labdental.mx"
             target="_blank" rel="noopener noreferrer">
             LabDental ↗
           </a>
         </div>
-        <p>Teléfono: <a href="tel:+527717112564">771 711 2564</a></p>
+
+        <p>
+          Teléfono:
+          <a href="tel:+527717112564">771 711 2564</a>
+        </p>
       </div>
     </section>
   </main>
@@ -787,6 +888,7 @@
     aria-label="Contactar a MÉDICA ML por WhatsApp">✆</a>
 
   <script>
+    // Menú para dispositivos móviles
     const menuToggle = document.getElementById("menu-toggle");
     const navLinks = document.getElementById("nav-links");
 
@@ -804,15 +906,20 @@
       });
     });
 
+    // Año automático
     document.getElementById("anio").textContent = new Date().getFullYear();
 
+    // Selector de estrellas
     let calificacion = 5;
     const botonesEstrella = [...document.querySelectorAll(".estrella")];
 
     function actualizarEstrellas() {
       botonesEstrella.forEach((boton, indice) => {
         boton.classList.toggle("activa", indice < calificacion);
-        boton.setAttribute("aria-pressed", String(indice + 1 === calificacion));
+        boton.setAttribute(
+          "aria-pressed",
+          String(indice + 1 === calificacion)
+        );
       });
     }
 
@@ -823,12 +930,7 @@
       });
     });
 
-    /*
-      Este formulario es una demostración local.
-      No envía ni almacena opiniones en Supabase.
-      Para publicar opiniones con moderación, configura
-      la conexión real a tu proyecto de Supabase.
-    */
+    // El formulario no envía datos hasta configurar el backend.
     document.getElementById("form-opinion").addEventListener("submit", evento => {
       evento.preventDefault();
 
@@ -837,12 +939,13 @@
       const mensaje = document.getElementById("mensaje-opinion");
 
       if (nombre.length < 2 || comentario.length < 5) {
-        mensaje.textContent = "Revisa tu nombre y tu opinión antes de continuar.";
+        mensaje.textContent =
+          "Revisa tu nombre y tu opinión antes de continuar.";
         return;
       }
 
       mensaje.textContent =
-        "La página está lista visualmente, pero el envío de opiniones requiere conectar una base de datos. Tu opinión no se ha enviado.";
+        "El formulario visual está listo, pero aún necesita conexión con Supabase para guardar y moderar las opiniones. No se ha enviado tu comentario.";
     });
   </script>
 </body>
