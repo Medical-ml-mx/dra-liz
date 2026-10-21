@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#111111">
-<meta name="description" content="MÉDICA ML Alta Boutique Dental. Diseño de sonrisa, turismo dental y atención odontológica especializada.">
+<meta name="description" content="MÉDICA ML Alta Boutique Dental. Ortodoncia, endodoncia, periodoncia, implantología, diagnóstico por imagen y fotografía dental.">
 <title>MÉDICA ML | Alta Boutique Dental</title>
 
 <style>
@@ -38,7 +38,7 @@ header {position:sticky;top:0;z-index:100;background:rgba(17,17,17,.97);border-b
 .nav-links {display:flex;align-items:center;gap:18px;flex-wrap:wrap;font-size:13px}
 .nav-links a:hover {color:var(--dorado)}
 .nav-cita {padding:8px 12px;border:1px solid var(--dorado);color:var(--dorado)}
-.menu-boton {display:none;background:transparent;border:1px solid #66512f;color:var(--dorado);padding:8px 12px;font-size:22px}
+.menu-boton {display:none;background:transparent;border:1px solid #66512f;color:var(--dorado);padding:8px 12px;font-size:22px;cursor:pointer}
 
 .hero {
   min-height:620px;
@@ -64,11 +64,25 @@ header {position:sticky;top:0;z-index:100;background:rgba(17,17,17,.97);border-b
 
 .fondo-alterno {background:#171717}
 .rejilla {display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:38px}
-.tarjeta {background:#1c1c1c;padding:27px 23px;border:1px solid #37322a;border-radius:5px;transition:.2s}
+.tarjeta {background:#1c1c1c;padding:25px 23px;border:1px solid #37322a;border-radius:5px;transition:.2s;overflow:hidden}
 .tarjeta:hover {border-color:var(--dorado);transform:translateY(-3px)}
 .tarjeta .numero {color:var(--dorado);font-size:12px;letter-spacing:2px}
-.tarjeta h3 {font-size:20px;margin:12px 0}
+.tarjeta h3 {font-size:20px;margin:15px 0 10px}
 .tarjeta p {color:var(--gris);font-size:14px}
+.imagen-especialidad {
+  width:100%;
+  height:190px;
+  margin:0 auto 20px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  background:radial-gradient(ellipse at center,#302a20 0%,#191919 72%);
+  border:1px solid #4a3b26;
+  border-radius:4px;
+}
+.imagen-especialidad svg {width:100%;height:100%;max-width:300px}
+.tarjeta .boton {margin-top:20px;font-size:13px;padding:10px 15px}
 
 .laboratorio {background:linear-gradient(135deg,#171717,#222019);border-block:1px solid #4b3d25}
 .lista-lab {list-style:none;display:grid;gap:10px;margin:20px 0 27px}
@@ -138,11 +152,13 @@ footer strong {color:var(--dorado)}
   section {padding:58px 0}
   .hero {min-height:550px}
   .hero p {font-size:16px}
+  .hero-botones .boton {max-width:100%}
   .rejilla,.galeria,.contacto-grid,.lista-opiniones,.ubicaciones-grid {grid-template-columns:1fr}
   .galeria img {height:260px}
   .beneficios {grid-template-columns:1fr}
   .form-opinion {padding:20px}
   .ubicacion-card {padding:24px}
+  .imagen-especialidad {height:210px}
   .whatsapp-flotante {bottom:12px;right:10px}
 }
 </style>
@@ -202,29 +218,117 @@ footer strong {color:var(--dorado)}
   </div>
 </section>
 
+<!-- ESPECIALIDADES ACTUALIZADAS -->
 <section class="fondo-alterno" id="especialidades">
   <div class="contenedor centrado">
     <div class="etiqueta">Atención especializada</div>
     <h2>Nuestras <span class="dorado">especialidades</span></h2>
-    <p class="texto-seccion">Atención odontológica integral con opciones de tratamiento de acuerdo con tus necesidades y valoración profesional.</p>
+    <p class="texto-seccion">Atención odontológica especializada, diagnóstico preciso y opciones de tratamiento de acuerdo con tu valoración clínica.</p>
+
     <div class="rejilla">
-      <article class="tarjeta"><span class="numero">01 · PREVENCIÓN</span><h3>Odontología integral</h3><p>Valoración, prevención y cuidado general de la salud bucal.</p></article>
-      <article class="tarjeta"><span class="numero">02 · SONRISA</span><h3>Estética dental</h3><p>Opciones para mejorar la apariencia de la sonrisa con un plan individualizado.</p></article>
-      <article class="tarjeta"><span class="numero">03 · REHABILITACIÓN</span><h3>Rehabilitación oral</h3><p>Alternativas para recuperar función, comodidad y estética dental.</p></article>
-      <article class="tarjeta"><span class="numero">04 · ALINEACIÓN</span><h3>Ortodoncia</h3><p>Valoración y opciones para la alineación dental y la mordida.</p></article>
-      <article class="tarjeta"><span class="numero">05 · DIAGNÓSTICO</span><h3>Diagnóstico por imagen</h3><p>Estudios radiográficos indicados por el profesional tratante.</p></article>
-      <article class="tarjeta"><span class="numero">06 · TECNOLOGÍA</span><h3>Flujo digital</h3><p>Herramientas digitales que apoyan la planeación de restauraciones.</p></article>
+
+      <!-- ORTODONCIA: ILUSTRACIÓN DE BRACKETS -->
+      <article class="tarjeta">
+        <span class="numero">01 · ALINEACIÓN</span>
+        <div class="imagen-especialidad">
+          <svg viewBox="0 0 300 190" role="img" aria-label="Ilustración dental de brackets de ortodoncia">
+            <defs>
+              <linearGradient id="dienteOrt" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#fffdf5"/>
+                <stop offset="1" stop-color="#d4cbb8"/>
+              </linearGradient>
+            </defs>
+            <path d="M72 48 Q150 15 228 48 L220 119 Q211 158 185 151 L166 130 L150 145 L134 130 L115 151 Q89 158 80 119Z"
+              fill="url(#dienteOrt)" stroke="#b8a989" stroke-width="2"/>
+            <path d="M80 93 Q150 85 220 93" fill="none" stroke="#c8a96a" stroke-width="4"/>
+            <g fill="#e5e2d9" stroke="#8d8a81" stroke-width="2">
+              <rect x="88" y="76" width="25" height="32" rx="4"/>
+              <rect x="122" y="72" width="25" height="32" rx="4"/>
+              <rect x="155" y="72" width="25" height="32" rx="4"/>
+              <rect x="189" y="76" width="25" height="32" rx="4"/>
+            </g>
+            <g fill="#c8a96a">
+              <circle cx="100" cy="92" r="3.5"/>
+              <circle cx="134" cy="88" r="3.5"/>
+              <circle cx="167" cy="88" r="3.5"/>
+              <circle cx="201" cy="92" r="3.5"/>
+            </g>
+            <path d="M78 92 Q150 83 222 92" fill="none" stroke="#f4e9d0" stroke-width="2"/>
+          </svg>
+        </div>
+        <h3>Ortodoncia</h3>
+        <p>Valoración y opciones de tratamiento para mejorar la alineación dental y la mordida.</p>
+        <a class="boton boton-secundario" href="https://wa.me/527713159521?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20ortodoncia." target="_blank" rel="noopener noreferrer">Solicitar información</a>
+      </article>
+
+      <!-- ENDODONCIA: DIENTE Y LIMA ENDODÓNTICA -->
+      <article class="tarjeta">
+        <span class="numero">02 · TRATAMIENTO INTERNO</span>
+        <div class="imagen-especialidad">
+          <svg viewBox="0 0 300 190" role="img" aria-label="Ilustración de un diente con una lima endodóntica">
+            <defs>
+              <linearGradient id="dienteEndo" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#fffdf5"/>
+                <stop offset="1" stop-color="#d4cbb8"/>
+              </linearGradient>
+            </defs>
+            <path d="M80 35 Q115 18 145 37 Q176 18 208 35 Q230 51 214 83 L194 145 Q186 165 174 143 L153 92 Q150 84 145 92 L124 143 Q112 165 103 145 L83 83 Q67 52 80 35Z"
+              fill="url(#dienteEndo)" stroke="#b8a989" stroke-width="2"/>
+            <path d="M145 45 L145 88 L127 139 M153 45 L153 88 L174 139"
+              fill="none" stroke="#b45e45" stroke-width="4" stroke-linecap="round"/>
+            <path d="M246 24 L161 95 L153 151" fill="none" stroke="#c8a96a" stroke-width="5" stroke-linecap="round"/>
+            <path d="M246 24 L257 15 M246 24 L250 38" fill="none" stroke="#e5cd98" stroke-width="5" stroke-linecap="round"/>
+            <path d="M161 95 L153 151" fill="none" stroke="#f8f5ee" stroke-width="1.5" stroke-dasharray="3 4"/>
+          </svg>
+        </div>
+        <h3>Endodoncia</h3>
+        <p>Evaluación y tratamiento de los tejidos internos del diente cuando está indicado.</p>
+        <a class="boton boton-secundario" href="https://wa.me/527713159521?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20endodoncia." target="_blank" rel="noopener noreferrer">Solicitar información</a>
+      </article>
+
+      <!-- PERIODONCIA E IMPLANTOLOGÍA: IMPLANTE -->
+      <article class="tarjeta">
+        <span class="numero">03 · ENCÍAS E IMPLANTES</span>
+        <div class="imagen-especialidad">
+          <svg viewBox="0 0 300 190" role="img" aria-label="Ilustración de un implante dental y encía">
+            <defs>
+              <linearGradient id="dienteImplante" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#fffdf5"/>
+                <stop offset="1" stop-color="#d4cbb8"/>
+              </linearGradient>
+              <linearGradient id="metalImplante" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#77766f"/>
+                <stop offset=".5" stop-color="#eee9dc"/>
+                <stop offset="1" stop-color="#77766f"/>
+              </linearGradient>
+            </defs>
+            <path d="M35 84 Q75 70 110 82 Q150 94 190 82 Q225 72 265 84 L265 116 L35 116Z"
+              fill="#b76562" stroke="#d68d81" stroke-width="2"/>
+            <path d="M108 36 Q150 17 192 36 Q203 49 187 67 L178 85 L122 85 L113 67 Q97 49 108 36Z"
+              fill="url(#dienteImplante)" stroke="#b8a989" stroke-width="2"/>
+            <path d="M133 82 L167 82 L161 141 L150 157 L139 141Z"
+              fill="url(#metalImplante)" stroke="#aaa69a" stroke-width="2"/>
+            <path d="M137 96 L163 102 L136 109 L161 116 L134 123 L158 130 L139 138"
+              fill="none" stroke="#6c6b65" stroke-width="3" stroke-linejoin="round"/>
+            <path d="M122 81 Q150 90 178 81" fill="none" stroke="#e5cd98" stroke-width="3"/>
+          </svg>
+        </div>
+        <h3>Periodoncia e implantología</h3>
+        <p>Cuidado de las encías y valoración de alternativas para reemplazar piezas dentales mediante implantes.</p>
+        <a class="boton boton-secundario" href="https://wa.me/527713159521?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20periodoncia%20e%20implantolog%C3%ADa." target="_blank" rel="noopener noreferrer">Solicitar información</a>
+      </article>
+
     </div>
   </div>
 </section>
 
-<!-- DESTINO DEL BOTÓN DE PORTADA -->
+<!-- DISEÑO DE SONRISA Y TURISMO DENTAL -->
 <section class="laboratorio" id="turismo-dental">
   <div class="contenedor lab-grid">
     <div>
       <div class="etiqueta">Diseño de sonrisa · Turismo dental</div>
       <h2>Tu sonrisa, <span class="dorado">tu experiencia</span></h2>
-      <p>Conoce las opciones de diseño de sonrisa y tratamientos dentales que podemos valorar de acuerdo con tus necesidades.</p>
+      <p>Conoce las opciones de diseño de sonrisa y los tratamientos dentales que podemos valorar de acuerdo con tus necesidades.</p>
       <p>Si viajas desde otra ciudad o país, contáctanos para consultar disponibilidad, valoración y planificación de tu visita.</p>
       <ul class="lista-lab">
         <li>Valoración personalizada.</li>
@@ -243,6 +347,7 @@ footer strong {color:var(--dorado)}
   </div>
 </section>
 
+<!-- LABORATORIO DENTAL -->
 <section class="laboratorio" id="laboratorio">
   <div class="contenedor lab-grid">
     <div>
@@ -267,6 +372,7 @@ footer strong {color:var(--dorado)}
   </div>
 </section>
 
+<!-- INSTALACIONES -->
 <section id="instalaciones">
   <div class="contenedor centrado">
     <div class="etiqueta">Conoce nuestro espacio</div>
@@ -286,7 +392,6 @@ footer strong {color:var(--dorado)}
     <div class="etiqueta">Encuentra tu clínica</div>
     <h2>Nuestras <span class="dorado">ubicaciones</span></h2>
     <p class="texto-seccion">Elige la clínica que te quede mejor y consulta la ruta para llegar fácilmente.</p>
-
     <div class="ubicaciones-grid">
       <article class="ubicacion-card">
         <div class="ubicacion-icono" aria-hidden="true">⌖</div>
@@ -295,7 +400,6 @@ footer strong {color:var(--dorado)}
         <p>Consulta la dirección y las indicaciones directamente en Google Maps.</p>
         <a class="boton" href="https://maps.app.goo.gl/ntiYwqHr58auN8dQ8?g_st=ic" target="_blank" rel="noopener noreferrer">Cómo llegar ↗</a>
       </article>
-
       <article class="ubicacion-card">
         <div class="ubicacion-icono" aria-hidden="true">⌖</div>
         <span class="ubicacion-numero">UBICACIÓN 02</span>
@@ -321,7 +425,6 @@ footer strong {color:var(--dorado)}
       <form class="form-opinion" id="form-opinion">
         <h3>Comparte tu opinión</h3>
         <p>Tu comentario quedará pendiente hasta que nuestro equipo lo revise.</p>
-
         <label for="nombre-paciente">Nombre o iniciales</label>
         <input id="nombre-paciente" name="nombre" type="text" minlength="2" maxlength="80" placeholder="Ej. Ana M." required>
 
@@ -336,7 +439,6 @@ footer strong {color:var(--dorado)}
 
         <label for="comentario-paciente">Tu comentario</label>
         <textarea id="comentario-paciente" name="comentario" minlength="5" maxlength="1200" placeholder="Cuéntanos cómo fue tu experiencia..." required></textarea>
-
         <button class="boton" id="enviar-opinion" type="submit">Enviar opinión</button>
         <p id="mensaje-opinion" role="status" aria-live="polite"></p>
       </form>
@@ -348,6 +450,7 @@ footer strong {color:var(--dorado)}
   </div>
 </section>
 
+<!-- CONTACTO -->
 <section class="fondo-alterno" id="contacto">
   <div class="contenedor centrado">
     <div class="etiqueta">Estamos para atenderte</div>
