@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#111111">
-<meta name="description" content="MÉDICA ML Alta Boutique Dental. Atención odontológica especializada.">
+<meta name="description" content="MÉDICA ML Alta Boutique Dental. Diseño de sonrisa, turismo dental y atención odontológica especializada.">
 <title>MÉDICA ML | Alta Boutique Dental</title>
 
 <style>
@@ -79,6 +79,17 @@ header {position:sticky;top:0;z-index:100;background:rgba(17,17,17,.97);border-b
 .galeria {display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:35px}
 .galeria img {width:100%;height:280px;object-fit:cover;border:1px solid #413623;border-radius:4px}
 
+/* UBICACIONES */
+.ubicaciones {background:linear-gradient(135deg,#171717,#222019);border-block:1px solid #4b3d25}
+.ubicaciones-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:38px;text-align:left}
+.ubicacion-card {display:flex;flex-direction:column;align-items:flex-start;padding:30px;background:#1c1c1c;border:1px solid #37322a;border-radius:5px;transition:.2s}
+.ubicacion-card:hover {border-color:var(--dorado);transform:translateY(-3px)}
+.ubicacion-icono {width:48px;height:48px;display:flex;align-items:center;justify-content:center;color:var(--dorado);border:1px solid var(--dorado);border-radius:50%;font-size:24px;margin-bottom:20px}
+.ubicacion-numero {color:var(--dorado);font-size:12px;letter-spacing:2px}
+.ubicacion-card h3 {font-size:22px;margin:12px 0}
+.ubicacion-card p {color:var(--gris);font-size:14px;margin-bottom:24px}
+.ubicacion-card .boton {margin-top:auto}
+
 /* OPINIONES */
 .testimonios {background:#101010;border-top:1px solid #4a3b23}
 .testimonios-cabecera {text-align:center}
@@ -127,10 +138,11 @@ footer strong {color:var(--dorado)}
   section {padding:58px 0}
   .hero {min-height:550px}
   .hero p {font-size:16px}
-  .rejilla,.galeria,.contacto-grid,.lista-opiniones {grid-template-columns:1fr}
+  .rejilla,.galeria,.contacto-grid,.lista-opiniones,.ubicaciones-grid {grid-template-columns:1fr}
   .galeria img {height:260px}
   .beneficios {grid-template-columns:1fr}
   .form-opinion {padding:20px}
+  .ubicacion-card {padding:24px}
   .whatsapp-flotante {bottom:12px;right:10px}
 }
 </style>
@@ -149,9 +161,10 @@ footer strong {color:var(--dorado)}
       <a href="#especialidades">Especialidades</a>
       <a href="#laboratorio">LabDental</a>
       <a href="#instalaciones">Instalaciones</a>
+      <a href="#ubicaciones">Ubicaciones</a>
       <a href="#opiniones">Opiniones</a>
       <a href="#contacto">Contacto</a>
-      <a class="nav-cita" href="https://wa.me/527713159521" target="_blank" rel="noopener">Agendar cita</a>
+      <a class="nav-cita" href="https://wa.me/527713159521" target="_blank" rel="noopener noreferrer">Agendar cita</a>
     </nav>
   </div>
 </header>
@@ -163,8 +176,8 @@ footer strong {color:var(--dorado)}
     <h1>La precisión de la ciencia.<br><span class="dorado">El arte de sonreír.</span></h1>
     <p>Odontología especializada que combina atención personalizada, tecnología digital y precisión clínica para cuidar tu sonrisa.</p>
     <div class="hero-botones">
-      <a class="boton" href="https://wa.me/527713159521" target="_blank" rel="noopener">Agendar una cita</a>
-      <a class="boton boton-secundario" href="#especialidades">Conocer especialidades</a>
+      <a class="boton" href="https://wa.me/527713159521" target="_blank" rel="noopener noreferrer">Agendar una cita</a>
+      <a class="boton boton-secundario" href="#turismo-dental">Diseño de sonrisa · Turismo dental</a>
     </div>
   </div>
 </section>
@@ -205,6 +218,31 @@ footer strong {color:var(--dorado)}
   </div>
 </section>
 
+<!-- DESTINO DEL BOTÓN DE PORTADA -->
+<section class="laboratorio" id="turismo-dental">
+  <div class="contenedor lab-grid">
+    <div>
+      <div class="etiqueta">Diseño de sonrisa · Turismo dental</div>
+      <h2>Tu sonrisa, <span class="dorado">tu experiencia</span></h2>
+      <p>Conoce las opciones de diseño de sonrisa y tratamientos dentales que podemos valorar de acuerdo con tus necesidades.</p>
+      <p>Si viajas desde otra ciudad o país, contáctanos para consultar disponibilidad, valoración y planificación de tu visita.</p>
+      <ul class="lista-lab">
+        <li>Valoración personalizada.</li>
+        <li>Opciones de diseño de sonrisa.</li>
+        <li>Orientación sobre tratamientos.</li>
+        <li>Coordinación de tu visita a la clínica.</li>
+      </ul>
+      <a class="boton" href="https://wa.me/527713159521?text=Hola%2C%20me%20interesa%20el%20dise%C3%B1o%20de%20sonrisa%20y%20el%20turismo%20dental." target="_blank" rel="noopener noreferrer">Solicitar información</a>
+    </div>
+    <div class="lab-destacado">
+      <div class="siglas">SONRÍE</div>
+      <h3>Diseño de sonrisa</h3>
+      <p>Conoce las alternativas disponibles y recibe orientación personalizada sobre tu tratamiento.</p>
+      <a class="boton boton-secundario" href="https://wa.me/527713159521?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20dise%C3%B1o%20de%20sonrisa." target="_blank" rel="noopener noreferrer">Consultar por WhatsApp</a>
+    </div>
+  </div>
+</section>
+
 <section class="laboratorio" id="laboratorio">
   <div class="contenedor lab-grid">
     <div>
@@ -218,13 +256,13 @@ footer strong {color:var(--dorado)}
         <li>Herramientas de fabricación dental.</li>
         <li>Coordinación entre clínica y laboratorio.</li>
       </ul>
-      <a class="boton" href="https://www.labdental.mx" target="_blank" rel="noopener">Conocer LabDental</a>
+      <a class="boton" href="https://www.labdental.mx" target="_blank" rel="noopener noreferrer">Conocer LabDental</a>
     </div>
     <div class="lab-destacado">
       <div class="siglas">CAD/CAM</div>
       <h3>Precisión digital</h3>
       <p>Tecnología aplicada al diseño y fabricación de soluciones odontológicas personalizadas.</p>
-      <a class="boton boton-secundario" href="https://www.labdental.mx" target="_blank" rel="noopener">Visitar sitio web</a>
+      <a class="boton boton-secundario" href="https://www.labdental.mx" target="_blank" rel="noopener noreferrer">Visitar sitio web</a>
     </div>
   </div>
 </section>
@@ -242,6 +280,34 @@ footer strong {color:var(--dorado)}
   </div>
 </section>
 
+<!-- UBICACIONES -->
+<section class="ubicaciones" id="ubicaciones">
+  <div class="contenedor centrado">
+    <div class="etiqueta">Encuentra tu clínica</div>
+    <h2>Nuestras <span class="dorado">ubicaciones</span></h2>
+    <p class="texto-seccion">Elige la clínica que te quede mejor y consulta la ruta para llegar fácilmente.</p>
+
+    <div class="ubicaciones-grid">
+      <article class="ubicacion-card">
+        <div class="ubicacion-icono" aria-hidden="true">⌖</div>
+        <span class="ubicacion-numero">UBICACIÓN 01</span>
+        <h3>Clínica MÉDICA ML</h3>
+        <p>Consulta la dirección y las indicaciones directamente en Google Maps.</p>
+        <a class="boton" href="https://maps.app.goo.gl/ntiYwqHr58auN8dQ8?g_st=ic" target="_blank" rel="noopener noreferrer">Cómo llegar ↗</a>
+      </article>
+
+      <article class="ubicacion-card">
+        <div class="ubicacion-icono" aria-hidden="true">⌖</div>
+        <span class="ubicacion-numero">UBICACIÓN 02</span>
+        <h3>MÉDICA ML</h3>
+        <p>Consulta la dirección y las indicaciones directamente en Google Maps.</p>
+        <a class="boton" href="https://maps.app.goo.gl/Acs23e9rWX7uCvRC8?g_st=ic" target="_blank" rel="noopener noreferrer">Cómo llegar ↗</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- OPINIONES -->
 <section class="testimonios" id="opiniones">
   <div class="contenedor">
     <div class="testimonios-cabecera">
@@ -289,11 +355,11 @@ footer strong {color:var(--dorado)}
     <p class="texto-seccion">Comunícate con nosotros para solicitar información o agendar una valoración.</p>
     <div class="contacto-grid">
       <div class="contacto-item"><h3>Teléfono</h3><p><a href="tel:+527717112564">771 711 2564</a></p></div>
-      <div class="contacto-item"><h3>WhatsApp</h3><p><a href="https://wa.me/527713159521" target="_blank" rel="noopener">771 315 9521</a></p></div>
+      <div class="contacto-item"><h3>WhatsApp</h3><p><a href="https://wa.me/527713159521" target="_blank" rel="noopener noreferrer">771 315 9521</a></p></div>
       <div class="contacto-item"><h3>Ubicación</h3><p>Pachuca, Hidalgo, México</p></div>
     </div>
     <div class="contacto-accion">
-      <a class="boton" href="https://wa.me/527713159521" target="_blank" rel="noopener">Contactar por WhatsApp</a>
+      <a class="boton" href="https://wa.me/527713159521" target="_blank" rel="noopener noreferrer">Contactar por WhatsApp</a>
     </div>
   </div>
 </section>
@@ -306,7 +372,7 @@ footer strong {color:var(--dorado)}
   </div>
 </footer>
 
-<a class="whatsapp-flotante" href="https://wa.me/527713159521" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">WhatsApp</a>
+<a class="whatsapp-flotante" href="https://wa.me/527713159521" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">WhatsApp</a>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
