@@ -2,608 +2,1061 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#090909">
-<meta name="description" content="MÉDICA ML · Alta Boutique Dental">
-<title>MÉDICA ML | Alta Boutique Dental</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111111">
+  <meta name="description" content="MÉDICA ML Alta Boutique Dental. Odontología especializada, estética dental, ortodoncia, radiología y laboratorio digital CAD/CAM en Pachuca.">
+  <title>MÉDICA ML | Alta Boutique Dental</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --negro: #111111;
+      --negro2: #1b1b1b;
+      --dorado: #c8a96a;
+      --dorado-claro: #e0c78e;
+      --blanco: #f8f5ee;
+      --gris: #bcb7ad;
+    }
 
-<style>
-:root {
-  --black:#090909;
-  --panel:#141414;
-  --gold:#c7a66a;
-  --white:#f8f7f3;
-  --gray:#a4a4a4;
-  --line:rgba(199,166,106,.27);
-}
-* { box-sizing:border-box; margin:0; padding:0; }
-html { scroll-behavior:smooth; scroll-padding-top:130px; }
-body {
-  background:var(--black);
-  color:var(--white);
-  font-family:'DM Sans',sans-serif;
-  line-height:1.7;
-  overflow-x:hidden;
-}
-a { color:inherit; text-decoration:none; }
-img { display:block; max-width:100%; }
-.container { width:min(1180px,90%); margin:auto; }
-.gold { color:var(--gold); }
-.topline { height:3px; background:linear-gradient(90deg,transparent,var(--gold),transparent); }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
-header {
-  position:sticky;
-  top:0;
-  z-index:100;
-  background:rgba(9,9,9,.97);
-  border-bottom:1px solid var(--line);
-  backdrop-filter:blur(15px);
-}
-.nav {
-  min-height:110px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:24px;
-}
-.brand { display:flex; align-items:center; gap:14px; flex-shrink:0; }
-.brand-logo {
-  width:125px;
-  height:88px;
-  object-fit:contain;
-  object-position:center;
-  flex-shrink:0;
-}
-.brand-name { font:800 20px Manrope,sans-serif; letter-spacing:2px; white-space:nowrap; }
-.brand-sub {
-  display:block;
-  color:var(--gold);
-  font-size:10px;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  white-space:nowrap;
-}
-.nav-links { display:flex; align-items:center; gap:17px; }
-.nav-links a { color:#ddd; font-size:12px; white-space:nowrap; }
-.nav-links a:hover { color:var(--gold); }
-.nav-links .nav-cta { border:1px solid var(--gold); padding:10px 14px; color:var(--gold); }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
 
-.hero {
-  min-height:640px;
-  display:flex;
-  align-items:center;
-  position:relative;
-  background:#090909;
-}
-.hero-photo {
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  object-position:center;
-  opacity:.42;
-  z-index:0;
-}
-.hero-overlay {
-  position:absolute;
-  inset:0;
-  background:linear-gradient(90deg,#090909 0%,rgba(9,9,9,.88) 48%,rgba(9,9,9,.35) 100%);
-  z-index:1;
-}
-.hero-content { position:relative; z-index:2; padding:85px 0; max-width:760px; }
-.eyebrow,.section-label {
-  color:var(--gold);
-  text-transform:uppercase;
-  letter-spacing:3px;
-  font-size:10px;
-  font-weight:700;
-}
-.eyebrow { margin-bottom:22px; }
-h1,h2,h3 { font-family:Manrope,sans-serif; line-height:1.2; }
-h1 { font-size:clamp(42px,7vw,78px); font-weight:500; letter-spacing:-2px; }
-.hero-content p { color:#d0d0d0; max-width:560px; margin-top:24px; }
-.actions { display:flex; flex-wrap:wrap; gap:13px; margin-top:30px; }
-.btn {
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:14px 20px;
-  font-size:12px;
-  font-weight:700;
-  letter-spacing:.5px;
-  transition:.25s;
-}
-.btn-gold { background:var(--gold); color:#111; }
-.btn-gold:hover { background:#e3c991; }
-.btn-outline { border:1px solid #777; }
-.btn-outline:hover { border-color:var(--gold); color:var(--gold); }
+    body {
+      background: var(--negro);
+      color: var(--blanco);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.65;
+    }
 
-.stats {
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  background:#0d0d0d;
-  border-block:1px solid var(--line);
-}
-.stat { text-align:center; padding:24px 12px; border-right:1px solid var(--line); }
-.stat:last-child { border-right:0; }
-.stat strong { display:block; color:var(--gold); font:600 13px Manrope,sans-serif; }
-.stat span { color:var(--gray); font-size:11px; }
+    a { color: inherit; text-decoration: none; }
 
-section { padding:85px 0; }
-.section-head { max-width:720px; margin-bottom:38px; }
-.section-head h2,.about-copy h2,.lab-copy h2 {
-  margin-top:14px;
-  font-size:clamp(32px,5vw,50px);
-  font-weight:500;
-  letter-spacing:-1px;
-}
-.section-head p,.about-copy p,.lab-copy p { color:var(--gray); margin-top:18px; }
+    img { display: block; max-width: 100%; }
 
-.about-grid,.lab-grid,.contact-grid {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:55px;
-  align-items:center;
-}
-.about-image { position:relative; min-width:0; }
-.about-image img {
-  display:block;
-  width:100%;
-  height:440px;
-  object-fit:cover;
-  background:#171717;
-}
-.image-tag {
-  position:absolute;
-  bottom:-15px;
-  right:0;
-  padding:14px 20px;
-  background:var(--gold);
-  color:#111;
-  font:700 12px Manrope,sans-serif;
-}
-.feature-list { list-style:none; margin-top:22px; }
-.feature-list li { padding:11px 0; border-bottom:1px solid #292929; font-size:13px; }
-.feature-list li:before { content:"✦"; color:var(--gold); margin-right:12px; }
+    .contenedor { width: min(1160px, 90%); margin: auto; }
 
-.installations,.lab { background:#0e0e0e; }
-.gallery { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; }
-.gallery-card {
-  position:relative;
-  display:block;
-  min-width:0;
-  min-height:280px;
-  overflow:hidden;
-  background:#171717;
-  border:1px solid #292929;
-}
-.gallery-card:first-child { grid-column:span 2; }
-.gallery-card img {
-  display:block;
-  width:100%;
-  height:290px;
-  object-fit:cover;
-  background:#171717;
-  transition:transform .4s;
-}
-.gallery-card:first-child img { height:430px; }
-.gallery-card:hover img { transform:scale(1.025); }
-.gallery-caption {
-  position:absolute;
-  inset:auto 0 0;
-  padding:45px 23px 20px;
-  background:linear-gradient(transparent,rgba(0,0,0,.9));
-}
-.gallery-caption h3 { font-size:20px; }
-.gallery-caption p { color:#ddd; font-size:12px; }
+    .dorado { color: var(--dorado); }
 
-.specialties-grid {
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:17px;
-}
-.specialty {
-  padding:28px;
-  background:linear-gradient(145deg,#151515,#0b0b0b);
-  border:1px solid #292929;
-  transition:border-color .25s;
-}
-.specialty:hover { border-color:var(--gold); }
-.specialty .number { color:var(--gold); font-size:11px; letter-spacing:2px; }
-.specialty h3 { font-size:19px; margin:20px 0 12px; }
-.specialty p { color:var(--gray); font-size:13px; }
-.specialty a,.specialty .consultar { display:none!important; }
+    .etiqueta {
+      color: var(--dorado);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 12px;
+      margin-bottom: 12px;
+    }
 
-.lab-visual {
-  min-height:350px;
-  display:grid;
-  place-items:center;
-  text-align:center;
-  padding:25px;
-  border:1px solid var(--line);
-  background:
-    radial-gradient(circle at 50% 40%,rgba(199,166,106,.17),transparent 55%),
-    repeating-linear-gradient(0deg,transparent,transparent 39px,rgba(199,166,106,.06) 40px),
-    repeating-linear-gradient(90deg,transparent,transparent 39px,rgba(199,166,106,.06) 40px);
-}
-.lab-logo { font:800 clamp(32px,5vw,52px) Manrope,sans-serif; letter-spacing:2px; }
-.lab-logo span { color:var(--gold); }
-.lab-sub { margin-top:12px; color:var(--gold); font-size:10px; letter-spacing:3px; }
-.lab-rule { width:65px; height:1px; margin:24px auto; background:var(--gold); }
-.lab-visual p { color:var(--gray); font-size:10px; letter-spacing:2px; }
-.lab-points { display:grid; gap:11px; margin-top:23px; }
-.lab-point { padding:12px 15px; background:#151515; border-left:2px solid var(--gold); font-size:13px; }
-.lab-tagline { color:var(--gold)!important; font-weight:600; margin-top:22px!important; }
+    h2 {
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
 
-/* TESTIMONIOS */
-.testimonials { background:#090909; }
-.testimonials-heading { text-align:center; max-width:760px; margin:0 auto 42px; }
-.testimonials-heading h2 {
-  font-size:clamp(32px,5vw,48px);
-  font-weight:500;
-  letter-spacing:-1px;
-  margin-top:14px;
-}
-.testimonials-heading p { color:var(--gray); margin-top:16px; }
-.testimonial-grid {
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:18px;
-}
-.testimonial-card {
-  position:relative;
-  padding:28px 25px;
-  background:linear-gradient(145deg,#171717,#0e0e0e);
-  border:1px solid var(--line);
-  min-height:230px;
-  display:flex;
-  flex-direction:column;
-}
-.testimonial-card:before {
-  content:"“";
-  position:absolute;
-  top:5px;
-  right:18px;
-  font-family:Georgia,serif;
-  font-size:62px;
-  line-height:1;
-  color:rgba(199,166,106,.28);
-}
-.testimonial-stars {
-  color:var(--gold);
-  letter-spacing:4px;
-  font-size:17px;
-  margin-bottom:17px;
-}
-.testimonial-text { color:#dedede; font-size:14px; line-height:1.8; flex:1; }
-.testimonial-author {
-  border-top:1px solid #303030;
-  margin-top:22px;
-  padding-top:16px;
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
-.testimonial-avatar {
-  width:39px;
-  height:39px;
-  flex-shrink:0;
-  border:1px solid var(--gold);
-  border-radius:50%;
-  display:grid;
-  place-items:center;
-  color:var(--gold);
-  font:600 12px Manrope,sans-serif;
-}
-.testimonial-author strong { display:block; font-size:12px; font-weight:600; }
-.testimonial-author small { display:block; color:var(--gray); font-size:10px; }
-.testimonial-note {
-  text-align:center;
-  color:#858585;
-  font-size:11px;
-  margin-top:24px;
-}
+    .texto-seccion {
+      color: var(--gris);
+      max-width: 720px;
+      margin: 0 auto;
+    }
 
-.contact-copy>p { color:var(--gray); margin:17px 0; }
-.contact-item { padding:16px 0; border-bottom:1px solid #292929; }
-.contact-item small {
-  display:block;
-  color:var(--gold);
-  font-size:9px;
-  letter-spacing:2px;
-  text-transform:uppercase;
-}
-.contact-item a,.contact-item span { font-size:14px; }
-.contact-panel { padding:30px; background:#121212; border:1px solid var(--line); }
-.contact-panel h3 { font-size:24px; margin:12px 0; }
-.contact-panel p { color:var(--gray); font-size:13px; margin-bottom:22px; }
-.contact-panel .btn { width:100%; margin-top:10px; }
+    .centrado { text-align: center; }
 
-footer { padding:25px 0; border-top:1px solid var(--line); }
-.footer-inner {
-  display:flex;
-  justify-content:space-between;
-  gap:15px;
-  flex-wrap:wrap;
-  color:var(--gray);
-  font-size:11px;
-}
-.footer-inner strong { color:var(--gold); }
-.whatsapp {
-  position:fixed;
-  right:18px;
-  bottom:18px;
-  z-index:200;
-  padding:13px 18px;
-  border-radius:50px;
-  background:#25d366;
-  color:#071b0e;
-  font-size:12px;
-  font-weight:700;
-  box-shadow:0 5px 25px #0008;
-}
+    .boton {
+      display: inline-block;
+      padding: 13px 23px;
+      border: 1px solid var(--dorado);
+      border-radius: 4px;
+      background: var(--dorado);
+      color: #111;
+      font-weight: bold;
+      text-align: center;
+      cursor: pointer;
+      transition: .25s;
+    }
 
-@media(max-width:950px) {
-  .nav { align-items:flex-start; flex-direction:column; padding:14px 0; }
-  .nav-links { width:100%; overflow-x:auto; padding-bottom:8px; gap:19px; }
-  .about-grid,.lab-grid,.contact-grid { grid-template-columns:1fr; gap:35px; }
-  .specialties-grid,.testimonial-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
-  section { padding:70px 0; }
-}
-@media(max-width:560px) {
-  .brand-logo { width:125px; height:75px; }
-  .brand { gap:10px; }
-  .brand-name { font-size:19px; }
-  .brand-sub { font-size:9px; letter-spacing:1.5px; }
-  .hero { min-height:590px; }
-  .hero-content { padding:70px 0; }
-  h1 { letter-spacing:-1.5px; }
-  .hero-content p { font-size:14px; }
-  .stats { grid-template-columns:1fr; }
-  .stat { border-right:0; border-bottom:1px solid var(--line); padding:16px; }
-  .stat:last-child { border-bottom:0; }
-  .gallery { grid-template-columns:1fr; }
-  .gallery-card:first-child { grid-column:auto; }
-  .gallery-card:first-child img,.gallery-card img { height:280px; }
-  .specialties-grid,.testimonial-grid { grid-template-columns:1fr; }
-  .about-image img { height:350px; }
-  .contact-panel { padding:22px; }
-  .whatsapp { right:12px; bottom:12px; }
-}
-</style>
+    .boton:hover {
+      background: transparent;
+      color: var(--dorado);
+    }
+
+    .boton-secundario {
+      background: transparent;
+      color: var(--dorado);
+    }
+
+    /* NAVEGACIÓN */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(17,17,17,.97);
+      border-bottom: 1px solid rgba(200,169,106,.35);
+      backdrop-filter: blur(12px);
+    }
+
+    .nav {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .marca img {
+      width: 145px;
+      height: 72px;
+      object-fit: contain;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 19px;
+      flex-wrap: wrap;
+      font-size: 13px;
+    }
+
+    .nav-links a:hover { color: var(--dorado); }
+
+    .nav-links .nav-cita {
+      padding: 9px 13px;
+      border: 1px solid var(--dorado);
+      color: var(--dorado);
+    }
+
+    .menu-boton {
+      display: none;
+      color: var(--dorado);
+      background: transparent;
+      border: 1px solid #555;
+      border-radius: 4px;
+      padding: 8px 12px;
+      font-size: 22px;
+    }
+
+    /* PORTADA */
+
+    .hero {
+      min-height: 630px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.86), rgba(0,0,0,.38)),
+        url("https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/5e770fd8-4e44-4615-bcbf-a68745ab324f.jpeg")
+        center/cover no-repeat;
+    }
+
+    .hero-contenido {
+      padding-top: 75px;
+      padding-bottom: 75px;
+      max-width: 760px;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 7vw, 76px);
+      line-height: 1.08;
+      margin-bottom: 22px;
+    }
+
+    .hero p {
+      max-width: 610px;
+      color: #e0ddd6;
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .hero-botones {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    /* SECCIONES */
+
+    section { padding: 85px 0; }
+
+    .nosotros-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 48px;
+    }
+
+    .nosotros-foto img {
+      width: 100%;
+      height: 440px;
+      object-fit: cover;
+      border: 1px solid #6b5733;
+      border-radius: 5px;
+    }
+
+    .nosotros-texto p {
+      color: var(--gris);
+      margin-bottom: 18px;
+    }
+
+    .beneficios {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 25px;
+    }
+
+    .beneficio {
+      border-left: 2px solid var(--dorado);
+      padding: 10px 14px;
+      background: #191919;
+    }
+
+    .beneficio strong { display: block; color: var(--dorado); }
+    .beneficio span { color: var(--gris); font-size: 13px; }
+
+    /* ESPECIALIDADES */
+
+    .fondo-alterno { background: #171717; }
+
+    .rejilla {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 38px;
+    }
+
+    .tarjeta {
+      background: #1c1c1c;
+      padding: 28px 24px;
+      border: 1px solid #37322a;
+      border-radius: 5px;
+      transition: transform .25s, border-color .25s;
+    }
+
+    .tarjeta:hover {
+      transform: translateY(-4px);
+      border-color: var(--dorado);
+    }
+
+    .tarjeta .numero {
+      color: var(--dorado);
+      font-size: 13px;
+      letter-spacing: 2px;
+    }
+
+    .tarjeta h3 {
+      font-size: 20px;
+      margin: 12px 0;
+    }
+
+    .tarjeta p { color: var(--gris); font-size: 14px; }
+
+    /* LABORATORIO */
+
+    .laboratorio {
+      background: linear-gradient(135deg, #171717, #222019);
+      border-top: 1px solid #4b3d25;
+      border-bottom: 1px solid #4b3d25;
+    }
+
+    .lab-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .lab-grid p { color: var(--gris); margin-bottom: 18px; }
+
+    .lista-lab {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      margin: 20px 0 28px;
+    }
+
+    .lista-lab li::before {
+      content: "✦";
+      color: var(--dorado);
+      margin-right: 10px;
+    }
+
+    .lab-destacado {
+      border: 1px solid var(--dorado);
+      border-radius: 5px;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .lab-destacado .siglas {
+      font-size: clamp(35px, 5vw, 58px);
+      color: var(--dorado);
+      letter-spacing: 4px;
+      font-weight: bold;
+    }
+
+    .lab-destacado p { margin: 12px 0 22px; }
+
+    /* GALERÍA */
+
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-top: 35px;
+    }
+
+    .galeria img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      border: 1px solid #413623;
+      border-radius: 4px;
+    }
+
+    /* OPINIONES */
+
+    .testimonios {
+      background: #101010;
+      border-top: 1px solid #4a3b23;
+    }
+
+    .testimonios-cabecera { text-align: center; }
+
+    .estrellas-resumen {
+      color: var(--dorado);
+      font-size: 23px;
+      margin-top: 12px;
+    }
+
+    .testimonios-layout {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 35px;
+      margin-top: 40px;
+      align-items: start;
+    }
+
+    .form-opinion {
+      background: #1a1a1a;
+      border: 1px solid #5d4a2b;
+      border-radius: 8px;
+      padding: 27px;
+    }
+
+    .form-opinion h3 {
+      color: var(--dorado);
+      font-size: 23px;
+      margin-bottom: 8px;
+    }
+
+    .form-opinion > p {
+      color: var(--gris);
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .form-opinion label {
+      display: block;
+      margin: 13px 0 6px;
+      font-size: 14px;
+    }
+
+    .form-opinion input,
+    .form-opinion textarea {
+      width: 100%;
+      padding: 13px;
+      background: #101010;
+      border: 1px solid #4c4538;
+      border-radius: 4px;
+      color: white;
+      font: inherit;
+    }
+
+    .form-opinion input:focus,
+    .form-opinion textarea:focus {
+      outline: 1px solid var(--dorado);
+      border-color: var(--dorado);
+    }
+
+    .form-opinion textarea {
+      min-height: 125px;
+      resize: vertical;
+    }
+
+    .selector-estrellas {
+      display: flex;
+      gap: 5px;
+      margin: 7px 0 13px;
+    }
+
+    .selector-estrellas button {
+      border: none;
+      background: transparent;
+      color: #65605a;
+      font-size: 36px;
+      cursor: pointer;
+      padding: 0 3px;
+      line-height: 1.3;
+    }
+
+    .selector-estrellas button.activa { color: var(--dorado); }
+
+    .form-opinion .boton {
+      width: 100%;
+      margin-top: 18px;
+    }
+
+    .form-opinion .boton:disabled {
+      opacity: .6;
+      cursor: wait;
+    }
+
+    .aviso-privacidad {
+      display: block;
+      color: #aaa49a;
+      font-size: 12px;
+      margin-top: 14px;
+    }
+
+    #mensaje-opinion {
+      margin-top: 12px;
+      font-size: 14px;
+      overflow-wrap: anywhere;
+    }
+
+    .lista-opiniones {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .opinion {
+      background: #1c1c1c;
+      border: 1px solid #453923;
+      border-radius: 7px;
+      padding: 22px;
+      overflow-wrap: anywhere;
+    }
+
+    .opinion-estrellas {
+      color: var(--dorado);
+      font-size: 19px;
+      letter-spacing: 2px;
+      margin-bottom: 9px;
+    }
+
+    .opinion h3 { font-size: 16px; margin-bottom: 9px; }
+    .opinion p { color: #d1ccc3; font-size: 14px; }
+
+    .sin-opiniones {
+      grid-column: 1 / -1;
+      padding: 30px;
+      color: var(--gris);
+      border: 1px dashed #57472d;
+      border-radius: 7px;
+      text-align: center;
+    }
+
+    /* CONTACTO */
+
+    .contacto-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 35px;
+    }
+
+    .contacto-item {
+      padding: 25px;
+      background: #1b1b1b;
+      border: 1px solid #3d3425;
+      text-align: center;
+      border-radius: 5px;
+    }
+
+    .contacto-item h3 { color: var(--dorado); margin-bottom: 10px; }
+    .contacto-item p { color: var(--gris); overflow-wrap: anywhere; }
+
+    .contacto-accion { margin-top: 25px; text-align: center; }
+
+    footer {
+      border-top: 1px solid #403522;
+      padding: 30px 0;
+      text-align: center;
+      color: #aaa49a;
+      font-size: 13px;
+    }
+
+    footer strong { color: var(--dorado); }
+
+    .whatsapp-flotante {
+      position: fixed;
+      z-index: 99;
+      bottom: 20px;
+      right: 18px;
+      background: #197b51;
+      color: white;
+      padding: 13px 17px;
+      border-radius: 50px;
+      box-shadow: 0 4px 20px #0008;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    @media (max-width: 900px) {
+      .nav { min-height: 72px; }
+      .marca img { width: 120px; height: 65px; }
+      .menu-boton { display: block; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        padding: 22px 5%;
+        background: #151515;
+        border-bottom: 1px solid #57472d;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+      }
+      .nav-links.abierto { display: flex; }
+      .nav-links a { padding: 4px 0; }
+      .nosotros-grid, .lab-grid, .testimonios-layout {
+        grid-template-columns: 1fr;
+      }
+      .rejilla { grid-template-columns: repeat(2, 1fr); }
+      .nosotros-foto img { height: 350px; }
+    }
+
+    @media (max-width: 600px) {
+      section { padding: 60px 0; }
+      .hero { min-height: 570px; }
+      .hero p { font-size: 16px; }
+      .rejilla, .galeria, .contacto-grid, .lista-opiniones {
+        grid-template-columns: 1fr;
+      }
+      .galeria img { height: 260px; }
+      .beneficios { grid-template-columns: 1fr; }
+      .form-opinion { padding: 20px; }
+      .whatsapp-flotante { bottom: 12px; right: 10px; }
+    }
+  </style>
 </head>
 
 <body>
-<div class="topline"></div>
-
 <header>
-  <div class="container nav">
-    <a class="brand" href="#inicio" aria-label="MÉDICA ML, inicio">
-      <img class="brand-logo"
+  <div class="contenedor nav">
+    <a class="marca" href="#inicio" aria-label="MÉDICA ML inicio">
+      <img
         src="https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/6FDF1D0C-A18C-435E-95B1-DCDCE7B9832A.png"
-        alt="Logotipo de MÉDICA ML">
-      <div>
-        <div class="brand-name">MÉDICA ML</div>
-        <span class="brand-sub">Alta Boutique Dental</span>
-      </div>
+        alt="MÉDICA ML Alta Boutique Dental">
     </a>
 
-    <nav class="nav-links" aria-label="Navegación principal">
-      <a href="#inicio">Página inicial</a>
-      <a href="#instalaciones">Nuestras instalaciones</a>
+    <button class="menu-boton" id="menu-boton"
+      aria-label="Abrir menú" aria-expanded="false">☰</button>
+
+    <nav class="nav-links" id="nav-links">
+      <a href="#inicio">Inicio</a>
+      <a href="#nosotros">Nosotros</a>
       <a href="#especialidades">Especialidades</a>
-      <a href="#labdental">LabDental</a>
-      <a href="#testimonios">Opiniones</a>
+      <a href="#laboratorio">LabDental</a>
+      <a href="#instalaciones">Instalaciones</a>
+      <a href="#opiniones">Opiniones</a>
       <a href="#contacto">Contacto</a>
-      <a class="nav-cta" href="https://wa.me/527713159521" target="_blank" rel="noopener">Agendar cita</a>
+      <a class="nav-cita" href="https://wa.me/527713159521"
+         target="_blank" rel="noopener">Agendar cita</a>
     </nav>
   </div>
 </header>
 
 <main>
-<section class="hero" id="inicio">
-  <img class="hero-photo"
-    src="https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/5e770fd8-4e44-4615-bcbf-a68745ab324f.jpeg"
-    alt="">
-  <div class="hero-overlay"></div>
-  <div class="container hero-content">
-    <div class="eyebrow">Una nueva experiencia dental</div>
-    <h1>La precisión de la ciencia.<br><span class="gold">El arte de sonreír.</span></h1>
-    <p>Bienvenido a MÉDICA ML, un espacio donde la atención dental, la tecnología y el cuidado personal se encuentran en un entorno moderno y sofisticado.</p>
-    <div class="actions">
-      <a class="btn btn-gold" href="https://wa.me/527713159521" target="_blank" rel="noopener">AGENDA TU CITA</a>
-      <a class="btn btn-outline" href="#instalaciones">CONOCE EL ESPACIO</a>
-    </div>
-  </div>
-</section>
-
-<div class="stats">
-  <div class="stat"><strong>ATENCIÓN PERSONALIZADA</strong><span>Un trato pensado para ti</span></div>
-  <div class="stat"><strong>TECNOLOGÍA Y PRECISIÓN</strong><span>Innovación al servicio de tu sonrisa</span></div>
-  <div class="stat"><strong>EXPERIENCIA BOUTIQUE</strong><span>Comodidad en cada visita</span></div>
-</div>
-
-<section id="nosotros">
-  <div class="container about-grid">
-    <div class="about-image">
-      <img
-        src="https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/cc758aa7-2d30-4563-9023-cfa9a1a6587a.jpeg"
-        alt="Espacio de atención de MÉDICA ML"
-        loading="eager">
-      <div class="image-tag">Cuidado con intención.</div>
-    </div>
-    <div class="about-copy">
-      <div class="section-label">01 / Nuestra esencia</div>
-      <h2>Una sonrisa merece una atención <span class="gold">extraordinaria.</span></h2>
-      <p>En MÉDICA ML creemos que cada paciente merece una experiencia cercana, profesional y diseñada alrededor de sus necesidades.</p>
-      <p>Nuestro concepto boutique combina un entorno cuidado, atención personalizada y un enfoque moderno de la salud dental.</p>
-      <ul class="feature-list">
-        <li>Atención centrada en cada paciente</li>
-        <li>Espacios modernos y confortables</li>
-        <li>Información clara durante tu atención</li>
-        <li>Planes de tratamiento personalizados</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section class="installations" id="instalaciones">
-  <div class="container">
-    <div class="section-head">
-      <div class="section-label">02 / El espacio</div>
-      <h2>Nuestras <span class="gold">instalaciones.</span></h2>
-      <p>Un entorno contemporáneo donde cada detalle busca transmitir tranquilidad, confianza y profesionalismo.</p>
-    </div>
-    <div class="gallery">
-      <a class="gallery-card" href="https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/5e770fd8-4e44-4615-bcbf-a68745ab324f.jpeg" target="_blank" rel="noopener">
-        <img src="https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/5e770fd8-4e44-4615-bcbf-a68745ab324f.jpeg" alt="Instalaciones de MÉDICA ML">
-        <div class="gallery-caption"><h3>Un espacio para ti</h3><p>Diseño, comodidad y atención personalizada.</p></div>
-      </a>
-      <a class="gallery-card" href="https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/cc758aa7-2d30-4563-9023-cfa9a1a6587a.jpeg" target="_blank" rel="noopener">
-        <img src="https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/cc758aa7-2d30-4563-9023-cfa9a1a6587a.jpeg" alt="Espacio de atención dental">
-        <div class="gallery-caption"><h3>Nuestro entorno</h3><p>Atención en un ambiente confortable.</p></div>
-      </a>
-      <a class="gallery-card" href="https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/f55d05cf-065c-4c40-b070-8a62da1c67af.jpeg" target="_blank" rel="noopener">
-        <img src="https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/f55d05cf-065c-4c40-b070-8a62da1c67af.jpeg" alt="Detalles de MÉDICA ML">
-        <div class="gallery-caption"><h3>Cada detalle importa</h3><p>Una experiencia dental contemporánea.</p></div>
-      </a>
-    </div>
-  </div>
-</section>
-
-<section id="especialidades">
-  <div class="container">
-    <div class="section-head">
-      <div class="section-label">03 / Atención dental</div>
-      <h2>Especialidades para cuidar <span class="gold">tu sonrisa.</span></h2>
-      <p>Consulta con nuestro equipo qué opciones de atención están disponibles para ti.</p>
-    </div>
-    <div class="specialties-grid">
-      <article class="specialty"><div class="number">01 / PREVENCIÓN</div><h3>Odontología general</h3><p>Evaluación de la salud oral, prevención y orientación para el cuidado dental.</p></article>
-      <article class="specialty"><div class="number">02 / ALINEACIÓN</div><h3>Ortodoncia</h3><p>Valoración de la posición dental y orientación sobre alternativas de tratamiento.</p></article>
-      <article class="specialty"><div class="number">03 / ESTÉTICA</div><h3>Estética dental</h3><p>Opciones para mejorar la apariencia de la sonrisa de acuerdo con cada caso.</p></article>
-      <article class="specialty"><div class="number">04 / REHABILITACIÓN</div><h3>Rehabilitación oral</h3><p>Valoración de alternativas para recuperar función y estética oral.</p></article>
-      <article class="specialty"><div class="number">05 / SALUD ORAL</div><h3>Periodoncia</h3><p>Atención enfocada en las encías y los tejidos que sostienen los dientes.</p></article>
-      <article class="specialty"><div class="number">06 / TU CASO</div><h3>Valoración personalizada</h3><p>Conoce las opciones de atención de acuerdo con tus necesidades.</p></article>
-    </div>
-  </div>
-</section>
-
-<section class="lab" id="labdental">
-  <div class="container lab-grid">
-    <div class="lab-visual">
-      <a href="https://www.labdental.mx" target="_blank" rel="noopener" aria-label="Visitar LabDental">
-        <div class="lab-logo">LAB<span>DENTAL</span></div>
-        <div class="lab-sub">TECNOLOGÍA DENTAL DIGITAL</div>
-        <div class="lab-rule"></div>
-        <p>PRECISIÓN · INNOVACIÓN · CALIDAD</p>
-      </a>
-    </div>
-    <div class="lab-copy">
-      <div class="section-label">04 / LABDENTAL</div>
-      <h2>Laboratorio Dental: <span class="gold">precisión en cada sonrisa.</span></h2>
-      <p>Nuestro laboratorio dental se especializa en el diseño y fabricación de prótesis dentales, coronas, carillas, puentes y aparatología odontológica, combinando experiencia técnica con tecnología digital para ofrecer resultados precisos, funcionales y estéticos.</p>
-      <p>Trabajamos con materiales de alta calidad y herramientas de vanguardia, como sistemas CAD/CAM, diseño 3D, fresado e impresión digital, para brindar soluciones personalizadas que respondan a las necesidades de cada odontólogo y sus pacientes.</p>
-      <div class="lab-points">
-        <div class="lab-point">Diseño y fabricación de prótesis dentales</div>
-        <div class="lab-point">Tecnología CAD/CAM, diseño 3D y fresado</div>
-        <div class="lab-point">Soluciones personalizadas para odontólogos y pacientes</div>
-      </div>
-      <p class="lab-tagline">Precisión, innovación y calidad en cada sonrisa.</p>
-      <div class="actions"><a class="btn btn-gold" href="https://www.labdental.mx" target="_blank" rel="noopener">VISITAR LABDENTAL.MX</a></div>
-    </div>
-  </div>
-</section>
-
-<!-- SECCIÓN DE TESTIMONIOS: EDITA LOS TEXTOS CUANDO TENGAS OPINIONES REALES -->
-<section class="testimonials" id="testimonios">
-  <div class="container">
-    <div class="testimonials-heading">
-      <div class="section-label">05 / Experiencias</div>
-      <h2>Sonrisas que cuentan <span class="gold">historias.</span></h2>
-      <p>La confianza de nuestros pacientes es parte esencial de nuestra filosofía de atención.</p>
-    </div>
-
-    <div class="testimonial-grid">
-      <!-- TESTIMONIO 1: sustituye el texto y el nombre por un testimonio real -->
-      <article class="testimonial-card">
-        <div class="testimonial-stars" aria-label="5 estrellas">★★★★★</div>
-        <p class="testimonial-text">Aquí puedes agregar la opinión real de un paciente sobre su experiencia en MÉDICA ML.</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">P1</div>
-          <div><strong>Nombre o iniciales</strong><small>Paciente de MÉDICA ML</small></div>
-        </div>
-      </article>
-
-      <!-- TESTIMONIO 2 -->
-      <article class="testimonial-card">
-        <div class="testimonial-stars" aria-label="5 estrellas">★★★★★</div>
-        <p class="testimonial-text">Escribe aquí otro comentario auténtico sobre la atención, el trato recibido o las instalaciones.</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">P2</div>
-          <div><strong>Nombre o iniciales</strong><small>Paciente de MÉDICA ML</small></div>
-        </div>
-      </article>
-
-      <!-- TESTIMONIO 3 -->
-      <article class="testimonial-card">
-        <div class="testimonial-stars" aria-label="5 estrellas">★★★★★</div>
-        <p class="testimonial-text">Agrega una tercera experiencia real cuando tengas autorización para compartirla.</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">P3</div>
-          <div><strong>Nombre o iniciales</strong><small>Paciente de MÉDICA ML</small></div>
-        </div>
-      </article>
-    </div>
-
-    <p class="testimonial-note">Los testimonios deben corresponder a experiencias reales y compartirse con autorización de cada paciente.</p>
-  </div>
-</section>
-
-<section id="contacto">
-  <div class="container">
-    <div class="section-head">
-      <div class="section-label">06 / Estamos para ayudarte</div>
-      <h2>Tu próxima sonrisa comienza <span class="gold">aquí.</span></h2>
-      <p>Contáctanos para solicitar información o consultar disponibilidad para una cita.</p>
-    </div>
-    <div class="contact-grid">
-      <div class="contact-copy">
-        <h3>Hablemos de tu sonrisa.</h3>
-        <p>Elige el medio que te resulte más cómodo para comunicarte con nosotros.</p>
-        <div class="contact-item"><small>Teléfono</small><a href="tel:+527717112564">771 711 2564</a></div>
-        <div class="contact-item"><small>WhatsApp</small><a href="https://wa.me/527713159521" target="_blank" rel="noopener">771 315 9521</a></div>
-      </div>
-      <div class="contact-panel">
-        <div class="section-label">CONTACTO DIRECTO</div>
-        <h3>¿Agendamos una cita?</h3>
-        <p>Escríbenos por WhatsApp para consultar horarios, servicios y disponibilidad.</p>
-        <a class="btn btn-gold" href="https://wa.me/527713159521?text=Hola%2C%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20de%20M%C3%89DICA%20ML." target="_blank" rel="noopener">ESCRIBIR POR WHATSAPP</a>
-        <a class="btn btn-outline" href="tel:+527717112564">LLAMAR A LA CLÍNICA</a>
+  <section class="hero" id="inicio">
+    <div class="contenedor hero-contenido">
+      <div class="etiqueta">MÉDICA ML · Alta Boutique Dental</div>
+      <h1>La precisión de la ciencia.<br><span class="dorado">El arte de sonreír.</span></h1>
+      <p>
+        Odontología especializada que combina atención personalizada,
+        tecnología digital y precisión clínica para cuidar tu sonrisa.
+      </p>
+      <div class="hero-botones">
+        <a class="boton" href="https://wa.me/527713159521"
+           target="_blank" rel="noopener">Agendar una cita</a>
+        <a class="boton boton-secundario" href="#especialidades">
+          Conocer especialidades
+        </a>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <section id="nosotros">
+    <div class="contenedor nosotros-grid">
+      <div class="nosotros-foto">
+        <img
+          src="https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/cc758aa7-2d30-4563-9023-cfa9a1a6587a.jpeg"
+          alt="Instalaciones de MÉDICA ML">
+      </div>
+
+      <div class="nosotros-texto">
+        <div class="etiqueta">Nuestra filosofía</div>
+        <h2>Una experiencia dental <span class="dorado">de alto nivel</span></h2>
+        <p>
+          En MÉDICA ML Alta Boutique Dental, buscamos que cada paciente
+          reciba una atención profesional, cercana y personalizada.
+        </p>
+        <p>
+          Integramos distintas áreas odontológicas, diagnóstico por imagen
+          y flujo digital para acompañarte en el cuidado de tu salud bucal.
+        </p>
+
+        <div class="beneficios">
+          <div class="beneficio">
+            <strong>Atención integral</strong>
+            <span>Soluciones adaptadas a cada paciente.</span>
+          </div>
+          <div class="beneficio">
+            <strong>Flujo digital</strong>
+            <span>Herramientas para apoyar la precisión.</span>
+          </div>
+          <div class="beneficio">
+            <strong>Diagnóstico</strong>
+            <span>Apoyo de estudios radiográficos.</span>
+          </div>
+          <div class="beneficio">
+            <strong>Trato personalizado</strong>
+            <span>Atención centrada en ti.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="fondo-alterno" id="especialidades">
+    <div class="contenedor centrado">
+      <div class="etiqueta">Atención especializada</div>
+      <h2>Nuestras <span class="dorado">especialidades</span></h2>
+      <p class="texto-seccion">
+        Atención odontológica integral con opciones de tratamiento
+        de acuerdo con tus necesidades y valoración profesional.
+      </p>
+
+      <div class="rejilla">
+        <article class="tarjeta">
+          <span class="numero">01 · PREVENCIÓN</span>
+          <h3>Odontología integral</h3>
+          <p>Valoración, prevención y cuidado general de la salud bucal.</p>
+        </article>
+
+        <article class="tarjeta">
+          <span class="numero">02 · SONRISA</span>
+          <h3>Estética dental</h3>
+          <p>Opciones para mejorar la apariencia de la sonrisa con un plan individualizado.</p>
+        </article>
+
+        <article class="tarjeta">
+          <span class="numero">03 · REHABILITACIÓN</span>
+          <h3>Rehabilitación oral</h3>
+          <p>Alternativas para recuperar función, comodidad y estética dental.</p>
+        </article>
+
+        <article class="tarjeta">
+          <span class="numero">04 · ALINEACIÓN</span>
+          <h3>Ortodoncia</h3>
+          <p>Valoración y opciones de tratamiento para la alineación dental y la mordida.</p>
+        </article>
+
+        <article class="tarjeta">
+          <span class="numero">05 · DIAGNÓSTICO</span>
+          <h3>Diagnóstico por imagen</h3>
+          <p>Estudios radiográficos dentales indicados por el profesional tratante.</p>
+        </article>
+
+        <article class="tarjeta">
+          <span class="numero">06 · TECNOLOGÍA</span>
+          <h3>Flujo digital</h3>
+          <p>Herramientas digitales que apoyan la planeación y elaboración de restauraciones.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="laboratorio" id="laboratorio">
+    <div class="contenedor lab-grid">
+      <div>
+        <div class="etiqueta">Tecnología dental</div>
+        <h2>LabDental <span class="dorado">· Flujo digital</span></h2>
+        <p>
+          Nuestro laboratorio dental se especializa en el diseño y fabricación
+          de prótesis dentales, coronas, carillas, puentes y aparatología
+          odontológica, combinando experiencia técnica con herramientas digitales.
+        </p>
+        <p>
+          El flujo de trabajo digital puede ayudar a coordinar la planeación
+          clínica y la elaboración de restauraciones, según cada caso.
+        </p>
+
+        <ul class="lista-lab">
+          <li>Diseño asistido por computadora (CAD/CAM).</li>
+          <li>Planeación digital de restauraciones.</li>
+          <li>Herramientas de fabricación dental.</li>
+          <li>Coordinación entre clínica y laboratorio.</li>
+        </ul>
+
+        <a class="boton" href="https://www.labdental.mx"
+           target="_blank" rel="noopener">Conocer LabDental</a>
+      </div>
+
+      <div class="lab-destacado">
+        <div class="siglas">CAD/CAM</div>
+        <h3>Precisión digital</h3>
+        <p>
+          Tecnología aplicada al diseño y fabricación de soluciones
+          odontológicas personalizadas.
+        </p>
+        <a class="boton boton-secundario" href="https://www.labdental.mx"
+           target="_blank" rel="noopener">Visitar sitio web</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="instalaciones">
+    <div class="contenedor centrado">
+      <div class="etiqueta">Conoce nuestro espacio</div>
+      <h2>Nuestras <span class="dorado">instalaciones</span></h2>
+      <p class="texto-seccion">
+        Un espacio diseñado para acompañar tu atención odontológica.
+      </p>
+
+      <div class="galeria">
+        <img
+          src="https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/5e770fd8-4e44-4615-bcbf-a68745ab324f.jpeg"
+          alt="Espacio de MÉDICA ML, fotografía uno" loading="lazy">
+        <img
+          src="https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/cc758aa7-2d30-4563-9023-cfa9a1a6587a.jpeg"
+          alt="Espacio de MÉDICA ML, fotografía dos" loading="lazy">
+        <img
+          src="https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/f55d05cf-065c-4c40-b070-8a62da1c67af.jpeg"
+          alt="Espacio de MÉDICA ML, fotografía tres" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- OPINIONES DE PACIENTES -->
+  <section class="testimonios" id="opiniones">
+    <div class="contenedor">
+      <div class="testimonios-cabecera">
+        <div class="etiqueta">Experiencias reales</div>
+        <h2>La confianza se construye <span class="dorado">con sonrisas</span></h2>
+        <p class="texto-seccion">
+          Comparte tu experiencia en MÉDICA ML. Todas las opiniones
+          se revisan antes de publicarse.
+        </p>
+        <div class="estrellas-resumen" aria-label="Calificación de una a cinco estrellas">
+          ★★★★★
+        </div>
+      </div>
+
+      <div class="testimonios-layout">
+        <form class="form-opinion" id="form-opinion">
+          <h3>Comparte tu opinión</h3>
+          <p>Tu comentario quedará pendiente hasta que nuestro equipo lo revise.</p>
+
+          <label for="nombre-paciente">Nombre o iniciales</label>
+          <input
+            id="nombre-paciente"
+            name="nombre"
+            type="text"
+            minlength="2"
+            maxlength="80"
+            autocomplete="name"
+            placeholder="Ej. Ana M."
+            required>
+
+          <label>Tu calificación</label>
+          <div class="selector-estrellas" id="selector-estrellas"
+               role="group" aria-label="Selecciona de una a cinco estrellas">
+            <button type="button" data-valor="1" aria-label="1 estrella"
+                    aria-pressed="false">★</button>
+            <button type="button" data-valor="2" aria-label="2 estrellas"
+                    aria-pressed="false">★</button>
+            <button type="button" data-valor="3" aria-label="3 estrellas"
+                    aria-pressed="false">★</button>
+            <button type="button" data-valor="4" aria-label="4 estrellas"
+                    aria-pressed="false">★</button>
+            <button type="button" data-valor="5" aria-label="5 estrellas"
+                    aria-pressed="false">★</button>
+          </div>
+
+          <label for="comentario-paciente">Tu comentario</label>
+          <textarea
+            id="comentario-paciente"
+            name="comentario"
+            minlength="5"
+            maxlength="1200"
+            placeholder="Cuéntanos cómo fue tu experiencia..."
+            required></textarea>
+
+          <button class="boton" id="enviar-opinion" type="submit">
+            Enviar opinión
+          </button>
+
+          <p id="mensaje-opinion" role="status" aria-live="polite"></p>
+
+          <small class="aviso-privacidad">
+            No incluyas información médica privada. Al enviar tu opinión,
+            autorizas su revisión para una posible publicación. Solo se
+            publicará después de su aprobación.
+          </small>
+        </form>
+
+        <div>
+          <div class="lista-opiniones" id="lista-opiniones"
+               aria-live="polite">
+            <div class="sin-opiniones">Cargando opiniones...</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="fondo-alterno" id="contacto">
+    <div class="contenedor centrado">
+      <div class="etiqueta">Estamos para atenderte</div>
+      <h2>Agenda tu <span class="dorado">cita</span></h2>
+      <p class="texto-seccion">
+        Comunícate con nosotros para solicitar información o agendar una valoración.
+      </p>
+
+      <div class="contacto-grid">
+        <div class="contacto-item">
+          <h3>Teléfono</h3>
+          <p><a href="tel:+527717112564">771 711 2564</a></p>
+        </div>
+
+        <div class="contacto-item">
+          <h3>WhatsApp</h3>
+          <p><a href="https://wa.me/527713159521"
+                target="_blank" rel="noopener">771 315 9521</a></p>
+        </div>
+
+        <div class="contacto-item">
+          <h3>Ubicación</h3>
+          <p>Pachuca, Hidalgo, México</p>
+        </div>
+      </div>
+
+      <div class="contacto-accion">
+        <a class="boton" href="https://wa.me/527713159521"
+           target="_blank" rel="noopener">Contactar por WhatsApp</a>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer>
-  <div class="container footer-inner">
-    <div><strong>MÉDICA ML</strong> · Alta Boutique Dental</div>
-    <div>© <span id="year"></span> MÉDICA ML. Todos los derechos reservados.</div>
+  <div class="contenedor">
+    <p><strong>MÉDICA ML · Alta Boutique Dental</strong></p>
+    <p>© <span id="anio"></span> MÉDICA ML. Todos los derechos reservados.</p>
   </div>
 </footer>
 
-<a class="whatsapp" href="https://wa.me/527713159521" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">WhatsApp</a>
+<a class="whatsapp-flotante"
+   href="https://wa.me/527713159521"
+   target="_blank" rel="noopener"
+   aria-label="Contactar por WhatsApp">WhatsApp</a>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <script>
-document.getElementById("year").textContent = new Date().getFullYear();
+(() => {
+  "use strict";
+
+  // CONFIGURACIÓN DE SUPABASE
+  // La URL debe terminar en .supabase.co, sin /rest/v1/.
+  const SUPABASE_URL = "https://ipumlydvtzkkfyxuxhoh.supabase.co";
+  const SUPABASE_KEY = "sb_publishable_f_jz64svdub0emoeDGA5ig_4YQDfSGd";
+
+  document.getElementById("anio").textContent = new Date().getFullYear();
+
+  // Menú móvil
+  const menuBoton = document.getElementById("menu-boton");
+  const navLinks = document.getElementById("nav-links");
+
+  menuBoton.addEventListener("click", () => {
+    const abierto = navLinks.classList.toggle("abierto");
+    menuBoton.setAttribute("aria-expanded", String(abierto));
+    menuBoton.textContent = abierto ? "✕" : "☰";
+  });
+
+  navLinks.querySelectorAll("a").forEach(enlace => {
+    enlace.addEventListener("click", () => {
+      navLinks.classList.remove("abierto");
+      menuBoton.setAttribute("aria-expanded", "false");
+      menuBoton.textContent = "☰";
+    });
+  });
+
+  const formulario = document.getElementById("form-opinion");
+  const campoNombre = document.getElementById("nombre-paciente");
+  const campoComentario = document.getElementById("comentario-paciente");
+  const mensaje = document.getElementById("mensaje-opinion");
+  const lista = document.getElementById("lista-opiniones");
+  const botonEnviar = document.getElementById("enviar-opinion");
+  const botonesEstrellas = [
+    ...document.querySelectorAll("#selector-estrellas button")
+  ];
+
+  let calificacion = 0;
+  let db = null;
+
+  function actualizarEstrellas(valor) {
+    calificacion = valor;
+    botonesEstrellas.forEach(boton => {
+      const activa = Number(boton.dataset.valor) <= valor;
+      boton.classList.toggle("activa", activa);
+      boton.setAttribute("aria-pressed",
+        String(Number(boton.dataset.valor) === valor));
+    });
+  }
+
+  botonesEstrellas.forEach(boton => {
+    boton.addEventListener("click", () => {
+      actualizarEstrellas(Number(boton.dataset.valor));
+    });
+  });
+
+  function mostrarEstado(texto) {
+    mensaje.textContent = texto;
+  }
+
+  function crearTarjeta(opinion) {
+    const tarjeta = document.createElement("article");
+    tarjeta.className = "opinion";
+
+    const estrellas = document.createElement("div");
+    estrellas.className = "opinion-estrellas";
+    estrellas.textContent =
+      "★".repeat(opinion.estrellas) +
+      "☆".repeat(5 - opinion.estrellas);
+    estrellas.setAttribute("aria-label",
+      opinion.estrellas + " de 5 estrellas");
+
+    const nombre = document.createElement("h3");
+    nombre.textContent = opinion.nombre;
+
+    const comentario = document.createElement("p");
+    comentario.textContent = opinion.comentario;
+
+    tarjeta.append(estrellas, nombre, comentario);
+    return tarjeta;
+  }
+
+  async function cargarOpiniones() {
+    if (!db) return;
+
+    const { data, error } = await db
+      .from("testimonios")
+      .select("nombre, comentario, estrellas, creado_en")
+      .eq("aprobado", true)
+      .order("creado_en", { ascending: false })
+      .limit(50);
+
+    lista.replaceChildren();
+
+    if (error) {
+      const aviso = document.createElement("div");
+      aviso.className = "sin-opiniones";
+      aviso.textContent =
+        "Por el momento no podemos cargar las opiniones. Inténtalo más tarde.";
+      lista.append(aviso);
+      console.error("Error al cargar opiniones:", error.message);
+      return;
+    }
+
+    if (!data || data.length === 0) {
+      const aviso = document.createElement("div");
+      aviso.className = "sin-opiniones";
+      aviso.textContent =
+        "Todavía no hay opiniones publicadas. ¡Puedes compartir la tuya!";
+      lista.append(aviso);
+      return;
+    }
+
+    data.forEach(opinion => {
+      lista.append(crearTarjeta(opinion));
+    });
+  }
+
+  formulario.addEventListener("submit", async evento => {
+    evento.preventDefault();
+
+    if (!db) {
+      mostrarEstado("No se pudo establecer conexión. Inténtalo más tarde.");
+      return;
+    }
+
+    const nombre = campoNombre.value.trim();
+    const comentario = campoComentario.value.trim();
+
+    if (!calificacion) {
+      mostrarEstado("Selecciona una calificación de 1 a 5 estrellas.");
+      return;
+    }
+
+    if (nombre.length < 2 || nombre.length > 80 ||
+        comentario.length < 5 || comentario.length > 1200) {
+      mostrarEstado("Revisa el nombre y el comentario antes de enviarlos.");
+      return;
+    }
+
+    botonEnviar.disabled = true;
+    mostrarEstado("Enviando tu opinión...");
+
+    try {
+      const { error } = await db.from("testimonios").insert([{
+        nombre,
+        comentario,
+        estrellas: calificacion,
+        aprobado: false
+      }]);
+
+      if (error) {
+        console.error("Error al enviar opinión:", error.message);
+        mostrarEstado(
+          "No pudimos enviar tu opinión. Inténtalo de nuevo más tarde."
+        );
+        return;
+      }
+
+      formulario.reset();
+      actualizarEstrellas(0);
+      mostrarEstado(
+        "¡Gracias por compartir tu experiencia! Tu opinión quedó pendiente de revisión."
+      );
+    } catch (error) {
+      console.error("Error de conexión:", error);
+      mostrarEstado(
+        "No se pudo conectar. Comprueba tu conexión e inténtalo nuevamente."
+      );
+    } finally {
+      botonEnviar.disabled = false;
+    }
+  });
+
+  function iniciarSupabase() {
+    if (!window.supabase ||
+        !SUPABASE_URL.startsWith("https://") ||
+        !SUPABASE_KEY.startsWith("sb_publishable_")) {
+      lista.textContent =
+        "No se pudo iniciar la conexión con el sistema de opiniones.";
+      mostrarEstado("Comprueba la configuración de Supabase.");
+      return;
+    }
+
+    db = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+    cargarOpiniones();
+  }
+
+  iniciarSupabase();
+})();
 </script>
 </body>
 </html>
