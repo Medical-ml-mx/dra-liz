@@ -2,908 +2,761 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#080808">
-  <meta name="description" content="MÉDICA ML Alta Boutique Dental. Atención dental, diseño de sonrisa, ortodoncia, rehabilitación oral y tecnología odontológica.">
-  <title>MÉDICA ML | Alta Boutique Dental</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080808">
+<meta name="description" content="MÉDICA ML Alta Boutique Dental. Atención dental personalizada, estética y tecnología odontológica.">
+<title>MÉDICA ML | Alta Boutique Dental</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    :root {
-      --black: #080808;
-      --panel: #111110;
-      --panel2: #171614;
-      --gold: #c7a568;
-      --gold-light: #ead6a9;
-      --white: #f7f5f0;
-      --muted: #b4b0a8;
-      --border: rgba(199,165,104,.24);
-      --max: 1200px;
-    }
+<style>
+:root {
+  --bg:#080808;
+  --panel:#111110;
+  --gold:#c7a568;
+  --light:#ead6a9;
+  --white:#f7f5f0;
+  --muted:#b4b0a8;
+  --border:rgba(199,165,104,.27);
+  --max:1200px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
+body{margin:0;background:var(--bg);color:var(--white);font-family:"DM Sans",sans-serif;line-height:1.65}
+a{color:inherit;text-decoration:none}
+img,video{max-width:100%;display:block}
+button,input,textarea{font:inherit}
+section{padding:85px 22px}
+.container{max-width:var(--max);margin:auto}
+h1,h2,h3,.serif{font-family:"Playfair Display",Georgia,serif;font-weight:500}
+h2{font-size:clamp(2rem,4vw,3.2rem);line-height:1.15;margin:0 0 18px}
+h3{line-height:1.25}
+p{margin-top:0}
+.gold{color:var(--light)}
+.muted,.section-intro{color:var(--muted)}
+.section-intro{max-width:750px;margin-bottom:35px}
+.eyebrow{display:inline-block;color:var(--gold);font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;margin-bottom:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 22px;background:var(--gold);border:1px solid var(--gold);color:#111;font-weight:700;transition:.25s;cursor:pointer}
+.btn:hover{background:var(--light);transform:translateY(-2px)}
+.btn-outline{background:transparent;color:var(--light)}
+.btn-outline:hover{color:#111}
+.center{text-align:center}
+.center .section-intro{margin-left:auto;margin-right:auto}
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 95px; }
-    body {
-      margin: 0;
-      background: var(--black);
-      color: var(--white);
-      font-family: "DM Sans", sans-serif;
-      line-height: 1.65;
-    }
-    body, button, input, textarea, select { font-family: "DM Sans", sans-serif; }
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
-    button, input, textarea, select { font: inherit; }
-    button, a { -webkit-tap-highlight-color: transparent; }
-    section { padding: 100px 22px; }
-    .container { max-width: var(--max); margin: 0 auto; }
-    .eyebrow {
-      display: inline-block;
-      color: var(--gold);
-      font-size: .75rem;
-      letter-spacing: .22em;
-      text-transform: uppercase;
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
-    h1, h2, h3, .serif { font-family: "Playfair Display", Georgia, serif; font-weight: 500; }
-    h2 { font-size: clamp(2rem, 4vw, 3.3rem); line-height: 1.15; margin: 0 0 18px; }
-    h3 { line-height: 1.25; }
-    .section-intro { max-width: 720px; color: var(--muted); margin-bottom: 38px; }
-    .gold { color: var(--gold-light); }
-    .center { text-align: center; }
-    .center .section-intro { margin-left: auto; margin-right: auto; }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 13px 22px;
-      border: 1px solid var(--gold);
-      background: var(--gold);
-      color: #111;
-      font-size: .9rem;
-      font-weight: 700;
-      transition: .25s ease;
-      cursor: pointer;
-    }
-    .btn:hover { background: var(--gold-light); border-color: var(--gold-light); transform: translateY(-2px); }
-    .btn-outline { background: transparent; color: var(--gold-light); }
-    .btn-outline:hover { color: #111; }
-    .btn-small { padding: 10px 15px; font-size: .82rem; }
-    .muted { color: var(--muted); }
+/* NAVEGACIÓN */
+.topbar{position:sticky;top:0;z-index:1000;background:rgba(8,8,8,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+.nav-wrap{max-width:1400px;margin:auto;padding:10px 24px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{display:flex;align-items:center;gap:12px;min-width:165px}
+.brand img{width:56px;height:56px;object-fit:contain}
+.brand-copy{line-height:1.2}
+.brand-copy strong{display:block;letter-spacing:.1em}
+.brand-copy span{color:var(--gold);font-size:.65rem;letter-spacing:.15em}
+.nav-links{display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:15px}
+.nav-links a{font-size:.76rem;color:#e1ddd4}
+.nav-links a:hover{color:var(--light)}
+.nav-links .nav-cta{border:1px solid var(--gold);padding:8px 12px;color:var(--light)}
+.menu-toggle{display:none;background:transparent;color:var(--light);border:1px solid var(--border);padding:10px 13px;cursor:pointer}
 
-    /* HEADER */
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(8,8,8,.94);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--border);
-    }
-    .nav-wrap {
-      max-width: 1400px;
-      margin: auto;
-      padding: 10px 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-    .brand { display: flex; align-items: center; gap: 12px; min-width: 165px; }
-    .brand img { width: 56px; height: 56px; object-fit: contain; }
-    .brand-copy { line-height: 1.15; }
-    .brand-copy strong { display: block; font-size: .9rem; letter-spacing: .1em; }
-    .brand-copy span { color: var(--gold); font-size: .64rem; letter-spacing: .16em; }
-    .nav-links { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 17px; }
-    .nav-links a { font-size: .76rem; color: #e1ddd4; transition: color .2s; }
-    .nav-links a:hover { color: var(--gold-light); }
-    .nav-links .nav-cta { padding: 9px 13px; border: 1px solid var(--gold); color: var(--gold-light); }
-    .menu-toggle {
-      display: none;
-      background: transparent;
-      color: var(--gold-light);
-      border: 1px solid var(--border);
-      padding: 9px 12px;
-      cursor: pointer;
-    }
+/* PORTADA */
+.hero{
+  min-height:660px;
+  display:flex;
+  align-items:center;
+  padding:90px 22px;
+  background:
+    linear-gradient(90deg,rgba(5,5,5,.94),rgba(5,5,5,.65),rgba(5,5,5,.25)),
+    url("https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/d3c797a8-433b-498c-83d9-fad409dc89e5.jpeg") center/cover no-repeat;
+}
+.hero-content{max-width:var(--max);width:100%;margin:auto}
+.hero-text{max-width:700px}
+.hero h1{font-size:clamp(2.8rem,6vw,5.3rem);line-height:1.05;margin:8px 0 22px}
+.hero p{color:#e1ddd5;font-size:1.05rem;max-width:580px;margin-bottom:28px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px}
 
-    /* HERO */
-    .hero {
-      min-height: 690px;
-      display: flex;
-      align-items: center;
-      position: relative;
-      padding: 100px 22px;
-      overflow: hidden;
-      background:
-        linear-gradient(90deg, rgba(5,5,5,.94) 0%, rgba(5,5,5,.75) 48%, rgba(5,5,5,.28) 100%),
-        linear-gradient(0deg, rgba(5,5,5,.55), transparent 45%),
-        url("https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/d3c797a8-433b-498c-83d9-fad409dc89e5.jpeg") center/cover no-repeat;
-    }
-    .hero-content { max-width: var(--max); width: 100%; margin: auto; position: relative; z-index: 1; }
-    .hero-text { max-width: 690px; }
-    .hero h1 { font-size: clamp(2.8rem, 6vw, 5.4rem); line-height: 1.04; margin: 8px 0 22px; }
-    .hero p { color: #e1ddd5; max-width: 570px; font-size: 1.05rem; margin-bottom: 30px; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 13px; }
+/* TARJETAS DE PORTADA */
+.feature-strip{padding:0 20px 30px;margin-top:-35px;position:relative}
+.feature-grid{max-width:1000px;margin:auto;display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.feature-card{display:flex;align-items:center;gap:15px;padding:20px;background:linear-gradient(135deg,#191816,#0e0e0d);border:1px solid var(--border);transition:.25s}
+.feature-card:hover{border-color:var(--gold);transform:translateY(-3px)}
+.feature-icon{width:50px;height:50px;min-width:50px;display:grid;place-items:center;border:1px solid var(--gold);border-radius:50%;color:var(--light);font-size:1.25rem}
+.feature-card small{display:block;color:var(--gold);font-size:.65rem;letter-spacing:.12em;text-transform:uppercase}
+.feature-card strong{font:500 1.2rem "Playfair Display",serif}
+.feature-plus{margin-left:auto;border:1px solid var(--border);color:var(--gold);border-radius:50%;width:30px;height:30px;display:grid;place-items:center}
 
-    /* FEATURE CARDS */
-    .feature-strip { padding: 0 22px 30px; margin-top: -44px; position: relative; z-index: 5; }
-    .feature-grid { max-width: 1000px; margin: auto; display: grid; grid-template-columns: repeat(2,1fr); gap: 18px; }
-    .feature-card {
-      background: linear-gradient(135deg,#191816,#0e0e0d);
-      border: 1px solid var(--border);
-      padding: 23px 25px;
-      display: flex;
-      align-items: center;
-      gap: 17px;
-      transition: .25s;
-    }
-    .feature-card:hover { border-color: var(--gold); transform: translateY(-3px); }
-    .feature-icon {
-      width: 52px; height: 52px; min-width: 52px;
-      display: grid; place-items: center;
-      border: 1px solid var(--gold);
-      border-radius: 50%;
-      color: var(--gold-light);
-      font-size: 1.2rem;
-    }
-    .feature-card small { display: block; color: var(--gold); letter-spacing: .14em; font-size: .65rem; text-transform: uppercase; }
-    .feature-card strong { display: block; font-family: "Playfair Display", Georgia, serif; font-size: 1.2rem; font-weight: 500; }
-    .feature-plus { margin-left: auto; color: var(--gold); border: 1px solid var(--border); border-radius: 50%; width: 30px; height: 30px; display: grid; place-items: center; }
+/* NOSOTROS */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.about-art{min-height:410px;background:url("https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/5e770fd8-4e44-4615-bcbf-a68745ab324f.jpeg") center/cover;border:1px solid var(--border)}
+.about-points{display:grid;gap:13px;margin:25px 0}
+.about-point{display:flex;gap:12px}
+.check{color:var(--gold)}
 
-    /* GENERAL CARDS */
-    .cards { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 20px; }
-    .card {
-      background: var(--panel);
-      border: 1px solid var(--border);
-      padding: 28px;
-      transition: border-color .25s, transform .25s;
-    }
-    .card:hover { border-color: rgba(199,165,104,.65); transform: translateY(-3px); }
-    .card-number { color: var(--gold); letter-spacing: .16em; font-size: .72rem; }
-    .card h3 { font-size: 1.45rem; margin: 10px 0; }
-    .card p { color: var(--muted); font-size: .92rem; margin-bottom: 0; }
-    .card-icon {
-      width: 46px; height: 46px; display: grid; place-items: center;
-      border: 1px solid var(--gold); color: var(--gold-light);
-      border-radius: 50%; font-size: 1.1rem; margin-bottom: 17px;
-    }
+/* ESPECIALIDADES */
+.specialties,.reviews{background:#0c0c0b}
+.specialty-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.card{background:var(--panel);border:1px solid var(--border);padding:26px;transition:.25s}
+.card:hover{border-color:var(--gold);transform:translateY(-3px)}
+.card-icon{width:45px;height:45px;display:grid;place-items:center;border:1px solid var(--gold);border-radius:50%;color:var(--light);font-size:1.2rem;margin-bottom:15px}
+.card-number{color:var(--gold);font-size:.7rem;letter-spacing:.13em}
+.card h3{font-size:1.4rem;margin:10px 0}
+.card p{font-size:.9rem;color:var(--muted);margin-bottom:0}
+.technology-panel{margin-top:30px;padding:32px;border:1px solid var(--border);background:radial-gradient(circle at top right,rgba(199,165,104,.12),transparent 40%),#111}
+.technology-top{display:grid;grid-template-columns:1fr 1fr;gap:25px;align-items:center;margin-bottom:25px}
+.technology-top h3{font-size:clamp(1.7rem,3vw,2.5rem);margin:5px 0 12px}
+.technology-top p,.tech-card p{color:var(--muted)}
+.cadcam-mark{min-height:160px;display:grid;place-content:center;text-align:center;border:1px solid var(--border);background:repeating-linear-gradient(135deg,rgba(199,165,104,.04) 0 1px,transparent 1px 14px)}
+.cadcam-mark strong{font:clamp(2.4rem,5vw,4rem) "Playfair Display",serif;color:var(--light);letter-spacing:.08em}
+.cadcam-mark span{font-size:.7rem;color:var(--gold);letter-spacing:.15em}
+.tech-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.tech-card{padding:20px;border:1px solid var(--border);background:rgba(0,0,0,.2)}
+.tech-card h4{margin:0 0 8px}
+.tech-card p{font-size:.85rem;margin:0}
 
-    /* ABOUT */
-    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 55px; align-items: center; }
-    .about-art {
-      min-height: 430px;
-      background:
-        linear-gradient(0deg, rgba(0,0,0,.2), rgba(0,0,0,.05)),
-        url("https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/5e770fd8-4e44-4615-bcbf-a68745ab324f.jpeg") center/cover no-repeat;
-      border: 1px solid var(--border);
-      position: relative;
-    }
-    .about-art:after { content: ""; position: absolute; inset: 14px; border: 1px solid rgba(234,214,169,.55); pointer-events: none; }
-    .about-points { display: grid; gap: 14px; margin: 28px 0; }
-    .about-point { display: flex; gap: 13px; color: #e7e2d9; }
-    .check { color: var(--gold); font-size: 1.2rem; }
+/* DISEÑO DE SONRISA */
+.smile-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.smile-card{border:1px solid var(--border);background:var(--panel)}
+.smile-image{min-height:250px;display:grid;place-items:center;text-align:center;background:linear-gradient(135deg,#1b1915,#0c0c0b);color:var(--light);padding:25px}
+.smile-image span{display:block;font-size:3rem}
+.smile-copy{padding:22px}
+.smile-copy h3{margin:0 0 8px;font-size:1.4rem}
+.smile-copy p,.smile-note{color:var(--muted)}
 
-    /* SPECIALTIES */
-    .specialties { background: #0c0c0b; }
-    .specialty-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 18px; }
-    .specialty-card { min-height: 230px; }
-    .specialty-card .card-icon { font-size: 1.25rem; }
-    .technology-panel {
-      margin-top: 30px;
-      padding: 34px;
-      border: 1px solid var(--border);
-      background:
-        radial-gradient(circle at top right,rgba(199,165,104,.12),transparent 40%),
-        linear-gradient(130deg,#171613,#0e0e0d);
-    }
-    .technology-top { display: grid; grid-template-columns: 1fr 1.1fr; gap: 30px; align-items: center; margin-bottom: 28px; }
-    .technology-top h3 { font-size: clamp(1.7rem,3vw,2.5rem); margin: 5px 0 12px; }
-    .technology-top p { color: var(--muted); margin: 0; }
-    .cadcam-mark {
-      min-height: 170px; display: flex; flex-direction: column; justify-content: center; align-items: center;
-      text-align: center; border: 1px solid rgba(199,165,104,.4);
-      background: repeating-linear-gradient(135deg,rgba(199,165,104,.04) 0 1px,transparent 1px 14px);
-    }
-    .cadcam-mark strong { font-family: "Playfair Display",Georgia,serif; font-size: clamp(2.4rem,5vw,4rem); color: var(--gold-light); letter-spacing: .08em; }
-    .cadcam-mark span { color: var(--gold); font-size: .72rem; letter-spacing: .2em; }
-    .tech-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 15px; }
-    .tech-card { padding: 22px; border: 1px solid var(--border); background: rgba(0,0,0,.22); }
-    .tech-card .card-icon { margin-bottom: 12px; }
-    .tech-card h4 { margin: 0 0 8px; font-size: 1rem; }
-    .tech-card p { margin: 0; font-size: .85rem; color: var(--muted); }
+/* TURISMO DENTAL */
+.tourism{
+  background:
+    linear-gradient(90deg,rgba(7,7,7,.94),rgba(7,7,7,.84)),
+    url("https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/cc758aa7-2d30-4563-9023-cfa9a1a6587a.jpeg") center/cover no-repeat;
+}
+.tourism-grid{display:grid;grid-template-columns:1fr 1fr;gap:38px;align-items:center}
+.tourism-copy{max-width:650px}
+.tourism-benefits{display:grid;gap:12px;margin:24px 0}
+.benefit{padding:14px 16px;border-left:2px solid var(--gold);background:rgba(255,255,255,.045)}
+.tourism-video-wrap{width:100%;min-width:0;border:1px solid rgba(199,165,104,.4);background:#050505;overflow:hidden;padding:7px}
+.tourism-video{display:block;width:100%;max-height:760px;aspect-ratio:9/16;object-fit:contain;background:#050505}
+.tourism-video-caption{padding:16px 14px 8px;border-top:1px solid rgba(199,165,104,.2);margin-top:7px}
+.tourism-video-caption .eyebrow{margin-bottom:4px}
+.tourism-video-caption p{margin:0;color:#e5dfd3;font-size:.9rem}
 
-    /* SMILE DESIGN */
-    .smile-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
-    .smile-card { border: 1px solid var(--border); background: var(--panel); overflow: hidden; }
-    .smile-image {
-      min-height: 260px;
-      display: grid;
-      place-items: center;
-      padding: 25px;
-      text-align: center;
-      background: linear-gradient(135deg,#1b1915,#0c0c0b);
-      color: var(--gold-light);
-    }
-    .smile-image span { display: block; font-size: 3rem; margin-bottom: 8px; }
-    .smile-copy { padding: 24px; }
-    .smile-copy h3 { font-size: 1.45rem; margin: 0 0 9px; }
-    .smile-copy p { color: var(--muted); margin: 0; }
-    .smile-note { font-size: .82rem; color: var(--muted); margin-top: 22px; }
+/* LABDENTAL */
+.lab-grid{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center}
+.lab-visual{min-height:300px;display:grid;place-items:center;text-align:center;border:1px solid var(--border);background:radial-gradient(circle,rgba(199,165,104,.15),transparent 55%),#111}
+.lab-visual strong{font:clamp(2.3rem,5vw,4rem) "Playfair Display",serif;color:var(--light);letter-spacing:.1em}
+.lab-visual span{display:block;font-size:.7rem;color:var(--gold);letter-spacing:.2em}
+.lab-copy p{color:var(--muted)}
 
-    /* TOURISM */
-    .tourism {
-      background:
-        linear-gradient(90deg,rgba(7,7,7,.96),rgba(7,7,7,.82)),
-        url("https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/cc758aa7-2d30-4563-9023-cfa9a1a6587a.jpeg") center/cover no-repeat;
-    }
-    .tourism-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 40px; align-items: start; }
-    .tourism-benefits { display: grid; gap: 12px; margin-top: 24px; }
-    .benefit { padding: 14px 16px; border-left: 2px solid var(--gold); background: rgba(255,255,255,.035); }
-    .quote-list { display: grid; gap: 13px; }
-    .quote-card { border: 1px solid var(--border); background: rgba(12,12,11,.82); padding: 21px; }
-    .quote-card strong { color: var(--gold-light); font-family: "Playfair Display",Georgia,serif; font-size: 1.12rem; }
-    .quote-card p { color: var(--muted); margin: 7px 0 0; font-size: .87rem; }
+/* INSTALACIONES */
+.gallery{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:15px}
+.gallery img{width:100%;height:280px;object-fit:cover;border:1px solid var(--border)}
+.gallery img:first-child{height:360px;grid-row:span 2}
 
-    /* LABDENTAL */
-    .lab-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 35px; align-items: center; }
-    .lab-visual {
-      min-height: 320px;
-      display: grid; place-items: center; text-align: center;
-      border: 1px solid var(--border);
-      background: radial-gradient(circle at center,rgba(199,165,104,.15),transparent 50%),#111;
-    }
-    .lab-visual strong { font-family: "Playfair Display",Georgia,serif; font-size: clamp(2.3rem,5vw,4rem); letter-spacing: .1em; color: var(--gold-light); }
-    .lab-visual span { display: block; font-size: .7rem; letter-spacing: .25em; color: var(--gold); }
-    .lab-copy p { color: var(--muted); }
-    .lab-copy .btn { margin-top: 14px; }
+/* UBICACIONES */
+.location-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.location-card{padding:28px;background:var(--panel);border:1px solid var(--border)}
+.location-card h3{font-size:1.5rem;margin:8px 0}
+.location-card p{color:var(--muted)}
+.location-card .btn{margin-top:10px}
 
-    /* INSTALLATIONS */
-    .gallery { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 15px; }
-    .gallery img { width: 100%; height: 300px; object-fit: cover; border: 1px solid var(--border); }
-    .gallery img:first-child { height: 380px; grid-row: span 2; }
-    .gallery img:last-child { height: 300px; }
+/* OPINIONES */
+.review-layout{display:grid;grid-template-columns:.9fr 1.1fr;gap:35px;align-items:start}
+.review-form,.contact-panel{padding:26px;background:var(--panel);border:1px solid var(--border)}
+.field{display:grid;gap:7px;margin-bottom:15px}
+.field label{font-size:.82rem;color:var(--light)}
+.field input,.field textarea{width:100%;padding:12px;background:#090909;border:1px solid #3a352b;color:var(--white);outline:none}
+.field input:focus,.field textarea:focus{border-color:var(--gold)}
+.field textarea{min-height:110px;resize:vertical}
+.stars{display:flex;gap:8px}
+.star-btn{border:0;background:transparent;padding:0;font-size:1.8rem;color:#655c4c;cursor:pointer}
+.star-btn.active{color:var(--gold)}
+.review-list{display:grid;gap:14px}
+.review-item,.empty-reviews{padding:22px;background:var(--panel);border:1px solid var(--border)}
+.review-item h3{margin:0;font-size:1.2rem}
+.review-stars{color:var(--gold);letter-spacing:.1em}
+.review-item p,.empty-reviews{color:var(--muted)}
+.form-status{font-size:.85rem;color:var(--light);margin-top:12px}
 
-    /* LOCATIONS */
-    .location-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 20px; }
-    .location-card { padding: 30px; background: var(--panel); border: 1px solid var(--border); }
-    .location-card h3 { font-size: 1.5rem; margin: 8px 0; }
-    .location-card p { color: var(--muted); }
-    .location-card .btn { margin-top: 12px; }
+/* CONTACTO */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:35px}
+.contact-line{margin:18px 0}
+.contact-line small{display:block;color:var(--gold);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase}
+.contact-line strong{font-weight:500}
+.contact-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.contact-decoration{min-height:340px;display:flex;align-items:end;padding:30px;background:linear-gradient(0deg,rgba(0,0,0,.9),transparent),url("https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/f55d05cf-065c-4c40-b070-8a62da1c67af.jpeg") center/cover;border:1px solid var(--border)}
+.contact-decoration h3{font-size:2rem;margin:0}
 
-    /* TESTIMONIALS */
-    .reviews { background: #0c0c0b; }
-    .review-layout { display: grid; grid-template-columns: .9fr 1.1fr; gap: 35px; align-items: start; }
-    .review-form { background: var(--panel); border: 1px solid var(--border); padding: 28px; }
-    .field { display: grid; gap: 7px; margin-bottom: 16px; }
-    .field label { font-size: .82rem; color: var(--gold-light); }
-    .field input, .field textarea, .field select {
-      width: 100%; background: #090909; color: var(--white);
-      border: 1px solid #3a352b; padding: 12px 13px; outline: none;
-    }
-    .field input:focus, .field textarea:focus, .field select:focus { border-color: var(--gold); }
-    .field textarea { min-height: 110px; resize: vertical; }
-    .stars { display: flex; gap: 8px; }
-    .star-btn { border: 0; background: transparent; padding: 0; font-size: 1.8rem; color: #655c4c; cursor: pointer; }
-    .star-btn.active { color: var(--gold); }
-    .review-list { display: grid; gap: 14px; }
-    .review-item { padding: 23px; background: var(--panel); border: 1px solid var(--border); }
-    .review-item h3 { margin: 0; font-size: 1.2rem; }
-    .review-stars { color: var(--gold); letter-spacing: .12em; }
-    .review-item p { color: var(--muted); margin-bottom: 0; }
-    .empty-reviews { border: 1px dashed var(--border); padding: 25px; color: var(--muted); }
-    .form-status { font-size: .87rem; margin-top: 12px; color: var(--gold-light); }
+/* PIE DE PÁGINA */
+footer{border-top:1px solid var(--border);padding:28px 22px;color:var(--muted);font-size:.8rem}
+.footer-inner{max-width:var(--max);margin:auto;display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.footer-inner strong{color:var(--light)}
+.whatsapp-float{position:fixed;right:18px;bottom:20px;z-index:900;background:#1f9d61;color:white;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;font-size:1.5rem;box-shadow:0 5px 22px #0006}
 
-    /* CONTACT */
-    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 35px; }
-    .contact-panel { padding: 30px; background: var(--panel); border: 1px solid var(--border); }
-    .contact-line { margin: 19px 0; }
-    .contact-line small { display: block; color: var(--gold); letter-spacing: .12em; text-transform: uppercase; font-size: .7rem; }
-    .contact-line strong { display: block; font-weight: 500; margin-top: 3px; }
-    .contact-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
-    .contact-decoration {
-      min-height: 350px; display: flex; align-items: end; padding: 32px;
-      background: linear-gradient(0deg,rgba(0,0,0,.9),rgba(0,0,0,.08)),url("https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/f55d05cf-065c-4c40-b070-8a62da1c67af.jpeg") center/cover no-repeat;
-      border: 1px solid var(--border);
-    }
-    .contact-decoration h3 { font-size: 2rem; margin: 0; }
-
-    footer { border-top: 1px solid var(--border); padding: 30px 22px; color: var(--muted); font-size: .8rem; }
-    .footer-inner { max-width: var(--max); margin: auto; display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
-    .footer-inner strong { color: var(--gold-light); }
-    .whatsapp-float {
-      position: fixed; right: 20px; bottom: 20px; z-index: 900;
-      background: #1f9d61; color: #fff; width: 56px; height: 56px;
-      border-radius: 50%; display: grid; place-items: center; font-size: 1.5rem;
-      box-shadow: 0 5px 22px rgba(0,0,0,.35);
-    }
-
-    @media (max-width: 1100px) {
-      .nav-wrap { flex-wrap: wrap; }
-      .menu-toggle { display: block; }
-      .nav-links { display: none; width: 100%; flex-direction: column; align-items: stretch; gap: 0; padding: 8px 0 12px; }
-      .nav-links.open { display: flex; }
-      .nav-links a { padding: 11px 5px; border-bottom: 1px solid rgba(199,165,104,.12); font-size: .9rem; }
-      .nav-links .nav-cta { text-align: center; margin-top: 10px; }
-      .cards, .specialty-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
-    }
-    @media (max-width: 760px) {
-      section { padding: 72px 18px; }
-      .nav-wrap { padding: 9px 16px; }
-      .brand img { width: 47px; height: 47px; }
-      .hero { min-height: 620px; padding: 75px 18px; background-position: 60% center; }
-      .hero h1 { font-size: clamp(2.65rem,12vw,4.2rem); }
-      .hero p { font-size: .98rem; }
-      .feature-strip { padding: 0 15px 20px; margin-top: -25px; }
-      .feature-grid { grid-template-columns: 1fr; gap: 10px; }
-      .feature-card { padding: 17px; }
-      .about-grid, .technology-top, .tourism-grid, .lab-grid, .review-layout, .contact-grid { grid-template-columns: 1fr; gap: 28px; }
-      .about-art { min-height: 320px; }
-      .cards, .specialty-grid, .tech-grid, .smile-grid, .location-grid { grid-template-columns: 1fr; }
-      .technology-panel { padding: 22px 17px; }
-      .cadcam-mark { min-height: 140px; }
-      .gallery { grid-template-columns: 1fr 1fr; }
-      .gallery img, .gallery img:first-child, .gallery img:last-child { height: 210px; grid-row: auto; }
-      .gallery img:first-child { grid-column: span 2; height: 260px; }
-      .contact-decoration { min-height: 280px; }
-      .review-form, .contact-panel { padding: 22px; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after { transition: none !important; }
-    }
-  </style>
+@media(max-width:1100px){
+  .menu-toggle{display:block}
+  .nav-wrap{flex-wrap:wrap}
+  .nav-links{display:none;width:100%;flex-direction:column;align-items:stretch;gap:0;padding:8px 0}
+  .nav-links.open{display:flex}
+  .nav-links a{padding:10px 4px;border-bottom:1px solid rgba(199,165,104,.12);font-size:.9rem}
+  .nav-links .nav-cta{text-align:center;margin-top:8px}
+  .specialty-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:760px){
+  section{padding:68px 18px}
+  .nav-wrap{padding:9px 15px}
+  .brand img{width:47px;height:47px}
+  .hero{min-height:610px;padding:70px 18px;background-position:60% center}
+  .hero h1{font-size:clamp(2.65rem,11vw,4rem)}
+  .hero p{font-size:.98rem}
+  .feature-strip{padding:0 15px 20px;margin-top:-22px}
+  .feature-grid,.about-grid,.technology-top,.tourism-grid,.lab-grid,.review-layout,.contact-grid,.smile-grid,.location-grid{grid-template-columns:1fr}
+  .feature-card{padding:16px}
+  .about-art{min-height:300px}
+  .specialty-grid,.tech-grid{grid-template-columns:1fr}
+  .technology-panel{padding:21px 16px}
+  .tourism-video-wrap{margin-top:5px;padding:4px}
+  .tourism-video{max-height:75vh;aspect-ratio:9/16}
+  .gallery{grid-template-columns:1fr 1fr}
+  .gallery img,.gallery img:first-child{height:210px;grid-row:auto}
+  .gallery img:first-child{grid-column:span 2;height:260px}
+  .review-form,.contact-panel{padding:21px}
+  .contact-decoration{min-height:270px}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition:none!important}
+}
+</style>
 </head>
 
 <body>
-  <header class="topbar">
-    <div class="nav-wrap">
-      <a class="brand" href="#inicio" aria-label="MÉDICA ML Inicio">
-        <img src="https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/6FDF1D0C-A18C-435E-95B1-DCDCE7B9832A.png" alt="Logo MÉDICA ML">
-        <div class="brand-copy">
-          <strong>MÉDICA ML</strong>
-          <span>ALTA BOUTIQUE DENTAL</span>
-        </div>
-      </a>
 
-      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks">☰ Menú</button>
-
-      <nav class="nav-links" id="navLinks" aria-label="Navegación principal">
-        <a href="#inicio">Inicio</a>
-        <a href="#nosotros">Nosotros</a>
-        <a href="#especialidades">Especialidades</a>
-        <a href="#diseno-sonrisa">Diseño de sonrisa</a>
-        <a href="#turismo-dental">Turismo dental</a>
-        <a href="#labdental">LabDental</a>
-        <a href="#instalaciones">Instalaciones</a>
-        <a href="#ubicaciones">Ubicaciones</a>
-        <a href="#opiniones">Opiniones</a>
-        <a href="#contacto">Contacto</a>
-        <a class="nav-cta" href="https://wa.me/527713159521?text=Hola%2C%20quiero%20agendar%20una%20cita%20en%20M%C3%89DICA%20ML" target="_blank" rel="noopener">Agendar cita</a>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero" id="inicio">
-      <div class="hero-content">
-        <div class="hero-text">
-          <span class="eyebrow">Odontología · Tecnología · Bienestar</span>
-          <h1>Una sonrisa que refleja <span class="gold">lo mejor de ti.</span></h1>
-          <p>Atención dental personalizada en un espacio donde la experiencia, la precisión y el cuidado de cada detalle se unen para acompañarte hacia una sonrisa saludable.</p>
-          <div class="hero-actions">
-            <a class="btn" href="#especialidades">Conocer especialidades</a>
-            <a class="btn btn-outline" href="https://wa.me/527713159521?text=Hola%2C%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n" target="_blank" rel="noopener">Solicitar información</a>
-          </div>
-        </div>
+<header class="topbar">
+  <div class="nav-wrap">
+    <a class="brand" href="#inicio" aria-label="MÉDICA ML Inicio">
+      <img src="https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/6FDF1D0C-A18C-435E-95B1-DCDCE7B9832A.png" alt="Logo MÉDICA ML">
+      <div class="brand-copy">
+        <strong>MÉDICA ML</strong>
+        <span>ALTA BOUTIQUE DENTAL</span>
       </div>
-    </section>
+    </a>
 
-    <div class="feature-strip">
-      <div class="feature-grid">
-        <a class="feature-card" href="#diseno-sonrisa">
-          <span class="feature-icon" aria-hidden="true">✧</span>
-          <span>
-            <small>Estética dental</small>
-            <strong>Diseño de sonrisa</strong>
-          </span>
-          <span class="feature-plus" aria-hidden="true">+</span>
-        </a>
-        <a class="feature-card" href="#turismo-dental">
-          <span class="feature-icon" aria-hidden="true">◇</span>
-          <span>
-            <small>Atención personalizada</small>
-            <strong>Turismo dental</strong>
-          </span>
-          <span class="feature-plus" aria-hidden="true">+</span>
-        </a>
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks">☰ Menú</button>
+
+    <nav class="nav-links" id="navLinks" aria-label="Navegación principal">
+      <a href="#inicio">Inicio</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#especialidades">Especialidades</a>
+      <a href="#diseno-sonrisa">Diseño de sonrisa</a>
+      <a href="#turismo-dental">Turismo dental</a>
+      <a href="#labdental">LabDental</a>
+      <a href="#instalaciones">Instalaciones</a>
+      <a href="#ubicaciones">Ubicaciones</a>
+      <a href="#opiniones">Opiniones</a>
+      <a href="#contacto">Contacto</a>
+      <a class="nav-cta" href="https://wa.me/527713159521?text=Hola%2C%20quiero%20agendar%20una%20cita" target="_blank" rel="noopener">Agendar cita</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero" id="inicio">
+  <div class="hero-content">
+    <div class="hero-text">
+      <span class="eyebrow">Odontología · Tecnología · Bienestar</span>
+      <h1>Una sonrisa que refleja <span class="gold">lo mejor de ti.</span></h1>
+      <p>Atención dental personalizada en un espacio donde la experiencia, la precisión y el cuidado de cada detalle se unen para acompañarte hacia una sonrisa saludable.</p>
+      <div class="hero-actions">
+        <a class="btn" href="#especialidades">Conocer especialidades</a>
+        <a class="btn btn-outline" href="https://wa.me/527713159521?text=Hola%2C%20quiero%20informaci%C3%B3n" target="_blank" rel="noopener">Solicitar información</a>
       </div>
     </div>
+  </div>
+</section>
 
-    <section id="nosotros">
-      <div class="container about-grid">
-        <div class="about-art" role="img" aria-label="Imagen de la clínica dental"></div>
+<div class="feature-strip">
+  <div class="feature-grid">
+    <a class="feature-card" href="#diseno-sonrisa">
+      <span class="feature-icon">✧</span>
+      <span><small>Estética dental</small><strong>Diseño de sonrisa</strong></span>
+      <span class="feature-plus">+</span>
+    </a>
+    <a class="feature-card" href="#turismo-dental">
+      <span class="feature-icon">◇</span>
+      <span><small>Atención personalizada</small><strong>Turismo dental</strong></span>
+      <span class="feature-plus">+</span>
+    </a>
+  </div>
+</div>
+
+<section id="nosotros">
+  <div class="container about-grid">
+    <div class="about-art" role="img" aria-label="Instalaciones de la clínica dental"></div>
+    <div>
+      <span class="eyebrow">Conócenos</span>
+      <h2>La atención que mereces, con un enfoque <span class="gold">personal.</span></h2>
+      <p class="muted">En MÉDICA ML · Alta Boutique Dental buscamos que cada visita sea una experiencia cercana y profesional. Escuchamos tus necesidades y te orientamos para que puedas tomar decisiones informadas sobre tu salud bucal.</p>
+      <div class="about-points">
+        <div class="about-point"><span class="check">✦</span><span>Planes de atención adaptados a cada paciente.</span></div>
+        <div class="about-point"><span class="check">✦</span><span>Enfoque en salud bucal, función y estética.</span></div>
+        <div class="about-point"><span class="check">✦</span><span>Orientación clara durante cada etapa del tratamiento.</span></div>
+      </div>
+      <a class="btn btn-outline" href="#ubicaciones">Conoce nuestras ubicaciones</a>
+    </div>
+  </div>
+</section>
+
+<section class="specialties" id="especialidades">
+  <div class="container">
+    <span class="eyebrow">Atención odontológica</span>
+    <h2>Especialidades para cuidar <span class="gold">tu sonrisa.</span></h2>
+    <p class="section-intro">Conoce las áreas de atención y las herramientas que pueden apoyar la valoración y planificación de tu tratamiento. La indicación depende de las necesidades de cada paciente.</p>
+
+    <div class="specialty-grid">
+      <article class="card">
+        <div class="card-icon">⌁</div>
+        <span class="card-number">01 / ORTODONCIA</span>
+        <h3>Ortodoncia</h3>
+        <p>Valoración y opciones de tratamiento para mejorar la alineación dental y la relación entre los dientes.</p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">◉</div>
+        <span class="card-number">02 / ENDODONCIA</span>
+        <h3>Endodoncia</h3>
+        <p>Atención de problemas que afectan la pulpa dental, con el objetivo de conservar las piezas cuando sea posible.</p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">✧</div>
+        <span class="card-number">03 / ENCÍAS E IMPLANTES</span>
+        <h3>Periodoncia e implantología</h3>
+        <p>Valoración de la salud de las encías y alternativas para reemplazar piezas dentales ausentes cuando estén indicadas.</p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">◇</div>
+        <span class="card-number">04 / ESTÉTICA</span>
+        <h3>Diseño de sonrisa</h3>
+        <p>Planificación estética personalizada que considera armonía, proporción y salud bucal.</p>
+        <p style="margin-top:12px"><a class="gold" href="#diseno-sonrisa">Conocer más →</a></p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">▱</div>
+        <span class="card-number">05 / REHABILITACIÓN</span>
+        <h3>Rehabilitación oral</h3>
+        <p>Alternativas para recuperar función y estética dental mediante un plan individualizado.</p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">⌕</div>
+        <span class="card-number">06 / DIAGNÓSTICO</span>
+        <h3>Diagnóstico y planificación</h3>
+        <p>Estudios y valoración clínica para orientar las decisiones de tratamiento de acuerdo con cada caso.</p>
+      </article>
+    </div>
+
+    <div class="technology-panel" id="tecnologia">
+      <div class="technology-top">
         <div>
-          <span class="eyebrow">Conócenos</span>
-          <h2>La atención que mereces, con un enfoque <span class="gold">personal.</span></h2>
-          <p class="muted">En MÉDICA ML · Alta Boutique Dental buscamos que cada visita sea una experiencia cercana y profesional. Escuchamos tus necesidades y te orientamos para que puedas tomar decisiones informadas sobre tu salud bucal.</p>
-          <div class="about-points">
-            <div class="about-point"><span class="check">✦</span><span>Planes de atención adaptados a cada paciente.</span></div>
-            <div class="about-point"><span class="check">✦</span><span>Enfoque en salud bucal, función y estética.</span></div>
-            <div class="about-point"><span class="check">✦</span><span>Orientación clara durante cada etapa del tratamiento.</span></div>
-          </div>
-          <a class="btn btn-outline" href="#contacto">Conoce nuestras ubicaciones</a>
+          <span class="eyebrow">Tecnología aplicada a la odontología</span>
+          <h3>Precisión en cada etapa del <span class="gold">tratamiento.</span></h3>
+          <p>Las herramientas de diagnóstico y diseño digital pueden apoyar la comunicación clínica y la planificación de restauraciones, según el procedimiento indicado.</p>
+        </div>
+        <div class="cadcam-mark">
+          <strong>CAD/CAM</strong>
+          <span>DISEÑO Y FABRICACIÓN ASISTIDOS</span>
         </div>
       </div>
-    </section>
 
-    <section class="specialties" id="especialidades">
-      <div class="container">
-        <span class="eyebrow">Atención odontológica</span>
-        <h2>Especialidades para cuidar <span class="gold">tu sonrisa.</span></h2>
-        <p class="section-intro">Conoce las áreas de atención y las herramientas que pueden apoyar la valoración y planificación de tu tratamiento. La indicación depende de las necesidades de cada paciente.</p>
-
-        <div class="specialty-grid">
-          <article class="card specialty-card">
-            <div class="card-icon" aria-hidden="true">⌁</div>
-            <span class="card-number">01 / ORTODONCIA</span>
-            <h3>Ortodoncia</h3>
-            <p>Valoración y opciones de tratamiento para mejorar la alineación dental y la relación entre los dientes.</p>
-          </article>
-
-          <article class="card specialty-card">
-            <div class="card-icon" aria-hidden="true">◉</div>
-            <span class="card-number">02 / ENDODONCIA</span>
-            <h3>Endodoncia</h3>
-            <p>Atención de problemas que afectan la pulpa dental, con el objetivo de conservar las piezas cuando sea posible.</p>
-          </article>
-
-          <article class="card specialty-card">
-            <div class="card-icon" aria-hidden="true">✧</div>
-            <span class="card-number">03 / ENCÍAS E IMPLANTES</span>
-            <h3>Periodoncia e implantología</h3>
-            <p>Valoración de la salud de las encías y alternativas para reemplazar piezas dentales ausentes cuando estén indicadas.</p>
-          </article>
-
-          <article class="card specialty-card">
-            <div class="card-icon" aria-hidden="true">◇</div>
-            <span class="card-number">04 / ESTÉTICA</span>
-            <h3>Diseño de sonrisa</h3>
-            <p>Planificación estética personalizada que considera armonía, proporción y salud bucal.</p>
-            <p><a class="gold" href="#diseno-sonrisa">Conocer más →</a></p>
-          </article>
-
-          <article class="card specialty-card">
-            <div class="card-icon" aria-hidden="true">▱</div>
-            <span class="card-number">05 / REHABILITACIÓN</span>
-            <h3>Rehabilitación oral</h3>
-            <p>Alternativas para recuperar función y estética dental mediante un plan individualizado.</p>
-          </article>
-
-          <article class="card specialty-card">
-            <div class="card-icon" aria-hidden="true">⌕</div>
-            <span class="card-number">06 / DIAGNÓSTICO</span>
-            <h3>Diagnóstico y planificación</h3>
-            <p>Estudios y valoración clínica para orientar las decisiones de tratamiento de acuerdo con cada caso.</p>
-          </article>
-        </div>
-
-        <!-- Tecnología integrada dentro de Especialidades -->
-        <div class="technology-panel" id="tecnologia">
-          <div class="technology-top">
-            <div>
-              <span class="eyebrow">Tecnología aplicada a la odontología</span>
-              <h3>Precisión en cada etapa del <span class="gold">tratamiento.</span></h3>
-              <p>Las herramientas de diagnóstico y diseño digital pueden apoyar la comunicación clínica y la planificación de restauraciones, según el procedimiento indicado.</p>
-            </div>
-            <div class="cadcam-mark">
-              <strong>CAD/CAM</strong>
-              <span>DISEÑO Y FABRICACIÓN ASISTIDOS</span>
-            </div>
-          </div>
-
-          <div class="tech-grid">
-            <article class="tech-card">
-              <div class="card-icon" aria-hidden="true">⌕</div>
-              <h4>Radiología y diagnóstico</h4>
-              <p>Los estudios radiográficos, como panorámica o cefalometría, se solicitan cuando están indicados para valorar estructuras y apoyar el plan de tratamiento.</p>
-            </article>
-
-            <article class="tech-card">
-              <div class="card-icon" aria-hidden="true">▦</div>
-              <h4>Flujo digital CAD/CAM</h4>
-              <p>El diseño y la fabricación asistidos por computadora pueden apoyar la planificación de restauraciones y trabajos protésicos, según el caso.</p>
-            </article>
-
-            <article class="tech-card">
-              <div class="card-icon" aria-hidden="true">◎</div>
-              <h4>Escaneo y herramientas digitales</h4>
-              <p>Las herramientas digitales disponibles pueden facilitar la captura de información y la comunicación del tratamiento cuando el procedimiento lo requiere.</p>
-            </article>
-          </div>
-          <p class="muted" style="font-size:.8rem;margin:18px 0 0;">Los estudios, equipos y procedimientos se ofrecen según disponibilidad en la clínica o mediante proveedores especializados. La indicación se determina durante la valoración.</p>
-        </div>
+      <div class="tech-grid">
+        <article class="tech-card">
+          <div class="card-icon">⌕</div>
+          <h4>Radiología y diagnóstico</h4>
+          <p>Los estudios radiográficos, como panorámica o cefalometría, se solicitan cuando están indicados para valorar estructuras y apoyar el plan de tratamiento.</p>
+        </article>
+        <article class="tech-card">
+          <div class="card-icon">▦</div>
+          <h4>Flujo digital CAD/CAM</h4>
+          <p>El diseño y la fabricación asistidos por computadora pueden apoyar la planificación de restauraciones y trabajos protésicos, según el caso.</p>
+        </article>
+        <article class="tech-card">
+          <div class="card-icon">◎</div>
+          <h4>Escaneo y herramientas digitales</h4>
+          <p>Las herramientas digitales disponibles pueden facilitar la captura de información y la comunicación del tratamiento cuando el procedimiento lo requiere.</p>
+        </article>
       </div>
-    </section>
-
-    <section id="diseno-sonrisa">
-      <div class="container">
-        <span class="eyebrow">Estética personalizada</span>
-        <h2>Diseño de sonrisa: <span class="gold">tu sonrisa, tu esencia.</span></h2>
-        <p class="section-intro">Cada sonrisa es diferente. El objetivo es evaluar tus necesidades y definir un plan que considere la salud bucal, la función y tus expectativas estéticas.</p>
-
-        <div class="smile-grid">
-          <article class="smile-card">
-            <div class="smile-image">
-              <div><span>◇</span><strong>ANTES</strong><p>Espacio para fotografía real del paciente</p></div>
-            </div>
-            <div class="smile-copy">
-              <h3>Valoración inicial</h3>
-              <p>Se revisan las condiciones de salud bucal y las necesidades estéticas antes de definir cualquier procedimiento.</p>
-            </div>
-          </article>
-          <article class="smile-card">
-            <div class="smile-image">
-              <div><span>✧</span><strong>DESPUÉS</strong><p>Espacio para fotografía real del resultado</p></div>
-            </div>
-            <div class="smile-copy">
-              <h3>Plan personalizado</h3>
-              <p>Las opciones se explican de forma individualizada, con expectativas realistas y prioridad en la salud del paciente.</p>
-            </div>
-          </article>
-        </div>
-
-        <p class="smile-note">Nota: sustituye estos espacios por fotografías clínicas autorizadas y verificadas. Los resultados dependen de cada paciente y del tratamiento realizado.</p>
-        <div style="margin-top:25px">
-          <a class="btn" href="https://wa.me/527713159521?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20dise%C3%B1o%20de%20sonrisa" target="_blank" rel="noopener">Solicitar valoración</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="tourism" id="turismo-dental">
-      <div class="container tourism-grid">
-        <div>
-          <span class="eyebrow">Atención a pacientes de otras ciudades</span>
-          <h2>Turismo dental con atención <span class="gold">personalizada.</span></h2>
-          <p class="muted">Si viajas para recibir atención dental, podemos orientarte sobre el proceso de valoración y los pasos para organizar tu visita. El calendario y la duración del tratamiento dependen del diagnóstico clínico.</p>
-          <div class="tourism-benefits">
-            <div class="benefit">Orientación inicial sobre las opciones de tratamiento.</div>
-            <div class="benefit">Comunicación previa para organizar tu consulta.</div>
-            <div class="benefit">Planificación de citas según las necesidades clínicas.</div>
-          </div>
-          <a class="btn" style="margin-top:25px" href="https://wa.me/527713159521?text=Hola%2C%20viajo%20para%20recibir%20atenci%C3%B3n%20dental%20y%20quiero%20informaci%C3%B3n" target="_blank" rel="noopener">Consultar mi visita</a>
-        </div>
-
-        <div class="quote-list">
-          <article class="quote-card">
-            <strong>Paciente internacional</strong>
-            <p>Espacio reservado para agregar una opinión real y autorizada de un paciente internacional.</p>
-          </article>
-          <article class="quote-card">
-            <strong>Jesús</strong>
-            <p>Espacio reservado para incorporar el testimonio real del paciente, previa autorización.</p>
-          </article>
-          <article class="quote-card">
-            <strong>Señor Cabrera</strong>
-            <p>Espacio reservado para incorporar el testimonio real del paciente, previa autorización.</p>
-          </article>
-          <p class="muted" style="font-size:.78rem;margin:0">Los textos anteriores son marcadores de posición, no reseñas publicadas.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="labdental">
-      <div class="container lab-grid">
-        <div class="lab-visual">
-          <div>
-            <strong>LabDental</strong>
-            <span>TECNOLOGÍA · DISEÑO · PRECISIÓN</span>
-          </div>
-        </div>
-        <div class="lab-copy">
-          <span class="eyebrow">Colaboración especializada</span>
-          <h2>El valor del detalle en cada <span class="gold">restauración.</span></h2>
-          <p>El trabajo de laboratorio dental es una parte importante de determinados tratamientos restauradores. Los procesos de diseño y fabricación digital CAD/CAM pueden contribuir a la planificación y elaboración de restauraciones según las indicaciones clínicas.</p>
-          <p>Conoce más sobre LabDental y sus servicios en su sitio web.</p>
-          <a class="btn btn-outline" href="https://www.labdental.mx" target="_blank" rel="noopener">Conocer LabDental</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="instalaciones">
-      <div class="container">
-        <span class="eyebrow">Nuestro espacio</span>
-        <h2>Instalaciones pensadas para <span class="gold">tu comodidad.</span></h2>
-        <p class="section-intro">Conoce algunos espacios de la clínica. Las imágenes muestran las instalaciones y el ambiente de atención.</p>
-        <div class="gallery">
-          <img src="https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/5e770fd8-4e44-4615-bcbf-a68745ab324f.jpeg" alt="Instalaciones de MÉDICA ML Alta Boutique Dental" loading="lazy">
-          <img src="https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/cc758aa7-2d30-4563-9023-cfa9a1a6587a.jpeg" alt="Espacio de atención dental" loading="lazy">
-          <img src="https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/f55d05cf-065c-4c40-b070-8a62da1c67af.jpeg" alt="Detalles de la clínica" loading="lazy">
-        </div>
-      </div>
-    </section>
-
-    <section id="ubicaciones">
-      <div class="container">
-        <span class="eyebrow">Encuéntranos</span>
-        <h2>Dos ubicaciones para estar <span class="gold">más cerca de ti.</span></h2>
-        <p class="section-intro">Selecciona la ubicación que te resulte más conveniente y consulta cómo llegar en Google Maps.</p>
-
-        <div class="location-grid">
-          <article class="location-card">
-            <span class="eyebrow">Ubicación 01</span>
-            <h3>Clínica MÉDICA ML</h3>
-            <p>Consulta la ubicación y las indicaciones para llegar.</p>
-            <a class="btn btn-outline" href="https://maps.app.goo.gl/ntiYwqHr58auN8dQ8?g_st=ic" target="_blank" rel="noopener">Ver en Google Maps</a>
-          </article>
-          <article class="location-card">
-            <span class="eyebrow">Ubicación 02</span>
-            <h3>Segunda ubicación</h3>
-            <p>Consulta la ubicación y las indicaciones para llegar.</p>
-            <a class="btn btn-outline" href="https://maps.app.goo.gl/Acs23e9rWX7uCvRC8?g_st=ic" target="_blank" rel="noopener">Ver en Google Maps</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="reviews" id="opiniones">
-      <div class="container">
-        <span class="eyebrow">Experiencias de pacientes</span>
-        <h2>Tu opinión nos ayuda a <span class="gold">mejorar.</span></h2>
-        <p class="section-intro">Comparte tu experiencia con el equipo de MÉDICA ML. Las opiniones se revisan antes de aparecer públicamente.</p>
-
-        <div class="review-layout">
-          <form class="review-form" id="reviewForm">
-            <h3 style="font-size:1.5rem;margin-top:0">Comparte tu opinión</h3>
-            <div class="field">
-              <label for="reviewName">Nombre</label>
-              <input id="reviewName" name="nombre" maxlength="80" required placeholder="¿Cómo te llamas?">
-            </div>
-            <div class="field">
-              <label>Calificación</label>
-              <div class="stars" id="starPicker" role="group" aria-label="Selecciona una calificación">
-                <button type="button" class="star-btn" data-rating="1" aria-label="1 estrella">★</button>
-                <button type="button" class="star-btn" data-rating="2" aria-label="2 estrellas">★</button>
-                <button type="button" class="star-btn" data-rating="3" aria-label="3 estrellas">★</button>
-                <button type="button" class="star-btn" data-rating="4" aria-label="4 estrellas">★</button>
-                <button type="button" class="star-btn" data-rating="5" aria-label="5 estrellas">★</button>
-              </div>
-            </div>
-            <div class="field">
-              <label for="reviewText">Tu comentario</label>
-              <textarea id="reviewText" name="comentario" maxlength="1200" required placeholder="Cuéntanos cómo fue tu experiencia..."></textarea>
-            </div>
-            <button class="btn" type="submit" id="reviewSubmit">Enviar opinión</button>
-            <p class="form-status" id="reviewStatus" aria-live="polite"></p>
-            <p class="muted" style="font-size:.76rem;margin-bottom:0">Al enviar, aceptas que tu comentario sea revisado antes de su posible publicación.</p>
-          </form>
-
-          <div>
-            <h3 style="font-size:1.5rem;margin-top:0">Opiniones publicadas</h3>
-            <div class="review-list" id="reviewList">
-              <div class="empty-reviews">Cargando opiniones...</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contacto">
-      <div class="container">
-        <span class="eyebrow">Estamos para ayudarte</span>
-        <h2>Da el siguiente paso hacia <span class="gold">tu salud bucal.</span></h2>
-        <p class="section-intro">Comunícate con nosotros para solicitar información, resolver dudas o consultar la disponibilidad de citas.</p>
-
-        <div class="contact-grid">
-          <div class="contact-panel">
-            <div class="contact-line">
-              <small>Teléfono</small>
-              <strong><a href="tel:+527717112564">771 711 2564</a></strong>
-            </div>
-            <div class="contact-line">
-              <small>WhatsApp para citas</small>
-              <strong><a href="https://wa.me/527713159521" target="_blank" rel="noopener">771 315 9521</a></strong>
-            </div>
-            <div class="contact-line">
-              <small>Atención</small>
-              <strong>Con cita previa y según disponibilidad</strong>
-            </div>
-            <div class="contact-actions">
-              <a class="btn" href="https://wa.me/527713159521?text=Hola%2C%20quiero%20agendar%20una%20cita" target="_blank" rel="noopener">Agendar por WhatsApp</a>
-              <a class="btn btn-outline" href="#ubicaciones">Ver ubicaciones</a>
-            </div>
-          </div>
-          <div class="contact-decoration">
-            <div>
-              <span class="eyebrow">MÉDICA ML</span>
-              <h3>Tu sonrisa merece atención especial.</h3>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="footer-inner">
-      <div><strong>MÉDICA ML · Alta Boutique Dental</strong><br>Atención odontológica personalizada.</div>
-      <div>© <span id="currentYear"></span> MÉDICA ML. Todos los derechos reservados.</div>
+      <p class="muted" style="font-size:.8rem;margin:18px 0 0">Los estudios, equipos y procedimientos se ofrecen según disponibilidad en la clínica o mediante proveedores especializados. La indicación se determina durante la valoración.</p>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <a class="whatsapp-float" href="https://wa.me/527713159521?text=Hola%2C%20quiero%20informaci%C3%B3n" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">✆</a>
+<section id="diseno-sonrisa">
+  <div class="container">
+    <span class="eyebrow">Estética personalizada</span>
+    <h2>Diseño de sonrisa: <span class="gold">tu sonrisa, tu esencia.</span></h2>
+    <p class="section-intro">Cada sonrisa es diferente. El objetivo es evaluar tus necesidades y definir un plan que considere la salud bucal, la función y tus expectativas estéticas.</p>
 
-  <script>
-    // Menú adaptable a dispositivos móviles
-    const menuToggle = document.getElementById("menuToggle");
-    const navLinks = document.getElementById("navLinks");
+    <div class="smile-grid">
+      <article class="smile-card">
+        <div class="smile-image">
+          <div><span>◇</span><strong>ANTES</strong><p>Espacio para fotografía real del paciente</p></div>
+        </div>
+        <div class="smile-copy">
+          <h3>Valoración inicial</h3>
+          <p>Se revisan las condiciones de salud bucal y las necesidades estéticas antes de definir cualquier procedimiento.</p>
+        </div>
+      </article>
+      <article class="smile-card">
+        <div class="smile-image">
+          <div><span>✧</span><strong>DESPUÉS</strong><p>Espacio para fotografía real del resultado</p></div>
+        </div>
+        <div class="smile-copy">
+          <h3>Plan personalizado</h3>
+          <p>Las opciones se explican de forma individualizada, con expectativas realistas y prioridad en la salud del paciente.</p>
+        </div>
+      </article>
+    </div>
 
-    menuToggle.addEventListener("click", () => {
-      const isOpen = navLinks.classList.toggle("open");
-      menuToggle.setAttribute("aria-expanded", String(isOpen));
-      menuToggle.textContent = isOpen ? "✕ Cerrar" : "☰ Menú";
+    <p class="smile-note" style="margin-top:20px;font-size:.82rem">Sustituye estos espacios por fotografías clínicas autorizadas y verificadas. Los resultados dependen de cada paciente y del tratamiento realizado.</p>
+    <div style="margin-top:25px">
+      <a class="btn" href="https://wa.me/527713159521?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20dise%C3%B1o%20de%20sonrisa" target="_blank" rel="noopener">Solicitar valoración</a>
+    </div>
+  </div>
+</section>
+
+<!-- TURISMO DENTAL: TESTIMONIOS DE EJEMPLO ELIMINADOS Y VIDEO INTEGRADO -->
+<section class="tourism" id="turismo-dental">
+  <div class="container tourism-grid">
+    <div class="tourism-copy">
+      <span class="eyebrow">Atención dental sin fronteras</span>
+      <h2>Turismo dental para pacientes <span class="gold">de todas partes.</span></h2>
+      <p class="muted">No importa desde dónde viajes. En MÉDICA ML · Alta Boutique Dental te orientamos para organizar tu visita, conocer las opciones de tratamiento y planificar tu atención de acuerdo con tus necesidades. Cada tratamiento requiere una valoración clínica individual.</p>
+
+      <div class="tourism-benefits">
+        <div class="benefit">Orientación inicial sobre las opciones de tratamiento.</div>
+        <div class="benefit">Comunicación previa para organizar tu consulta.</div>
+        <div class="benefit">Planificación de citas según tus necesidades clínicas.</div>
+      </div>
+
+      <a class="btn" style="margin-top:12px" href="https://wa.me/527713159521?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20turismo%20dental" target="_blank" rel="noopener">Consultar mi visita</a>
+    </div>
+
+    <div class="tourism-video-wrap">
+      <video
+        class="tourism-video"
+        controls
+        playsinline
+        preload="metadata"
+        aria-label="Video de turismo dental de MÉDICA ML"
+      >
+        <source src="https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/0b519cdf-c6b2-466c-9fa7-f8800608b43c.mov" type="video/quicktime">
+        Tu navegador no puede reproducir este video.
+        <a href="https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/0b519cdf-c6b2-466c-9fa7-f8800608b43c.mov">Abrir video</a>
+      </video>
+      <div class="tourism-video-caption">
+        <span class="eyebrow">MÉDICA ML · Alta Boutique Dental</span>
+        <p>Una experiencia de atención dental personalizada.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="labdental">
+  <div class="container lab-grid">
+    <div class="lab-visual">
+      <div><strong>LabDental</strong><span>TECNOLOGÍA · DISEÑO · PRECISIÓN</span></div>
+    </div>
+    <div class="lab-copy">
+      <span class="eyebrow">Colaboración especializada</span>
+      <h2>El valor del detalle en cada <span class="gold">restauración.</span></h2>
+      <p>El trabajo de laboratorio dental es una parte importante de determinados tratamientos restauradores. Los procesos de diseño y fabricación digital CAD/CAM pueden contribuir a la planificación y elaboración de restauraciones según las indicaciones clínicas.</p>
+      <p>Conoce más sobre LabDental y sus servicios en su sitio web.</p>
+      <a class="btn btn-outline" href="https://www.labdental.mx" target="_blank" rel="noopener">Conocer LabDental</a>
+    </div>
+  </div>
+</section>
+
+<section id="instalaciones">
+  <div class="container">
+    <span class="eyebrow">Nuestro espacio</span>
+    <h2>Instalaciones pensadas para <span class="gold">tu comodidad.</span></h2>
+    <p class="section-intro">Conoce algunos espacios de la clínica y el ambiente de atención.</p>
+    <div class="gallery">
+      <img src="https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/5e770fd8-4e44-4615-bcbf-a68745ab324f.jpeg" alt="Instalaciones de MÉDICA ML" loading="lazy">
+      <img src="https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/cc758aa7-2d30-4563-9023-cfa9a1a6587a.jpeg" alt="Espacio de atención dental" loading="lazy">
+      <img src="https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/f55d05cf-065c-4c40-b070-8a62da1c67af.jpeg" alt="Detalles de la clínica" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section id="ubicaciones">
+  <div class="container">
+    <span class="eyebrow">Encuéntranos</span>
+    <h2>Dos ubicaciones para estar <span class="gold">más cerca de ti.</span></h2>
+    <p class="section-intro">Selecciona la ubicación que te resulte más conveniente y consulta cómo llegar en Google Maps.</p>
+    <div class="location-grid">
+      <article class="location-card">
+        <span class="eyebrow">Ubicación 01</span>
+        <h3>Clínica MÉDICA ML</h3>
+        <p>Consulta la ubicación y las indicaciones para llegar.</p>
+        <a class="btn btn-outline" href="https://maps.app.goo.gl/ntiYwqHr58auN8dQ8?g_st=ic" target="_blank" rel="noopener">Ver en Google Maps</a>
+      </article>
+      <article class="location-card">
+        <span class="eyebrow">Ubicación 02</span>
+        <h3>Segunda ubicación</h3>
+        <p>Consulta la ubicación y las indicaciones para llegar.</p>
+        <a class="btn btn-outline" href="https://maps.app.goo.gl/Acs23e9rWX7uCvRC8?g_st=ic" target="_blank" rel="noopener">Ver en Google Maps</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="reviews" id="opiniones">
+  <div class="container">
+    <span class="eyebrow">Experiencias de pacientes</span>
+    <h2>Tu opinión nos ayuda a <span class="gold">mejorar.</span></h2>
+    <p class="section-intro">Comparte tu experiencia con el equipo de MÉDICA ML. Las opiniones se revisan antes de aparecer públicamente.</p>
+
+    <div class="review-layout">
+      <form class="review-form" id="reviewForm">
+        <h3 style="font-size:1.5rem;margin-top:0">Comparte tu opinión</h3>
+        <div class="field">
+          <label for="reviewName">Nombre</label>
+          <input id="reviewName" name="nombre" maxlength="80" required placeholder="¿Cómo te llamas?">
+        </div>
+        <div class="field">
+          <label>Calificación</label>
+          <div class="stars" id="starPicker" role="group" aria-label="Selecciona una calificación">
+            <button type="button" class="star-btn" data-rating="1" aria-label="1 estrella">★</button>
+            <button type="button" class="star-btn" data-rating="2" aria-label="2 estrellas">★</button>
+            <button type="button" class="star-btn" data-rating="3" aria-label="3 estrellas">★</button>
+            <button type="button" class="star-btn" data-rating="4" aria-label="4 estrellas">★</button>
+            <button type="button" class="star-btn" data-rating="5" aria-label="5 estrellas">★</button>
+          </div>
+        </div>
+        <div class="field">
+          <label for="reviewText">Tu comentario</label>
+          <textarea id="reviewText" name="comentario" maxlength="1200" required placeholder="Cuéntanos cómo fue tu experiencia..."></textarea>
+        </div>
+        <button class="btn" type="submit" id="reviewSubmit">Enviar opinión</button>
+        <p class="form-status" id="reviewStatus" aria-live="polite"></p>
+        <p class="muted" style="font-size:.76rem;margin-bottom:0">Las opiniones se revisan antes de su posible publicación.</p>
+      </form>
+
+      <div>
+        <h3 style="font-size:1.5rem;margin-top:0">Opiniones publicadas</h3>
+        <div class="review-list" id="reviewList">
+          <div class="empty-reviews">Cargando opiniones...</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contacto">
+  <div class="container">
+    <span class="eyebrow">Estamos para ayudarte</span>
+    <h2>Da el siguiente paso hacia <span class="gold">tu salud bucal.</span></h2>
+    <p class="section-intro">Comunícate con nosotros para solicitar información, resolver dudas o consultar la disponibilidad de citas.</p>
+    <div class="contact-grid">
+      <div class="contact-panel">
+        <div class="contact-line">
+          <small>Teléfono</small>
+          <strong><a href="tel:+527717112564">771 711 2564</a></strong>
+        </div>
+        <div class="contact-line">
+          <small>WhatsApp para citas</small>
+          <strong><a href="https://wa.me/527713159521" target="_blank" rel="noopener">771 315 9521</a></strong>
+        </div>
+        <div class="contact-line">
+          <small>Atención</small>
+          <strong>Con cita previa y según disponibilidad</strong>
+        </div>
+        <div class="contact-actions">
+          <a class="btn" href="https://wa.me/527713159521?text=Hola%2C%20quiero%20agendar%20una%20cita" target="_blank" rel="noopener">Agendar por WhatsApp</a>
+          <a class="btn btn-outline" href="#ubicaciones">Ver ubicaciones</a>
+        </div>
+      </div>
+      <div class="contact-decoration">
+        <div><span class="eyebrow">MÉDICA ML</span><h3>Tu sonrisa merece atención especial.</h3></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div><strong>MÉDICA ML · Alta Boutique Dental</strong><br>Atención odontológica personalizada.</div>
+    <div>© <span id="currentYear"></span> MÉDICA ML. Todos los derechos reservados.</div>
+  </div>
+</footer>
+
+<a class="whatsapp-float" href="https://wa.me/527713159521?text=Hola%2C%20quiero%20informaci%C3%B3n" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">✆</a>
+
+<script>
+/* MENÚ MÓVIL */
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", () => {
+  const open = navLinks.classList.toggle("open");
+  menuToggle.setAttribute("aria-expanded", String(open));
+  menuToggle.textContent = open ? "✕ Cerrar" : "☰ Menú";
+});
+
+navLinks.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("open");
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.textContent = "☰ Menú";
+  });
+});
+
+document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+/* CALIFICACIÓN CON ESTRELLAS */
+let selectedRating = 0;
+const starButtons = [...document.querySelectorAll(".star-btn")];
+
+function paintStars(rating) {
+  starButtons.forEach(button => {
+    const active = Number(button.dataset.rating) <= rating;
+    button.classList.toggle("active", active);
+    button.setAttribute("aria-pressed", String(Number(button.dataset.rating) === rating));
+  });
+}
+
+starButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    selectedRating = Number(button.dataset.rating);
+    paintStars(selectedRating);
+  });
+});
+
+/* CONFIGURACIÓN SUPABASE */
+const SUPABASE_URL = "https://ipumlydvtzkkfyxuxhoh.supabase.co";
+const SUPABASE_KEY = "sb_publishable_f_jz64svdub0emoeDGA5ig_4YQDfSGd";
+const SUPABASE_TABLE = "testimonios";
+
+const reviewForm = document.getElementById("reviewForm");
+const reviewStatus = document.getElementById("reviewStatus");
+const reviewList = document.getElementById("reviewList");
+const reviewSubmit = document.getElementById("reviewSubmit");
+
+async function loadReviews() {
+  try {
+    const url = `${SUPABASE_URL}/rest/v1/${SUPABASE_TABLE}?select=nombre,comentario,estrellas,creado_en&aprobado=eq.true&order=creado_en.desc`;
+    const response = await fetch(url, {
+      headers: {
+        apikey: SUPABASE_KEY,
+        Authorization: `Bearer ${SUPABASE_KEY}`
+      }
     });
 
-    navLinks.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => {
-        navLinks.classList.remove("open");
-        menuToggle.setAttribute("aria-expanded", "false");
-        menuToggle.textContent = "☰ Menú";
-      });
-    });
+    if (!response.ok) throw new Error("No se pudieron cargar las opiniones.");
 
-    document.getElementById("currentYear").textContent = new Date().getFullYear();
+    const reviews = await response.json();
+    reviewList.replaceChildren();
 
-    // Calificación por estrellas
-    let selectedRating = 0;
-    const starButtons = [...document.querySelectorAll(".star-btn")];
-
-    function paintStars(rating) {
-      starButtons.forEach(button => {
-        const active = Number(button.dataset.rating) <= rating;
-        button.classList.toggle("active", active);
-        button.setAttribute("aria-pressed", String(Number(button.dataset.rating) === rating));
-      });
+    if (!reviews.length) {
+      const empty = document.createElement("div");
+      empty.className = "empty-reviews";
+      empty.textContent = "Todavía no hay opiniones publicadas. Puedes compartir tu experiencia.";
+      reviewList.appendChild(empty);
+      return;
     }
 
-    starButtons.forEach(button => {
-      button.addEventListener("click", () => {
-        selectedRating = Number(button.dataset.rating);
-        paintStars(selectedRating);
-      });
+    reviews.forEach(review => {
+      const item = document.createElement("article");
+      item.className = "review-item";
+
+      const title = document.createElement("h3");
+      title.textContent = review.nombre || "Paciente";
+
+      const stars = document.createElement("div");
+      stars.className = "review-stars";
+      const rating = Math.max(0, Math.min(5, Number(review.estrellas) || 0));
+      stars.textContent = "★".repeat(rating) + "☆".repeat(5 - rating);
+      stars.setAttribute("aria-label", `${rating} de 5 estrellas`);
+
+      const comment = document.createElement("p");
+      comment.textContent = review.comentario || "";
+
+      item.append(title, stars, comment);
+      reviewList.appendChild(item);
+    });
+  } catch (error) {
+    reviewList.replaceChildren();
+    const message = document.createElement("div");
+    message.className = "empty-reviews";
+    message.textContent = "Las opiniones no están disponibles en este momento. Intenta más tarde.";
+    reviewList.appendChild(message);
+    console.error(error);
+  }
+}
+
+reviewForm.addEventListener("submit", async event => {
+  event.preventDefault();
+
+  if (selectedRating < 1 || selectedRating > 5) {
+    reviewStatus.textContent = "Selecciona una calificación de 1 a 5 estrellas.";
+    return;
+  }
+
+  const nombre = document.getElementById("reviewName").value.trim();
+  const comentario = document.getElementById("reviewText").value.trim();
+
+  if (!nombre || !comentario) {
+    reviewStatus.textContent = "Completa tu nombre y comentario.";
+    return;
+  }
+
+  reviewSubmit.disabled = true;
+  reviewSubmit.textContent = "Enviando...";
+  reviewStatus.textContent = "";
+
+  try {
+    const response = await fetch(`${SUPABASE_URL}/rest/v1/${SUPABASE_TABLE}`, {
+      method: "POST",
+      headers: {
+        apikey: SUPABASE_KEY,
+        Authorization: `Bearer ${SUPABASE_KEY}`,
+        "Content-Type": "application/json",
+        Prefer: "return=minimal"
+      },
+      body: JSON.stringify({
+        nombre,
+        comentario,
+        estrellas: selectedRating,
+        aprobado: false
+      })
     });
 
-    /*
-      CONFIGURACIÓN DE SUPABASE
-      El formulario utiliza la tabla "testimonios" con estas columnas:
-      nombre, comentario, estrellas, creado_en y aprobado.
-      Las opiniones nuevas se envían con aprobado=false.
-      Publica únicamente testimonios aprobados manualmente.
-    */
-    const SUPABASE_URL = "https://ipumlydvtzkkfyxuxhoh.supabase.co";
-    const SUPABASE_KEY = "sb_publishable_f_jz64svdub0emoeDGA5ig_4YQDfSGd";
-    const SUPABASE_TABLE = "testimonios";
-
-    const reviewForm = document.getElementById("reviewForm");
-    const reviewStatus = document.getElementById("reviewStatus");
-    const reviewList = document.getElementById("reviewList");
-    const reviewSubmit = document.getElementById("reviewSubmit");
-
-    async function loadReviews() {
-      try {
-        const url = `${SUPABASE_URL}/rest/v1/${SUPABASE_TABLE}?select=nombre,comentario,estrellas,creado_en&aprobado=eq.true&order=creado_en.desc`;
-        const response = await fetch(url, {
-          headers: {
-            apikey: SUPABASE_KEY,
-            Authorization: `Bearer ${SUPABASE_KEY}`
-          }
-        });
-
-        if (!response.ok) throw new Error("No se pudieron cargar las opiniones.");
-
-        const reviews = await response.json();
-        reviewList.replaceChildren();
-
-        if (!reviews.length) {
-          const empty = document.createElement("div");
-          empty.className = "empty-reviews";
-          empty.textContent = "Todavía no hay opiniones publicadas. ¡Puedes ser la primera persona en compartir su experiencia!";
-          reviewList.appendChild(empty);
-          return;
-        }
-
-        reviews.forEach(review => {
-          const item = document.createElement("article");
-          item.className = "review-item";
-
-          const title = document.createElement("h3");
-          title.textContent = review.nombre || "Paciente";
-
-          const stars = document.createElement("div");
-          stars.className = "review-stars";
-          const rating = Math.max(0, Math.min(5, Number(review.estrellas) || 0));
-          stars.textContent = "★".repeat(rating) + "☆".repeat(5 - rating);
-          stars.setAttribute("aria-label", `${rating} de 5 estrellas`);
-
-          const comment = document.createElement("p");
-          comment.textContent = review.comentario || "";
-
-          item.append(title, stars, comment);
-          reviewList.appendChild(item);
-        });
-      } catch (error) {
-        reviewList.replaceChildren();
-        const message = document.createElement("div");
-        message.className = "empty-reviews";
-        message.textContent = "Las opiniones no están disponibles en este momento. Intenta más tarde.";
-        reviewList.appendChild(message);
-        console.error(error);
-      }
+    if (!response.ok) {
+      const details = await response.text();
+      console.error("Supabase:", details);
+      throw new Error("No se pudo guardar la opinión.");
     }
 
-    reviewForm.addEventListener("submit", async event => {
-      event.preventDefault();
+    reviewForm.reset();
+    selectedRating = 0;
+    paintStars(0);
+    reviewStatus.textContent = "¡Gracias! Tu opinión se envió y será revisada antes de publicarse.";
+  } catch (error) {
+    reviewStatus.textContent = "No fue posible enviar tu opinión. Intenta más tarde.";
+    console.error(error);
+  } finally {
+    reviewSubmit.disabled = false;
+    reviewSubmit.textContent = "Enviar opinión";
+  }
+});
 
-      if (selectedRating < 1 || selectedRating > 5) {
-        reviewStatus.textContent = "Selecciona una calificación de 1 a 5 estrellas.";
-        return;
-      }
+loadReviews();
+</script>
 
-      const nombre = document.getElementById("reviewName").value.trim();
-      const comentario = document.getElementById("reviewText").value.trim();
-
-      if (!nombre || !comentario) {
-        reviewStatus.textContent = "Completa tu nombre y comentario.";
-        return;
-      }
-
-      reviewSubmit.disabled = true;
-      reviewSubmit.textContent = "Enviando...";
-      reviewStatus.textContent = "";
-
-      try {
-        const response = await fetch(`${SUPABASE_URL}/rest/v1/${SUPABASE_TABLE}`, {
-          method: "POST",
-          headers: {
-            apikey: SUPABASE_KEY,
-            Authorization: `Bearer ${SUPABASE_KEY}`,
-            "Content-Type": "application/json",
-            Prefer: "return=minimal"
-          },
-          body: JSON.stringify({
-            nombre,
-            comentario,
-            estrellas: selectedRating,
-            aprobado: false
-          })
-        });
-
-        if (!response.ok) {
-          const details = await response.text();
-          console.error("Supabase:", details);
-          throw new Error("No se pudo guardar la opinión.");
-        }
-
-        reviewForm.reset();
-        selectedRating = 0;
-        paintStars(0);
-        reviewStatus.textContent = "¡Gracias! Tu opinión se envió y será revisada antes de publicarse.";
-      } catch (error) {
-        reviewStatus.textContent = "No fue posible enviar tu opinión. Intenta más tarde.";
-        console.error(error);
-      } finally {
-        reviewSubmit.disabled = false;
-        reviewSubmit.textContent = "Enviar opinión";
-      }
-    });
-
-    loadReviews();
-  </script>
 </body>
 </html>
