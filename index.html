@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#080808">
-<meta name="description" content="MÉDICA ML Alta Boutique Dental. Atención dental personalizada, estética y tecnología odontológica.">
+<meta name="description" content="MÉDICA ML Alta Boutique Dental. Atención dental personalizada y tecnología odontológica.">
 <title>MÉDICA ML | Alta Boutique Dental</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,16 +13,7 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-:root {
-  --bg:#080808;
-  --panel:#111110;
-  --gold:#c7a568;
-  --light:#ead6a9;
-  --white:#f7f5f0;
-  --muted:#b4b0a8;
-  --border:rgba(199,165,104,.27);
-  --max:1200px;
-}
+:root{--bg:#080808;--panel:#111110;--gold:#c7a568;--light:#ead6a9;--white:#f7f5f0;--muted:#b4b0a8;--border:rgba(199,165,104,.27);--max:1200px}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:100px}
 body{margin:0;background:var(--bg);color:var(--white);font-family:"DM Sans",sans-serif;line-height:1.65}
@@ -31,7 +22,7 @@ img,video{max-width:100%;display:block}
 button,input,textarea{font:inherit}
 section{padding:85px 22px}
 .container{max-width:var(--max);margin:auto}
-h1,h2,h3,.serif{font-family:"Playfair Display",Georgia,serif;font-weight:500}
+h1,h2,h3{font-family:"Playfair Display",Georgia,serif;font-weight:500}
 h2{font-size:clamp(2rem,4vw,3.2rem);line-height:1.15;margin:0 0 18px}
 h3{line-height:1.25}
 p{margin-top:0}
@@ -43,10 +34,6 @@ p{margin-top:0}
 .btn:hover{background:var(--light);transform:translateY(-2px)}
 .btn-outline{background:transparent;color:var(--light)}
 .btn-outline:hover{color:#111}
-.center{text-align:center}
-.center .section-intro{margin-left:auto;margin-right:auto}
-
-/* NAVEGACIÓN */
 .topbar{position:sticky;top:0;z-index:1000;background:rgba(8,8,8,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
 .nav-wrap{max-width:1400px;margin:auto;padding:10px 24px;display:flex;align-items:center;justify-content:space-between;gap:18px}
 .brand{display:flex;align-items:center;gap:12px;min-width:165px}
@@ -54,22 +41,18 @@ p{margin-top:0}
 .brand-copy{line-height:1.2}
 .brand-copy strong{display:block;letter-spacing:.1em}
 .brand-copy span{color:var(--gold);font-size:.65rem;letter-spacing:.15em}
+.nav-right{display:flex;align-items:center;gap:14px}
 .nav-links{display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:15px}
 .nav-links a{font-size:.76rem;color:#e1ddd4}
 .nav-links a:hover{color:var(--light)}
 .nav-links .nav-cta{border:1px solid var(--gold);padding:8px 12px;color:var(--light)}
+.lang-switch{display:flex;align-items:center;border:1px solid var(--border);padding:4px;gap:3px;flex-shrink:0}
+.lang-btn{background:transparent;border:0;color:var(--muted);padding:7px 9px;font-weight:700;font-size:.78rem;cursor:pointer}
+.lang-btn.active{background:var(--gold);color:#111}
 .menu-toggle{display:none;background:transparent;color:var(--light);border:1px solid var(--border);padding:10px 13px;cursor:pointer}
 
 /* PORTADA */
-.hero{
-  min-height:660px;
-  display:flex;
-  align-items:center;
-  padding:90px 22px;
-  background:
-    linear-gradient(90deg,rgba(5,5,5,.94),rgba(5,5,5,.65),rgba(5,5,5,.25)),
-    url("https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/d3c797a8-433b-498c-83d9-fad409dc89e5.jpeg") center/cover no-repeat;
-}
+.hero{min-height:660px;display:flex;align-items:center;padding:90px 22px;background:linear-gradient(90deg,rgba(5,5,5,.94),rgba(5,5,5,.65),rgba(5,5,5,.25)),url("https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/d3c797a8-433b-498c-83d9-fad409dc89e5.jpeg") center/cover no-repeat}
 .hero-content{max-width:var(--max);width:100%;margin:auto}
 .hero-text{max-width:700px}
 .hero h1{font-size:clamp(2.8rem,6vw,5.3rem);line-height:1.05;margin:8px 0 22px}
@@ -87,7 +70,7 @@ p{margin-top:0}
 .feature-plus{margin-left:auto;border:1px solid var(--border);color:var(--gold);border-radius:50%;width:30px;height:30px;display:grid;place-items:center}
 
 /* NOSOTROS */
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.about-grid,.lab-grid,.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
 .about-art{min-height:410px;background:url("https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/5e770fd8-4e44-4615-bcbf-a68745ab324f.jpeg") center/cover;border:1px solid var(--border)}
 .about-points{display:grid;gap:13px;margin:25px 0}
 .about-point{display:flex;gap:12px}
@@ -124,11 +107,7 @@ p{margin-top:0}
 .smile-copy p,.smile-note{color:var(--muted)}
 
 /* TURISMO DENTAL */
-.tourism{
-  background:
-    linear-gradient(90deg,rgba(7,7,7,.94),rgba(7,7,7,.84)),
-    url("https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/cc758aa7-2d30-4563-9023-cfa9a1a6587a.jpeg") center/cover no-repeat;
-}
+.tourism{background:linear-gradient(90deg,rgba(7,7,7,.94),rgba(7,7,7,.84)),url("https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/cc758aa7-2d30-4563-9023-cfa9a1a6587a.jpeg") center/cover no-repeat}
 .tourism-grid{display:grid;grid-template-columns:1fr 1fr;gap:38px;align-items:center}
 .tourism-copy{max-width:650px}
 .tourism-benefits{display:grid;gap:12px;margin:24px 0}
@@ -140,7 +119,6 @@ p{margin-top:0}
 .tourism-video-caption p{margin:0;color:#e5dfd3;font-size:.9rem}
 
 /* LABDENTAL */
-.lab-grid{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center}
 .lab-visual{min-height:300px;display:grid;place-items:center;text-align:center;border:1px solid var(--border);background:radial-gradient(circle,rgba(199,165,104,.15),transparent 55%),#111}
 .lab-visual strong{font:clamp(2.3rem,5vw,4rem) "Playfair Display",serif;color:var(--light);letter-spacing:.1em}
 .lab-visual span{display:block;font-size:.7rem;color:var(--gold);letter-spacing:.2em}
@@ -177,15 +155,12 @@ p{margin-top:0}
 .form-status{font-size:.85rem;color:var(--light);margin-top:12px}
 
 /* CONTACTO */
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:35px}
 .contact-line{margin:18px 0}
 .contact-line small{display:block;color:var(--gold);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase}
 .contact-line strong{font-weight:500}
 .contact-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
 .contact-decoration{min-height:340px;display:flex;align-items:end;padding:30px;background:linear-gradient(0deg,rgba(0,0,0,.9),transparent),url("https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/f55d05cf-065c-4c40-b070-8a62da1c67af.jpeg") center/cover;border:1px solid var(--border)}
 .contact-decoration h3{font-size:2rem;margin:0}
-
-/* PIE DE PÁGINA */
 footer{border-top:1px solid var(--border);padding:28px 22px;color:var(--muted);font-size:.8rem}
 .footer-inner{max-width:var(--max);margin:auto;display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
 .footer-inner strong{color:var(--light)}
@@ -194,6 +169,7 @@ footer{border-top:1px solid var(--border);padding:28px 22px;color:var(--muted);f
 @media(max-width:1100px){
   .menu-toggle{display:block}
   .nav-wrap{flex-wrap:wrap}
+  .nav-right{margin-left:auto}
   .nav-links{display:none;width:100%;flex-direction:column;align-items:stretch;gap:0;padding:8px 0}
   .nav-links.open{display:flex}
   .nav-links a{padding:10px 4px;border-bottom:1px solid rgba(199,165,104,.12);font-size:.9rem}
@@ -203,7 +179,13 @@ footer{border-top:1px solid var(--border);padding:28px 22px;color:var(--muted);f
 @media(max-width:760px){
   section{padding:68px 18px}
   .nav-wrap{padding:9px 15px}
-  .brand img{width:47px;height:47px}
+  .brand{min-width:0;gap:8px}
+  .brand img{width:42px;height:42px}
+  .brand-copy strong{font-size:.86rem}
+  .brand-copy span{font-size:.56rem;letter-spacing:.1em}
+  .nav-right{gap:7px}
+  .lang-btn{padding:7px 8px}
+  .menu-toggle{padding:9px 10px;font-size:.82rem}
   .hero{min-height:610px;padding:70px 18px;background-position:60% center}
   .hero h1{font-size:clamp(2.65rem,11vw,4rem)}
   .hero p{font-size:.98rem}
@@ -221,54 +203,52 @@ footer{border-top:1px solid var(--border);padding:28px 22px;color:var(--muted);f
   .review-form,.contact-panel{padding:21px}
   .contact-decoration{min-height:270px}
 }
-@media(prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  *,*::before,*::after{transition:none!important}
-}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
 </style>
 </head>
 
 <body>
-
 <header class="topbar">
   <div class="nav-wrap">
     <a class="brand" href="#inicio" aria-label="MÉDICA ML Inicio">
-      <img src="https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/6FDF1D0C-A18C-435E-95B1-DCDCE7B9832A.png" alt="Logo MÉDICA ML">
-      <div class="brand-copy">
-        <strong>MÉDICA ML</strong>
-        <span>ALTA BOUTIQUE DENTAL</span>
-      </div>
+      <img src="https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/6FDF1D0C-A18C-435E-95B1-DCDCE7B9832A.png" alt="MÉDICA ML logo">
+      <div class="brand-copy"><strong>MÉDICA ML</strong><span>ALTA BOUTIQUE DENTAL</span></div>
     </a>
 
-    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks">☰ Menú</button>
+    <div class="nav-right">
+      <div class="lang-switch" aria-label="Language selector">
+        <button class="lang-btn active" type="button" data-lang="es" aria-pressed="true">ES</button>
+        <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks">☰ <span data-i18n="menu">Menú</span></button>
+    </div>
 
     <nav class="nav-links" id="navLinks" aria-label="Navegación principal">
-      <a href="#inicio">Inicio</a>
-      <a href="#nosotros">Nosotros</a>
-      <a href="#especialidades">Especialidades</a>
-      <a href="#diseno-sonrisa">Diseño de sonrisa</a>
-      <a href="#turismo-dental">Turismo dental</a>
+      <a href="#inicio" data-i18n="navHome">Inicio</a>
+      <a href="#nosotros" data-i18n="navAbout">Nosotros</a>
+      <a href="#especialidades" data-i18n="navSpecialties">Especialidades</a>
+      <a href="#diseno-sonrisa" data-i18n="navSmile">Diseño de sonrisa</a>
+      <a href="#turismo-dental" data-i18n="navTourism">Turismo dental</a>
       <a href="#labdental">LabDental</a>
-      <a href="#instalaciones">Instalaciones</a>
-      <a href="#ubicaciones">Ubicaciones</a>
-      <a href="#opiniones">Opiniones</a>
-      <a href="#contacto">Contacto</a>
-      <a class="nav-cta" href="https://wa.me/527713159521?text=Hola%2C%20quiero%20agendar%20una%20cita" target="_blank" rel="noopener">Agendar cita</a>
+      <a href="#instalaciones" data-i18n="navFacilities">Instalaciones</a>
+      <a href="#ubicaciones" data-i18n="navLocations">Ubicaciones</a>
+      <a href="#opiniones" data-i18n="navReviews">Opiniones</a>
+      <a href="#contacto" data-i18n="navContact">Contacto</a>
+      <a class="nav-cta" href="https://wa.me/527713159521?text=Hola%2C%20quiero%20agendar%20una%20cita" target="_blank" rel="noopener" data-i18n="navBook">Agendar cita</a>
     </nav>
   </div>
 </header>
 
 <main>
-
 <section class="hero" id="inicio">
   <div class="hero-content">
     <div class="hero-text">
-      <span class="eyebrow">Odontología · Tecnología · Bienestar</span>
-      <h1>Una sonrisa que refleja <span class="gold">lo mejor de ti.</span></h1>
-      <p>Atención dental personalizada en un espacio donde la experiencia, la precisión y el cuidado de cada detalle se unen para acompañarte hacia una sonrisa saludable.</p>
+      <span class="eyebrow" data-i18n="heroEyebrow">Odontología · Tecnología · Bienestar</span>
+      <h1 data-i18n="heroTitle">Una sonrisa que refleja <span class="gold">lo mejor de ti.</span></h1>
+      <p data-i18n="heroText">Atención dental personalizada en un espacio donde la experiencia, la precisión y el cuidado de cada detalle se unen para acompañarte hacia una sonrisa saludable.</p>
       <div class="hero-actions">
-        <a class="btn" href="#especialidades">Conocer especialidades</a>
-        <a class="btn btn-outline" href="https://wa.me/527713159521?text=Hola%2C%20quiero%20informaci%C3%B3n" target="_blank" rel="noopener">Solicitar información</a>
+        <a class="btn" href="#especialidades" data-i18n="heroButton">Conocer especialidades</a>
+        <a class="btn btn-outline" href="https://wa.me/527713159521?text=Hola%2C%20quiero%20informaci%C3%B3n" target="_blank" rel="noopener" data-i18n="heroContact">Solicitar información</a>
       </div>
     </div>
   </div>
@@ -278,12 +258,12 @@ footer{border-top:1px solid var(--border);padding:28px 22px;color:var(--muted);f
   <div class="feature-grid">
     <a class="feature-card" href="#diseno-sonrisa">
       <span class="feature-icon">✧</span>
-      <span><small>Estética dental</small><strong>Diseño de sonrisa</strong></span>
+      <span><small data-i18n="featureSmileSmall">Estética dental</small><strong data-i18n="featureSmile">Diseño de sonrisa</strong></span>
       <span class="feature-plus">+</span>
     </a>
     <a class="feature-card" href="#turismo-dental">
       <span class="feature-icon">◇</span>
-      <span><small>Atención personalizada</small><strong>Turismo dental</strong></span>
+      <span><small data-i18n="featureTourismSmall">Atención personalizada</small><strong data-i18n="featureTourism">Turismo dental</strong></span>
       <span class="feature-plus">+</span>
     </a>
   </div>
@@ -291,173 +271,132 @@ footer{border-top:1px solid var(--border);padding:28px 22px;color:var(--muted);f
 
 <section id="nosotros">
   <div class="container about-grid">
-    <div class="about-art" role="img" aria-label="Instalaciones de la clínica dental"></div>
+    <div class="about-art" role="img" aria-label="Dental clinic facilities"></div>
     <div>
-      <span class="eyebrow">Conócenos</span>
-      <h2>La atención que mereces, con un enfoque <span class="gold">personal.</span></h2>
-      <p class="muted">En MÉDICA ML · Alta Boutique Dental buscamos que cada visita sea una experiencia cercana y profesional. Escuchamos tus necesidades y te orientamos para que puedas tomar decisiones informadas sobre tu salud bucal.</p>
+      <span class="eyebrow" data-i18n="aboutEyebrow">Conócenos</span>
+      <h2 data-i18n="aboutTitle">La atención que mereces, con un enfoque <span class="gold">personal.</span></h2>
+      <p class="muted" data-i18n="aboutText">En MÉDICA ML · Alta Boutique Dental buscamos que cada visita sea una experiencia cercana y profesional. Escuchamos tus necesidades y te orientamos para que puedas tomar decisiones informadas sobre tu salud bucal.</p>
       <div class="about-points">
-        <div class="about-point"><span class="check">✦</span><span>Planes de atención adaptados a cada paciente.</span></div>
-        <div class="about-point"><span class="check">✦</span><span>Enfoque en salud bucal, función y estética.</span></div>
-        <div class="about-point"><span class="check">✦</span><span>Orientación clara durante cada etapa del tratamiento.</span></div>
+        <div class="about-point"><span class="check">✦</span><span data-i18n="aboutPoint1">Planes de atención adaptados a cada paciente.</span></div>
+        <div class="about-point"><span class="check">✦</span><span data-i18n="aboutPoint2">Enfoque en salud bucal, función y estética.</span></div>
+        <div class="about-point"><span class="check">✦</span><span data-i18n="aboutPoint3">Orientación clara durante cada etapa del tratamiento.</span></div>
       </div>
-      <a class="btn btn-outline" href="#ubicaciones">Conoce nuestras ubicaciones</a>
+      <a class="btn btn-outline" href="#ubicaciones" data-i18n="aboutButton">Conoce nuestras ubicaciones</a>
     </div>
   </div>
 </section>
 
 <section class="specialties" id="especialidades">
   <div class="container">
-    <span class="eyebrow">Atención odontológica</span>
-    <h2>Especialidades para cuidar <span class="gold">tu sonrisa.</span></h2>
-    <p class="section-intro">Conoce las áreas de atención y las herramientas que pueden apoyar la valoración y planificación de tu tratamiento. La indicación depende de las necesidades de cada paciente.</p>
+    <span class="eyebrow" data-i18n="specEyebrow">Atención odontológica</span>
+    <h2 data-i18n="specTitle">Especialidades para cuidar <span class="gold">tu sonrisa.</span></h2>
+    <p class="section-intro" data-i18n="specIntro">Conoce las áreas de atención y las herramientas que pueden apoyar la valoración y planificación de tu tratamiento. La indicación depende de las necesidades de cada paciente.</p>
 
     <div class="specialty-grid">
       <article class="card">
-        <div class="card-icon">⌁</div>
-        <span class="card-number">01 / ORTODONCIA</span>
-        <h3>Ortodoncia</h3>
-        <p>Valoración y opciones de tratamiento para mejorar la alineación dental y la relación entre los dientes.</p>
+        <div class="card-icon">⌁</div><span class="card-number">01 / ORTODONCIA</span>
+        <h3 data-i18n="spec1Title">Ortodoncia</h3>
+        <p data-i18n="spec1Text">Valoración y opciones de tratamiento para mejorar la alineación dental y la relación entre los dientes.</p>
       </article>
-
       <article class="card">
-        <div class="card-icon">◉</div>
-        <span class="card-number">02 / ENDODONCIA</span>
-        <h3>Endodoncia</h3>
-        <p>Atención de problemas que afectan la pulpa dental, con el objetivo de conservar las piezas cuando sea posible.</p>
+        <div class="card-icon">◉</div><span class="card-number">02 / ENDODONCIA</span>
+        <h3 data-i18n="spec2Title">Endodoncia</h3>
+        <p data-i18n="spec2Text">Atención de problemas que afectan la pulpa dental, con el objetivo de conservar las piezas cuando sea posible.</p>
       </article>
-
       <article class="card">
-        <div class="card-icon">✧</div>
-        <span class="card-number">03 / ENCÍAS E IMPLANTES</span>
-        <h3>Periodoncia e implantología</h3>
-        <p>Valoración de la salud de las encías y alternativas para reemplazar piezas dentales ausentes cuando estén indicadas.</p>
+        <div class="card-icon">✧</div><span class="card-number">03 / ENCÍAS E IMPLANTES</span>
+        <h3 data-i18n="spec3Title">Periodoncia e implantología</h3>
+        <p data-i18n="spec3Text">Valoración de la salud de las encías y alternativas para reemplazar piezas dentales ausentes cuando estén indicadas.</p>
       </article>
-
       <article class="card">
-        <div class="card-icon">◇</div>
-        <span class="card-number">04 / ESTÉTICA</span>
-        <h3>Diseño de sonrisa</h3>
-        <p>Planificación estética personalizada que considera armonía, proporción y salud bucal.</p>
-        <p style="margin-top:12px"><a class="gold" href="#diseno-sonrisa">Conocer más →</a></p>
+        <div class="card-icon">◇</div><span class="card-number">04 / ESTÉTICA</span>
+        <h3 data-i18n="spec4Title">Diseño de sonrisa</h3>
+        <p data-i18n="spec4Text">Planificación estética personalizada que considera armonía, proporción y salud bucal.</p>
+        <p style="margin-top:12px"><a class="gold" href="#diseno-sonrisa" data-i18n="learnMore">Conocer más →</a></p>
       </article>
-
       <article class="card">
-        <div class="card-icon">▱</div>
-        <span class="card-number">05 / REHABILITACIÓN</span>
-        <h3>Rehabilitación oral</h3>
-        <p>Alternativas para recuperar función y estética dental mediante un plan individualizado.</p>
+        <div class="card-icon">▱</div><span class="card-number">05 / REHABILITACIÓN</span>
+        <h3 data-i18n="spec5Title">Rehabilitación oral</h3>
+        <p data-i18n="spec5Text">Alternativas para recuperar función y estética dental mediante un plan individualizado.</p>
       </article>
-
       <article class="card">
-        <div class="card-icon">⌕</div>
-        <span class="card-number">06 / DIAGNÓSTICO</span>
-        <h3>Diagnóstico y planificación</h3>
-        <p>Estudios y valoración clínica para orientar las decisiones de tratamiento de acuerdo con cada caso.</p>
+        <div class="card-icon">⌕</div><span class="card-number">06 / DIAGNÓSTICO</span>
+        <h3 data-i18n="spec6Title">Diagnóstico y planificación</h3>
+        <p data-i18n="spec6Text">Estudios y valoración clínica para orientar las decisiones de tratamiento de acuerdo con cada caso.</p>
       </article>
     </div>
 
     <div class="technology-panel" id="tecnologia">
       <div class="technology-top">
         <div>
-          <span class="eyebrow">Tecnología aplicada a la odontología</span>
-          <h3>Precisión en cada etapa del <span class="gold">tratamiento.</span></h3>
-          <p>Las herramientas de diagnóstico y diseño digital pueden apoyar la comunicación clínica y la planificación de restauraciones, según el procedimiento indicado.</p>
+          <span class="eyebrow" data-i18n="techEyebrow">Tecnología aplicada a la odontología</span>
+          <h3 data-i18n="techTitle">Precisión en cada etapa del <span class="gold">tratamiento.</span></h3>
+          <p data-i18n="techIntro">Las herramientas de diagnóstico y diseño digital pueden apoyar la comunicación clínica y la planificación de restauraciones, según el procedimiento indicado.</p>
         </div>
-        <div class="cadcam-mark">
-          <strong>CAD/CAM</strong>
-          <span>DISEÑO Y FABRICACIÓN ASISTIDOS</span>
-        </div>
+        <div class="cadcam-mark"><strong>CAD/CAM</strong><span data-i18n="cadcamLabel">DISEÑO Y FABRICACIÓN ASISTIDOS</span></div>
       </div>
-
       <div class="tech-grid">
         <article class="tech-card">
-          <div class="card-icon">⌕</div>
-          <h4>Radiología y diagnóstico</h4>
-          <p>Los estudios radiográficos, como panorámica o cefalometría, se solicitan cuando están indicados para valorar estructuras y apoyar el plan de tratamiento.</p>
+          <div class="card-icon">⌕</div><h4 data-i18n="tech1Title">Radiología y diagnóstico</h4>
+          <p data-i18n="tech1Text">Los estudios radiográficos, como panorámica o cefalometría, se solicitan cuando están indicados para valorar estructuras y apoyar el plan de tratamiento.</p>
         </article>
         <article class="tech-card">
-          <div class="card-icon">▦</div>
-          <h4>Flujo digital CAD/CAM</h4>
-          <p>El diseño y la fabricación asistidos por computadora pueden apoyar la planificación de restauraciones y trabajos protésicos, según el caso.</p>
+          <div class="card-icon">▦</div><h4 data-i18n="tech2Title">Flujo digital CAD/CAM</h4>
+          <p data-i18n="tech2Text">El diseño y la fabricación asistidos por computadora pueden apoyar la planificación de restauraciones y trabajos protésicos, según el caso.</p>
         </article>
         <article class="tech-card">
-          <div class="card-icon">◎</div>
-          <h4>Escaneo y herramientas digitales</h4>
-          <p>Las herramientas digitales disponibles pueden facilitar la captura de información y la comunicación del tratamiento cuando el procedimiento lo requiere.</p>
+          <div class="card-icon">◎</div><h4 data-i18n="tech3Title">Escaneo y herramientas digitales</h4>
+          <p data-i18n="tech3Text">Las herramientas digitales disponibles pueden facilitar la captura de información y la comunicación del tratamiento cuando el procedimiento lo requiere.</p>
         </article>
       </div>
-      <p class="muted" style="font-size:.8rem;margin:18px 0 0">Los estudios, equipos y procedimientos se ofrecen según disponibilidad en la clínica o mediante proveedores especializados. La indicación se determina durante la valoración.</p>
+      <p class="muted" style="font-size:.8rem;margin:18px 0 0" data-i18n="techNote">Los estudios, equipos y procedimientos se ofrecen según disponibilidad en la clínica o mediante proveedores especializados. La indicación se determina durante la valoración.</p>
     </div>
   </div>
 </section>
 
 <section id="diseno-sonrisa">
   <div class="container">
-    <span class="eyebrow">Estética personalizada</span>
-    <h2>Diseño de sonrisa: <span class="gold">tu sonrisa, tu esencia.</span></h2>
-    <p class="section-intro">Cada sonrisa es diferente. El objetivo es evaluar tus necesidades y definir un plan que considere la salud bucal, la función y tus expectativas estéticas.</p>
-
+    <span class="eyebrow" data-i18n="smileEyebrow">Estética personalizada</span>
+    <h2 data-i18n="smileTitle">Diseño de sonrisa: <span class="gold">tu sonrisa, tu esencia.</span></h2>
+    <p class="section-intro" data-i18n="smileIntro">Cada sonrisa es diferente. El objetivo es evaluar tus necesidades y definir un plan que considere la salud bucal, la función y tus expectativas estéticas.</p>
     <div class="smile-grid">
       <article class="smile-card">
-        <div class="smile-image">
-          <div><span>◇</span><strong>ANTES</strong><p>Espacio para fotografía real del paciente</p></div>
-        </div>
-        <div class="smile-copy">
-          <h3>Valoración inicial</h3>
-          <p>Se revisan las condiciones de salud bucal y las necesidades estéticas antes de definir cualquier procedimiento.</p>
-        </div>
+        <div class="smile-image"><div><span>◇</span><strong data-i18n="before">ANTES</strong><p data-i18n="beforePlaceholder">Espacio para fotografía real del paciente</p></div></div>
+        <div class="smile-copy"><h3 data-i18n="initialAssessment">Valoración inicial</h3><p data-i18n="initialAssessmentText">Se revisan las condiciones de salud bucal y las necesidades estéticas antes de definir cualquier procedimiento.</p></div>
       </article>
       <article class="smile-card">
-        <div class="smile-image">
-          <div><span>✧</span><strong>DESPUÉS</strong><p>Espacio para fotografía real del resultado</p></div>
-        </div>
-        <div class="smile-copy">
-          <h3>Plan personalizado</h3>
-          <p>Las opciones se explican de forma individualizada, con expectativas realistas y prioridad en la salud del paciente.</p>
-        </div>
+        <div class="smile-image"><div><span>✧</span><strong data-i18n="after">DESPUÉS</strong><p data-i18n="afterPlaceholder">Espacio para fotografía real del resultado</p></div></div>
+        <div class="smile-copy"><h3 data-i18n="personalizedPlan">Plan personalizado</h3><p data-i18n="personalizedPlanText">Las opciones se explican de forma individualizada, con expectativas realistas y prioridad en la salud del paciente.</p></div>
       </article>
     </div>
-
-    <p class="smile-note" style="margin-top:20px;font-size:.82rem">Sustituye estos espacios por fotografías clínicas autorizadas y verificadas. Los resultados dependen de cada paciente y del tratamiento realizado.</p>
-    <div style="margin-top:25px">
-      <a class="btn" href="https://wa.me/527713159521?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20dise%C3%B1o%20de%20sonrisa" target="_blank" rel="noopener">Solicitar valoración</a>
-    </div>
+    <p class="smile-note" style="margin-top:20px;font-size:.82rem" data-i18n="smileNote">Sustituye estos espacios por fotografías clínicas autorizadas y verificadas. Los resultados dependen de cada paciente y del tratamiento realizado.</p>
+    <div style="margin-top:25px"><a class="btn" href="https://wa.me/527713159521?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20dise%C3%B1o%20de%20sonrisa" target="_blank" rel="noopener" data-i18n="requestAssessment">Solicitar valoración</a></div>
   </div>
 </section>
 
-<!-- TURISMO DENTAL: TESTIMONIOS DE EJEMPLO ELIMINADOS Y VIDEO INTEGRADO -->
+<!-- TURISMO DENTAL CON VIDEO Y SIN TESTIMONIOS DE EJEMPLO -->
 <section class="tourism" id="turismo-dental">
   <div class="container tourism-grid">
     <div class="tourism-copy">
-      <span class="eyebrow">Atención dental sin fronteras</span>
-      <h2>Turismo dental para pacientes <span class="gold">de todas partes.</span></h2>
-      <p class="muted">No importa desde dónde viajes. En MÉDICA ML · Alta Boutique Dental te orientamos para organizar tu visita, conocer las opciones de tratamiento y planificar tu atención de acuerdo con tus necesidades. Cada tratamiento requiere una valoración clínica individual.</p>
-
+      <span class="eyebrow" data-i18n="tourismEyebrow">Atención dental sin fronteras</span>
+      <h2 data-i18n="tourismTitle">Turismo dental para pacientes <span class="gold">de todas partes.</span></h2>
+      <p class="muted" data-i18n="tourismText">No importa desde dónde viajes. En MÉDICA ML · Alta Boutique Dental te orientamos para organizar tu visita, conocer las opciones de tratamiento y planificar tu atención de acuerdo con tus necesidades. Cada tratamiento requiere una valoración clínica individual.</p>
       <div class="tourism-benefits">
-        <div class="benefit">Orientación inicial sobre las opciones de tratamiento.</div>
-        <div class="benefit">Comunicación previa para organizar tu consulta.</div>
-        <div class="benefit">Planificación de citas según tus necesidades clínicas.</div>
+        <div class="benefit" data-i18n="tourismBenefit1">Orientación inicial sobre las opciones de tratamiento.</div>
+        <div class="benefit" data-i18n="tourismBenefit2">Comunicación previa para organizar tu consulta.</div>
+        <div class="benefit" data-i18n="tourismBenefit3">Planificación de citas según tus necesidades clínicas.</div>
       </div>
-
-      <a class="btn" style="margin-top:12px" href="https://wa.me/527713159521?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20turismo%20dental" target="_blank" rel="noopener">Consultar mi visita</a>
+      <a class="btn" style="margin-top:12px" href="https://wa.me/527713159521?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20turismo%20dental" target="_blank" rel="noopener" data-i18n="tourismButton">Consultar mi visita</a>
     </div>
-
     <div class="tourism-video-wrap">
-      <video
-        class="tourism-video"
-        controls
-        playsinline
-        preload="metadata"
-        aria-label="Video de turismo dental de MÉDICA ML"
-      >
+      <video class="tourism-video" controls playsinline preload="metadata" aria-label="MÉDICA ML dental tourism video">
         <source src="https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/0b519cdf-c6b2-466c-9fa7-f8800608b43c.mov" type="video/quicktime">
-        Tu navegador no puede reproducir este video.
-        <a href="https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/0b519cdf-c6b2-466c-9fa7-f8800608b43c.mov">Abrir video</a>
+        Your browser cannot play this video.
+        <a href="https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/0b519cdf-c6b2-466c-9fa7-f8800608b43c.mov" data-i18n="openVideo">Abrir video</a>
       </video>
       <div class="tourism-video-caption">
         <span class="eyebrow">MÉDICA ML · Alta Boutique Dental</span>
-        <p>Una experiencia de atención dental personalizada.</p>
+        <p data-i18n="videoCaption">Una experiencia de atención dental personalizada.</p>
       </div>
     </div>
   </div>
@@ -465,49 +404,47 @@ footer{border-top:1px solid var(--border);padding:28px 22px;color:var(--muted);f
 
 <section id="labdental">
   <div class="container lab-grid">
-    <div class="lab-visual">
-      <div><strong>LabDental</strong><span>TECNOLOGÍA · DISEÑO · PRECISIÓN</span></div>
-    </div>
+    <div class="lab-visual"><div><strong>LabDental</strong><span>TECNOLOGÍA · DISEÑO · PRECISIÓN</span></div></div>
     <div class="lab-copy">
-      <span class="eyebrow">Colaboración especializada</span>
-      <h2>El valor del detalle en cada <span class="gold">restauración.</span></h2>
-      <p>El trabajo de laboratorio dental es una parte importante de determinados tratamientos restauradores. Los procesos de diseño y fabricación digital CAD/CAM pueden contribuir a la planificación y elaboración de restauraciones según las indicaciones clínicas.</p>
-      <p>Conoce más sobre LabDental y sus servicios en su sitio web.</p>
-      <a class="btn btn-outline" href="https://www.labdental.mx" target="_blank" rel="noopener">Conocer LabDental</a>
+      <span class="eyebrow" data-i18n="labEyebrow">Colaboración especializada</span>
+      <h2 data-i18n="labTitle">El valor del detalle en cada <span class="gold">restauración.</span></h2>
+      <p data-i18n="labText">El trabajo de laboratorio dental es una parte importante de determinados tratamientos restauradores. Los procesos de diseño y fabricación digital CAD/CAM pueden contribuir a la planificación y elaboración de restauraciones según las indicaciones clínicas.</p>
+      <p data-i18n="labText2">Conoce más sobre LabDental y sus servicios en su sitio web.</p>
+      <a class="btn btn-outline" href="https://www.labdental.mx" target="_blank" rel="noopener" data-i18n="labButton">Conocer LabDental</a>
     </div>
   </div>
 </section>
 
 <section id="instalaciones">
   <div class="container">
-    <span class="eyebrow">Nuestro espacio</span>
-    <h2>Instalaciones pensadas para <span class="gold">tu comodidad.</span></h2>
-    <p class="section-intro">Conoce algunos espacios de la clínica y el ambiente de atención.</p>
+    <span class="eyebrow" data-i18n="facilitiesEyebrow">Nuestro espacio</span>
+    <h2 data-i18n="facilitiesTitle">Instalaciones pensadas para <span class="gold">tu comodidad.</span></h2>
+    <p class="section-intro" data-i18n="facilitiesIntro">Conoce algunos espacios de la clínica y el ambiente de atención.</p>
     <div class="gallery">
-      <img src="https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/5e770fd8-4e44-4615-bcbf-a68745ab324f.jpeg" alt="Instalaciones de MÉDICA ML" loading="lazy">
-      <img src="https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/cc758aa7-2d30-4563-9023-cfa9a1a6587a.jpeg" alt="Espacio de atención dental" loading="lazy">
-      <img src="https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/f55d05cf-065c-4c40-b070-8a62da1c67af.jpeg" alt="Detalles de la clínica" loading="lazy">
+      <img src="https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/5e770fd8-4e44-4615-bcbf-a68745ab324f.jpeg" alt="MÉDICA ML clinic facilities" loading="lazy">
+      <img src="https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/cc758aa7-2d30-4563-9023-cfa9a1a6587a.jpeg" alt="Dental care area" loading="lazy">
+      <img src="https://raw.githubusercontent.com/Medical-ml-mx/dra-liz/main/f55d05cf-065c-4c40-b070-8a62da1c67af.jpeg" alt="Clinic details" loading="lazy">
     </div>
   </div>
 </section>
 
 <section id="ubicaciones">
   <div class="container">
-    <span class="eyebrow">Encuéntranos</span>
-    <h2>Dos ubicaciones para estar <span class="gold">más cerca de ti.</span></h2>
-    <p class="section-intro">Selecciona la ubicación que te resulte más conveniente y consulta cómo llegar en Google Maps.</p>
+    <span class="eyebrow" data-i18n="locationsEyebrow">Encuéntranos</span>
+    <h2 data-i18n="locationsTitle">Dos ubicaciones para estar <span class="gold">más cerca de ti.</span></h2>
+    <p class="section-intro" data-i18n="locationsIntro">Selecciona la ubicación que te resulte más conveniente y consulta cómo llegar en Google Maps.</p>
     <div class="location-grid">
       <article class="location-card">
-        <span class="eyebrow">Ubicación 01</span>
-        <h3>Clínica MÉDICA ML</h3>
-        <p>Consulta la ubicación y las indicaciones para llegar.</p>
-        <a class="btn btn-outline" href="https://maps.app.goo.gl/ntiYwqHr58auN8dQ8?g_st=ic" target="_blank" rel="noopener">Ver en Google Maps</a>
+        <span class="eyebrow" data-i18n="location1">Ubicación 01</span>
+        <h3 data-i18n="clinic1">Clínica MÉDICA ML</h3>
+        <p data-i18n="locationText">Consulta la ubicación y las indicaciones para llegar.</p>
+        <a class="btn btn-outline" href="https://maps.app.goo.gl/ntiYwqHr58auN8dQ8?g_st=ic" target="_blank" rel="noopener" data-i18n="mapsButton">Ver en Google Maps</a>
       </article>
       <article class="location-card">
-        <span class="eyebrow">Ubicación 02</span>
-        <h3>Segunda ubicación</h3>
-        <p>Consulta la ubicación y las indicaciones para llegar.</p>
-        <a class="btn btn-outline" href="https://maps.app.goo.gl/Acs23e9rWX7uCvRC8?g_st=ic" target="_blank" rel="noopener">Ver en Google Maps</a>
+        <span class="eyebrow" data-i18n="location2">Ubicación 02</span>
+        <h3 data-i18n="clinic2">Segunda ubicación</h3>
+        <p data-i18n="locationText">Consulta la ubicación y las indicaciones para llegar.</p>
+        <a class="btn btn-outline" href="https://maps.app.goo.gl/Acs23e9rWX7uCvRC8?g_st=ic" target="_blank" rel="noopener" data-i18n="mapsButton">Ver en Google Maps</a>
       </article>
     </div>
   </div>
@@ -515,41 +452,37 @@ footer{border-top:1px solid var(--border);padding:28px 22px;color:var(--muted);f
 
 <section class="reviews" id="opiniones">
   <div class="container">
-    <span class="eyebrow">Experiencias de pacientes</span>
-    <h2>Tu opinión nos ayuda a <span class="gold">mejorar.</span></h2>
-    <p class="section-intro">Comparte tu experiencia con el equipo de MÉDICA ML. Las opiniones se revisan antes de aparecer públicamente.</p>
-
+    <span class="eyebrow" data-i18n="reviewsEyebrow">Experiencias de pacientes</span>
+    <h2 data-i18n="reviewsTitle">Tu opinión nos ayuda a <span class="gold">mejorar.</span></h2>
+    <p class="section-intro" data-i18n="reviewsIntro">Comparte tu experiencia con el equipo de MÉDICA ML. Las opiniones se revisan antes de aparecer públicamente.</p>
     <div class="review-layout">
       <form class="review-form" id="reviewForm">
-        <h3 style="font-size:1.5rem;margin-top:0">Comparte tu opinión</h3>
+        <h3 style="font-size:1.5rem;margin-top:0" data-i18n="reviewFormTitle">Comparte tu opinión</h3>
         <div class="field">
-          <label for="reviewName">Nombre</label>
-          <input id="reviewName" name="nombre" maxlength="80" required placeholder="¿Cómo te llamas?">
+          <label for="reviewName" data-i18n="nameLabel">Nombre</label>
+          <input id="reviewName" name="nombre" maxlength="80" required placeholder="¿Cómo te llamas?" data-i18n-placeholder="namePlaceholder">
         </div>
         <div class="field">
-          <label>Calificación</label>
+          <label data-i18n="ratingLabel">Calificación</label>
           <div class="stars" id="starPicker" role="group" aria-label="Selecciona una calificación">
-            <button type="button" class="star-btn" data-rating="1" aria-label="1 estrella">★</button>
-            <button type="button" class="star-btn" data-rating="2" aria-label="2 estrellas">★</button>
-            <button type="button" class="star-btn" data-rating="3" aria-label="3 estrellas">★</button>
-            <button type="button" class="star-btn" data-rating="4" aria-label="4 estrellas">★</button>
-            <button type="button" class="star-btn" data-rating="5" aria-label="5 estrellas">★</button>
+            <button type="button" class="star-btn" data-rating="1" aria-label="1 star">★</button>
+            <button type="button" class="star-btn" data-rating="2" aria-label="2 stars">★</button>
+            <button type="button" class="star-btn" data-rating="3" aria-label="3 stars">★</button>
+            <button type="button" class="star-btn" data-rating="4" aria-label="4 stars">★</button>
+            <button type="button" class="star-btn" data-rating="5" aria-label="5 stars">★</button>
           </div>
         </div>
         <div class="field">
-          <label for="reviewText">Tu comentario</label>
-          <textarea id="reviewText" name="comentario" maxlength="1200" required placeholder="Cuéntanos cómo fue tu experiencia..."></textarea>
+          <label for="reviewText" data-i18n="commentLabel">Tu comentario</label>
+          <textarea id="reviewText" name="comentario" maxlength="1200" required placeholder="Cuéntanos cómo fue tu experiencia..." data-i18n-placeholder="commentPlaceholder"></textarea>
         </div>
-        <button class="btn" type="submit" id="reviewSubmit">Enviar opinión</button>
+        <button class="btn" type="submit" id="reviewSubmit" data-i18n="reviewSubmit">Enviar opinión</button>
         <p class="form-status" id="reviewStatus" aria-live="polite"></p>
-        <p class="muted" style="font-size:.76rem;margin-bottom:0">Las opiniones se revisan antes de su posible publicación.</p>
+        <p class="muted" style="font-size:.76rem;margin-bottom:0" data-i18n="reviewDisclaimer">Las opiniones se revisan antes de su posible publicación.</p>
       </form>
-
       <div>
-        <h3 style="font-size:1.5rem;margin-top:0">Opiniones publicadas</h3>
-        <div class="review-list" id="reviewList">
-          <div class="empty-reviews">Cargando opiniones...</div>
-        </div>
+        <h3 style="font-size:1.5rem;margin-top:0" data-i18n="publishedReviews">Opiniones publicadas</h3>
+        <div class="review-list" id="reviewList"><div class="empty-reviews" data-i18n="loadingReviews">Cargando opiniones...</div></div>
       </div>
     </div>
   </div>
@@ -557,47 +490,192 @@ footer{border-top:1px solid var(--border);padding:28px 22px;color:var(--muted);f
 
 <section id="contacto">
   <div class="container">
-    <span class="eyebrow">Estamos para ayudarte</span>
-    <h2>Da el siguiente paso hacia <span class="gold">tu salud bucal.</span></h2>
-    <p class="section-intro">Comunícate con nosotros para solicitar información, resolver dudas o consultar la disponibilidad de citas.</p>
+    <span class="eyebrow" data-i18n="contactEyebrow">Estamos para ayudarte</span>
+    <h2 data-i18n="contactTitle">Da el siguiente paso hacia <span class="gold">tu salud bucal.</span></h2>
+    <p class="section-intro" data-i18n="contactIntro">Comunícate con nosotros para solicitar información, resolver dudas o consultar la disponibilidad de citas.</p>
     <div class="contact-grid">
       <div class="contact-panel">
-        <div class="contact-line">
-          <small>Teléfono</small>
-          <strong><a href="tel:+527717112564">771 711 2564</a></strong>
-        </div>
-        <div class="contact-line">
-          <small>WhatsApp para citas</small>
-          <strong><a href="https://wa.me/527713159521" target="_blank" rel="noopener">771 315 9521</a></strong>
-        </div>
-        <div class="contact-line">
-          <small>Atención</small>
-          <strong>Con cita previa y según disponibilidad</strong>
-        </div>
+        <div class="contact-line"><small data-i18n="phoneLabel">Teléfono</small><strong><a href="tel:+527717112564">771 711 2564</a></strong></div>
+        <div class="contact-line"><small data-i18n="whatsappLabel">WhatsApp para citas</small><strong><a href="https://wa.me/527713159521" target="_blank" rel="noopener">771 315 9521</a></strong></div>
+        <div class="contact-line"><small data-i18n="availabilityLabel">Atención</small><strong data-i18n="availabilityText">Con cita previa y según disponibilidad</strong></div>
         <div class="contact-actions">
-          <a class="btn" href="https://wa.me/527713159521?text=Hola%2C%20quiero%20agendar%20una%20cita" target="_blank" rel="noopener">Agendar por WhatsApp</a>
-          <a class="btn btn-outline" href="#ubicaciones">Ver ubicaciones</a>
+          <a class="btn" href="https://wa.me/527713159521?text=Hola%2C%20quiero%20agendar%20una%20cita" target="_blank" rel="noopener" data-i18n="whatsappButton">Agendar por WhatsApp</a>
+          <a class="btn btn-outline" href="#ubicaciones" data-i18n="locationsButton">Ver ubicaciones</a>
         </div>
       </div>
       <div class="contact-decoration">
-        <div><span class="eyebrow">MÉDICA ML</span><h3>Tu sonrisa merece atención especial.</h3></div>
+        <div><span class="eyebrow">MÉDICA ML</span><h3 data-i18n="contactTagline">Tu sonrisa merece atención especial.</h3></div>
       </div>
     </div>
   </div>
 </section>
-
 </main>
 
 <footer>
   <div class="footer-inner">
-    <div><strong>MÉDICA ML · Alta Boutique Dental</strong><br>Atención odontológica personalizada.</div>
-    <div>© <span id="currentYear"></span> MÉDICA ML. Todos los derechos reservados.</div>
+    <div><strong>MÉDICA ML · Alta Boutique Dental</strong><br><span data-i18n="footerTagline">Atención odontológica personalizada.</span></div>
+    <div>© <span id="currentYear"></span> MÉDICA ML. <span data-i18n="copyright">Todos los derechos reservados.</span></div>
   </div>
 </footer>
 
-<a class="whatsapp-float" href="https://wa.me/527713159521?text=Hola%2C%20quiero%20informaci%C3%B3n" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">✆</a>
+<a class="whatsapp-float" href="https://wa.me/527713159521?text=Hola%2C%20quiero%20informaci%C3%B3n" target="_blank" rel="noopener" aria-label="WhatsApp">✆</a>
 
 <script>
+const translations = {
+  es: {
+    menu:"Menú",closeMenu:"Cerrar",
+    navHome:"Inicio",navAbout:"Nosotros",navSpecialties:"Especialidades",navSmile:"Diseño de sonrisa",navTourism:"Turismo dental",navFacilities:"Instalaciones",navLocations:"Ubicaciones",navReviews:"Opiniones",navContact:"Contacto",navBook:"Agendar cita",
+    heroEyebrow:"Odontología · Tecnología · Bienestar",
+    heroTitle:'Una sonrisa que refleja <span class="gold">lo mejor de ti.</span>',
+    heroText:"Atención dental personalizada en un espacio donde la experiencia, la precisión y el cuidado de cada detalle se unen para acompañarte hacia una sonrisa saludable.",
+    heroButton:"Conocer especialidades",heroContact:"Solicitar información",
+    featureSmileSmall:"Estética dental",featureSmile:"Diseño de sonrisa",featureTourismSmall:"Atención personalizada",featureTourism:"Turismo dental",
+    aboutEyebrow:"Conócenos",aboutTitle:'La atención que mereces, con un enfoque <span class="gold">personal.</span>',
+    aboutText:"En MÉDICA ML · Alta Boutique Dental buscamos que cada visita sea una experiencia cercana y profesional. Escuchamos tus necesidades y te orientamos para que puedas tomar decisiones informadas sobre tu salud bucal.",
+    aboutPoint1:"Planes de atención adaptados a cada paciente.",aboutPoint2:"Enfoque en salud bucal, función y estética.",aboutPoint3:"Orientación clara durante cada etapa del tratamiento.",aboutButton:"Conoce nuestras ubicaciones",
+    specEyebrow:"Atención odontológica",specTitle:'Especialidades para cuidar <span class="gold">tu sonrisa.</span>',
+    specIntro:"Conoce las áreas de atención y las herramientas que pueden apoyar la valoración y planificación de tu tratamiento. La indicación depende de las necesidades de cada paciente.",
+    spec1Title:"Ortodoncia",spec1Text:"Valoración y opciones de tratamiento para mejorar la alineación dental y la relación entre los dientes.",
+    spec2Title:"Endodoncia",spec2Text:"Atención de problemas que afectan la pulpa dental, con el objetivo de conservar las piezas cuando sea posible.",
+    spec3Title:"Periodoncia e implantología",spec3Text:"Valoración de la salud de las encías y alternativas para reemplazar piezas dentales ausentes cuando estén indicadas.",
+    spec4Title:"Diseño de sonrisa",spec4Text:"Planificación estética personalizada que considera armonía, proporción y salud bucal.",
+    spec5Title:"Rehabilitación oral",spec5Text:"Alternativas para recuperar función y estética dental mediante un plan individualizado.",
+    spec6Title:"Diagnóstico y planificación",spec6Text:"Estudios y valoración clínica para orientar las decisiones de tratamiento de acuerdo con cada caso.",learnMore:"Conocer más →",
+    techEyebrow:"Tecnología aplicada a la odontología",techTitle:'Precisión en cada etapa del <span class="gold">tratamiento.</span>',
+    techIntro:"Las herramientas de diagnóstico y diseño digital pueden apoyar la comunicación clínica y la planificación de restauraciones, según el procedimiento indicado.",
+    cadcamLabel:"DISEÑO Y FABRICACIÓN ASISTIDOS",tech1Title:"Radiología y diagnóstico",tech1Text:"Los estudios radiográficos, como panorámica o cefalometría, se solicitan cuando están indicados para valorar estructuras y apoyar el plan de tratamiento.",
+    tech2Title:"Flujo digital CAD/CAM",tech2Text:"El diseño y la fabricación asistidos por computadora pueden apoyar la planificación de restauraciones y trabajos protésicos, según el caso.",
+    tech3Title:"Escaneo y herramientas digitales",tech3Text:"Las herramientas digitales disponibles pueden facilitar la captura de información y la comunicación del tratamiento cuando el procedimiento lo requiere.",
+    techNote:"Los estudios, equipos y procedimientos se ofrecen según disponibilidad en la clínica o mediante proveedores especializados. La indicación se determina durante la valoración.",
+    smileEyebrow:"Estética personalizada",smileTitle:'Diseño de sonrisa: <span class="gold">tu sonrisa, tu esencia.</span>',
+    smileIntro:"Cada sonrisa es diferente. El objetivo es evaluar tus necesidades y definir un plan que considere la salud bucal, la función y tus expectativas estéticas.",
+    before:"ANTES",after:"DESPUÉS",beforePlaceholder:"Espacio para fotografía real del paciente",afterPlaceholder:"Espacio para fotografía real del resultado",
+    initialAssessment:"Valoración inicial",initialAssessmentText:"Se revisan las condiciones de salud bucal y las necesidades estéticas antes de definir cualquier procedimiento.",
+    personalizedPlan:"Plan personalizado",personalizedPlanText:"Las opciones se explican de forma individualizada, con expectativas realistas y prioridad en la salud del paciente.",
+    smileNote:"Sustituye estos espacios por fotografías clínicas autorizadas y verificadas. Los resultados dependen de cada paciente y del tratamiento realizado.",requestAssessment:"Solicitar valoración",
+    tourismEyebrow:"Atención dental sin fronteras",tourismTitle:'Turismo dental para pacientes <span class="gold">de todas partes.</span>',
+    tourismText:"No importa desde dónde viajes. En MÉDICA ML · Alta Boutique Dental te orientamos para organizar tu visita, conocer las opciones de tratamiento y planificar tu atención de acuerdo con tus necesidades. Cada tratamiento requiere una valoración clínica individual.",
+    tourismBenefit1:"Orientación inicial sobre las opciones de tratamiento.",tourismBenefit2:"Comunicación previa para organizar tu consulta.",tourismBenefit3:"Planificación de citas según tus necesidades clínicas.",tourismButton:"Consultar mi visita",
+    videoCaption:"Una experiencia de atención dental personalizada.",openVideo:"Abrir video",
+    labEyebrow:"Colaboración especializada",labTitle:'El valor del detalle en cada <span class="gold">restauración.</span>',
+    labText:"El trabajo de laboratorio dental es una parte importante de determinados tratamientos restauradores. Los procesos de diseño y fabricación digital CAD/CAM pueden contribuir a la planificación y elaboración de restauraciones según las indicaciones clínicas.",
+    labText2:"Conoce más sobre LabDental y sus servicios en su sitio web.",labButton:"Conocer LabDental",
+    facilitiesEyebrow:"Nuestro espacio",facilitiesTitle:'Instalaciones pensadas para <span class="gold">tu comodidad.</span>',facilitiesIntro:"Conoce algunos espacios de la clínica y el ambiente de atención.",
+    locationsEyebrow:"Encuéntranos",locationsTitle:'Dos ubicaciones para estar <span class="gold">más cerca de ti.</span>',locationsIntro:"Selecciona la ubicación que te resulte más conveniente y consulta cómo llegar en Google Maps.",
+    location1:"Ubicación 01",location2:"Ubicación 02",clinic1:"Clínica MÉDICA ML",clinic2:"Segunda ubicación",locationText:"Consulta la ubicación y las indicaciones para llegar.",mapsButton:"Ver en Google Maps",
+    reviewsEyebrow:"Experiencias de pacientes",reviewsTitle:'Tu opinión nos ayuda a <span class="gold">mejorar.</span>',
+    reviewsIntro:"Comparte tu experiencia con el equipo de MÉDICA ML. Las opiniones se revisan antes de aparecer públicamente.",
+    reviewFormTitle:"Comparte tu opinión",nameLabel:"Nombre",namePlaceholder:"¿Cómo te llamas?",ratingLabel:"Calificación",commentLabel:"Tu comentario",commentPlaceholder:"Cuéntanos cómo fue tu experiencia...",reviewSubmit:"Enviar opinión",
+    reviewDisclaimer:"Las opiniones se revisan antes de su posible publicación.",publishedReviews:"Opiniones publicadas",loadingReviews:"Cargando opiniones...",
+    contactEyebrow:"Estamos para ayudarte",contactTitle:'Da el siguiente paso hacia <span class="gold">tu salud bucal.</span>',
+    contactIntro:"Comunícate con nosotros para solicitar información, resolver dudas o consultar la disponibilidad de citas.",
+    phoneLabel:"Teléfono",whatsappLabel:"WhatsApp para citas",availabilityLabel:"Atención",availabilityText:"Con cita previa y según disponibilidad",
+    whatsappButton:"Agendar por WhatsApp",locationsButton:"Ver ubicaciones",contactTagline:"Tu sonrisa merece atención especial.",
+    footerTagline:"Atención odontológica personalizada.",copyright:"Todos los derechos reservados.",
+    formNeedRating:"Selecciona una calificación de 1 a 5 estrellas.",formNeedFields:"Completa tu nombre y comentario.",
+    formSending:"Enviando...",formSuccess:"¡Gracias! Tu opinión se envió y será revisada antes de publicarse.",formError:"No fue posible enviar tu opinión. Intenta más tarde.",
+    reviewsError:"Las opiniones no están disponibles en este momento. Intenta más tarde.",reviewsEmpty:"Todavía no hay opiniones publicadas. Puedes compartir tu experiencia."
+  },
+  en: {
+    menu:"Menu",closeMenu:"Close",
+    navHome:"Home",navAbout:"About us",navSpecialties:"Specialties",navSmile:"Smile design",navTourism:"Dental tourism",navFacilities:"Facilities",navLocations:"Locations",navReviews:"Reviews",navContact:"Contact",navBook:"Book an appointment",
+    heroEyebrow:"Dentistry · Technology · Well-being",
+    heroTitle:'A smile that reflects <span class="gold">the best in you.</span>',
+    heroText:"Personalized dental care in a space where experience, precision and attention to detail come together to support your journey toward a healthy smile.",
+    heroButton:"Explore specialties",heroContact:"Request information",
+    featureSmileSmall:"Dental aesthetics",featureSmile:"Smile design",featureTourismSmall:"Personalized care",featureTourism:"Dental tourism",
+    aboutEyebrow:"About us",aboutTitle:'The care you deserve, with a <span class="gold">personal touch.</span>',
+    aboutText:"At MÉDICA ML · Alta Boutique Dental, we aim to make every visit a welcoming and professional experience. We listen to your needs and help you make informed decisions about your oral health.",
+    aboutPoint1:"Care plans tailored to each patient.",aboutPoint2:"A focus on oral health, function and aesthetics.",aboutPoint3:"Clear guidance throughout every stage of treatment.",aboutButton:"Explore our locations",
+    specEyebrow:"Dental care",specTitle:'Specialties to care for <span class="gold">your smile.</span>',
+    specIntro:"Explore our areas of care and the tools that may support your assessment and treatment planning. Recommendations depend on each patient's needs.",
+    spec1Title:"Orthodontics",spec1Text:"Assessment and treatment options to improve tooth alignment and the relationship between teeth.",
+    spec2Title:"Endodontics",spec2Text:"Care for conditions affecting the dental pulp, with the goal of preserving teeth whenever possible.",
+    spec3Title:"Periodontics and implant dentistry",spec3Text:"Assessment of gum health and options for replacing missing teeth when appropriate.",
+    spec4Title:"Smile design",spec4Text:"Personalized aesthetic planning that considers harmony, proportion and oral health.",
+    spec5Title:"Oral rehabilitation",spec5Text:"Options to restore dental function and aesthetics through an individualized plan.",
+    spec6Title:"Diagnosis and planning",spec6Text:"Clinical assessments and diagnostic studies to help guide treatment decisions for each case.",learnMore:"Learn more →",
+    techEyebrow:"Technology in dentistry",techTitle:'Precision at every stage of <span class="gold">treatment.</span>',
+    techIntro:"Diagnostic and digital design tools may support clinical communication and restoration planning, depending on the procedure.",
+    cadcamLabel:"COMPUTER-AIDED DESIGN AND MANUFACTURING",tech1Title:"Radiology and diagnostics",tech1Text:"Imaging studies, such as panoramic X-rays or cephalometric imaging, may be requested when indicated to assess structures and support treatment planning.",
+    tech2Title:"Digital CAD/CAM workflow",tech2Text:"Computer-aided design and manufacturing can support the planning of restorations and prosthetic work, depending on the case.",
+    tech3Title:"Scanning and digital tools",tech3Text:"Available digital tools may help capture information and communicate treatment plans when required.",
+    techNote:"Studies, equipment and procedures are offered according to clinic availability or through specialized providers. Recommendations are made during assessment.",
+    smileEyebrow:"Personalized aesthetics",smileTitle:'Smile design: <span class="gold">your smile, your identity.</span>',
+    smileIntro:"Every smile is different. Our goal is to assess your needs and create a plan that considers oral health, function and your aesthetic expectations.",
+    before:"BEFORE",after:"AFTER",beforePlaceholder:"Space for an authorized patient photo",afterPlaceholder:"Space for an authorized result photo",
+    initialAssessment:"Initial assessment",initialAssessmentText:"Oral health and aesthetic needs are reviewed before any procedure is planned.",
+    personalizedPlan:"Personalized plan",personalizedPlanText:"Options are explained individually, with realistic expectations and the patient's health as a priority.",
+    smileNote:"Replace these placeholders with authorized, verified clinical photos. Results vary according to each patient and treatment.",requestAssessment:"Request an assessment",
+    tourismEyebrow:"Dental care without borders",tourismTitle:'Dental tourism for patients <span class="gold">from everywhere.</span>',
+    tourismText:"No matter where you are traveling from, MÉDICA ML · Alta Boutique Dental can guide you through arranging your visit, learning about treatment options and planning your care around your needs. Every treatment requires an individual clinical assessment.",
+    tourismBenefit1:"Initial guidance on available treatment options.",tourismBenefit2:"Advance communication to help arrange your consultation.",tourismBenefit3:"Appointment planning based on your clinical needs.",tourismButton:"Plan your visit",
+    videoCaption:"A personalized dental care experience.",openVideo:"Open video",
+    labEyebrow:"Specialized collaboration",labTitle:'Attention to detail in every <span class="gold">restoration.</span>',
+    labText:"Dental laboratory work is an important part of certain restorative treatments. Digital CAD/CAM design and manufacturing processes may support the planning and production of restorations according to clinical recommendations.",
+    labText2:"Learn more about LabDental and its services on its website.",labButton:"Explore LabDental",
+    facilitiesEyebrow:"Our space",facilitiesTitle:'Facilities designed for <span class="gold">your comfort.</span>',facilitiesIntro:"Explore some of our clinic spaces and care environment.",
+    locationsEyebrow:"Find us",locationsTitle:'Two locations to be <span class="gold">closer to you.</span>',locationsIntro:"Choose the location that works best for you and get directions through Google Maps.",
+    location1:"Location 01",location2:"Location 02",clinic1:"MÉDICA ML Clinic",clinic2:"Second location",locationText:"View the location and directions.",mapsButton:"View on Google Maps",
+    reviewsEyebrow:"Patient experiences",reviewsTitle:'Your feedback helps us <span class="gold">improve.</span>',
+    reviewsIntro:"Share your experience with the MÉDICA ML team. Reviews are checked before they are displayed publicly.",
+    reviewFormTitle:"Share your experience",nameLabel:"Name",namePlaceholder:"What is your name?",ratingLabel:"Rating",commentLabel:"Your review",commentPlaceholder:"Tell us about your experience...",reviewSubmit:"Submit review",
+    reviewDisclaimer:"Reviews are checked before they may be published.",publishedReviews:"Published reviews",loadingReviews:"Loading reviews...",
+    contactEyebrow:"We're here to help",contactTitle:'Take the next step toward <span class="gold">better oral health.</span>',
+    contactIntro:"Contact us for information, answers to your questions or appointment availability.",
+    phoneLabel:"Phone",whatsappLabel:"Appointments via WhatsApp",availabilityLabel:"Appointments",availabilityText:"By appointment, subject to availability",
+    whatsappButton:"Book via WhatsApp",locationsButton:"View locations",contactTagline:"Your smile deserves special care.",
+    footerTagline:"Personalized dental care.",copyright:"All rights reserved.",
+    formNeedRating:"Please select a rating from 1 to 5 stars.",formNeedFields:"Please enter your name and review.",
+    formSending:"Submitting...",formSuccess:"Thank you! Your review was submitted and will be checked before publication.",formError:"Your review could not be submitted. Please try again later.",
+    reviewsError:"Reviews are unavailable right now. Please try again later.",reviewsEmpty:"There are no published reviews yet. You can share your experience."
+  }
+};
+
+let currentLang = "es";
+
+function setLanguage(lang) {
+  if (!translations[lang]) return;
+  currentLang = lang;
+  document.documentElement.lang = lang;
+
+  document.querySelectorAll("[data-i18n]").forEach(element => {
+    const key = element.dataset.i18n;
+    if (translations[lang][key] !== undefined) {
+      element.innerHTML = translations[lang][key];
+    }
+  });
+
+  document.querySelectorAll("[data-i18n-placeholder]").forEach(element => {
+    const key = element.dataset.i18nPlaceholder;
+    if (translations[lang][key] !== undefined) {
+      element.placeholder = translations[lang][key];
+    }
+  });
+
+  document.querySelectorAll(".lang-btn").forEach(button => {
+    const active = button.dataset.lang === lang;
+    button.classList.toggle("active", active);
+    button.setAttribute("aria-pressed", String(active));
+  });
+
+  menuToggle.textContent = navLinks.classList.contains("open")
+    ? "✕ " + translations[lang].closeMenu
+    : "☰ " + translations[lang].menu;
+
+  starButtons.forEach((button, index) => {
+    button.setAttribute("aria-label", `${index + 1} ${lang === "es" ? "estrella" : "star"}${index ? (lang === "en" ? "s" : "s") : ""}`);
+  });
+
+  const reviewStatus = document.getElementById("reviewStatus");
+  reviewStatus.textContent = "";
+  localStorage.setItem("medicalMlLanguage", lang);
+}
+
+document.querySelectorAll(".lang-btn").forEach(button => {
+  button.addEventListener("click", () => setLanguage(button.dataset.lang));
+});
+
 /* MENÚ MÓVIL */
 const menuToggle = document.getElementById("menuToggle");
 const navLinks = document.getElementById("navLinks");
@@ -605,14 +683,16 @@ const navLinks = document.getElementById("navLinks");
 menuToggle.addEventListener("click", () => {
   const open = navLinks.classList.toggle("open");
   menuToggle.setAttribute("aria-expanded", String(open));
-  menuToggle.textContent = open ? "✕ Cerrar" : "☰ Menú";
+  menuToggle.textContent = open
+    ? "✕ " + translations[currentLang].closeMenu
+    : "☰ " + translations[currentLang].menu;
 });
 
 navLinks.querySelectorAll("a").forEach(link => {
   link.addEventListener("click", () => {
     navLinks.classList.remove("open");
     menuToggle.setAttribute("aria-expanded", "false");
-    menuToggle.textContent = "☰ Menú";
+    menuToggle.textContent = "☰ " + translations[currentLang].menu;
   });
 });
 
@@ -637,7 +717,7 @@ starButtons.forEach(button => {
   });
 });
 
-/* CONFIGURACIÓN SUPABASE */
+/* SUPABASE: OPINIONES MODERADAS */
 const SUPABASE_URL = "https://ipumlydvtzkkfyxuxhoh.supabase.co";
 const SUPABASE_KEY = "sb_publishable_f_jz64svdub0emoeDGA5ig_4YQDfSGd";
 const SUPABASE_TABLE = "testimonios";
@@ -657,7 +737,7 @@ async function loadReviews() {
       }
     });
 
-    if (!response.ok) throw new Error("No se pudieron cargar las opiniones.");
+    if (!response.ok) throw new Error("Reviews unavailable");
 
     const reviews = await response.json();
     reviewList.replaceChildren();
@@ -665,7 +745,7 @@ async function loadReviews() {
     if (!reviews.length) {
       const empty = document.createElement("div");
       empty.className = "empty-reviews";
-      empty.textContent = "Todavía no hay opiniones publicadas. Puedes compartir tu experiencia.";
+      empty.textContent = translations[currentLang].reviewsEmpty;
       reviewList.appendChild(empty);
       return;
     }
@@ -675,13 +755,13 @@ async function loadReviews() {
       item.className = "review-item";
 
       const title = document.createElement("h3");
-      title.textContent = review.nombre || "Paciente";
+      title.textContent = review.nombre || "Patient";
 
       const stars = document.createElement("div");
       stars.className = "review-stars";
       const rating = Math.max(0, Math.min(5, Number(review.estrellas) || 0));
       stars.textContent = "★".repeat(rating) + "☆".repeat(5 - rating);
-      stars.setAttribute("aria-label", `${rating} de 5 estrellas`);
+      stars.setAttribute("aria-label", `${rating} / 5`);
 
       const comment = document.createElement("p");
       comment.textContent = review.comentario || "";
@@ -693,7 +773,7 @@ async function loadReviews() {
     reviewList.replaceChildren();
     const message = document.createElement("div");
     message.className = "empty-reviews";
-    message.textContent = "Las opiniones no están disponibles en este momento. Intenta más tarde.";
+    message.textContent = translations[currentLang].reviewsError;
     reviewList.appendChild(message);
     console.error(error);
   }
@@ -703,7 +783,7 @@ reviewForm.addEventListener("submit", async event => {
   event.preventDefault();
 
   if (selectedRating < 1 || selectedRating > 5) {
-    reviewStatus.textContent = "Selecciona una calificación de 1 a 5 estrellas.";
+    reviewStatus.textContent = translations[currentLang].formNeedRating;
     return;
   }
 
@@ -711,12 +791,12 @@ reviewForm.addEventListener("submit", async event => {
   const comentario = document.getElementById("reviewText").value.trim();
 
   if (!nombre || !comentario) {
-    reviewStatus.textContent = "Completa tu nombre y comentario.";
+    reviewStatus.textContent = translations[currentLang].formNeedFields;
     return;
   }
 
   reviewSubmit.disabled = true;
-  reviewSubmit.textContent = "Enviando...";
+  reviewSubmit.textContent = translations[currentLang].formSending;
   reviewStatus.textContent = "";
 
   try {
@@ -737,26 +817,28 @@ reviewForm.addEventListener("submit", async event => {
     });
 
     if (!response.ok) {
-      const details = await response.text();
-      console.error("Supabase:", details);
-      throw new Error("No se pudo guardar la opinión.");
+      console.error("Supabase:", await response.text());
+      throw new Error("Submission failed");
     }
 
     reviewForm.reset();
     selectedRating = 0;
     paintStars(0);
-    reviewStatus.textContent = "¡Gracias! Tu opinión se envió y será revisada antes de publicarse.";
+    reviewStatus.textContent = translations[currentLang].formSuccess;
   } catch (error) {
-    reviewStatus.textContent = "No fue posible enviar tu opinión. Intenta más tarde.";
+    reviewStatus.textContent = translations[currentLang].formError;
     console.error(error);
   } finally {
     reviewSubmit.disabled = false;
-    reviewSubmit.textContent = "Enviar opinión";
+    reviewSubmit.textContent = translations[currentLang].reviewSubmit;
   }
 });
 
+/* Recordar el idioma elegido en este navegador */
+const savedLanguage = localStorage.getItem("medicalMlLanguage");
+setLanguage(savedLanguage === "en" ? "en" : "es");
+
 loadReviews();
 </script>
-
 </body>
 </html>
